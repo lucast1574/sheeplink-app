@@ -1,0 +1,13 @@
+{
+  "title": "SheepLink",
+  "shortDescription": "Asistencia semanal, cumpleaños y servicio para cuidar de tu comunidad",
+  "fullDescription": "SheepLink acompaña a líderes y equipos de iglesias con una aplicación sencilla para el día a día.\n\nMI CÉLULA\nMarca la asistencia de cada integrante, elige la fecha real de la reunión y añade una foto desde la cámara o la galería. Cada semana conserva su registro para que los responsables autorizados puedan consultarlo desde la plataforma web. Las semanas sin registro no se cuentan como ausencias.\n\nHOY\nConsulta cumpleaños próximos y tus turnos de servicio. Los turnos confirmados pueden recordarse el día anterior y el mismo día, según tus preferencias de notificaciones.\n\nMI PERFIL\nConsulta tus datos, comunidad y responsabilidades. Cambia tu foto y elige qué recordatorios recibir.\n\nACCESO PARA TU COMUNIDAD\nNecesitas una cuenta existente de SheepLink y los permisos asignados por tu iglesia. Puedes entrar con correo y contraseña o con Google cuando el correo coincide con tu cuenta. Las funciones disponibles dependen de tu rol.\n\nLa conexión a internet es necesaria para sincronizar los datos. Los recordatorios se actualizan al abrir la aplicación y su entrega puede variar por los ajustes del teléfono.\n\nPolítica de privacidad: https://sheeplink.nexode.app/privacidad\nContacto: krecarfaz@gmail.com",
+  "category": "Productivity",
+  "supportEmail": "krecarfaz@gmail.com",
+  "website": "https://sheeplink.nexode.app",
+  "privacyPolicy": "https://sheeplink.nexode.app/privacidad",
+  "targetAudience": "18 and over; church leaders and staff",
+  "containsAds": false,
+  "accountCreationInApp": false,
+  "screenshots": "Fictional demo data rendered by the real Flutter UI."
+}
