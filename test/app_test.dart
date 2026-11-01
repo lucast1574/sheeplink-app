@@ -1,6 +1,7 @@
 import 'package:sheeplink/domain/models/personal_profile.dart';
 import 'dart:io';
 import 'dart:ui' as ui;
+import 'package:image/image.dart' as raster;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/rendering.dart';
@@ -39,15 +40,24 @@ class TestNotifications extends NotificationService {
   }
 }
 
-Future<void> capture(WidgetTester tester, GlobalKey key, String name) async {
+Future<void> capture(
+  WidgetTester tester,
+  GlobalKey key,
+  String name, {
+  double pixelRatio = 2,
+  bool jpeg = false,
+}) async {
   await tester.runAsync(() async {
     final boundary =
         key.currentContext!.findRenderObject()! as RenderRepaintBoundary;
-    final image = await boundary.toImage(pixelRatio: 2);
+    final image = await boundary.toImage(pixelRatio: pixelRatio);
     final png = await image.toByteData(format: ui.ImageByteFormat.png);
-    final file = File('artifacts/$name.png');
+    final file = File('artifacts/$name.${jpeg ? 'jpg' : 'png'}');
     await file.parent.create(recursive: true);
-    await file.writeAsBytes(png!.buffer.asUint8List());
+    final bytes = png!.buffer.asUint8List();
+    await file.writeAsBytes(
+      jpeg ? raster.encodeJpg(raster.decodePng(bytes)!, quality: 95) : bytes,
+    );
     image.dispose();
   });
 }
