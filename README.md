@@ -17,7 +17,7 @@ flutter pub get
 flutter run
 ```
 
-La API predeterminada es `https://dashboard-sheeplink.nexode.app/api`. Para un entorno diferente:
+La API predeterminada es `https://app.sheeplink.app/api`. Para un entorno diferente:
 
 ```sh
 flutter run --dart-define=API_URL=https://tu-servidor.example/api
@@ -107,3 +107,13 @@ AAB: `build/app/outputs/bundle/release/app-release.aab`. Validación bundletool 
 Canal interno activo: https://play.google.com/apps/internaltest/4699493667805671464 . Usar la cuenta Google agregada como probador y aceptar participar. Firebase tiene las huellas debug, upload y firma de Google Play; SHA-1/SHA-256 públicas de distribución en `store/release-audit.json`.
 
 Ficha es-419 y recursos en `store/es-419/`; acceso de revisión permanente entregado a Google, con credenciales protegidas fuera del repositorio. IARC y seguridad de datos completados. La publicación pública requiere revisión y acceso a producción tras una prueba cerrada con al menos 12 inscritos durante 14 días consecutivos; añadir correos reales autorizados, no cuentas ficticias.
+
+## Migración a sheeplink.app — 31 de octubre de 2026
+
+Versión Android 1.0.1+2 publicada en el canal interno existente. API: https://app.sheeplink.app/api. Sitio y enlaces legales: https://sheeplink.app. Backend: https://api.sheeplink.app. Firebase Authentication, marca OAuth, orígenes JavaScript y Stripe usan el nuevo dominio. Los hostnames de Nexode permanecen disponibles para las instalaciones anteriores.
+
+El build Android conserva el paquete y la firma existentes. El código compartido de iOS usa las nuevas URLs; su compilación y distribución requieren macOS/Xcode.
+
+La validación de la migración confirmó HTTPS público en los cuatro hostnames, endpoints y CORS, las páginas legales, metadatos y el selector OAuth con enlaces nuevos. La credencial de prueba guardada respondió 401; no se afirma haber validado una sesión real completa.
+
+Alpha también tiene preparada la versión 1.0.1 (2), conservando los testers existentes. Se confirmó el envío de Alpha, descripción y política de privacidad; Play todavía los muestra en comprobaciones previas y pendientes de revisión. La versión interna ya está publicada.

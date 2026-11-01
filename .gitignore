@@ -51,9 +51,9 @@ key.properties
 *.dpapi
 __pycache__/
 
-# Local caches and private console evidence
-android/.kotlin/
-artifacts/
-store/play-*.png
-.env
-.env.*
+# Apple signing credentials never belong in source control.
+*.p8
+*.p12
+*.mobileprovision
+*.provisionprofile
+*.cer

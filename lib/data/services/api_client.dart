@@ -13,7 +13,7 @@ class ApiClient {
           BaseOptions(
             baseUrl: const String.fromEnvironment(
               'API_URL',
-              defaultValue: 'https://dashboard-sheeplink.nexode.app/api',
+              defaultValue: 'https://app.sheeplink.app/api',
             ),
             connectTimeout: const Duration(seconds: 15),
             receiveTimeout: const Duration(seconds: 25),

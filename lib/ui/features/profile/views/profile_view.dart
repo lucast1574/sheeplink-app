@@ -171,7 +171,7 @@ class _ProfileViewState extends State<ProfileView> {
               TextButton(
                 onPressed: () => action(() async {
                   if (!await launchUrl(
-                    Uri.parse('https://sheeplink.nexode.app/privacidad'),
+                    Uri.parse('https://sheeplink.app/privacidad'),
                     mode: LaunchMode.externalApplication,
                   )) {
                     throw StateError('No browser');
@@ -182,7 +182,7 @@ class _ProfileViewState extends State<ProfileView> {
               TextButton(
                 onPressed: () => action(() async {
                   if (!await launchUrl(
-                    Uri.parse('https://sheeplink.nexode.app/terminos'),
+                    Uri.parse('https://sheeplink.app/terminos'),
                     mode: LaunchMode.externalApplication,
                   )) {
                     throw StateError('No browser');

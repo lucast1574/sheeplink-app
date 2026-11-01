@@ -123,7 +123,12 @@ class NotificationService extends ChangeNotifier {
               AndroidFlutterLocalNotificationsPlugin
             >()
             ?.requestNotificationsPermission();
-        if (granted == false) {
+        final appleGranted = await _plugin
+            .resolvePlatformSpecificImplementation<
+              IOSFlutterLocalNotificationsPlugin
+            >()
+            ?.requestPermissions(alert: true, badge: true, sound: true);
+        if (granted == false || appleGranted == false) {
           status = 'Permite las notificaciones en los ajustes del teléfono.';
           notifyListeners();
           return;
@@ -161,6 +166,7 @@ class NotificationService extends ChangeNotifier {
     try {
       await scheduleReminders(members, timezone, assignments);
       if (available) {
+        await _waitForApplePushRegistration();
         await _refresh?.cancel();
         final registered = Completer<String>();
         _refresh = FirebaseMessaging.instance.onRegistered.listen(
@@ -195,6 +201,22 @@ class NotificationService extends ChangeNotifier {
           'No pudimos completar la sincronización de los avisos. Reintenta desde Perfil.';
     }
     notifyListeners();
+  }
+
+  Future<void> _waitForApplePushRegistration() async {
+    if (defaultTargetPlatform != TargetPlatform.iOS &&
+        defaultTargetPlatform != TargetPlatform.macOS) {
+      return;
+    }
+    // APNs registration can finish after the permission dialog closes.
+    // Firebase cannot register an Apple installation until its APNs token exists.
+    for (var attempt = 0; attempt < 40; attempt++) {
+      if (!enabled) throw StateError('Notifications were disabled.');
+      final token = await FirebaseMessaging.instance.getAPNSToken();
+      if (token != null && token.isNotEmpty) return;
+      await Future<void>.delayed(const Duration(milliseconds: 250));
+    }
+    throw StateError('APNs registration did not complete. Retry from Profile.');
   }
 
   Future<bool> shouldOffer() async =>

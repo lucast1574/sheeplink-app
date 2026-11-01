@@ -8,6 +8,7 @@
 	<true/>
 	<key>UIBackgroundModes</key>
 	<array>
+		<string>fetch</string>
 		<string>remote-notification</string>
 	</array>
 	<key>CADisableMinimumFrameDurationOnPhone</key>
@@ -90,8 +91,10 @@
 		</dict>
 	</array>
 	<key>NSCameraUsageDescription</key>
-	<string>Tomar la foto de la reunión semanal de tu célula.</string>
+	<string>Toma una foto para tu perfil o para el registro de la reunión de tu célula.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Elegir la foto de la reunión semanal de tu célula.</string>
+	<string>Elige una foto para tu perfil o para el registro de la reunión de tu célula.</string>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
 </dict>
 </plist>

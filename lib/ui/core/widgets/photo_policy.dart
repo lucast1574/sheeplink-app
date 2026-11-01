@@ -20,7 +20,7 @@ Future<bool> acceptPhotoPolicy(BuildContext context, String userId) async {
           ),
           TextButton(
             onPressed: () => launchUrl(
-              Uri.parse('https://sheeplink.nexode.app/terminos'),
+              Uri.parse('https://sheeplink.app/terminos'),
               mode: LaunchMode.externalApplication,
             ),
             child: const Text('Leer términos y condiciones'),
