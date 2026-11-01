@@ -29,11 +29,11 @@ La sesión usa cookies persistidas mediante almacenamiento seguro del sistema. N
 
 Proyecto existente: `sheeplink`. Android e iOS registrados como `app.sheeplink.sheeplink`. Los archivos de configuración de cliente están incluidos; no contienen credenciales administrativas.
 
-FCM usa el registro actual mediante `register()` y `onRegistered` con Firebase Installation IDs. El contrato `/notifications/devices` conserva su propiedad `token` por compatibilidad con el backend existente; su valor es el identificador registrado. No se mezclan las APIs nuevas y antiguas de registro.
+FCM usa el registro actual mediante `register()` y `onRegistered` con Firebase Installation IDs. El contrato `/notifications/devices` conserva su propiedad `token`; el backend reconoce las instalaciones móviles y las envía mediante `fids`, manteniendo los tokens de navegador por separado. También admite `targetType` explícito y reconoce las instalaciones subidas por versiones anteriores. No se mezclan las APIs nuevas y antiguas de registro.
 
 La activación es voluntaria desde Perfil. Los avisos push se muestran en primer plano mediante un canal Android de importancia alta; el sistema entrega los avisos con la app en segundo plano. Pulsarlos abre Hoy. Los cumpleaños usan notificaciones **locales**, no un job del servidor: se programan a las 9:00 de la zona horaria de la célula con datos sincronizados al abrir, actualizar o cambiar de célula. El horizonte es de 30 días y hasta 60 avisos próximos. No requieren conexión una vez programados, pero cambios posteriores del roster se reflejan en la siguiente sincronización. Android puede retrasarlos por ahorro de batería; no se solicitan alarmas exactas. El 29 de febrero se observa el 28 en años no bisiestos.
 
-En iOS están añadidos el plist, los modos de segundo plano y el entitlement de notificaciones. **Falta cargar una clave APNs del equipo Apple en Firebase y validar con macOS/Xcode y un dispositivo Apple.** No se afirma que push iOS esté probado.
+En iOS están añadidos el plist, los modos de segundo plano y el entitlement de notificaciones. La clave APNs de producción está cargada en Firebase para el equipo `9BZKHZM3ZB`, restringida al bundle de SheepLink. La firma de distribución usa el entorno APNs de producción del perfil de App Store. Falta validar la entrega de notificaciones y el acceso con Google en un dispositivo Apple real.
 
 ## Firma Android
 
@@ -96,7 +96,7 @@ Android usa los clientes OAuth de google-services.json y las SHA-1 debug/release
 
 Mi célula permite navegar semanas, marcar asistencia y adjuntar una foto de cámara o galería. El día habitual es sugerido; la fecha real puede ser cualquier día de esa semana, hasta hoy. El historial y sus fotos privadas se consultan desde la web pastoral (Células → Asistencia). Una semana sin datos no cuenta como ausencia. Backend y web publicados y verificados en producción el 22 de octubre de 2026.
 
-Hoy muestra los turnos personales; Perfil incluye datos, roles, ministerios y preferencias de cumpleaños/servicio. La invitación al entrar puede aplazarse. Los recordatorios se actualizan al abrir la app; iOS continúa pendiente de APNs y validación en macOS.
+Hoy muestra los turnos personales; Perfil incluye datos, roles, ministerios y preferencias de cumpleaños/servicio. La invitación al entrar puede aplazarse. Los recordatorios se actualizan al abrir la app; iOS tiene APNs de producción configurado; la comprobación en un dispositivo físico sigue pendiente.
 
 ## Google Play Android — 22 de octubre de 2026
 
@@ -112,8 +112,27 @@ Ficha es-419 y recursos en `store/es-419/`; acceso de revisión permanente entre
 
 Versión Android 1.0.1+2 publicada en el canal interno existente. API: https://app.sheeplink.app/api. Sitio y enlaces legales: https://sheeplink.app. Backend: https://api.sheeplink.app. Firebase Authentication, marca OAuth, orígenes JavaScript y Stripe usan el nuevo dominio. Los hostnames de Nexode permanecen disponibles para las instalaciones anteriores.
 
-El build Android conserva el paquete y la firma existentes. El código compartido de iOS usa las nuevas URLs; su compilación y distribución requieren macOS/Xcode.
+El build Android conserva el paquete y la firma existentes. El código compartido de iOS usa las nuevas URLs. La compilación oficial puede ejecutarse en el runner macOS de GitHub sin una Mac propia; la firma y la subida también se han realizado desde Linux. La ruta experimental de compilación íntegra en Linux se comprueba por separado.
 
 La validación de la migración confirmó HTTPS público en los cuatro hostnames, endpoints y CORS, las páginas legales, metadatos y el selector OAuth con enlaces nuevos. La credencial de prueba guardada respondió 401; no se afirma haber validado una sesión real completa.
 
 Alpha también tiene preparada la versión 1.0.1 (2), conservando los testers existentes. Se confirmó el envío de Alpha, descripción y política de privacidad; Play todavía los muestra en comprobaciones previas y pendientes de revisión. La versión interna ya está publicada.
+
+## Preparación de iOS — 1 de noviembre de 2026
+
+Bundle `app.sheeplink.sheeplink`, equipo `9BZKHZM3ZB`, ficha App Store Connect `6829374579`, mínimo iOS 15. Firebase y Google usan la misma identidad y el esquema de retorno del cliente iOS. Soporte: https://sheeplink.app/soporte; privacidad: https://sheeplink.app/privacidad.
+
+El flujo manual `.github/workflows/ios-build.yml` fija Flutter 3.44.5 y Xcode 26.3, ejecuta validación de configuración, análisis, pruebas y compilación release sin firma. El artefacto se firma posteriormente con Apple Distribution y el perfil SheepLink App Store. No se suben claves privadas a GitHub.
+
+`third_party/google_sign_in_ios/SHEEPLINK_PATCH.md` documenta la copia del plugin upstream y el pin de GoogleSignIn 10.1.0 que resuelve las restricciones de SwiftPM con Firebase 13.
+
+Capturas de la interfaz con datos ficticios, sin retocar el contenido, para iPhone de 6,3 pulgadas e iPad de 13 pulgadas:
+
+```sh
+flutter test test/store_capture_test.dart --dart-define=STORE_IOS=true
+flutter test test/store_capture_test.dart --dart-define=STORE_IPAD=true
+```
+
+Se exportan JPEG sin canal alfa en `artifacts/`; la ficha usa las copias de `store/ios/es-MX/`. La cuenta de revisión del servidor usa una comunidad aislada, sin datos reales ni acceso a la administración global. Sus credenciales no se incluyen en el código.
+
+El manifiesto de privacidad declara datos vinculados a la cuenta usados para funcionalidad, sin seguimiento publicitario. Las declaraciones de App Store, permisos y capacidades no sustituyen la prueba de Google Login, cámara, fotos y notificaciones en iPhone/iPad antes de publicación pública.
