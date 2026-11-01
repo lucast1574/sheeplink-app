@@ -166,7 +166,6 @@ class NotificationService extends ChangeNotifier {
     try {
       await scheduleReminders(members, timezone, assignments);
       if (available) {
-        await _waitForApplePushRegistration();
         await _refresh?.cancel();
         final registered = Completer<String>();
         _refresh = FirebaseMessaging.instance.onRegistered.listen(
@@ -188,6 +187,7 @@ class NotificationService extends ChangeNotifier {
           },
         );
         await FirebaseMessaging.instance.setAutoInitEnabled(true);
+        await _waitForApplePushRegistration();
         await FirebaseMessaging.instance.register();
         final installationId = await registered.future.timeout(
           const Duration(seconds: 25),

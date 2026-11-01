@@ -20,12 +20,13 @@ void main() {
     final font = FontLoader('Figtree')
       ..addFont(rootBundle.load('assets/fonts/Figtree.ttf'));
     await font.load();
-    const iosStore = bool.fromEnvironment('STORE_IOS');
-    final prefix = iosStore ? 'ios' : 'play';
-    final ratio = iosStore ? 3.0 : 2.0;
-    tester.view.physicalSize = iosStore
-        ? const Size(1290, 2796)
-        : const Size(1080, 1920);
+    const ipadStore = bool.fromEnvironment('STORE_IPAD');
+    const iosStore = bool.fromEnvironment('STORE_IOS') || ipadStore;
+    final prefix = ipadStore ? 'ios-ipad' : (iosStore ? 'ios' : 'play');
+    final ratio = iosStore && !ipadStore ? 3.0 : 2.0;
+    tester.view.physicalSize = ipadStore
+        ? const Size(2064, 2752)
+        : (iosStore ? const Size(1206, 2622) : const Size(1080, 1920));
     tester.view.devicePixelRatio = ratio;
     if (iosStore) {
       debugDefaultTargetPlatformOverride = TargetPlatform.iOS;
