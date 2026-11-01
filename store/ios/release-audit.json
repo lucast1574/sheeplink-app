@@ -1,0 +1,42 @@
+{
+  "version": "1.0.1",
+  "build": "3",
+  "bundleId": "app.sheeplink.sheeplink",
+  "appleAppId": "6829374579",
+  "appStoreState": "WAITING_FOR_REVIEW",
+  "releaseMode": "MANUAL",
+  "sourceCommit": "96427f9",
+  "githubRun": "https://github.com/lucast1574/sheeplink-app/actions/runs/41275318792",
+  "buildProcessingState": "VALID",
+  "uploadState": "COMPLETE",
+  "uploadErrors": [],
+  "uploadWarnings": [],
+  "compiler": "GitHub macOS Xcode 26.3",
+  "signing": "Linux NUC",
+  "testFlightInternalGroup": "SheepLink QA",
+  "testersInvited": 0,
+  "firebaseProductionApnsConfigured": true,
+  "privateReviewContactAndDemoConfigured": true,
+  "privacyPublished": true,
+  "supportUrl": "https://sheeplink.app/soporte",
+  "privacyUrl": "https://sheeplink.app/privacidad",
+  "screenshots": {
+    "iphone": 4,
+    "ipad": 4
+  },
+  "fullLinuxBuild": {
+    "success": true,
+    "signed": false,
+    "uploaded": false,
+    "toolchainCommit": "b9da1e3e544383aa4e29609e45b9520173c30896",
+    "firebaseAndPrivacyResourcesVerified": true
+  },
+  "physicalIphoneLoginAndPushTest": "PENDING",
+  "appleAgreement": {
+    "accountHolderActionRequired": true,
+    "deadline": "2026-11-13",
+    "didNotBlockThisSubmission": true
+  },
+  "backendPushCompatibilityCommit": "356c0f0ed26e47ef40c5a0da557558d2bb0f0abb",
+  "backendTestsPassed": 168
+}
