@@ -136,3 +136,14 @@ flutter test test/store_capture_test.dart --dart-define=STORE_IPAD=true
 Se exportan JPEG sin canal alfa en `artifacts/`; la ficha usa las copias de `store/ios/es-MX/`. La cuenta de revisión del servidor usa una comunidad aislada, sin datos reales ni acceso a la administración global. Sus credenciales no se incluyen en el código.
 
 El manifiesto de privacidad declara datos vinculados a la cuenta usados para funcionalidad, sin seguimiento publicitario. Las declaraciones de App Store, permisos y capacidades no sustituyen la prueba de Google Login, cámara, fotos y notificaciones en iPhone/iPad antes de publicación pública.
+
+La compilación íntegra en Linux se verificó en el NUC con Swift 6.4.1, SDK oficial iOS 27 y `omarchy-apple-dev` fijado en `b9da1e3e544383aa4e29609e45b9520173c30896`. Después de preparar ese toolchain y su Flutter 3.44.5:
+
+```sh
+export PATH=/ruta/flutter/bin:$PATH
+export SHEEPLINK_IOS_TOOLCHAIN=/ruta/omarchy-apple-dev
+export LLVM_BINDIR=/usr/lib/llvm-18/bin
+bash scripts/build_ios_linux.sh
+```
+
+El wrapper de SheepLink añade `GoogleService-Info.plist` y el manifiesto de privacidad al paquete antes de firmarlo; el wrapper upstream los omite. El resultado es `build/ios-linux/Runner.ipa`, sin firma. `BUILD_NUMBER` permite asignar el siguiente número al preparar una nueva subida. Un build que compila o supera controles de firma aún requiere pruebas de ejecución en un dispositivo Apple.
