@@ -45,3 +45,8 @@ flutter:
         - asset: assets/fonts/Figtree.ttf
 
 
+
+# Firebase 13 compatibility until the upstream plugin supports GoogleSignIn 10.
+dependency_overrides:
+  google_sign_in_ios:
+    path: third_party/google_sign_in_ios
