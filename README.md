@@ -112,7 +112,7 @@ Ficha es-419 y recursos en `store/es-419/`; acceso de revisión permanente entre
 
 Versión Android 1.0.1+2 publicada en el canal interno existente. API: https://app.sheeplink.app/api. Sitio y enlaces legales: https://sheeplink.app. Backend: https://api.sheeplink.app. Firebase Authentication, marca OAuth, orígenes JavaScript y Stripe usan el nuevo dominio. Los hostnames de Nexode permanecen disponibles para las instalaciones anteriores.
 
-El build Android conserva el paquete y la firma existentes. El código compartido de iOS usa las nuevas URLs. La compilación oficial puede ejecutarse en el runner macOS de GitHub sin una Mac propia; la firma y la subida también se han realizado desde Linux. La ruta experimental de compilación íntegra en Linux se comprueba por separado.
+El build Android conserva el paquete y la firma existentes. El código compartido de iOS usa las nuevas URLs. La compilación se realiza con un entorno local compatible; la firma y la subida también se han realizado desde Linux. La ruta experimental de compilación íntegra en Linux se comprueba por separado.
 
 La validación de la migración confirmó HTTPS público en los cuatro hostnames, endpoints y CORS, las páginas legales, metadatos y el selector OAuth con enlaces nuevos. La credencial de prueba guardada respondió 401; no se afirma haber validado una sesión real completa.
 
@@ -122,7 +122,17 @@ Alpha también tiene preparada la versión 1.0.1 (2), conservando los testers ex
 
 Bundle `app.sheeplink.sheeplink`, equipo `9BZKHZM3ZB`, ficha App Store Connect `6829374579`, mínimo iOS 15. Firebase y Google usan la misma identidad y el esquema de retorno del cliente iOS. Soporte: https://sheeplink.app/soporte; privacidad: https://sheeplink.app/privacidad.
 
-El flujo manual `.github/workflows/ios-build.yml` fija Flutter 3.44.5 y Xcode 26.3, ejecuta validación de configuración, análisis, pruebas y compilación release sin firma. El artefacto se firma posteriormente con Apple Distribution y el perfil SheepLink App Store. No se suben claves privadas a GitHub.
+La validación y compilación se ejecutan localmente con Flutter 3.44.5 y Xcode 26.3 en macOS:
+
+```sh
+flutter pub get
+python3 scripts/check_ios_configuration.py
+flutter analyze
+flutter test
+flutter build ios --release --no-codesign
+```
+
+El artefacto se firma posteriormente con Apple Distribution y el perfil SheepLink App Store. No se suben claves privadas a GitHub. El proyecto no utiliza GitHub Actions.
 
 `third_party/google_sign_in_ios/SHEEPLINK_PATCH.md` documenta la copia del plugin upstream y el pin de GoogleSignIn 10.1.0 que resuelve las restricciones de SwiftPM con Firebase 13.
 
