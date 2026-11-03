@@ -1,0 +1,146 @@
+[
+  {
+    "platform": "iphone",
+    "file": "01-bienvenida.png",
+    "width": 1206,
+    "height": 2622,
+    "title": "Tu comunidad, más cerca.",
+    "genuineCapture": null
+  },
+  {
+    "platform": "iphone",
+    "file": "02-hoy.png",
+    "width": 1206,
+    "height": 2622,
+    "title": "Empieza el día con claridad.",
+    "genuineCapture": "store\\ios\\es-MX\\ios-01-hoy.jpg"
+  },
+  {
+    "platform": "iphone",
+    "file": "03-asistencia.png",
+    "width": 1206,
+    "height": 2622,
+    "title": "Acompaña a tu célula.",
+    "genuineCapture": "store\\ios\\es-MX\\ios-02-asistencia.jpg"
+  },
+  {
+    "platform": "iphone",
+    "file": "04-semana.png",
+    "width": 1206,
+    "height": 2622,
+    "title": "Dale espacio a cada encuentro.",
+    "genuineCapture": "store\\ios\\es-MX\\ios-03-semana.jpg"
+  },
+  {
+    "platform": "iphone",
+    "file": "05-servicio.png",
+    "width": 1206,
+    "height": 2622,
+    "title": "Prepárate para servir.",
+    "genuineCapture": "store\\ios\\es-MX\\ios-04-perfil.jpg"
+  },
+  {
+    "platform": "iphone",
+    "file": "06-comunidad.png",
+    "width": 1206,
+    "height": 2622,
+    "title": "Más tiempo para estar cerca.",
+    "genuineCapture": null
+  },
+  {
+    "platform": "ipad",
+    "file": "01-bienvenida.png",
+    "width": 2064,
+    "height": 2752,
+    "title": "Tu comunidad, más cerca.",
+    "genuineCapture": null
+  },
+  {
+    "platform": "ipad",
+    "file": "02-hoy.png",
+    "width": 2064,
+    "height": 2752,
+    "title": "Empieza el día con claridad.",
+    "genuineCapture": "store\\ios\\es-MX\\ios-ipad-01-hoy.jpg"
+  },
+  {
+    "platform": "ipad",
+    "file": "03-asistencia.png",
+    "width": 2064,
+    "height": 2752,
+    "title": "Acompaña a tu célula.",
+    "genuineCapture": "store\\ios\\es-MX\\ios-ipad-02-asistencia.jpg"
+  },
+  {
+    "platform": "ipad",
+    "file": "04-semana.png",
+    "width": 2064,
+    "height": 2752,
+    "title": "Dale espacio a cada encuentro.",
+    "genuineCapture": "store\\ios\\es-MX\\ios-ipad-03-semana.jpg"
+  },
+  {
+    "platform": "ipad",
+    "file": "05-servicio.png",
+    "width": 2064,
+    "height": 2752,
+    "title": "Prepárate para servir.",
+    "genuineCapture": "store\\ios\\es-MX\\ios-ipad-04-perfil.jpg"
+  },
+  {
+    "platform": "ipad",
+    "file": "06-comunidad.png",
+    "width": 2064,
+    "height": 2752,
+    "title": "Más tiempo para estar cerca.",
+    "genuineCapture": null
+  },
+  {
+    "platform": "android",
+    "file": "01-bienvenida.png",
+    "width": 1080,
+    "height": 1920,
+    "title": "Tu comunidad, más cerca.",
+    "genuineCapture": null
+  },
+  {
+    "platform": "android",
+    "file": "02-hoy.png",
+    "width": 1080,
+    "height": 1920,
+    "title": "Empieza el día con claridad.",
+    "genuineCapture": "artifacts\\play-01-hoy.png"
+  },
+  {
+    "platform": "android",
+    "file": "03-asistencia.png",
+    "width": 1080,
+    "height": 1920,
+    "title": "Acompaña a tu célula.",
+    "genuineCapture": "artifacts\\play-02-asistencia.png"
+  },
+  {
+    "platform": "android",
+    "file": "04-semana.png",
+    "width": 1080,
+    "height": 1920,
+    "title": "Dale espacio a cada encuentro.",
+    "genuineCapture": "artifacts\\play-03-semana.png"
+  },
+  {
+    "platform": "android",
+    "file": "05-servicio.png",
+    "width": 1080,
+    "height": 1920,
+    "title": "Prepárate para servir.",
+    "genuineCapture": "artifacts\\play-04-perfil.png"
+  },
+  {
+    "platform": "android",
+    "file": "06-comunidad.png",
+    "width": 1080,
+    "height": 1920,
+    "title": "Más tiempo para estar cerca.",
+    "genuineCapture": null
+  }
+]

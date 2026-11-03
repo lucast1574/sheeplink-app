@@ -1,0 +1,25 @@
+{
+  "status": "UPLOADED_TO_ASSET_LIBRARY_DRAFT",
+  "publicScreenshotsChanged": false,
+  "iphoneFiles": [
+    "01-bienvenida.png",
+    "02-hoy.png",
+    "03-asistencia.png",
+    "04-semana.png",
+    "05-servicio.png",
+    "06-comunidad.png"
+  ],
+  "ipadFiles": [
+    "ipad-01-bienvenida-final.png",
+    "02-hoy.png",
+    "03-asistencia.png",
+    "04-semana.png",
+    "05-servicio.png",
+    "ipad-06-comunidad-final.png"
+  ],
+  "supersededIpadDrafts": [
+    "01-bienvenida.png",
+    "06-comunidad.png"
+  ],
+  "androidUploaded": false
+}
