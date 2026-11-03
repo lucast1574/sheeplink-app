@@ -1,5 +1,5 @@
 {
-  "status": "UPLOADED_TO_ASSET_LIBRARY_DRAFT",
+  "status": "WAITING_FOR_REVIEW",
   "publicScreenshotsChanged": false,
   "iphoneFiles": [
     "01-bienvenida.png",
@@ -21,5 +21,7 @@
     "01-bienvenida.png",
     "06-comunidad.png"
   ],
-  "androidUploaded": false
+  "androidUploaded": false,
+  "submissionId": "ab8caa92-94e4-4a8e-aead-52ed87e14329",
+  "submittedImages": 12
 }
