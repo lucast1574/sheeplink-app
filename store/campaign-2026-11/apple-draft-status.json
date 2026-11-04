@@ -1,5 +1,5 @@
 {
-  "status": "WAITING_FOR_REVIEW",
+  "status": "ASSETS_APPROVED_PAGE_UPDATE_WAITING_FOR_REVIEW",
   "publicScreenshotsChanged": false,
   "iphoneFiles": [
     "01-bienvenida.png",
@@ -23,5 +23,9 @@
   ],
   "androidUploaded": false,
   "submissionId": "ab8caa92-94e4-4a8e-aead-52ed87e14329",
-  "submittedImages": 12
+  "submittedImages": 12,
+  "assetsApproved": 12,
+  "pageUpdateSubmissionId": "9bb879d2-cb6d-471c-94e2-f69c6f70a608",
+  "productPageOptimizationId": "ba355460-d1d7-4587-8db0-83dbb4ee2909",
+  "nextAction": "After page optimization approval, apply Treatment A to the original product page for all visitors"
 }
