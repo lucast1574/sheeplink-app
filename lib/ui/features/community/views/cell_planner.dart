@@ -1,4 +1,5 @@
 import 'planner_activity_picker.dart';
+import 'planner_activity_order.dart';
 import '../../../core/widgets/person_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
@@ -61,7 +62,7 @@ class _CellPlannerState extends State<CellPlanner> {
       final item = Map<String, dynamic>.from(raw);
       if (!result.any((x) => x['title'] == item['title'])) result.add(item);
     }
-    return result;
+    return orderPlannerActivities(result);
   }
 
   Future<void> chooseActivities(bool habitual) async {
@@ -154,6 +155,7 @@ class _CellPlannerState extends State<CellPlanner> {
         ];
       }
       if (mounted) {
+        items = orderPlannerActivities(items);
         title.text = plan?['title'] ?? '';
         setState(() {});
       }

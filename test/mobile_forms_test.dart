@@ -194,6 +194,12 @@ void main() {
       expect(saved?['version'], 2);
       expect((saved?['items'] as List).first['memberId'], 'member');
       expect(
+        (saved?['items'] as List)
+            .where((item) => item['enabled'] != false)
+            .map((item) => item['title']),
+        ['Bienvenida', 'Rompehielo', 'Palabra', 'Oración'],
+      );
+      expect(
         (saved?['items'] as List).first['notes'],
         'Dar la bienvenida y presentar a los visitantes.',
       );
