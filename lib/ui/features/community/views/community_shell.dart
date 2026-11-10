@@ -142,13 +142,6 @@ class _CommunityShellState extends State<CommunityShell>
       },
       child: Scaffold(
         appBar: AppBar(
-          actions: [
-            IconButton(
-              tooltip: 'Ocultar teclado',
-              onPressed: () => FocusManager.instance.primaryFocus?.unfocus(),
-              icon: const Icon(Icons.keyboard_hide_outlined),
-            ),
-          ],
           title: Row(
             children: [
               SvgPicture.asset(
@@ -247,7 +240,8 @@ class _CommunityShellState extends State<CommunityShell>
               icon: AppIcon(Symbol.user),
               label: 'Perfil',
             ),
-            if (model.session?.permissions.contains('academy.teach') ?? false)
+            if (model.session!.permissions.contains('academy.teach') ||
+                model.session!.permissions.contains('academy.manage'))
               const NavigationDestination(
                 icon: AppIcon(Symbol.calendar),
                 label: 'Asistencia',

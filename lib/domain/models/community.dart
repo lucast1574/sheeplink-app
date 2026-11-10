@@ -6,10 +6,12 @@ class Session {
     required this.churchName,
     required this.permissions,
     this.photoUrl,
+    this.needsWorkspace = false,
   });
   final String id, name, email, churchName;
   final Set<String> permissions;
   final String? photoUrl;
+  final bool needsWorkspace;
   Session withPhoto(String? value) => Session(
     id: id,
     name: name,
@@ -17,6 +19,7 @@ class Session {
     churchName: churchName,
     permissions: permissions,
     photoUrl: photoUrl ?? value,
+    needsWorkspace: needsWorkspace,
   );
   factory Session.fromJson(Map<String, dynamic> data) {
     final user = data['user'] as Map<String, dynamic>;
@@ -26,6 +29,8 @@ class Session {
       email: user['email'] as String,
       churchName: data['church']?['name'] as String? ?? 'Mi comunidad',
       photoUrl: user['photoUrl'] as String?,
+      needsWorkspace:
+          user['role'] == 'SUPER_ADMIN' && user['workspaceChurchId'] == null,
       permissions: Set<String>.from(user['permissions'] as List? ?? []),
     );
   }

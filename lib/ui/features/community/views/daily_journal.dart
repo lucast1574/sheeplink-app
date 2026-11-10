@@ -56,8 +56,11 @@ class _DailyJournalState extends State<DailyJournal> {
 
   @override
   Widget build(BuildContext context) => Card(
+    elevation: 0,
+    color: Theme.of(context).colorScheme.surface,
+    margin: EdgeInsets.zero,
     child: Padding(
-      padding: const EdgeInsets.all(16),
+      padding: EdgeInsets.zero,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
@@ -65,14 +68,18 @@ class _DailyJournalState extends State<DailyJournal> {
             'Mi devocional de hoy',
             style: Theme.of(context).textTheme.titleLarge,
           ),
-          const SizedBox(height: 12),
+          const SizedBox(height: 16),
+          const Text('Lectura bíblica'),
+          const SizedBox(height: 8),
           TextField(
             controller: reading,
-            decoration: const InputDecoration(labelText: 'Lectura bíblica'),
+            decoration: const InputDecoration(hintText: 'Ej. Salmo 23'),
             textInputAction: TextInputAction.next,
             onTapOutside: (_) => FocusScope.of(context).unfocus(),
           ),
-          const SizedBox(height: 12),
+          const SizedBox(height: 16),
+          const Text('Mi reflexión'),
+          const SizedBox(height: 8),
           TextField(
             controller: reflection,
             minLines: 4,
@@ -80,36 +87,49 @@ class _DailyJournalState extends State<DailyJournal> {
             textInputAction: TextInputAction.done,
             onSubmitted: (_) => FocusScope.of(context).unfocus(),
             onTapOutside: (_) => FocusScope.of(context).unfocus(),
-            decoration: const InputDecoration(labelText: 'Mi reflexión'),
+            decoration: const InputDecoration(
+              hintText: '¿Qué te dejó la lectura de hoy?',
+            ),
           ),
-          if (error != null) Text(error!),
-          FilledButton(
-            onPressed: busy || root == null
-                ? null
-                : () async {
-                    FocusScope.of(context).unfocus();
-                    setState(() => busy = true);
-                    try {
-                      await repo.client.dio.put<void>(
-                        root == '/personal/devotionals'
-                            ? root!
-                            : root!.replaceFirst('/devotionals', '/devotional'),
-                        data: {
-                          'date': date,
-                          'reading': reading.text.trim(),
-                          'reflection': reflection.text.trim(),
-                        },
-                      );
-                      if (mounted) {
-                        setState(() => error = 'Devocional guardado.');
+          if (error != null)
+            Padding(
+              padding: const EdgeInsets.only(top: 12),
+              child: Text(error!),
+            ),
+          const SizedBox(height: 8),
+          Align(
+            alignment: Alignment.centerRight,
+            child: TextButton(
+              onPressed: busy || root == null
+                  ? null
+                  : () async {
+                      FocusScope.of(context).unfocus();
+                      setState(() => busy = true);
+                      try {
+                        await repo.client.dio.put<void>(
+                          root == '/personal/devotionals'
+                              ? root!
+                              : root!.replaceFirst(
+                                  '/devotionals',
+                                  '/devotional',
+                                ),
+                          data: {
+                            'date': date,
+                            'reading': reading.text.trim(),
+                            'reflection': reflection.text.trim(),
+                          },
+                        );
+                        if (mounted) {
+                          setState(() => error = 'Devocional guardado.');
+                        }
+                      } catch (e) {
+                        if (mounted) setState(() => error = friendlyError(e));
+                      } finally {
+                        if (mounted) setState(() => busy = false);
                       }
-                    } catch (e) {
-                      if (mounted) setState(() => error = friendlyError(e));
-                    } finally {
-                      if (mounted) setState(() => busy = false);
-                    }
-                  },
-            child: const Text('Guardar devocional'),
+                    },
+              child: Text(busy ? 'Guardando…' : 'Guardar devocional'),
+            ),
           ),
         ],
       ),

@@ -90,6 +90,7 @@ class CommunityViewModel extends ChangeNotifier {
   }
 
   Future<void> _loadCells() async {
+    if (session!.needsWorkspace) return;
     personal = await repository.personal();
     cells = session!.permissions.contains('cells.read')
         ? await repository.cells()

@@ -7,6 +7,7 @@ import 'package:sheeplink/data/services/api_client.dart';
 import 'package:sheeplink/data/repositories/community_repository.dart';
 
 class SessionAdapter implements HttpClientAdapter {
+  bool platform = false, workspace = false;
   bool failLogout = false, rejectGoogle = false;
   String? customPhoto;
   @override
@@ -15,6 +16,9 @@ class SessionAdapter implements HttpClientAdapter {
     Stream<List<int>>? body,
     Future<void>? cancel,
   ) async {
+    if (options.path == '/admin/churches/test-church/workspace') {
+      workspace = true;
+    }
     if (options.path == '/auth/logout' && failLogout) {
       throw DioException(
         requestOptions: options,
@@ -28,6 +32,8 @@ class SessionAdapter implements HttpClientAdapter {
           'name': 'Test User',
           'email': 'user@example.test',
           'permissions': [],
+          if (platform) 'role': 'SUPER_ADMIN',
+          if (platform && workspace) 'workspaceChurchId': 'test-church',
           if (customPhoto != null) 'photoUrl': customPhoto,
         },
         'church': {'name': 'Test'},
@@ -50,6 +56,27 @@ void main() {
   String token() =>
       'header.${base64Url.encode(utf8.encode(jsonEncode({'picture': photo})))}.signature';
   setUp(() => FlutterSecureStorage.setMockInitialValues({}));
+  test(
+    'platform admin selects a church and restores its workspace after login',
+    () async {
+      final dio = Dio(BaseOptions(baseUrl: 'https://example.test/api'));
+      final adapter = SessionAdapter()..platform = true;
+      dio.httpClientAdapter = adapter;
+      final repo = ApiCommunityRepository(ApiClient(transport: dio));
+      expect(
+        (await repo.login('user@example.test', 'test')).needsWorkspace,
+        isTrue,
+      );
+      await repo.selectWorkspace('user', 'test-church');
+      expect((await repo.session()).needsWorkspace, isFalse);
+      adapter.workspace = false;
+      expect(
+        (await repo.login('user@example.test', 'test')).needsWorkspace,
+        isFalse,
+      );
+      expect(adapter.workspace, isTrue);
+    },
+  );
   (ApiCommunityRepository, SessionAdapter, ApiClient) fixture() {
     final dio = Dio(BaseOptions(baseUrl: 'https://example.test/api'));
     final adapter = SessionAdapter();

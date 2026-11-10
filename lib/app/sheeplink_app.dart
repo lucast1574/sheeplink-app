@@ -5,6 +5,7 @@ import '../ui/core/theme/app_theme.dart';
 import '../ui/features/auth/views/login_view.dart';
 import '../ui/features/community/view_models/community_view_model.dart';
 import '../ui/features/community/views/community_shell.dart';
+import '../ui/features/community/views/workspace_picker.dart';
 
 class SheeplinkApp extends StatelessWidget {
   const SheeplinkApp({
@@ -33,6 +34,8 @@ class SheeplinkApp extends StatelessWidget {
           ? const Scaffold(body: Center(child: CircularProgressIndicator()))
           : model.session == null
           ? LoginView(model: model)
+          : model.session!.needsWorkspace
+          ? WorkspacePicker(model: model)
           : CommunityShell(model: model, notifications: notifications),
     ),
   );

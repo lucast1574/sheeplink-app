@@ -46,6 +46,8 @@ class _MeetingTopicState extends State<MeetingTopic> {
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
+        const Text('Tema o título de la reunión'),
+        const SizedBox(height: 8),
         TextField(
           controller: text,
           readOnly: !widget.model.canWrite,
@@ -54,7 +56,7 @@ class _MeetingTopicState extends State<MeetingTopic> {
           onSubmitted: (_) => FocusScope.of(context).unfocus(),
           onTapOutside: (_) => FocusScope.of(context).unfocus(),
           decoration: const InputDecoration(
-            labelText: 'Tema o título de la reunión',
+            hintText: 'Ej. La fe en tiempos difíciles',
           ),
         ),
         if (error != null) Text(error!),

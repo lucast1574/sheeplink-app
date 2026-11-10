@@ -40,12 +40,35 @@ class ApiCommunityRepository implements CommunityRepository {
   final ApiClient client;
   String? _photoUser;
   Future<Session> _restorePhoto(Session session) async {
+    if (session.needsWorkspace) {
+      final church = await client.storage.read(
+        key: 'sheeplink.workspace.${session.id}',
+      );
+      if (church != null) {
+        try {
+          await client.dio.post<void>('/admin/churches/$church/workspace');
+          session = Session.fromJson(
+            (await client.dio.get<Map<String, dynamic>>('/auth/me')).data!,
+          );
+        } on DioException {
+          await client.storage.delete(key: 'sheeplink.workspace.${session.id}');
+        }
+      }
+    }
     _photoUser = session.id;
     if (session.photoUrl != null) return session;
     final cached = await client.storage.read(
       key: 'sheeplink.google-photo.${session.id}',
     );
     return session.withPhoto(googlePhoto(cached));
+  }
+
+  Future<void> selectWorkspace(String userId, String churchId) async {
+    await client.dio.post<void>('/admin/churches/$churchId/workspace');
+    await client.storage.write(
+      key: 'sheeplink.workspace.$userId',
+      value: churchId,
+    );
   }
 
   @override
@@ -137,13 +160,14 @@ class ApiCommunityRepository implements CommunityRepository {
     ),
   );
   @override
-  Future<Session> login(String email, String password) async =>
-      Session.fromJson(
-        (await client.dio.post<Map<String, dynamic>>(
-          '/auth/login',
-          data: {'email': email, 'password': password},
-        )).data!,
-      );
+  Future<Session> login(String email, String password) async => _restorePhoto(
+    Session.fromJson(
+      (await client.dio.post<Map<String, dynamic>>(
+        '/auth/login',
+        data: {'email': email, 'password': password},
+      )).data!,
+    ),
+  );
   @override
   Future<Session> loginGoogle(String firebaseIdToken) async {
     final session = Session.fromJson(
