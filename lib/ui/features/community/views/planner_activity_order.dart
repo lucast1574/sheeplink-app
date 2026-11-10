@@ -10,10 +10,18 @@ List<Map<String, dynamic>> orderPlannerActivities(
       ),
     );
   }
-  final rest = items.where((item) => !optional.contains(item)).toList();
+  final farewell = items
+      .where(
+        (item) => item['title'].toString().trim().toLowerCase() == 'despedida',
+      )
+      .toList();
+  final rest = items
+      .where((item) => !optional.contains(item) && !farewell.contains(item))
+      .toList();
   final welcome = rest.indexWhere(
     (item) => item['title'].toString().trim().toLowerCase() == 'bienvenida',
   );
   rest.insertAll(welcome < 0 ? 0 : welcome + 1, optional);
+  rest.addAll(farewell);
   return rest;
 }

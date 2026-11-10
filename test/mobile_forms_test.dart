@@ -64,6 +64,7 @@ void main() {
                         'Rompehielo',
                         'Dinámica 1',
                         'Dinámica 2',
+                        'Despedida',
                       ])
                         {'key': name, 'title': name, 'minutes': 10},
                     ],
@@ -144,6 +145,10 @@ void main() {
       await tester.pumpAndSettle();
       await tester.tap(find.widgetWithText(CheckboxListTile, 'Alabanza'));
       await tester.tap(find.widgetWithText(CheckboxListTile, 'Rompehielo'));
+      await tester.ensureVisible(
+        find.widgetWithText(CheckboxListTile, 'Despedida'),
+      );
+      await tester.tap(find.widgetWithText(CheckboxListTile, 'Despedida'));
       await tester.tap(find.text('Aplicar selección'));
       await tester.pumpAndSettle();
       await tester.ensureVisible(assignments.first);
@@ -197,7 +202,7 @@ void main() {
         (saved?['items'] as List)
             .where((item) => item['enabled'] != false)
             .map((item) => item['title']),
-        ['Bienvenida', 'Rompehielo', 'Palabra', 'Oración'],
+        ['Bienvenida', 'Rompehielo', 'Palabra', 'Oración', 'Despedida'],
       );
       expect(
         (saved?['items'] as List).first['notes'],
