@@ -165,10 +165,12 @@ void main() {
       await tester.pumpAndSettle();
       expect(tester.testTextInput.isVisible, isFalse);
       await tester.showKeyboard(description);
+      await tester.pumpAndSettle();
       await tester.tapAt(const Offset(4, 12));
       await tester.pumpAndSettle();
       expect(tester.testTextInput.isVisible, isFalse);
       await tester.showKeyboard(description);
+      await tester.pumpAndSettle();
       await tester.drag(
         find.byType(SingleChildScrollView).first,
         const Offset(0, -80),
