@@ -1,3 +1,4 @@
+import '../../../core/widgets/person_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import '../../../../data/repositories/community_repository.dart';
@@ -153,25 +154,14 @@ class _CellPlannerState extends State<CellPlanner> {
               children: [
                 Text(item['title']),
                 const SizedBox(height: 12),
-                DropdownButtonFormField<String>(
-                  isExpanded: true,
-                  initialValue:
-                      participants.any((m) => m['_id'] == item['memberId'])
-                      ? item['memberId']
-                      : '',
-                  decoration: const InputDecoration(),
-                  items: [
-                    const DropdownMenuItem(
-                      value: '',
-                      child: Text('Sin asignar'),
-                    ),
+                PersonPicker(
+                  label: item['title'],
+                  value: item['memberId'],
+                  options: {
                     for (final member in participants)
-                      DropdownMenuItem(
-                        value: member['_id'] as String,
-                        child: Text(member['name']),
-                      ),
-                  ],
-                  onChanged: editable
+                      member['_id'] as String: member['name'] as String,
+                  },
+                  onChanged: editable && !busy
                       ? (value) => setState(() => item['memberId'] = value)
                       : null,
                 ),

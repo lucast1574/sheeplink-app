@@ -1,3 +1,4 @@
+import 'package:sheeplink/ui/core/widgets/person_picker.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -84,7 +85,7 @@ void main() {
       );
       await tester.pumpAndSettle();
       final input = find.byType(TextField);
-      final assignments = find.byType(DropdownButtonFormField<String>);
+      final assignments = find.byType(PersonPicker);
       expect(
         tester.getTopLeft(find.text('Guardar plan')).dy -
             tester.getBottomLeft(assignments.last).dy,
@@ -97,10 +98,17 @@ void main() {
       );
       await tester.enterText(input, 'La esperanza de esta semana');
       await tester.testTextInput.receiveAction(TextInputAction.done);
+      await tester.tap(assignments.first);
+      await tester.pumpAndSettle();
+      expect(find.byType(BottomSheet), findsOneWidget);
+      await tester.tap(find.text('Ana · Prueba'));
+      await tester.pumpAndSettle();
+      expect(find.byType(BottomSheet), findsNothing);
       await tester.tap(find.text('Guardar plan'));
       await tester.pumpAndSettle();
       expect(saved?['title'], 'La esperanza de esta semana');
       expect(saved?['version'], 2);
+      expect((saved?['items'] as List).first['memberId'], 'member');
       expect(tester.takeException(), isNull);
       await capture(tester, key, 'qa-planner-fixed', pixelRatio: 1);
     },
