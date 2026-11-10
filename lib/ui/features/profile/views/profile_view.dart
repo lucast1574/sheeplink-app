@@ -125,6 +125,18 @@ class _ProfileViewState extends State<ProfileView> {
             ),
           ),
           if (notices.enabled) ...[
+            TextButton(
+              onPressed: working
+                  ? null
+                  : () => action(
+                      () => notices.enable(
+                        widget.model.members,
+                        widget.model.cell?.timezone ?? 'America/Lima',
+                        assignments: profile.assignments,
+                      ),
+                    ),
+              child: const Text('Reintentar activación de notificaciones'),
+            ),
             SwitchListTile.adaptive(
               contentPadding: EdgeInsets.zero,
               title: const Text('Cumpleaños de mi célula'),

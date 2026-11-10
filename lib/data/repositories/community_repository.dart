@@ -241,7 +241,7 @@ class ApiCommunityRepository implements CommunityRepository {
   Future<void> registerDevice(String token) async {
     await client.dio.post<void>(
       '/notifications/devices',
-      data: {'token': token},
+      data: {'token': token, 'targetType': 'fid'},
     );
   }
 

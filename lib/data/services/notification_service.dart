@@ -111,7 +111,8 @@ class NotificationService extends ChangeNotifier {
     try {
       if (available) {
         final settings = await FirebaseMessaging.instance.requestPermission();
-        if (settings.authorizationStatus == AuthorizationStatus.denied) {
+        if (settings.authorizationStatus != AuthorizationStatus.authorized &&
+            settings.authorizationStatus != AuthorizationStatus.provisional) {
           status =
               'Permiso denegado. Puedes habilitarlo en los ajustes del teléfono.';
           notifyListeners();
@@ -195,8 +196,9 @@ class NotificationService extends ChangeNotifier {
         );
         await repository.registerDevice(installationId);
       }
-      status =
-          'Recordatorios actualizados. El teléfono puede demorarlos por ahorro de batería.';
+      status = available
+          ? 'Notificaciones activadas y dispositivo sincronizado. Recordatorios actualizados.'
+          : 'Recordatorios locales actualizados. Los avisos del servidor no están disponibles en este dispositivo.';
     } catch (_) {
       status =
           'No pudimos completar la sincronización de los avisos. Reintenta desde Perfil.';
