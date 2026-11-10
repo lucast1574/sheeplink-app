@@ -147,12 +147,12 @@ class _CellPlannerState extends State<CellPlanner> {
         const SizedBox(height: 20),
         for (final item in items)
           Padding(
-            padding: const EdgeInsets.symmetric(vertical: 8),
+            padding: const EdgeInsets.only(bottom: 24),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 Text(item['title']),
-                const SizedBox(height: 8),
+                const SizedBox(height: 12),
                 DropdownButtonFormField<String>(
                   isExpanded: true,
                   initialValue:
@@ -178,7 +178,8 @@ class _CellPlannerState extends State<CellPlanner> {
               ],
             ),
           ),
-        if (error != null) Text(error!),
+        if (error != null) ...[Text(error!), const SizedBox(height: 16)],
+        const SizedBox(height: 12),
         if (editable)
           FilledButton(
             onPressed: busy || widget.model.cell == null

@@ -84,6 +84,12 @@ void main() {
       );
       await tester.pumpAndSettle();
       final input = find.byType(TextField);
+      final assignments = find.byType(DropdownButtonFormField<String>);
+      expect(
+        tester.getTopLeft(find.text('Guardar plan')).dy -
+            tester.getBottomLeft(assignments.last).dy,
+        greaterThanOrEqualTo(32),
+      );
       expect(tester.widget<TextField>(input).readOnly, isFalse);
       expect(
         tester.getBottomLeft(find.textContaining('martes')).dy + 16,

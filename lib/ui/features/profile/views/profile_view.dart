@@ -1,4 +1,5 @@
 import '../../../core/widgets/report_content.dart';
+import '../../community/views/workspace_picker.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'profile_header.dart';
 import 'package:intl/intl.dart';
@@ -76,6 +77,25 @@ class _ProfileViewState extends State<ProfileView> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           ProfileHeader(model: widget.model),
+          if (widget.model.session!.permissions.contains('platform')) ...[
+            const SizedBox(height: 16),
+            info('Iglesia seleccionada', widget.model.session!.churchName),
+            TextButton(
+              onPressed: () async {
+                if (widget.model.dirty && !await confirmDiscard(context)) {
+                  return;
+                }
+                if (!context.mounted) return;
+                FocusManager.instance.primaryFocus?.unfocus();
+                await Navigator.of(context).push(
+                  MaterialPageRoute<void>(
+                    builder: (_) => WorkspacePicker(model: widget.model),
+                  ),
+                );
+              },
+              child: const Text('Cambiar iglesia'),
+            ),
+          ],
           const SizedBox(height: 24),
           if (profile.phone.isNotEmpty) info('Teléfono', profile.phone),
           if (profile.birthday != null)

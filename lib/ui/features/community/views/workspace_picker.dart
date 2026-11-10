@@ -73,6 +73,9 @@ class _WorkspacePickerState extends State<WorkspacePicker> {
                     church['id'] ?? church['_id'],
                   );
                   await widget.model.restore();
+                  if (context.mounted && Navigator.of(context).canPop()) {
+                    Navigator.of(context).pop();
+                  }
                 } catch (e) {
                   if (mounted) setState(() => error = friendlyError(e));
                 } finally {
