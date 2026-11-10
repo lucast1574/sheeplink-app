@@ -1,3 +1,4 @@
+import 'daily_journal.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import '../view_models/community_view_model.dart';
@@ -26,6 +27,8 @@ class TodayView extends StatelessWidget {
       const SizedBox(height: 8),
       const Text('Lo importante es estar cerca.'),
       const SizedBox(height: 28),
+      DailyJournal(model: model),
+      const SizedBox(height: 24),
       ServiceSection(assignments: model.personal.assignments),
       const SizedBox(height: 24),
       if (model.canWrite)
@@ -33,7 +36,7 @@ class TodayView extends StatelessWidget {
           width: double.infinity,
           padding: const EdgeInsets.all(24),
           decoration: BoxDecoration(
-            color: AppTheme.forest,
+            color: AppTheme.surface,
             borderRadius: BorderRadius.circular(24),
           ),
           child: Column(
@@ -42,7 +45,7 @@ class TodayView extends StatelessWidget {
               Text(
                 model.cell?.name ?? 'Tu célula',
                 style: const TextStyle(
-                  color: Color(0xFFC8DBAC),
+                  color: AppTheme.forest,
                   fontWeight: FontWeight.w600,
                 ),
               ),
@@ -52,7 +55,7 @@ class TodayView extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 30,
                   fontWeight: FontWeight.w600,
-                  color: Colors.white,
+                  color: AppTheme.ink,
                   height: 1.15,
                 ),
               ),
@@ -61,14 +64,14 @@ class TodayView extends StatelessWidget {
                 model.cell == null
                     ? 'Todavía no tienes una célula asignada.'
                     : '${model.members.length} integrantes para acompañar.',
-                style: const TextStyle(color: Colors.white),
+                style: const TextStyle(color: AppTheme.muted),
               ),
               const SizedBox(height: 24),
               if (model.cell != null)
                 FilledButton(
                   style: FilledButton.styleFrom(
-                    backgroundColor: AppTheme.leaf,
-                    foregroundColor: AppTheme.ink,
+                    backgroundColor: AppTheme.forest,
+                    foregroundColor: Colors.white,
                   ),
                   onPressed: onAttendance,
                   child: const Row(

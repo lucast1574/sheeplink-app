@@ -17,6 +17,11 @@ class SheeplinkApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) => MaterialApp(
     title: 'SheepLink',
+    builder: (context, child) => GestureDetector(
+      behavior: HitTestBehavior.translucent,
+      onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
+      child: child,
+    ),
     debugShowCheckedModeBanner: false,
     theme: AppTheme.light,
     locale: const Locale('es'),

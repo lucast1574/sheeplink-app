@@ -87,7 +87,10 @@ void main() {
       await model.refresh();
       await tester.pumpAndSettle();
       expect(find.text('Mantente cerca de tu comunidad'), findsNothing);
-      expect(notifications.prompts, 1);
+      expect(
+        notifications.prompts,
+        0,
+      ); // Deferring does not consume the OS permission invitation.
       await tester.pumpWidget(const SizedBox());
       notifications.dispose();
       model.dispose();

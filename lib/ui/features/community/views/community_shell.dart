@@ -1,3 +1,4 @@
+import 'course_attendance.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -6,7 +7,7 @@ import '../view_models/community_view_model.dart';
 import '../../../core/widgets/app_icon.dart';
 import '../../../core/widgets/feedback_panel.dart';
 import '../../profile/views/profile_view.dart';
-import 'attendance_view.dart';
+import 'cell_planner.dart';
 import 'today_view.dart';
 
 class CommunityShell extends StatefulWidget {
@@ -25,7 +26,7 @@ class _CommunityShellState extends State<CommunityShell>
     with WidgetsBindingObserver {
   int tab = 0;
   String? _roster;
-  bool _offering = false;
+  bool _offering = false, _offeredThisSession = false;
   final _scroll = ScrollController();
   @override
   void initState() {
@@ -56,8 +57,13 @@ class _CommunityShellState extends State<CommunityShell>
 
   Future<void> offerNotifications() async {
     try {
-      if (!await widget.notifications.shouldOffer() || !mounted) return;
-      await widget.notifications.markPromptSeen();
+      if (_offeredThisSession ||
+          !await widget.notifications.shouldOffer() ||
+          !mounted) {
+        return;
+      }
+      _offeredThisSession = true;
+      // Mark the invitation only after a successful OS permission request.
       if (!mounted) return;
       final activate = await showDialog<bool>(
         context: context,
@@ -117,6 +123,7 @@ class _CommunityShellState extends State<CommunityShell>
   }
 
   void select(int index) {
+    FocusManager.instance.primaryFocus?.unfocus();
     setState(() => tab = index);
     if (_scroll.hasClients) _scroll.jumpTo(0);
   }
@@ -135,6 +142,13 @@ class _CommunityShellState extends State<CommunityShell>
       },
       child: Scaffold(
         appBar: AppBar(
+          actions: [
+            IconButton(
+              tooltip: 'Ocultar teclado',
+              onPressed: () => FocusManager.instance.primaryFocus?.unfocus(),
+              icon: const Icon(Icons.keyboard_hide_outlined),
+            ),
+          ],
           title: Row(
             children: [
               SvgPicture.asset(
@@ -167,7 +181,13 @@ class _CommunityShellState extends State<CommunityShell>
             child: ListView(
               controller: _scroll,
               physics: const AlwaysScrollableScrollPhysics(),
-              padding: const EdgeInsets.fromLTRB(24, 16, 24, 32),
+              keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
+              padding: EdgeInsets.fromLTRB(
+                tab == 1 ? 12 : 24,
+                16,
+                tab == 1 ? 12 : 24,
+                32,
+              ),
               children: [
                 Center(
                   child: ConstrainedBox(
@@ -199,7 +219,8 @@ class _CommunityShellState extends State<CommunityShell>
                             model: model,
                             onAttendance: () => select(1),
                           ),
-                          1 => AttendanceView(model: model),
+                          1 => CellWorkspace(model: model),
+                          3 => CourseAttendance(model: model),
                           _ => ProfileView(
                             model: model,
                             notifications: widget.notifications,
@@ -216,13 +237,21 @@ class _CommunityShellState extends State<CommunityShell>
         bottomNavigationBar: NavigationBar(
           selectedIndex: tab,
           onDestinationSelected: select,
-          destinations: const [
+          destinations: [
             NavigationDestination(icon: AppIcon(Symbol.home), label: 'Hoy'),
             NavigationDestination(
               icon: AppIcon(Symbol.people),
               label: 'Mi célula',
             ),
-            NavigationDestination(icon: AppIcon(Symbol.user), label: 'Perfil'),
+            const NavigationDestination(
+              icon: AppIcon(Symbol.user),
+              label: 'Perfil',
+            ),
+            if (model.session?.permissions.contains('academy.teach') ?? false)
+              const NavigationDestination(
+                icon: AppIcon(Symbol.calendar),
+                label: 'Asistencia',
+              ),
           ],
         ),
       ),

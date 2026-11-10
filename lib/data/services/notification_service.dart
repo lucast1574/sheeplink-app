@@ -134,6 +134,7 @@ class NotificationService extends ChangeNotifier {
           return;
         }
       }
+      await markPromptSeen();
       enabled = true;
       await _storage.write(key: 'sheeplink.notifications', value: 'true');
       await synchronize(members, timezone, assignments: assignments);
@@ -221,9 +222,9 @@ class NotificationService extends ChangeNotifier {
 
   Future<bool> shouldOffer() async =>
       !enabled &&
-      await _storage.read(key: 'sheeplink.notifications.prompted') != 'true';
+      await _storage.read(key: 'sheeplink.notifications.prompted.v2') != 'true';
   Future<void> markPromptSeen() =>
-      _storage.write(key: 'sheeplink.notifications.prompted', value: 'true');
+      _storage.write(key: 'sheeplink.notifications.prompted.v2', value: 'true');
   Future<void> preferences({
     bool? birthdays,
     bool? service,

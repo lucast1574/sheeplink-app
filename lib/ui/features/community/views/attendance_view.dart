@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'meeting_topic.dart';
 import 'package:intl/intl.dart';
 import '../../../../domain/models/community.dart';
 import '../../../../domain/models/weekly_meeting.dart';
@@ -154,7 +155,7 @@ class AttendanceView extends StatelessWidget {
             child: Container(
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
-                color: Colors.white,
+                color: AppTheme.surface,
                 borderRadius: BorderRadius.circular(18),
               ),
               child: Column(
@@ -196,6 +197,10 @@ class AttendanceView extends StatelessWidget {
             onPressed: model.busy ? null : model.markRemainingAbsent,
             child: const Text('Marcar pendientes como ausentes'),
           ),
+        MeetingTopic(
+          model: model,
+          key: ValueKey('topic-${model.cell?.id}/${model.week}'),
+        ),
         WeeklyPhoto(
           key: ValueKey('${model.cell?.id}/${model.week}'),
           model: model,
@@ -244,12 +249,27 @@ class _Mark extends StatelessWidget {
     child: TextButton.icon(
       onPressed: onTap,
       style: TextButton.styleFrom(
-        backgroundColor: selected ? AppTheme.leaf : const Color(0xFFF2F4EF),
-        foregroundColor: AppTheme.ink,
+        backgroundColor: selected ? AppTheme.forest : AppTheme.control,
+        foregroundColor: selected ? Colors.white : AppTheme.ink,
+        textStyle: TextStyle(
+          fontFamily: 'Figtree',
+          fontSize: 14,
+          fontWeight: selected ? FontWeight.w700 : FontWeight.w500,
+        ),
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
       ),
-      icon: AppIcon(symbol, size: 18),
-      label: Text(label),
+      icon: AppIcon(
+        symbol,
+        size: 18,
+        color: selected ? Colors.white : AppTheme.ink,
+      ),
+      label: Text(
+        label,
+        style: TextStyle(
+          color: selected ? Colors.white : AppTheme.ink,
+          fontWeight: selected ? FontWeight.w700 : FontWeight.w500,
+        ),
+      ),
     ),
   );
 }
