@@ -65,6 +65,7 @@ class _CellPlannerState extends State<CellPlanner> {
   }
 
   Future<void> chooseActivities(bool habitual) async {
+    FocusManager.instance.primaryFocus?.unfocus();
     final options = activityOptions;
     final chosen = habitual
         ? options
@@ -198,6 +199,7 @@ class _CellPlannerState extends State<CellPlanner> {
         const Text('Título del encuentro'),
         const SizedBox(height: 8),
         TextField(
+          key: const ValueKey('meeting-title'),
           controller: title,
           readOnly: !editable,
           textInputAction: TextInputAction.done,
@@ -210,17 +212,6 @@ class _CellPlannerState extends State<CellPlanner> {
           ),
         ),
         const SizedBox(height: 20),
-        if (editable) ...[
-          TextButton(
-            onPressed: busy ? null : () => chooseActivities(false),
-            child: const Text('Elegir actividades de esta reunión'),
-          ),
-          TextButton(
-            onPressed: busy ? null : () => chooseActivities(true),
-            child: const Text('Configurar actividades habituales'),
-          ),
-          const SizedBox(height: 20),
-        ],
         if (!items.any((i) => i['enabled'] != false))
           const Padding(
             padding: EdgeInsets.symmetric(vertical: 16),
@@ -232,8 +223,13 @@ class _CellPlannerState extends State<CellPlanner> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                Text(item['title']),
+                Text(
+                  item['title'],
+                  style: Theme.of(context).textTheme.titleMedium,
+                ),
                 const SizedBox(height: 12),
+                const Text('Responsable'),
+                const SizedBox(height: 8),
                 PersonPicker(
                   label: item['title'],
                   value: item['memberId'],
@@ -244,6 +240,29 @@ class _CellPlannerState extends State<CellPlanner> {
                   onChanged: editable && !busy
                       ? (value) => setState(() => item['memberId'] = value)
                       : null,
+                ),
+                const SizedBox(height: 16),
+                const Text('Descripción'),
+                const SizedBox(height: 8),
+                TextFormField(
+                  key: ValueKey(
+                    'activity-description-${item['key']}-${plan?['version'] ?? 0}',
+                  ),
+                  initialValue: item['notes'] as String? ?? '',
+                  readOnly: !editable || busy,
+                  minLines: 2,
+                  maxLines: 5,
+                  maxLength: 1000,
+                  scrollPadding: const EdgeInsets.only(bottom: 120),
+                  textInputAction: TextInputAction.done,
+                  onChanged: (value) => item['notes'] = value,
+                  onFieldSubmitted: (_) => FocusScope.of(context).unfocus(),
+                  onTapOutside: (_) => FocusScope.of(context).unfocus(),
+                  decoration: InputDecoration(
+                    hintText:
+                        'Indicaciones para ${item['title'].toString().toLowerCase()}',
+                    counterText: '',
+                  ),
                 ),
               ],
             ),
@@ -286,6 +305,18 @@ class _CellPlannerState extends State<CellPlanner> {
                   },
             child: const Text('Guardar plan'),
           ),
+        const SizedBox(height: 24),
+        if (editable) ...[
+          TextButton(
+            onPressed: busy ? null : () => chooseActivities(false),
+            child: const Text('Elegir actividades de esta reunión'),
+          ),
+          TextButton(
+            onPressed: busy ? null : () => chooseActivities(true),
+            child: const Text('Configurar actividades habituales'),
+          ),
+          const SizedBox(height: 20),
+        ],
       ],
     );
   }

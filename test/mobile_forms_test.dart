@@ -113,6 +113,8 @@ void main() {
             body: RepaintBoundary(
               key: key,
               child: SingleChildScrollView(
+                keyboardDismissBehavior:
+                    ScrollViewKeyboardDismissBehavior.onDrag,
                 padding: const EdgeInsets.all(20),
                 child: CellPlanner(model: model),
               ),
@@ -121,7 +123,7 @@ void main() {
         ),
       );
       await tester.pumpAndSettle();
-      final input = find.byType(TextField);
+      final input = find.byKey(const ValueKey('meeting-title'));
       final assignments = find.byType(PersonPicker);
       expect(
         tester.getTopLeft(find.text('Guardar plan')).dy -
@@ -135,24 +137,70 @@ void main() {
       );
       await tester.enterText(input, 'La esperanza de esta semana');
       await tester.testTextInput.receiveAction(TextInputAction.done);
+      await tester.ensureVisible(
+        find.text('Elegir actividades de esta reunión'),
+      );
       await tester.tap(find.text('Elegir actividades de esta reunión'));
       await tester.pumpAndSettle();
       await tester.tap(find.widgetWithText(CheckboxListTile, 'Alabanza'));
       await tester.tap(find.widgetWithText(CheckboxListTile, 'Rompehielo'));
       await tester.tap(find.text('Aplicar selección'));
       await tester.pumpAndSettle();
+      await tester.ensureVisible(assignments.first);
       await tester.tap(assignments.first);
       await tester.pumpAndSettle();
       expect(find.byType(BottomSheet), findsOneWidget);
       await tester.tap(find.text('Ana · Prueba'));
       await tester.pumpAndSettle();
       expect(find.byType(BottomSheet), findsNothing);
+      final description = find.byKey(
+        const ValueKey('activity-description-Bienvenida-2'),
+      );
+      await tester.ensureVisible(description);
+      await tester.enterText(
+        description,
+        'Dar la bienvenida y presentar a los visitantes.',
+      );
+      await tester.testTextInput.receiveAction(TextInputAction.done);
+      await tester.pumpAndSettle();
+      expect(tester.testTextInput.isVisible, isFalse);
+      await tester.showKeyboard(description);
+      await tester.tapAt(const Offset(4, 12));
+      await tester.pumpAndSettle();
+      expect(tester.testTextInput.isVisible, isFalse);
+      await tester.showKeyboard(description);
+      await tester.drag(
+        find.byType(SingleChildScrollView).first,
+        const Offset(0, -80),
+      );
+      await tester.pumpAndSettle();
+      expect(tester.testTextInput.isVisible, isFalse);
+      final dynamicsDescription = find.byKey(
+        const ValueKey('activity-description-Rompehielo-2'),
+      );
+      await tester.ensureVisible(dynamicsDescription);
+      await tester.enterText(
+        dynamicsDescription,
+        'Una pregunta para conocernos mejor.',
+      );
+      await tester.testTextInput.receiveAction(TextInputAction.done);
+      await tester.pumpAndSettle();
       await tester.ensureVisible(find.text('Guardar plan'));
       await tester.tap(find.text('Guardar plan'));
       await tester.pumpAndSettle();
       expect(saved?['title'], 'La esperanza de esta semana');
       expect(saved?['version'], 2);
       expect((saved?['items'] as List).first['memberId'], 'member');
+      expect(
+        (saved?['items'] as List).first['notes'],
+        'Dar la bienvenida y presentar a los visitantes.',
+      );
+      expect(
+        (saved?['items'] as List).firstWhere(
+          (x) => x['title'] == 'Rompehielo',
+        )['notes'],
+        'Una pregunta para conocernos mejor.',
+      );
       expect(
         (saved?['items'] as List).firstWhere(
           (x) => x['title'] == 'Alabanza',
