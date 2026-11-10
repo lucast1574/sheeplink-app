@@ -150,7 +150,13 @@ class _CellPlannerState extends State<CellPlanner> {
           !settings.containsKey('activities') &&
           items.isEmpty) {
         items = [
-          for (final name in ['Bienvenida', 'Alabanza', 'Palabra', 'Oración'])
+          for (final name in [
+            'Bienvenida',
+            'Alabanza',
+            'Palabra',
+            'Oración',
+            'Despedida',
+          ])
             {'key': name, 'title': name, 'minutes': 10, 'notes': ''},
         ];
       }
