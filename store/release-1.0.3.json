@@ -1,0 +1,46 @@
+{
+  "version": "1.0.3",
+  "build": 5,
+  "date": "2026-11-10",
+  "sourceCommit": "4fee32e376cbdc94e3bb36264969dd7807675c1c",
+  "checks": {
+    "flutterAnalyze": "passed",
+    "flutterTests": 33,
+    "iosConfiguration": "passed",
+    "iosSigningChecks": "55/55",
+    "androidBundletool": "passed",
+    "androidJarSignature": "verified"
+  },
+  "artifacts": {
+    "android": {
+      "path": "build/app/outputs/bundle/release/app-release.aab",
+      "bytes": 61746637,
+      "sha256": "755360cb1367015fea90050e9b51c0de135756df61e43ffceb4aeb36627fd16f"
+    },
+    "ios": {
+      "path": "build/ios-release/SheepLink-1.0.3-5.ipa",
+      "bytes": 10467701,
+      "sha256": "80389c407dea1c84fd827d6f1358cb74bfea81a70664cd160b3bff46f646d79e"
+    }
+  },
+  "ios": {
+    "state": "WAITING_FOR_REVIEW",
+    "appStoreId": "6829374579",
+    "processingState": "VALID",
+    "uploadState": "COMPLETE",
+    "buildUploadId": "a7fa1b2c-c9e5-4937-a03c-d62f4165851b",
+    "reviewSubmissionId": "ebf69595-c272-45c8-be03-5b3b7983d03e",
+    "releaseType": "AFTER_APPROVAL",
+    "testFlightGroupAssignment": "NOT_CONFIRMED_APPLE_UI_ERROR"
+  },
+  "android": {
+    "alpha": "SENT_FOR_REVIEW_PENDING_AUTOMATED_CHECKS",
+    "productionAccess": "APPLICATION_UNDER_REVIEW",
+    "internal": "AVAILABLE_TO_INTERNAL_TESTERS"
+  },
+  "evidence": [
+    "store/ios-1.0.3-submitted.png",
+    "store/android-1.0.3-submitted.png",
+    "store/android-1.0.3-internal.png"
+  ]
+}
