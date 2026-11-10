@@ -176,9 +176,27 @@ class _CommunityShellState extends State<CommunityShell>
               physics: const AlwaysScrollableScrollPhysics(),
               keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
               padding: EdgeInsets.fromLTRB(
-                tab == 1 ? 12 : 24,
+                (tab == 1 ||
+                        (tab == 2 &&
+                            (model.session!.permissions.contains(
+                                  'academy.teach',
+                                ) ||
+                                model.session!.permissions.contains(
+                                  'academy.manage',
+                                ))))
+                    ? 12
+                    : 24,
                 16,
-                tab == 1 ? 12 : 24,
+                (tab == 1 ||
+                        (tab == 2 &&
+                            (model.session!.permissions.contains(
+                                  'academy.teach',
+                                ) ||
+                                model.session!.permissions.contains(
+                                  'academy.manage',
+                                ))))
+                    ? 12
+                    : 24,
                 32,
               ),
               children: [
@@ -213,7 +231,14 @@ class _CommunityShellState extends State<CommunityShell>
                             onAttendance: () => select(1),
                           ),
                           1 => CellWorkspace(model: model),
-                          3 => CourseAttendance(model: model),
+                          2
+                              when model.session!.permissions.contains(
+                                    'academy.teach',
+                                  ) ||
+                                  model.session!.permissions.contains(
+                                    'academy.manage',
+                                  ) =>
+                            CourseAttendance(model: model),
                           _ => ProfileView(
                             model: model,
                             notifications: widget.notifications,
@@ -236,16 +261,16 @@ class _CommunityShellState extends State<CommunityShell>
               icon: AppIcon(Symbol.people),
               label: 'Mi célula',
             ),
-            const NavigationDestination(
-              icon: AppIcon(Symbol.user),
-              label: 'Perfil',
-            ),
             if (model.session!.permissions.contains('academy.teach') ||
                 model.session!.permissions.contains('academy.manage'))
               const NavigationDestination(
                 icon: AppIcon(Symbol.calendar),
                 label: 'Asistencia',
               ),
+            const NavigationDestination(
+              icon: AppIcon(Symbol.user),
+              label: 'Perfil',
+            ),
           ],
         ),
       ),

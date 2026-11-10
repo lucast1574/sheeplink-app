@@ -1,3 +1,4 @@
+import 'attendance_person_card.dart';
 import 'package:flutter/material.dart';
 import 'meeting_topic.dart';
 import 'package:intl/intl.dart';
@@ -150,51 +151,12 @@ class AttendanceView extends StatelessWidget {
         const Text('Marca presente o ausente para cada persona.'),
         const SizedBox(height: 16),
         for (final member in model.members)
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 8),
-            child: Container(
-              width: double.infinity,
-              padding: const EdgeInsets.all(16),
-              decoration: BoxDecoration(
-                color: AppTheme.surface,
-                borderRadius: BorderRadius.circular(18),
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    member.name,
-                    style: Theme.of(context).textTheme.titleMedium,
-                  ),
-                  const SizedBox(height: 12),
-                  Row(
-                    children: [
-                      Expanded(
-                        child: _Mark(
-                          label: 'Presente',
-                          selected: model.marked(member.id) == true,
-                          symbol: Symbol.check,
-                          onTap: model.canWrite && !model.busy
-                              ? () => model.mark(member.id, true)
-                              : null,
-                        ),
-                      ),
-                      const SizedBox(width: 8),
-                      Expanded(
-                        child: _Mark(
-                          label: 'Ausente',
-                          selected: model.marked(member.id) == false,
-                          symbol: Symbol.close,
-                          onTap: model.canWrite && !model.busy
-                              ? () => model.mark(member.id, false)
-                              : null,
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
+          AttendancePersonCard(
+            name: member.name,
+            present: model.marked(member.id),
+            onChanged: model.canWrite && !model.busy
+                ? (present) => model.mark(member.id, present)
+                : null,
           ),
         if (model.canWrite)
           TextButton(
@@ -233,47 +195,5 @@ class AttendanceView extends StatelessWidget {
         ),
       ],
     ],
-  );
-}
-
-class _Mark extends StatelessWidget {
-  const _Mark({
-    required this.label,
-    required this.selected,
-    required this.symbol,
-    required this.onTap,
-  });
-  final String label;
-  final bool selected;
-  final Symbol symbol;
-  final VoidCallback? onTap;
-  @override
-  Widget build(BuildContext context) => Semantics(
-    selected: selected,
-    child: TextButton.icon(
-      onPressed: onTap,
-      style: TextButton.styleFrom(
-        backgroundColor: selected ? AppTheme.forest : AppTheme.control,
-        foregroundColor: selected ? Colors.white : AppTheme.ink,
-        textStyle: TextStyle(
-          fontFamily: 'Figtree',
-          fontSize: 14,
-          fontWeight: selected ? FontWeight.w700 : FontWeight.w500,
-        ),
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-      ),
-      icon: AppIcon(
-        symbol,
-        size: 18,
-        color: selected ? Colors.white : AppTheme.ink,
-      ),
-      label: Text(
-        label,
-        style: TextStyle(
-          color: selected ? Colors.white : AppTheme.ink,
-          fontWeight: selected ? FontWeight.w700 : FontWeight.w500,
-        ),
-      ),
-    ),
   );
 }

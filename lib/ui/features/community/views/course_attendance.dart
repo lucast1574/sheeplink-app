@@ -1,5 +1,5 @@
-import 'dart:typed_data';
-import 'package:dio/dio.dart';
+import 'attendance_person_card.dart';
+import 'course_cover.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import '../../../../data/repositories/community_repository.dart';
@@ -70,60 +70,66 @@ class _CourseAttendanceState extends State<CourseAttendance> {
         ),
         const SizedBox(height: 16),
         for (final course in courses!)
-          Card(
-            child: InkWell(
-              onTap: () => Navigator.of(context).push(
-                MaterialPageRoute<void>(
-                  builder: (_) => Scaffold(
-                    appBar: AppBar(title: Text(course['name'])),
-                    body: SingleChildScrollView(
-                      keyboardDismissBehavior:
-                          ScrollViewKeyboardDismissBehavior.onDrag,
-                      padding: const EdgeInsets.all(16),
-                      child: CourseRoster(model: widget.model, course: course),
+          Padding(
+            padding: const EdgeInsets.only(bottom: 20),
+            child: Material(
+              color: Theme.of(context).inputDecorationTheme.fillColor,
+              borderRadius: BorderRadius.circular(18),
+              clipBehavior: Clip.antiAlias,
+              child: InkWell(
+                onTap: () => Navigator.of(context).push(
+                  MaterialPageRoute<void>(
+                    builder: (_) => Scaffold(
+                      appBar: AppBar(
+                        title: const Text('Asistencia'),
+                        leading: IconButton(
+                          tooltip: 'Volver a cursos',
+                          onPressed: () => Navigator.of(context).maybePop(),
+                          icon: const RotatedBox(
+                            quarterTurns: 2,
+                            child: AppIcon(Symbol.arrow),
+                          ),
+                        ),
+                      ),
+                      body: SingleChildScrollView(
+                        keyboardDismissBehavior:
+                            ScrollViewKeyboardDismissBehavior.onDrag,
+                        padding: const EdgeInsets.all(12),
+                        child: CourseRoster(
+                          model: widget.model,
+                          course: course,
+                        ),
+                      ),
                     ),
                   ),
                 ),
-              ),
-              child: Padding(
-                padding: const EdgeInsets.all(20),
-                child: Row(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
-                    if (course['coverUrl'] is String)
-                      FutureBuilder<dynamic>(
-                        future:
-                            (widget.model.repository as ApiCommunityRepository)
-                                .client
-                                .dio
-                                .get<List<int>>(
-                                  course['coverUrl'],
-                                  options: Options(
-                                    responseType: ResponseType.bytes,
-                                  ),
+                    CourseCover(course: course, model: widget.model),
+                    Padding(
+                      padding: const EdgeInsets.all(18),
+                      child: Row(
+                        children: [
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  course['name'],
+                                  style: Theme.of(context).textTheme.titleLarge,
                                 ),
-                        builder: (context, snapshot) => snapshot.hasData
-                            ? SizedBox(
-                                width: 64,
-                                height: 64,
-                                child: Image.memory(
-                                  Uint8List.fromList(
-                                    List<int>.from(snapshot.data.data),
-                                  ),
-                                  fit: BoxFit.cover,
+                                const SizedBox(height: 6),
+                                Text(
+                                  '${course['studentsCount'] ?? 0} ${course['studentsCount'] == 1 ? 'alumno' : 'alumnos'} · Marcar asistencia',
                                 ),
-                              )
-                            : const AppIcon(Symbol.calendar, size: 40),
-                      )
-                    else
-                      const AppIcon(Symbol.calendar, size: 40),
-                    const SizedBox(width: 16),
-                    Expanded(
-                      child: Text(
-                        course['name'],
-                        style: Theme.of(context).textTheme.titleLarge,
+                              ],
+                            ),
+                          ),
+                          const AppIcon(Symbol.arrow),
+                        ],
                       ),
                     ),
-                    const AppIcon(Symbol.arrow),
                   ],
                 ),
               ),
@@ -187,39 +193,21 @@ class _CourseRosterState extends State<CourseRoster> {
         widget.course['name'],
         style: Theme.of(context).textTheme.headlineMedium,
       ),
-      Text('Asistencia de hoy · $date'),
+      Text(
+        'Asistencia · ${DateFormat("EEEE d 'de' MMMM", "es").format(DateTime.now())}',
+      ),
       if (message != null) Text(message!),
       if (students == null) const LinearProgressIndicator(),
+      const SizedBox(height: 16),
       for (final s in students ?? [])
-        Card(
-          child: Padding(
-            padding: const EdgeInsets.all(12),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(s['memberName'] ?? 'Alumno'),
-                const SizedBox(height: 12),
-                Row(
-                  spacing: 8,
-                  children: [
-                    for (final present in [true, false])
-                      Expanded(
-                        child: ChoiceChip(
-                          label: Text(present ? 'Presente' : 'Ausente'),
-                          selected: marks[s['memberId']] == present,
-                          onSelected: busy
-                              ? null
-                              : (_) => setState(
-                                  () => marks[s['memberId']] = present,
-                                ),
-                        ),
-                      ),
-                  ],
-                ),
-              ],
-            ),
-          ),
+        AttendancePersonCard(
+          name: s['memberName'] ?? 'Alumno',
+          present: marks[s['memberId']],
+          onChanged: busy
+              ? null
+              : (present) => setState(() => marks[s['memberId']] = present),
         ),
+      const SizedBox(height: 24),
       FilledButton(
         onPressed:
             busy ||

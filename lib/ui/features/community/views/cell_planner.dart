@@ -1,3 +1,4 @@
+import 'planner_activity_picker.dart';
 import '../../../core/widgets/person_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
@@ -53,6 +54,65 @@ class _CellPlannerState extends State<CellPlanner> {
   List<Map<String, dynamic>> items = [];
   List<dynamic> participants = [];
   Map<String, dynamic>? plan;
+  Map<String, dynamic> settings = {};
+  List<Map<String, dynamic>> get activityOptions {
+    final result = [...items];
+    for (final raw in [...?settings['activities'], ...?settings['options']]) {
+      final item = Map<String, dynamic>.from(raw);
+      if (!result.any((x) => x['title'] == item['title'])) result.add(item);
+    }
+    return result;
+  }
+
+  Future<void> chooseActivities(bool habitual) async {
+    final options = activityOptions;
+    final chosen = habitual
+        ? options
+              .where(
+                (x) => (settings['activities'] as List? ?? []).any(
+                  (a) => a['title'] == x['title'],
+                ),
+              )
+              .map((x) => x['key'] as String)
+              .toSet()
+        : items
+              .where((x) => x['enabled'] != false)
+              .map((x) => x['key'] as String)
+              .toSet();
+    await showPlannerActivityPicker(
+      context,
+      title: habitual
+          ? 'Actividades habituales'
+          : 'Actividades de esta reunión',
+      description: habitual
+          ? 'Se usarán en las nuevas reuniones. Las reuniones guardadas no cambian.'
+          : 'Elige lo que harán en esta fecha. Conservaremos las asignaciones de lo que no hagan.',
+      options: options,
+      selected: chosen,
+      onSave: (selected) async {
+        if (habitual) {
+          final response = await repo.client.dio.put<Map<String, dynamic>>(
+            '/care/cells/${widget.model.cell!.id}/planner-settings',
+            data: {
+              'activities': options
+                  .where((x) => selected.contains(x['key']))
+                  .toList(),
+              'version': settings['version'] ?? 0,
+            },
+          );
+          if (mounted) setState(() => settings = response.data!);
+        } else if (mounted) {
+          setState(
+            () => items = [
+              for (final option in options)
+                {...option, 'enabled': selected.contains(option['key'])},
+            ],
+          );
+        }
+      },
+    );
+  }
+
   String? error;
   bool busy = false;
   bool loading = true;
@@ -75,14 +135,18 @@ class _CellPlannerState extends State<CellPlanner> {
         queryParameters: {'date': widget.model.day},
       )).data!;
       plan = data['plan'];
+      settings = Map<String, dynamic>.from(data['plannerSettings'] ?? {});
       participants = [...?data['members'], ...?data['plannerMembers']];
       participants = {
         for (final member in participants) member['_id']: member,
       }.values.toList();
       items = [
-        for (final i in plan?['items'] ?? []) Map<String, dynamic>.from(i),
+        for (final i in plan?['items'] ?? settings['activities'] ?? [])
+          Map<String, dynamic>.from(i),
       ];
-      if (items.isEmpty) {
+      if (plan == null &&
+          !settings.containsKey('activities') &&
+          items.isEmpty) {
         items = [
           for (final name in ['Bienvenida', 'Alabanza', 'Palabra', 'Oración'])
             {'key': name, 'title': name, 'minutes': 10, 'notes': ''},
@@ -146,7 +210,23 @@ class _CellPlannerState extends State<CellPlanner> {
           ),
         ),
         const SizedBox(height: 20),
-        for (final item in items)
+        if (editable) ...[
+          TextButton(
+            onPressed: busy ? null : () => chooseActivities(false),
+            child: const Text('Elegir actividades de esta reunión'),
+          ),
+          TextButton(
+            onPressed: busy ? null : () => chooseActivities(true),
+            child: const Text('Configurar actividades habituales'),
+          ),
+          const SizedBox(height: 20),
+        ],
+        if (!items.any((i) => i['enabled'] != false))
+          const Padding(
+            padding: EdgeInsets.symmetric(vertical: 16),
+            child: Text('No hay actividades seleccionadas para esta reunión.'),
+          ),
+        for (final item in items.where((i) => i['enabled'] != false))
           Padding(
             padding: const EdgeInsets.only(bottom: 24),
             child: Column(
@@ -179,7 +259,7 @@ class _CellPlannerState extends State<CellPlanner> {
                     setState(() => busy = true);
                     try {
                       await repo.client.dio.put<void>(
-                        '/care/cells/${widget.model.cell!.id}/plan',
+                        '/care/cells/${plan?['cellId'] ?? widget.model.cell!.id}/plan',
                         data: {
                           'date': widget.model.day,
                           'title': title.text.trim(),
