@@ -10,8 +10,8 @@ dependencies:
   cookie_jar: ^4.0.9
   dio: ^5.11.1
   dio_cookie_manager: ^3.5.0
-  firebase_auth: ^7.0.0
-  firebase_core: ^5.0.0
+  firebase_auth: ^7.0.1
+  firebase_core: ^5.1.0
   firebase_messaging: ^17.0.1
   flutter:
     sdk: flutter

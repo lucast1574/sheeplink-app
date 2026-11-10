@@ -47,7 +47,7 @@ class ServiceSection extends StatelessWidget {
             margin: const EdgeInsets.only(bottom: 12),
             padding: const EdgeInsets.all(18),
             decoration: BoxDecoration(
-              color: shift.confirmed ? AppTheme.leaf : Colors.white,
+              color: AppTheme.surface,
               borderRadius: BorderRadius.circular(18),
             ),
             child: Column(

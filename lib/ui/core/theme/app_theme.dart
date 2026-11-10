@@ -2,17 +2,23 @@ import 'package:flutter/material.dart';
 
 abstract final class AppTheme {
   static const forest = Color(0xFF164F3B),
-      paper = Color(0xFFF8FAF5),
-      ink = Color(0xFF203C31),
-      leaf = Color(0xFFE7EEDB);
+      paper = Color(0xFFFFFFFF),
+      ink = Color(0xFF252B28),
+      muted = Color(0xFF59625D),
+      surface = Color(0xFFF5F6F5),
+      control = Color(0xFFEBEEEC),
+      leaf = Color(0xFFE7EFE9);
   static ThemeData get light => ThemeData(
     useMaterial3: true,
     fontFamily: 'Figtree',
     colorScheme: ColorScheme.fromSeed(
       seedColor: forest,
       primary: forest,
+      onPrimary: Colors.white,
       surface: paper,
       onSurface: ink,
+      onSurfaceVariant: muted,
+      surfaceContainerHighest: control,
     ),
     scaffoldBackgroundColor: paper,
     appBarTheme: const AppBarTheme(
@@ -51,7 +57,7 @@ abstract final class AppTheme {
     ),
     inputDecorationTheme: InputDecorationTheme(
       filled: true,
-      fillColor: const Color(0xFFEDF1E8),
+      fillColor: surface,
       contentPadding: const EdgeInsets.all(18),
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(16),

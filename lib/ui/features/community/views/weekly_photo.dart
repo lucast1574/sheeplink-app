@@ -7,6 +7,7 @@ import '../../../../data/services/photo_service.dart';
 import '../view_models/community_view_model.dart';
 import '../../../core/widgets/app_icon.dart';
 import '../../../core/widgets/feedback_panel.dart';
+import '../../../core/theme/app_theme.dart';
 
 class WeeklyPhoto extends StatefulWidget {
   const WeeklyPhoto({super.key, required this.model});
@@ -90,7 +91,7 @@ class _WeeklyPhotoState extends State<WeeklyPhoto> {
             width: double.infinity,
             padding: const EdgeInsets.all(24),
             decoration: BoxDecoration(
-              color: const Color(0xFFEDF1E8),
+              color: AppTheme.surface,
               borderRadius: BorderRadius.circular(18),
             ),
             child: const Column(

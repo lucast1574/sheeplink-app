@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../theme/app_theme.dart';
 
 class FeedbackPanel extends StatelessWidget {
   const FeedbackPanel(this.text, {super.key, this.error = false, this.action});
@@ -10,7 +11,7 @@ class FeedbackPanel extends StatelessWidget {
     width: double.infinity,
     padding: const EdgeInsets.all(16),
     decoration: BoxDecoration(
-      color: error ? const Color(0xFFF9E9E4) : const Color(0xFFE7EEDB),
+      color: error ? const Color(0xFFF9E9E4) : AppTheme.surface,
       borderRadius: BorderRadius.circular(16),
     ),
     child: Column(

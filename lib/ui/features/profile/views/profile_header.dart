@@ -115,7 +115,7 @@ class _ProfileHeaderState extends State<ProfileHeader> {
           width: double.infinity,
           padding: const EdgeInsets.all(24),
           decoration: BoxDecoration(
-            color: AppTheme.forest,
+            color: AppTheme.surface,
             borderRadius: BorderRadius.circular(24),
           ),
           child: Column(
@@ -181,7 +181,7 @@ class _ProfileHeaderState extends State<ProfileHeader> {
                               foregroundColor: AppTheme.forest,
                               disabledBackgroundColor: AppTheme.leaf,
                               side: const BorderSide(
-                                color: AppTheme.forest,
+                                color: AppTheme.surface,
                                 width: 3,
                               ),
                               minimumSize: const Size(44, 44),
@@ -206,20 +206,17 @@ class _ProfileHeaderState extends State<ProfileHeader> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         const Text(
-                          'TU ESPACIO',
+                          'Tu espacio',
                           style: TextStyle(
-                            color: Color(0xFFCADAAB),
-                            fontSize: 11,
-                            letterSpacing: 1.6,
+                            color: AppTheme.muted,
+                            fontSize: 13,
                             fontWeight: FontWeight.w600,
                           ),
                         ),
                         const SizedBox(height: 6),
                         Text(
                           'Mi perfil',
-                          style: Theme.of(
-                            context,
-                          ).textTheme.titleLarge?.copyWith(color: Colors.white),
+                          style: Theme.of(context).textTheme.titleLarge,
                         ),
                       ],
                     ),
@@ -233,27 +230,23 @@ class _ProfileHeaderState extends State<ProfileHeader> {
                   fontSize: 22,
                   height: 1.2,
                   fontWeight: FontWeight.w600,
-                  color: Colors.white,
+                  color: AppTheme.ink,
                 ),
               ),
               const SizedBox(height: 8),
               Text(
                 user.email,
-                style: const TextStyle(color: Color(0xFFDDE7D9), fontSize: 13),
+                style: const TextStyle(color: AppTheme.muted, fontSize: 13),
               ),
               const SizedBox(height: 20),
               Row(
                 children: [
-                  const AppIcon(
-                    Symbol.people,
-                    color: Color(0xFFCADAAB),
-                    size: 18,
-                  ),
+                  const AppIcon(Symbol.people, color: AppTheme.muted, size: 18),
                   const SizedBox(width: 8),
                   Expanded(
                     child: Text(
                       user.churchName,
-                      style: const TextStyle(color: Colors.white, fontSize: 14),
+                      style: const TextStyle(color: AppTheme.ink, fontSize: 14),
                     ),
                   ),
                 ],
