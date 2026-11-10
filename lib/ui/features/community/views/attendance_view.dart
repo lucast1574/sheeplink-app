@@ -153,6 +153,7 @@ class AttendanceView extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 8),
             child: Container(
+              width: double.infinity,
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
                 color: AppTheme.surface,
@@ -166,25 +167,28 @@ class AttendanceView extends StatelessWidget {
                     style: Theme.of(context).textTheme.titleMedium,
                   ),
                   const SizedBox(height: 12),
-                  Wrap(
-                    spacing: 8,
-                    runSpacing: 8,
+                  Row(
                     children: [
-                      _Mark(
-                        label: 'Presente',
-                        selected: model.marked(member.id) == true,
-                        symbol: Symbol.check,
-                        onTap: model.canWrite && !model.busy
-                            ? () => model.mark(member.id, true)
-                            : null,
+                      Expanded(
+                        child: _Mark(
+                          label: 'Presente',
+                          selected: model.marked(member.id) == true,
+                          symbol: Symbol.check,
+                          onTap: model.canWrite && !model.busy
+                              ? () => model.mark(member.id, true)
+                              : null,
+                        ),
                       ),
-                      _Mark(
-                        label: 'Ausente',
-                        selected: model.marked(member.id) == false,
-                        symbol: Symbol.close,
-                        onTap: model.canWrite && !model.busy
-                            ? () => model.mark(member.id, false)
-                            : null,
+                      const SizedBox(width: 8),
+                      Expanded(
+                        child: _Mark(
+                          label: 'Ausente',
+                          selected: model.marked(member.id) == false,
+                          symbol: Symbol.close,
+                          onTap: model.canWrite && !model.busy
+                              ? () => model.mark(member.id, false)
+                              : null,
+                        ),
                       ),
                     ],
                   ),

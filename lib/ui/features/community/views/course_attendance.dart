@@ -198,18 +198,21 @@ class _CourseRosterState extends State<CourseRoster> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(s['memberName'] ?? 'Alumno'),
-                Wrap(
+                const SizedBox(height: 12),
+                Row(
                   spacing: 8,
                   children: [
                     for (final present in [true, false])
-                      ChoiceChip(
-                        label: Text(present ? 'Presente' : 'Ausente'),
-                        selected: marks[s['memberId']] == present,
-                        onSelected: busy
-                            ? null
-                            : (_) => setState(
-                                () => marks[s['memberId']] = present,
-                              ),
+                      Expanded(
+                        child: ChoiceChip(
+                          label: Text(present ? 'Presente' : 'Ausente'),
+                          selected: marks[s['memberId']] == present,
+                          onSelected: busy
+                              ? null
+                              : (_) => setState(
+                                  () => marks[s['memberId']] = present,
+                                ),
+                        ),
                       ),
                   ],
                 ),
