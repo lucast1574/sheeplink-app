@@ -6,6 +6,7 @@ import '../view_models/community_view_model.dart';
 import '../../../core/widgets/app_icon.dart';
 import '../../../core/widgets/feedback_panel.dart';
 import '../../profile/views/profile_view.dart';
+import 'announcements_sheet.dart';
 import 'attendance_view.dart';
 import 'today_view.dart';
 
@@ -154,6 +155,21 @@ class _CommunityShellState extends State<CommunityShell>
               ),
             ],
           ),
+          actions: [
+            if (model.canReadAnnouncements)
+              Padding(
+                padding: const EdgeInsets.only(right: 8),
+                child: IconButton(
+                  tooltip: 'Mensajes y avisos',
+                  onPressed: () => showAnnouncementsSheet(context, model),
+                  icon: Badge(
+                    isLabelVisible: model.unreadAnnouncements > 0,
+                    label: Text('${model.unreadAnnouncements}'),
+                    child: const AppIcon(Symbol.bell, size: 22),
+                  ),
+                ),
+              ),
+          ],
         ),
         body: SafeArea(
           top: false,

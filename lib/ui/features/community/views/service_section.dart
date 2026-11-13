@@ -6,8 +6,61 @@ import '../../../core/theme/app_theme.dart';
 import '../../../core/widgets/app_icon.dart';
 
 class ServiceSection extends StatelessWidget {
-  const ServiceSection({super.key, required this.assignments});
+  const ServiceSection({
+    super.key,
+    required this.assignments,
+    this.busy = false,
+    this.onAccept,
+    this.onDecline,
+  });
   final List<ServiceAssignment> assignments;
+  final bool busy;
+  final Future<void> Function(ServiceAssignment shift)? onAccept;
+  final Future<void> Function(ServiceAssignment shift, String? reason)?
+  onDecline;
+
+  Future<void> _confirmAbsence(
+    BuildContext context,
+    ServiceAssignment shift,
+  ) async {
+    final controller = TextEditingController();
+    final reason = await showDialog<String?>(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: const Text('Reportar ausencia'),
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text('${shift.ministry} · ${shift.time}'),
+            const SizedBox(height: 12),
+            TextField(
+              controller: controller,
+              maxLength: 200,
+              decoration: const InputDecoration(
+                labelText: 'Motivo (opcional)',
+                hintText: 'Ej. Viaje o tema familiar',
+              ),
+            ),
+          ],
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: const Text('Cancelar'),
+          ),
+          FilledButton(
+            onPressed: () => Navigator.pop(context, controller.text.trim()),
+            child: const Text('Confirmar ausencia'),
+          ),
+        ],
+      ),
+    );
+    controller.dispose();
+    if (reason != null && onDecline != null) {
+      await onDecline!(shift, reason.isEmpty ? null : reason);
+    }
+  }
   @override
   Widget build(BuildContext context) {
     final now = DateTime.now();
@@ -82,6 +135,28 @@ class ServiceSection extends StatelessWidget {
                       'Asignación pendiente de confirmar. Aún no genera recordatorios.',
                     ),
                   ),
+                if (shift.shiftId.isNotEmpty &&
+                    (onAccept != null || onDecline != null)) ...[
+                  const SizedBox(height: 12),
+                  Wrap(
+                    spacing: 8,
+                    runSpacing: 8,
+                    children: [
+                      if (!shift.confirmed && onAccept != null)
+                        FilledButton(
+                          onPressed: busy ? null : () => onAccept!(shift),
+                          child: const Text('Aceptar'),
+                        ),
+                      if (onDecline != null)
+                        OutlinedButton(
+                          onPressed: busy
+                              ? null
+                              : () => _confirmAbsence(context, shift),
+                          child: const Text('No puedo asistir'),
+                        ),
+                    ],
+                  ),
+                ],
               ],
             ),
           ),

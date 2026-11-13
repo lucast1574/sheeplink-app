@@ -33,6 +33,10 @@ abstract interface class CommunityRepository {
   );
   Future<void> registerDevice(String token);
   Future<void> revokeDevice(String token);
+  Future<List<ChurchAnnouncement>> announcements();
+  Future<void> markAnnouncementRead(String id);
+  Future<void> respondToShift(String shiftId, String decision);
+  Future<void> reportShiftAbsence(String shiftId, String date, {String? reason});
 }
 
 class ApiCommunityRepository implements CommunityRepository {
@@ -250,6 +254,37 @@ class ApiCommunityRepository implements CommunityRepository {
     await client.dio.delete<void>(
       '/notifications/devices',
       data: {'token': token},
+    );
+  }
+
+  @override
+  Future<List<ChurchAnnouncement>> announcements() async =>
+      ((await client.dio.get<List<dynamic>>('/messages')).data ?? [])
+          .map((e) => ChurchAnnouncement.fromJson(e as Map<String, dynamic>))
+          .toList();
+
+  @override
+  Future<void> markAnnouncementRead(String id) async {
+    await client.dio.patch<void>('/messages/$id/read');
+  }
+
+  @override
+  Future<void> respondToShift(String shiftId, String decision) async {
+    await client.dio.post<void>(
+      '/personal/shifts/$shiftId/respond',
+      data: {'decision': decision},
+    );
+  }
+
+  @override
+  Future<void> reportShiftAbsence(
+    String shiftId,
+    String date, {
+    String? reason,
+  }) async {
+    await client.dio.post<void>(
+      '/personal/shifts/$shiftId/absence',
+      data: {'date': date, if (reason != null && reason.isNotEmpty) 'reason': reason},
     );
   }
 }
