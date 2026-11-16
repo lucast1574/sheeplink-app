@@ -1,0 +1,65 @@
+{
+  "version": "1.0.7",
+  "build": 10,
+  "date": "2026-11-16",
+  "sourceCommit": "107740c05d158074487872f04170d2630d3a87b8",
+  "changes": "Automatic Spanish, English and Portuguese localization; Spanish fallback; no language selector.",
+  "artifacts": {
+    "android": {
+      "path": "build/app/outputs/bundle/release/app-release.aab",
+      "bytes": 63057839,
+      "sha256": "3f8a4fc7e5477b51ace08cd6bf63231e5c361c6e9a107a349bb740db70fe4882"
+    },
+    "ios": {
+      "path": "build/ios-release/SheepLink-1.0.7-10.ipa",
+      "bytes": 10698174,
+      "sha256": "569e9a890d1d9e87896e588c4bb085227ce2f7aea0b3a83460dd6adf34218654"
+    }
+  },
+  "checks": {
+    "flutterAnalyze": "passed",
+    "mobileLocalizationTests": 8,
+    "mobileSuitePassed": 69,
+    "mobileSuitePreexistingFailures": 2,
+    "iosSigningChecks": "55/55",
+    "iosConfiguration": "passed",
+    "frontendUnitTests": 30,
+    "landingTests": 17,
+    "frontendE2E": "130 passed across full and targeted rechecks after fixture updates"
+  },
+  "ios": {
+    "appStoreId": "6829374579",
+    "compiler": "Linux NUC, prepared Swift/iOS toolchain",
+    "processingState": "VALID",
+    "uploadState": "COMPLETE",
+    "buildId": "c0ac09ba-2c7d-4292-a14e-2a295d4b6e68",
+    "appStoreVersionId": "65f14ecc-266f-43dd-8a4a-ff47d2ebf215",
+    "appStoreSubmission": "WAITING_FOR_REVIEW",
+    "reviewSubmissionId": "882581df-a0fe-4170-a767-6d18da75f2fb",
+    "releaseType": "AFTER_APPROVAL",
+    "testFlightInternalGroup": "SheepLink QA",
+    "testFlightGroupAssignment": "verified",
+    "previousReviewReplaced": true,
+    "temporarySigningKeysRemoved": true
+  },
+  "android": {
+    "internal": "AVAILABLE_TO_INTERNAL_TESTERS",
+    "alpha": "SENT_FOR_REVIEW_PENDING_AUTOMATED_CHECKS",
+    "productionAccess": "MORE_CLOSED_TESTING_REQUIRED",
+    "internalReleaseUrl": "https://play.google.com/console/u/0/developers/5585127948264862090/app/4973233861400640768/tracks/4699493667805671464/releases/6/details",
+    "alphaReleaseUrl": "https://play.google.com/console/u/0/developers/5585127948264862090/app/4973233861400640768/tracks/4698138234816646348/releases/7/review"
+  },
+  "web": {
+    "frontendCommit": "630271923ae95ae003db4874aba7845c51ffdd75",
+    "landingCommit": "2eeee5f80f13bd53cd400b87228ce2ded158e616",
+    "landingLanguages": {
+      "es": 200,
+      "en": 200,
+      "pt": 200
+    }
+  },
+  "evidence": [
+    "output/release-i18n/android-submitted.jpg",
+    "output/release-i18n/apple-testflight.json"
+  ]
+}
