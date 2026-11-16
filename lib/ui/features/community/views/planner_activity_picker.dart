@@ -1,3 +1,4 @@
+import '../../../../l10n/locale.dart';
 import '../../../core/widgets/picker_header.dart';
 import 'package:flutter/material.dart';
 import '../../../../data/services/api_client.dart';
@@ -81,7 +82,9 @@ Future<void> showPlannerActivityPicker(
                             if (context.mounted) update(() => saving = false);
                           }
                         },
-                  child: Text(saving ? 'Guardando…' : 'Aplicar selección'),
+                  child: Text(
+                    saving ? tr("Guardando…") : tr("Aplicar selección"),
+                  ),
                 ),
               ],
             ),

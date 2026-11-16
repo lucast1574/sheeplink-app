@@ -1,3 +1,4 @@
+import '../../../../l10n/locale.dart';
 import 'dart:convert';
 import 'cell_meeting_selector.dart';
 import 'planner_activity_picker.dart';
@@ -35,9 +36,9 @@ class _CellWorkspaceState extends State<CellWorkspace> {
     children: [
       SegmentedButton<bool>(
         showSelectedIcon: false,
-        segments: const [
-          ButtonSegment(value: false, label: Text('Asistencia')),
-          ButtonSegment(value: true, label: Text('Planificador')),
+        segments: [
+          ButtonSegment(value: false, label: Text(tr("Asistencia"))),
+          ButtonSegment(value: true, label: Text(tr("Planificador"))),
         ],
         selected: {planning},
         onSelectionChanged: widget.model.plannerBusy
@@ -120,11 +121,15 @@ class _CellPlannerState extends State<CellPlanner> {
     await showPlannerActivityPicker(
       context,
       title: habitual
-          ? 'Actividades habituales'
-          : 'Actividades de esta reunión',
+          ? tr("Actividades habituales")
+          : tr("Actividades de esta reunión"),
       description: habitual
-          ? 'Se usarán en las nuevas reuniones. Las reuniones guardadas no cambian.'
-          : 'Elige lo que harán en esta fecha. Conservaremos las asignaciones de lo que no hagan.',
+          ? tr(
+              "Se usarán en las nuevas reuniones. Las reuniones guardadas no cambian.",
+            )
+          : tr(
+              "Elige lo que harán en esta fecha. Conservaremos las asignaciones de lo que no hagan.",
+            ),
       options: options,
       selected: chosen,
       onSave: (selected) async {
@@ -188,11 +193,11 @@ class _CellPlannerState extends State<CellPlanner> {
           items.isEmpty) {
         items = [
           for (final name in [
-            'Bienvenida',
-            'Alabanza',
-            'Palabra',
-            'Oración',
-            'Despedida',
+            tr("Bienvenida"),
+            tr("Alabanza"),
+            tr("Palabra"),
+            tr("Oración"),
+            tr("Despedida"),
           ])
             {'key': name, 'title': name, 'minutes': 10, 'notes': ''},
         ];
@@ -225,9 +230,7 @@ class _CellPlannerState extends State<CellPlanner> {
     final editable =
         widget.model.session?.permissions.contains('planner.write') ?? false;
     if (widget.model.cell == null) {
-      return const Text(
-        'Selecciona una célula para consultar su plan semanal.',
-      );
+      return Text(tr("Selecciona una célula para consultar su plan semanal."));
     }
     if (loading) return const Center(child: CircularProgressIndicator());
     if (savedDraft.isEmpty && error != null) {
@@ -235,7 +238,7 @@ class _CellPlannerState extends State<CellPlanner> {
         children: [
           Text(error!),
           const SizedBox(height: 16),
-          TextButton(onPressed: load, child: const Text('Reintentar plan')),
+          TextButton(onPressed: load, child: Text(tr("Reintentar plan"))),
         ],
       );
     }
@@ -243,19 +246,21 @@ class _CellPlannerState extends State<CellPlanner> {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Text(
-          'Plan de ${widget.model.cell!.name}',
+          tr("Plan de {{p0}}", {'p0': widget.model.cell!.name}),
           style: Theme.of(context).textTheme.titleLarge,
         ),
         const SizedBox(height: 6),
-        Text(DateFormat("EEEE d 'de' MMMM", 'es').format(widget.model.date)),
+        Text(DateFormat.MMMMEEEEd(appLocale).format(widget.model.date)),
         const SizedBox(height: 24),
         if (!editable) ...[
-          const Text(
-            'Puedes consultar el plan. Solo los responsables de la célula pueden editarlo.',
+          Text(
+            tr(
+              "Puedes consultar el plan. Solo los responsables de la célula pueden editarlo.",
+            ),
           ),
           const SizedBox(height: 16),
         ],
-        const Text('Título del encuentro'),
+        Text(tr("Título del encuentro")),
         const SizedBox(height: 8),
         TextField(
           key: const ValueKey('meeting-title'),
@@ -266,16 +271,18 @@ class _CellPlannerState extends State<CellPlanner> {
           onSubmitted: (_) => FocusScope.of(context).unfocus(),
           onTapOutside: (_) => FocusScope.of(context).unfocus(),
           maxLength: 150,
-          decoration: const InputDecoration(
-            hintText: '¿Qué compartirán esta semana?',
+          decoration: InputDecoration(
+            hintText: tr("¿Qué compartirán esta semana?"),
             counterText: '',
           ),
         ),
         const SizedBox(height: 20),
         if (!items.any((i) => i['enabled'] != false))
-          const Padding(
+          Padding(
             padding: EdgeInsets.symmetric(vertical: 16),
-            child: Text('No hay actividades seleccionadas para esta reunión.'),
+            child: Text(
+              tr("No hay actividades seleccionadas para esta reunión."),
+            ),
           ),
         for (final item in items.where((i) => i['enabled'] != false))
           Padding(
@@ -288,7 +295,7 @@ class _CellPlannerState extends State<CellPlanner> {
                   style: Theme.of(context).textTheme.titleMedium,
                 ),
                 const SizedBox(height: 12),
-                const Text('Responsable'),
+                Text(tr("Responsable")),
                 const SizedBox(height: 8),
                 PersonPicker(
                   label: item['title'],
@@ -305,7 +312,7 @@ class _CellPlannerState extends State<CellPlanner> {
                       : null,
                 ),
                 const SizedBox(height: 16),
-                const Text('Descripción'),
+                Text(tr("Descripción")),
                 const SizedBox(height: 8),
                 TextFormField(
                   key: ValueKey(
@@ -325,8 +332,9 @@ class _CellPlannerState extends State<CellPlanner> {
                   onFieldSubmitted: (_) => FocusScope.of(context).unfocus(),
                   onTapOutside: (_) => FocusScope.of(context).unfocus(),
                   decoration: InputDecoration(
-                    hintText:
-                        'Indicaciones para ${item['title'].toString().toLowerCase()}',
+                    hintText: tr("Indicaciones para {{p0}}", {
+                      'p0': item['title'].toString().toLowerCase(),
+                    }),
                     counterText: '',
                   ),
                 ),
@@ -343,7 +351,8 @@ class _CellPlannerState extends State<CellPlanner> {
                     FocusScope.of(context).unfocus();
                     if (title.text.trim().isEmpty) {
                       setState(
-                        () => error = 'Escribe un título para el encuentro.',
+                        () =>
+                            error = tr("Escribe un título para el encuentro."),
                       );
                       return;
                     }
@@ -370,7 +379,7 @@ class _CellPlannerState extends State<CellPlanner> {
                       );
                       final loaded = await load();
                       if (mounted && loaded) {
-                        setState(() => error = 'Plan guardado.');
+                        setState(() => error = tr("Plan guardado."));
                       }
                     } catch (e) {
                       if (mounted) setState(() => error = friendlyError(e));
@@ -379,17 +388,17 @@ class _CellPlannerState extends State<CellPlanner> {
                       if (mounted) setState(() => busy = false);
                     }
                   },
-            child: const Text('Guardar plan'),
+            child: Text(tr("Guardar plan")),
           ),
         const SizedBox(height: 24),
         if (editable) ...[
           TextButton(
             onPressed: busy ? null : () => chooseActivities(false),
-            child: const Text('Elegir actividades de esta reunión'),
+            child: Text(tr("Elegir actividades de esta reunión")),
           ),
           TextButton(
             onPressed: busy ? null : () => chooseActivities(true),
-            child: const Text('Configurar actividades habituales'),
+            child: Text(tr("Configurar actividades habituales")),
           ),
           const SizedBox(height: 20),
         ],

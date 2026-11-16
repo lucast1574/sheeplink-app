@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+        AABBCCDD0011223344556620 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AABBCCDD0011223344556621 /* InfoPlist.strings */; };
         AABBCCDD0011223344556611 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = AABBCCDD0011223344556612 /* PrivacyInfo.xcprivacy */; };
         AABBCCDD0011223344556601 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AABBCCDD0011223344556602 /* GoogleService-Info.plist */; };
 		1498D2341E8E89220040F4C2 /* GeneratedPluginRegistrant.m in Sources */ = {isa = PBXBuildFile; fileRef = 1498D2331E8E89220040F4C2 /* GeneratedPluginRegistrant.m */; };
@@ -44,6 +45,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+        AABBCCDD0011223344556622 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+        AABBCCDD0011223344556623 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+        AABBCCDD0011223344556624 /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/InfoPlist.strings; sourceTree = "<group>"; };
         AABBCCDD0011223344556612 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
         AABBCCDD0011223344556602 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1498D2321E8E86230040F4C2 /* GeneratedPluginRegistrant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GeneratedPluginRegistrant.h; sourceTree = "<group>"; };
@@ -119,6 +123,7 @@
 		97C146F01CF9000F007C117D /* Runner */ = {
 			isa = PBXGroup;
 			children = (
+                AABBCCDD0011223344556621 /* InfoPlist.strings */,
                 AABBCCDD0011223344556602 /* GoogleService-Info.plist */,
                 AABBCCDD0011223344556612 /* PrivacyInfo.xcprivacy */,
 				97C146FA1CF9000F007C117D /* Main.storyboard */,
@@ -204,9 +209,11 @@
 			};
 			buildConfigurationList = 97C146E91CF9000F007C117D /* Build configuration list for PBXProject "Runner" */;
 			compatibilityVersion = "Xcode 9.3";
-			developmentRegion = en;
+			developmentRegion = es;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				es,
+				pt,
 				en,
 				Base,
 			);
@@ -236,6 +243,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+                AABBCCDD0011223344556620 /* InfoPlist.strings in Resources */,
                 AABBCCDD0011223344556601 /* GoogleService-Info.plist in Resources */,
                 AABBCCDD0011223344556611 /* PrivacyInfo.xcprivacy in Resources */,
 				97C147011CF9000F007C117D /* LaunchScreen.storyboard in Resources */,
@@ -311,6 +319,7 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+        AABBCCDD0011223344556621 /* InfoPlist.strings */ = {isa = PBXVariantGroup; children = (AABBCCDD0011223344556622 /* es */, AABBCCDD0011223344556623 /* en */, AABBCCDD0011223344556624 /* pt */,); name = InfoPlist.strings; sourceTree = "<group>"; };
 		97C146FA1CF9000F007C117D /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

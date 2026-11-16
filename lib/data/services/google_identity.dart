@@ -1,3 +1,4 @@
+import '../../l10n/locale.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -19,14 +20,14 @@ class FirebaseGoogleIdentity implements GoogleIdentity {
       final account = await google.authenticate();
       final googleToken = account.authentication.idToken;
       if (googleToken == null) {
-        throw StateError('Google did not return an identity.');
+        throw StateError(tr("Google did not return an identity."));
       }
       final result = await FirebaseAuth.instance.signInWithCredential(
         GoogleAuthProvider.credential(idToken: googleToken),
       );
       final token = await result.user?.getIdToken();
       if (token == null) {
-        throw StateError('Firebase did not return an identity.');
+        throw StateError(tr("Firebase did not return an identity."));
       }
       return token;
     } on GoogleSignInException catch (error) {

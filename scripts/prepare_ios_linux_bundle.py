@@ -27,3 +27,13 @@ for name in ("GoogleService-Info.plist", "PrivacyInfo.xcprivacy"):
     if (bundle / name).read_bytes() != source_path.read_bytes():
         raise SystemExit(f"The built app is missing {name}.")
 print("Linux bundle: Firebase configuration, Google callback and privacy manifest verified.")
+for language in ('es', 'en', 'pt'):
+    source_strings = root / 'ios/Runner' / f'{language}.lproj' / 'InfoPlist.strings'
+    destination = bundle / f'{language}.lproj'
+    destination.mkdir(exist_ok=True)
+    shutil.copy2(source_strings, destination / 'InfoPlist.strings')
+    if (destination / 'InfoPlist.strings').read_bytes() != source_strings.read_bytes():
+        raise SystemExit(f'Missing native permission translations for {language}.')
+if set(info.get('CFBundleLocalizations', [])) != {'es', 'en', 'pt'}:
+    raise SystemExit('The built app is missing its supported languages.')
+print('Linux bundle: es/en/pt camera and photo permission translations verified.')

@@ -1,3 +1,4 @@
+import '../../../../l10n/locale.dart';
 import 'attendance_person_card.dart';
 import 'course_cover.dart';
 import 'package:flutter/material.dart';
@@ -56,7 +57,7 @@ class _CourseAttendanceState extends State<CourseAttendance> {
       return const Center(child: CircularProgressIndicator());
     }
     if (courses!.isEmpty) {
-      return const Text('No tienes cursos activos asignados como maestro.');
+      return Text(tr("No tienes cursos activos asignados como maestro."));
     }
     if (courses!.length == 1) {
       return CourseRoster(model: widget.model, course: courses!.first);
@@ -65,7 +66,7 @@ class _CourseAttendanceState extends State<CourseAttendance> {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Text(
-          'Asistencia de cursos',
+          tr("Asistencia de cursos"),
           style: Theme.of(context).textTheme.headlineMedium,
         ),
         const SizedBox(height: 16),
@@ -81,9 +82,9 @@ class _CourseAttendanceState extends State<CourseAttendance> {
                   MaterialPageRoute<void>(
                     builder: (_) => Scaffold(
                       appBar: AppBar(
-                        title: const Text('Asistencia'),
+                        title: Text(tr("Asistencia")),
                         leading: IconButton(
-                          tooltip: 'Volver a cursos',
+                          tooltip: tr("Volver a cursos"),
                           onPressed: () => Navigator.of(context).maybePop(),
                           icon: const RotatedBox(
                             quarterTurns: 2,
@@ -121,7 +122,12 @@ class _CourseAttendanceState extends State<CourseAttendance> {
                                 ),
                                 const SizedBox(height: 6),
                                 Text(
-                                  '${course['studentsCount'] ?? 0} ${course['studentsCount'] == 1 ? 'alumno' : 'alumnos'} · Marcar asistencia',
+                                  tr("{{p0}} {{p1}} · Marcar asistencia", {
+                                    'p0': course['studentsCount'] ?? 0,
+                                    'p1': course['studentsCount'] == 1
+                                        ? 'alumno'
+                                        : 'alumnos',
+                                  }),
                                 ),
                               ],
                             ),
@@ -194,14 +200,16 @@ class _CourseRosterState extends State<CourseRoster> {
         style: Theme.of(context).textTheme.headlineMedium,
       ),
       Text(
-        'Asistencia · ${DateFormat("EEEE d 'de' MMMM", "es").format(DateTime.now())}',
+        tr("Asistencia · {{p0}}", {
+          'p0': DateFormat.MMMMEEEEd(appLocale).format(DateTime.now()),
+        }),
       ),
       if (message != null) Text(message!),
       if (students == null) const LinearProgressIndicator(),
       const SizedBox(height: 16),
       for (final s in students ?? [])
         AttendancePersonCard(
-          name: s['memberName'] ?? 'Alumno',
+          name: s['memberName'] ?? tr("Alumno"),
           present: marks[s['memberId']],
           onChanged: busy
               ? null
@@ -231,14 +239,16 @@ class _CourseRosterState extends State<CourseRoster> {
                       ],
                     },
                   );
-                  if (mounted) setState(() => message = 'Asistencia guardada.');
+                  if (mounted) {
+                    setState(() => message = tr("Asistencia guardada."));
+                  }
                 } catch (e) {
                   if (mounted) setState(() => message = friendlyError(e));
                 } finally {
                   if (mounted) setState(() => busy = false);
                 }
               },
-        child: Text(busy ? 'Guardando…' : 'Guardar asistencia'),
+        child: Text(busy ? tr("Guardando…") : tr("Guardar asistencia")),
       ),
     ],
   );

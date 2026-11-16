@@ -1,3 +1,4 @@
+import '../../../../l10n/locale.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:timezone/timezone.dart' as tz;
@@ -38,19 +39,19 @@ class BirthdaySection extends StatelessWidget {
             const SizedBox(width: 10),
             Expanded(
               child: Text(
-                'Un día para celebrar',
+                tr("Un día para celebrar"),
                 style: Theme.of(context).textTheme.titleLarge,
               ),
             ),
           ],
         ),
         const SizedBox(height: 6),
-        const Text('Cumpleaños de tu célula · próximos 30 días'),
+        Text(tr("Cumpleaños de tu célula · próximos 30 días")),
         const SizedBox(height: 16),
         if (upcoming.isEmpty)
-          const Padding(
+          Padding(
             padding: EdgeInsets.symmetric(vertical: 20),
-            child: Text('No hay cumpleaños registrados para estos días.'),
+            child: Text(tr("No hay cumpleaños registrados para estos días.")),
           ),
         for (final birthday in upcoming)
           Padding(
@@ -67,9 +68,8 @@ class BirthdaySection extends StatelessWidget {
                   child: Column(
                     children: [
                       Text(
-                        DateFormat(
-                          'MMM',
-                          'es',
+                        DateFormat.MMM(
+                          appLocale,
                         ).format(birthday.day).toUpperCase(),
                         style: const TextStyle(
                           fontSize: 10,
@@ -97,8 +97,8 @@ class BirthdaySection extends StatelessWidget {
                       ),
                       Text(
                         DateUtils.isSameDay(birthday.day, now)
-                            ? 'Hoy · un saludo hace la diferencia'
-                            : 'Un buen día para hacerle sentir parte.',
+                            ? tr("Hoy · un saludo hace la diferencia")
+                            : tr("Un buen día para hacerle sentir parte."),
                       ),
                     ],
                   ),

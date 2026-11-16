@@ -1,3 +1,4 @@
+import '../../../l10n/locale.dart';
 import 'package:flutter/material.dart';
 import '../theme/app_theme.dart';
 
@@ -27,16 +28,16 @@ class FeedbackPanel extends StatelessWidget {
 Future<bool> confirmDiscard(BuildContext context) => showDialog<bool>(
   context: context,
   builder: (context) => AlertDialog(
-    title: const Text('Tienes cambios sin guardar'),
-    content: const Text('Si continúas perderás los cambios de esta reunión.'),
+    title: Text(tr("Tienes cambios sin guardar")),
+    content: Text(tr("Si continúas perderás los cambios de esta reunión.")),
     actions: [
       TextButton(
         onPressed: () => Navigator.pop(context, false),
-        child: const Text('Seguir editando'),
+        child: Text(tr("Seguir editando")),
       ),
       FilledButton(
         onPressed: () => Navigator.pop(context, true),
-        child: const Text('Descartar cambios'),
+        child: Text(tr("Descartar cambios")),
       ),
     ],
   ),

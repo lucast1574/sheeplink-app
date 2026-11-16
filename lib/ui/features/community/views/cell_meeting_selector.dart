@@ -1,3 +1,4 @@
+import '../../../../l10n/locale.dart';
 import '../../../core/widgets/picker_header.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
@@ -24,8 +25,7 @@ class CellMeetingSelector extends StatelessWidget {
       initialDate: model.date,
       firstDate: DateTime(model.date.year - 10),
       lastDate: DateTime(model.date.year + 10, 12, 31),
-      locale: const Locale('es'),
-      cancelText: 'Cancelar',
+      cancelText: tr("Cancelar"),
       barrierDismissible: true,
     );
     if (date != null) await model.refresh(selectedDate: date);
@@ -49,9 +49,9 @@ class CellMeetingSelector extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              const Padding(
+              Padding(
                 padding: EdgeInsets.fromLTRB(24, 0, 16, 16),
-                child: PickerHeader(title: 'Elige tu célula'),
+                child: PickerHeader(title: tr("Elige tu célula")),
               ),
               Flexible(
                 child: ListView(
@@ -115,21 +115,23 @@ class CellMeetingSelector extends StatelessWidget {
   Widget build(BuildContext context) => Column(
     crossAxisAlignment: CrossAxisAlignment.stretch,
     children: [
-      Text('Mi célula', style: Theme.of(context).textTheme.headlineLarge),
+      Text(tr("Mi célula"), style: Theme.of(context).textTheme.headlineLarge),
       const SizedBox(height: 8),
-      Text(model.cell?.name ?? 'Sin célula asignada'),
+      Text(model.cell?.name ?? tr("Sin célula asignada")),
       if (model.cells.length > 1)
         Align(
           alignment: Alignment.centerLeft,
           child: TextButton(
             onPressed: locked ? null : () => changeCell(context),
-            child: const Text('Cambiar célula'),
+            child: Text(tr("Cambiar célula")),
           ),
         ),
       if (model.cell != null) ...[
         const SizedBox(height: 24),
         Text(
-          "Semana del ${DateFormat('d MMM', 'es').format(startOfWeek(model.date))}",
+          tr("Semana del {{p0}}", {
+            'p0': DateFormat.MMMd(appLocale).format(startOfWeek(model.date)),
+          }),
           style: Theme.of(context).textTheme.titleMedium,
         ),
         const SizedBox(height: 8),
@@ -139,11 +141,11 @@ class CellMeetingSelector extends StatelessWidget {
           children: [
             TextButton(
               onPressed: locked ? null : () => changeWeek(context, -1),
-              child: const Text('Anterior'),
+              child: Text(tr("Anterior")),
             ),
             TextButton(
               onPressed: locked ? null : () => changeWeek(context, 1),
-              child: const Text('Siguiente'),
+              child: Text(tr("Siguiente")),
             ),
           ],
         ),
@@ -154,15 +156,19 @@ class CellMeetingSelector extends StatelessWidget {
           label: Padding(
             padding: const EdgeInsets.symmetric(vertical: 12),
             child: Text(
-              "Elegir fecha · ${DateFormat("EEEE d 'de' MMMM", 'es').format(model.date)}",
+              tr("Elegir fecha · {{p0}}", {
+                'p0': DateFormat.MMMMEEEEd(appLocale).format(model.date),
+              }),
               textAlign: TextAlign.center,
             ),
           ),
         ),
         if (model.meeting?.date != null) ...[
           const SizedBox(height: 12),
-          const Text(
-            'Esta semana tiene una reunión registrada. Para una nueva reunión, elige otra semana.',
+          Text(
+            tr(
+              "Esta semana tiene una reunión registrada. Para una nueva reunión, elige otra semana.",
+            ),
           ),
         ],
         if (model.session?.permissions.contains('planner.write') ?? false) ...[
@@ -170,8 +176,8 @@ class CellMeetingSelector extends StatelessWidget {
           FilledButton.icon(
             onPressed: locked ? null : () => prepareNext(context),
             icon: const AppIcon(Symbol.calendar, color: Colors.white, size: 20),
-            label: const Text(
-              'Preparar próxima célula',
+            label: Text(
+              tr("Preparar próxima célula"),
               textAlign: TextAlign.center,
             ),
           ),

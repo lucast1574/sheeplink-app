@@ -157,3 +157,8 @@ bash scripts/build_ios_linux.sh
 ```
 
 El wrapper de SheepLink añade `GoogleService-Info.plist` y el manifiesto de privacidad al paquete antes de firmarlo; el wrapper upstream los omite. El resultado es `build/ios-linux/Runner.ipa`, sin firma. `BUILD_NUMBER` permite asignar el siguiente número al preparar una nueva subida. Un build que compila o supera controles de firma aún requiere pruebas de ejecución en un dispositivo Apple.
+## Idiomas
+
+La app sigue automáticamente la lista de idiomas del dispositivo: español, inglés y portugués (texto de Brasil), con español de respaldo. No hay selector. `lib/l10n/locale.dart` centraliza la resolución, los formatos y la traducción de textos del sistema. Los anuncios y demás contenido escrito por las iglesias conservan su idioma original.
+
+Los catálogos editables están en `lib/l10n/app_es.arb`, `app_en.arb` y `app_pt.arb`. Al añadir textos, conservar la frase española en `description` y los parámetros en los tres idiomas; ejecutar `dart run tool/generate_message_dispatch.dart`, `flutter gen-l10n`, `flutter analyze` y `flutter test`. `messages.dart` conecta las frases originales con los accesores generados. Los permisos nativos de cámara/fotos de iOS también tienen recursos es/en/pt.

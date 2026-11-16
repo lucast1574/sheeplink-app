@@ -1,3 +1,4 @@
+import '../../../l10n/locale.dart';
 import 'picker_header.dart';
 import 'package:flutter/material.dart';
 import '../theme/app_theme.dart';
@@ -60,7 +61,9 @@ class PersonPicker extends StatelessWidget {
                           borderRadius: BorderRadius.circular(14),
                         ),
                         tileColor: selected ? AppTheme.leaf : AppTheme.surface,
-                        title: Text(id.isEmpty ? 'Sin asignar' : options[id]!),
+                        title: Text(
+                          id.isEmpty ? tr("Sin asignar") : options[id]!,
+                        ),
                         trailing: selected
                             ? const AppIcon(
                                 Symbol.check,
@@ -98,7 +101,7 @@ class PersonPicker extends StatelessWidget {
             children: [
               Expanded(
                 child: Text(
-                  options[value] ?? 'Sin asignar',
+                  options[value] ?? tr("Sin asignar"),
                   style: Theme.of(context).textTheme.bodyLarge,
                 ),
               ),

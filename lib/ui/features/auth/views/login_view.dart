@@ -1,3 +1,4 @@
+import '../../../../l10n/locale.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../../../core/widgets/feedback_panel.dart';
@@ -52,13 +53,11 @@ class _LoginViewState extends State<LoginView> {
                     ),
                     const SizedBox(height: 36),
                     Text(
-                      'Tu comunidad,\nmás cerca.',
+                      tr("Tu comunidad,\nmás cerca."),
                       style: Theme.of(context).textTheme.headlineLarge,
                     ),
                     const SizedBox(height: 12),
-                    const Text(
-                      'Un espacio sencillo para acompañar a tu célula.',
-                    ),
+                    Text(tr("Un espacio sencillo para acompañar a tu célula.")),
                     const SizedBox(height: 28),
                     SizedBox(
                       width: double.infinity,
@@ -77,11 +76,11 @@ class _LoginViewState extends State<LoginView> {
                           height: 20,
                           excludeFromSemantics: true,
                         ),
-                        label: const Text('Continuar con Google'),
+                        label: Text(tr("Continuar con Google")),
                       ),
                     ),
                     const SizedBox(height: 20),
-                    const Center(child: Text('o entra con tu correo')),
+                    Center(child: Text(tr("o entra con tu correo"))),
                     const SizedBox(height: 20),
                     TextFormField(
                       controller: _email,
@@ -89,14 +88,14 @@ class _LoginViewState extends State<LoginView> {
                       autofillHints: const [AutofillHints.username],
                       keyboardType: TextInputType.emailAddress,
                       textInputAction: TextInputAction.next,
-                      decoration: const InputDecoration(
-                        labelText: 'Correo electrónico',
+                      decoration: InputDecoration(
+                        labelText: tr("Correo electrónico"),
                       ),
                       validator: (v) =>
                           v != null &&
                               RegExp(r'^\S+@\S+\.\S+$').hasMatch(v.trim())
                           ? null
-                          : 'Escribe tu correo electrónico.',
+                          : tr("Escribe tu correo electrónico."),
                     ),
                     const SizedBox(height: 16),
                     TextFormField(
@@ -105,12 +104,10 @@ class _LoginViewState extends State<LoginView> {
                       obscureText: true,
                       autofillHints: const [AutofillHints.password],
                       onFieldSubmitted: (_) => submit(),
-                      decoration: const InputDecoration(
-                        labelText: 'Contraseña',
-                      ),
+                      decoration: InputDecoration(labelText: tr("Contraseña")),
                       validator: (v) => (v?.isNotEmpty ?? false)
                           ? null
-                          : 'Escribe tu contraseña.',
+                          : tr("Escribe tu contraseña."),
                     ),
                     const SizedBox(height: 24),
                     if (widget.model.error != null) ...[
@@ -123,14 +120,14 @@ class _LoginViewState extends State<LoginView> {
                         onPressed: widget.model.busy ? null : submit,
                         child: Text(
                           widget.model.busy
-                              ? 'Ingresando…'
-                              : 'Entrar a mi comunidad',
+                              ? tr("Ingresando…")
+                              : tr("Entrar a mi comunidad"),
                         ),
                       ),
                     ),
                     const SizedBox(height: 24),
-                    const Text(
-                      'Ingresa con la misma cuenta que usas en SheepLink.',
+                    Text(
+                      tr("Ingresa con la misma cuenta que usas en SheepLink."),
                     ),
                   ],
                 ),

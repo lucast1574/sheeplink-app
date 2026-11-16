@@ -1,3 +1,4 @@
+import '../../l10n/locale.dart';
 import 'package:timezone/timezone.dart' as tz;
 import 'community.dart';
 
@@ -34,7 +35,7 @@ class ServiceAssignment {
         shiftId: data['shiftId'] as String? ?? '',
         date: data['date'] as String,
         time: data['time'] as String,
-        ministry: data['ministry'] as String? ?? 'Mi ministerio',
+        ministry: data['ministry'] as String? ?? tr("Mi ministerio"),
         role: data['role'] as String? ?? '',
         timezone: data['timezone'] as String? ?? 'America/Lima',
         confirmation: data['confirmation'] as String? ?? 'PENDING',
@@ -48,7 +49,7 @@ class ChurchAnnouncement {
     required this.title,
     required this.body,
     required this.createdAt,
-    this.senderName = 'Iglesia',
+    String? senderName,
     this.audienceLabel = '',
     this.isPinned = false,
     this.pinnedUntil,
@@ -58,9 +59,13 @@ class ChurchAnnouncement {
     this.activityStartDate,
     this.activityTime,
     this.activityLocation,
-  });
+    // Preserve the public named parameter while keeping its fallback localized.
+    // ignore: prefer_initializing_formals
+  }) : _senderName = senderName;
 
-  final String id, title, body, createdAt, senderName, audienceLabel;
+  final String? _senderName;
+  String get senderName => _senderName ?? tr("Iglesia");
+  final String id, title, body, createdAt, audienceLabel;
   final bool isPinned, read, sent;
   final String? pinnedUntil,
       activityName,
@@ -94,8 +99,8 @@ class ChurchAnnouncement {
       body: data['body'] as String? ?? '',
       createdAt: data['createdAt'] as String? ?? '',
       senderName: sender is Map<String, dynamic>
-          ? (sender['name'] as String? ?? 'Iglesia')
-          : 'Iglesia',
+          ? (sender['name'] as String? ?? tr("Iglesia"))
+          : tr("Iglesia"),
       audienceLabel: data['audienceLabel'] as String? ?? '',
       isPinned: data['isPinned'] == true,
       pinnedUntil: data['pinnedUntil'] as String?,

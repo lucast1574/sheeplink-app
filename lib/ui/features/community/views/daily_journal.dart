@@ -1,3 +1,4 @@
+import '../../../../l10n/locale.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import '../../../../data/repositories/community_repository.dart';
@@ -65,11 +66,11 @@ class _DailyJournalState extends State<DailyJournal> {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Text(
-            'Mi devocional de hoy',
+            tr("Mi devocional de hoy"),
             style: Theme.of(context).textTheme.titleLarge,
           ),
           const SizedBox(height: 16),
-          const Text('Lectura bíblica'),
+          Text(tr("Lectura bíblica")),
           const SizedBox(height: 8),
           TextField(
             controller: reading,
@@ -78,7 +79,7 @@ class _DailyJournalState extends State<DailyJournal> {
             onTapOutside: (_) => FocusScope.of(context).unfocus(),
           ),
           const SizedBox(height: 16),
-          const Text('Mi reflexión'),
+          Text(tr("Mi reflexión")),
           const SizedBox(height: 8),
           TextField(
             controller: reflection,
@@ -87,8 +88,8 @@ class _DailyJournalState extends State<DailyJournal> {
             textInputAction: TextInputAction.done,
             onSubmitted: (_) => FocusScope.of(context).unfocus(),
             onTapOutside: (_) => FocusScope.of(context).unfocus(),
-            decoration: const InputDecoration(
-              hintText: '¿Qué te dejó la lectura de hoy?',
+            decoration: InputDecoration(
+              hintText: tr("¿Qué te dejó la lectura de hoy?"),
             ),
           ),
           if (error != null)
@@ -120,7 +121,7 @@ class _DailyJournalState extends State<DailyJournal> {
                           },
                         );
                         if (mounted) {
-                          setState(() => error = 'Devocional guardado.');
+                          setState(() => error = tr("Devocional guardado."));
                         }
                       } catch (e) {
                         if (mounted) setState(() => error = friendlyError(e));
@@ -128,7 +129,7 @@ class _DailyJournalState extends State<DailyJournal> {
                         if (mounted) setState(() => busy = false);
                       }
                     },
-              child: Text(busy ? 'Guardando…' : 'Guardar devocional'),
+              child: Text(busy ? tr("Guardando…") : tr("Guardar devocional")),
             ),
           ),
         ],

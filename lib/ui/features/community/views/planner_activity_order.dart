@@ -1,7 +1,9 @@
+import '../../../../l10n/locale.dart';
+
 List<Map<String, dynamic>> orderPlannerActivities(
   List<Map<String, dynamic>> items,
 ) {
-  const names = ['rompehielo', 'dinámica 1', 'dinámica 2'];
+  final names = ['rompehielo', tr("dinámica 1"), tr("dinámica 2")];
   final optional = <Map<String, dynamic>>[];
   for (final name in names) {
     optional.addAll(

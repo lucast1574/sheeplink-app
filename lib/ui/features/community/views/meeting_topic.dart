@@ -1,3 +1,4 @@
+import '../../../../l10n/locale.dart';
 import 'package:flutter/material.dart';
 import '../../../../data/repositories/community_repository.dart';
 import '../view_models/community_view_model.dart';
@@ -30,7 +31,7 @@ class _MeetingTopicState extends State<MeetingTopic> {
       );
       if (mounted) text.text = data.data?['title'] as String? ?? '';
     } catch (_) {
-      if (mounted) setState(() => error = 'No pudimos cargar el tema.');
+      if (mounted) setState(() => error = tr("No pudimos cargar el tema."));
     }
   }
 
@@ -46,7 +47,7 @@ class _MeetingTopicState extends State<MeetingTopic> {
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        const Text('Tema o título de la reunión'),
+        Text(tr("Tema o título de la reunión")),
         const SizedBox(height: 8),
         TextField(
           controller: text,
@@ -55,8 +56,8 @@ class _MeetingTopicState extends State<MeetingTopic> {
           textInputAction: TextInputAction.done,
           onSubmitted: (_) => FocusScope.of(context).unfocus(),
           onTapOutside: (_) => FocusScope.of(context).unfocus(),
-          decoration: const InputDecoration(
-            hintText: 'Ej. La fe en tiempos difíciles',
+          decoration: InputDecoration(
+            hintText: tr("Ej. La fe en tiempos difíciles"),
           ),
         ),
         if (error != null) Text(error!),
@@ -77,19 +78,20 @@ class _MeetingTopicState extends State<MeetingTopic> {
                           'title': text.text.trim(),
                         },
                       );
-                      if (mounted) setState(() => error = 'Tema guardado.');
+                      if (mounted) setState(() => error = tr("Tema guardado."));
                     } catch (_) {
                       if (mounted) {
                         setState(
-                          () =>
-                              error = 'No se pudo guardar el tema. Reintenta.',
+                          () => error = tr(
+                            "No se pudo guardar el tema. Reintenta.",
+                          ),
                         );
                       }
                     } finally {
                       if (mounted) setState(() => busy = false);
                     }
                   },
-            child: Text(busy ? 'Guardando…' : 'Guardar tema'),
+            child: Text(busy ? tr("Guardando…") : tr("Guardar tema")),
           ),
       ],
     ),

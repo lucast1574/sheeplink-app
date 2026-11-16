@@ -1,3 +1,4 @@
+import '../../../../l10n/locale.dart';
 import '../../../core/widgets/photo_policy.dart';
 import 'dart:typed_data';
 import 'package:flutter/material.dart';
@@ -56,12 +57,12 @@ class _ProfileHeaderState extends State<ProfileHeader> {
             children: [
               ListTile(
                 leading: const AppIcon(Symbol.camera),
-                title: const Text('Tomar una foto'),
+                title: Text(tr("Tomar una foto")),
                 onTap: () => Navigator.pop(context, ImageSource.camera),
               ),
               ListTile(
                 leading: const AppIcon(Symbol.user),
-                title: const Text('Elegir de galería'),
+                title: Text(tr("Elegir de galería")),
                 onTap: () => Navigator.pop(context, ImageSource.gallery),
               ),
             ],
@@ -89,7 +90,7 @@ class _ProfileHeaderState extends State<ProfileHeader> {
     } catch (_) {
       if (mounted) {
         setState(
-          () => error = 'No pudimos cambiar tu foto. Inténtalo de nuevo.',
+          () => error = tr("No pudimos cambiar tu foto. Inténtalo de nuevo."),
         );
       }
     } finally {
@@ -130,7 +131,9 @@ class _ProfileHeaderState extends State<ProfileHeader> {
                     child: Stack(
                       children: [
                         Semantics(
-                          label: 'Foto de perfil de ${user.name}',
+                          label: tr("Foto de perfil de {{p0}}", {
+                            'p0': user.name,
+                          }),
                           child: ClipOval(
                             child: SizedBox(
                               width: 80,
@@ -171,8 +174,8 @@ class _ProfileHeaderState extends State<ProfileHeader> {
                           bottom: 0,
                           child: IconButton.filled(
                             tooltip: saving
-                                ? 'Guardando foto…'
-                                : 'Cambiar foto de perfil',
+                                ? tr("Guardando foto…")
+                                : tr("Cambiar foto de perfil"),
                             onPressed: saving || widget.model.busy
                                 ? null
                                 : change,
@@ -205,8 +208,8 @@ class _ProfileHeaderState extends State<ProfileHeader> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const Text(
-                          'Tu espacio',
+                        Text(
+                          tr("Tu espacio"),
                           style: TextStyle(
                             color: AppTheme.muted,
                             fontSize: 13,
@@ -215,7 +218,7 @@ class _ProfileHeaderState extends State<ProfileHeader> {
                         ),
                         const SizedBox(height: 6),
                         Text(
-                          'Mi perfil',
+                          tr("Mi perfil"),
                           style: Theme.of(context).textTheme.titleLarge,
                         ),
                       ],

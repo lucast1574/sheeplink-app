@@ -1,3 +1,4 @@
+import '../../../../l10n/locale.dart';
 import 'cell_meeting_selector.dart';
 import 'attendance_person_card.dart';
 import 'package:flutter/material.dart';
@@ -23,26 +24,34 @@ class AttendanceView extends StatelessWidget {
         const SizedBox(height: 24),
       ],
       if (model.isFutureMeeting) ...[
-        const FeedbackPanel(
-          'La reunión está por realizarse. Prepara el plan ahora y registra la asistencia cuando llegue el día.',
+        FeedbackPanel(
+          tr(
+            "La reunión está por realizarse. Prepara el plan ahora y registra la asistencia cuando llegue el día.",
+          ),
         ),
       ] else ...[
         if (!model.canWrite)
-          const FeedbackPanel(
-            'Tu cuenta puede consultar esta célula. El registro requiere permiso de asistencia.',
+          FeedbackPanel(
+            tr(
+              "Tu cuenta puede consultar esta célula. El registro requiere permiso de asistencia.",
+            ),
           ),
         if (model.members.isEmpty)
-          const Padding(
+          Padding(
             padding: EdgeInsets.symmetric(vertical: 32),
-            child: Text('Aún no hay integrantes activos en esta célula.'),
+            child: Text(tr("Aún no hay integrantes activos en esta célula.")),
           ),
         if (model.members.isNotEmpty) ...[
           Text(
-            '${model.markedCount} de ${model.members.length} marcados · ${model.presentCount} presentes',
+            tr("{{p0}} de {{p1}} marcados · {{p2}} presentes", {
+              'p0': model.markedCount,
+              'p1': model.members.length,
+              'p2': model.presentCount,
+            }),
             style: Theme.of(context).textTheme.titleMedium,
           ),
           const SizedBox(height: 8),
-          const Text('Marca presente o ausente para cada persona.'),
+          Text(tr("Marca presente o ausente para cada persona.")),
           const SizedBox(height: 16),
           for (final member in model.members)
             AttendancePersonCard(
@@ -55,7 +64,7 @@ class AttendanceView extends StatelessWidget {
           if (model.canWrite)
             TextButton(
               onPressed: model.busy ? null : model.markRemainingAbsent,
-              child: const Text('Marcar pendientes como ausentes'),
+              child: Text(tr("Marcar pendientes como ausentes")),
             ),
           MeetingTopic(
             model: model,
@@ -72,20 +81,20 @@ class AttendanceView extends StatelessWidget {
               onPressed: model.canSave ? model.save : null,
               child: Text(
                 model.busy
-                    ? 'Guardando…'
+                    ? tr("Guardando…")
                     : model.dirty
-                    ? 'Guardar reunión'
+                    ? tr("Guardar reunión")
                     : model.markedCount == model.members.length
-                    ? 'Reunión guardada'
-                    : 'Guardar reunión',
+                    ? tr("Reunión guardada")
+                    : tr("Guardar reunión"),
               ),
             ),
           ),
           const SizedBox(height: 8),
           Text(
             model.markedCount < model.members.length
-                ? 'Completa todas las marcas para guardar.'
-                : 'Puedes corregir las marcas antes de guardar.',
+                ? tr("Completa todas las marcas para guardar.")
+                : tr("Puedes corregir las marcas antes de guardar."),
           ),
         ],
       ],

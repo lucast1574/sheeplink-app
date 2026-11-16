@@ -1,3 +1,4 @@
+import '../../../../l10n/locale.dart';
 import 'daily_journal.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
@@ -16,16 +17,16 @@ class TodayView extends StatelessWidget {
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
       Text(
-        DateFormat("EEEE d 'de' MMMM", 'es').format(DateTime.now()),
+        DateFormat.MMMMEEEEd(appLocale).format(DateTime.now()),
         style: const TextStyle(fontSize: 13),
       ),
       const SizedBox(height: 10),
       Text(
-        'Hola, ${model.session!.name.split(' ').first}.',
+        tr("Hola, {{p0}}.", {'p0': model.session!.name.split(' ').first}),
         style: Theme.of(context).textTheme.headlineLarge,
       ),
       const SizedBox(height: 8),
-      const Text('Lo importante es estar cerca.'),
+      Text(tr("Lo importante es estar cerca.")),
       const SizedBox(height: 28),
       DailyJournal(model: model),
       const SizedBox(height: 24),
@@ -48,15 +49,15 @@ class TodayView extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                model.cell?.name ?? 'Tu célula',
+                model.cell?.name ?? tr("Tu célula"),
                 style: const TextStyle(
                   color: AppTheme.forest,
                   fontWeight: FontWeight.w600,
                 ),
               ),
               const SizedBox(height: 16),
-              const Text(
-                'Cada persona\ncuenta.',
+              Text(
+                tr("Cada persona\ncuenta."),
                 style: TextStyle(
                   fontSize: 30,
                   fontWeight: FontWeight.w600,
@@ -67,8 +68,10 @@ class TodayView extends StatelessWidget {
               const SizedBox(height: 14),
               Text(
                 model.cell == null
-                    ? 'Todavía no tienes una célula asignada.'
-                    : '${model.members.length} integrantes para acompañar.',
+                    ? tr("Todavía no tienes una célula asignada.")
+                    : tr("{{p0}} integrantes para acompañar.", {
+                        'p0': model.members.length,
+                      }),
                 style: const TextStyle(color: AppTheme.muted),
               ),
               const SizedBox(height: 24),
@@ -79,10 +82,10 @@ class TodayView extends StatelessWidget {
                     foregroundColor: Colors.white,
                   ),
                   onPressed: onAttendance,
-                  child: const Row(
+                  child: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      Flexible(child: Text('Marcar asistencia')),
+                      Flexible(child: Text(tr("Marcar asistencia"))),
                       SizedBox(width: 14),
                       AppIcon(Symbol.arrow),
                     ],

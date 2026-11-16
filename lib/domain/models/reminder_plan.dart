@@ -1,3 +1,4 @@
+import '../../l10n/locale.dart';
 import 'package:timezone/timezone.dart' as tz;
 import 'community.dart';
 import 'personal_profile.dart';
@@ -46,9 +47,11 @@ List<PlannedReminder> reminderPlan({
       add(
         PlannedReminder(
           when: when,
-          title: 'Un día para acompañar',
-          body:
-              'Hoy cumple años ${member.name}. Un saludo puede alegrarle el día.',
+          title: tr("Un día para acompañar"),
+          body: tr(
+            "Hoy cumple años {{p0}}. Un saludo puede alegrarle el día.",
+            {'p0': member.name},
+          ),
           destination: 'birthdays',
         ),
       );
@@ -75,12 +78,15 @@ List<PlannedReminder> reminderPlan({
       );
       final early = start.subtract(const Duration(hours: 2));
       final sameDay = early.isBefore(midnight) ? midnight : early;
-      final detail =
-          '${assignment.ministry}${assignment.role.isEmpty ? '' : ' · ${assignment.role}'} a las ${assignment.time}.';
+      final detail = tr("{{p0}}{{p1}} a las {{p2}}.", {
+        'p0': assignment.ministry,
+        'p1': assignment.role.isEmpty ? '' : ' · ${assignment.role}',
+        'p2': assignment.time,
+      });
       add(
         PlannedReminder(
           when: previous,
-          title: 'Mañana te toca servir',
+          title: tr("Mañana te toca servir"),
           body: detail,
           destination: 'service',
         ),
@@ -88,7 +94,7 @@ List<PlannedReminder> reminderPlan({
       add(
         PlannedReminder(
           when: sameDay,
-          title: 'Hoy te toca servir',
+          title: tr("Hoy te toca servir"),
           body: detail,
           destination: 'service',
         ),

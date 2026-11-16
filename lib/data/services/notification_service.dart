@@ -1,3 +1,4 @@
+import '../../l10n/locale.dart';
 import 'dart:async';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
@@ -20,10 +21,10 @@ class NotificationService extends ChangeNotifier {
   final CommunityRepository repository;
   final _plugin = FlutterLocalNotificationsPlugin();
   final _storage = const FlutterSecureStorage();
-  static const channel = AndroidNotificationChannel(
+  static final channel = AndroidNotificationChannel(
     'sheeplink_care',
-    'Mi comunidad',
-    description: 'Cumpleaños y avisos de tu comunidad',
+    tr("Mi comunidad"),
+    description: tr("Cumpleaños y avisos de tu comunidad"),
     importance: Importance.high,
   );
   bool available = false, enabled = false;
@@ -81,7 +82,7 @@ class NotificationService extends ChangeNotifier {
         destination.value = 'today';
       }
     } catch (_) {
-      status = 'Los avisos push no están disponibles en este dispositivo.';
+      status = tr("Los avisos push no están disponibles en este dispositivo.");
     }
     enabled = await _storage.read(key: 'sheeplink.notifications') == 'true';
     birthdaysEnabled =
@@ -91,11 +92,11 @@ class NotificationService extends ChangeNotifier {
     notifyListeners();
   }
 
-  static const _details = NotificationDetails(
+  static final _details = NotificationDetails(
     android: AndroidNotificationDetails(
       'sheeplink_care',
-      'Mi comunidad',
-      channelDescription: 'Cumpleaños y avisos de tu comunidad',
+      tr("Mi comunidad"),
+      channelDescription: tr("Cumpleaños y avisos de tu comunidad"),
       importance: Importance.high,
       priority: Priority.high,
       icon: 'ic_notification',
@@ -113,8 +114,9 @@ class NotificationService extends ChangeNotifier {
         final settings = await FirebaseMessaging.instance.requestPermission();
         if (settings.authorizationStatus != AuthorizationStatus.authorized &&
             settings.authorizationStatus != AuthorizationStatus.provisional) {
-          status =
-              'Permiso denegado. Puedes habilitarlo en los ajustes del teléfono.';
+          status = tr(
+            "Permiso denegado. Puedes habilitarlo en los ajustes del teléfono.",
+          );
           notifyListeners();
           return;
         }
@@ -130,7 +132,9 @@ class NotificationService extends ChangeNotifier {
             >()
             ?.requestPermissions(alert: true, badge: true, sound: true);
         if (granted == false || appleGranted == false) {
-          status = 'Permite las notificaciones en los ajustes del teléfono.';
+          status = tr(
+            "Permite las notificaciones en los ajustes del teléfono.",
+          );
           notifyListeners();
           return;
         }
@@ -140,7 +144,7 @@ class NotificationService extends ChangeNotifier {
       await _storage.write(key: 'sheeplink.notifications', value: 'true');
       await synchronize(members, timezone, assignments: assignments);
     } catch (_) {
-      status = 'No pudimos activar todos los avisos. Inténtalo de nuevo.';
+      status = tr("No pudimos activar todos los avisos. Inténtalo de nuevo.");
     }
     notifyListeners();
   }
@@ -179,7 +183,7 @@ class NotificationService extends ChangeNotifier {
               try {
                 await repository.registerDevice(installationId);
               } catch (_) {
-                status = 'Abre Perfil para sincronizar los avisos.';
+                status = tr("Abre Perfil para sincronizar los avisos.");
                 notifyListeners();
               }
             }
@@ -197,11 +201,16 @@ class NotificationService extends ChangeNotifier {
         await repository.registerDevice(installationId);
       }
       status = available
-          ? 'Notificaciones activadas y dispositivo sincronizado. Recordatorios actualizados.'
-          : 'Recordatorios locales actualizados. Los avisos del servidor no están disponibles en este dispositivo.';
+          ? tr(
+              "Notificaciones activadas y dispositivo sincronizado. Recordatorios actualizados.",
+            )
+          : tr(
+              "Recordatorios locales actualizados. Los avisos del servidor no están disponibles en este dispositivo.",
+            );
     } catch (_) {
-      status =
-          'No pudimos completar la sincronización de los avisos. Reintenta desde Perfil.';
+      status = tr(
+        "No pudimos completar la sincronización de los avisos. Reintenta desde Perfil.",
+      );
     }
     notifyListeners();
   }
@@ -214,7 +223,7 @@ class NotificationService extends ChangeNotifier {
     // APNs registration can finish after the permission dialog closes.
     // Firebase cannot register an Apple installation until its APNs token exists.
     for (var attempt = 0; attempt < 40; attempt++) {
-      if (!enabled) throw StateError('Notifications were disabled.');
+      if (!enabled) throw StateError(tr("Notifications were disabled."));
       final token = await FirebaseMessaging.instance.getAPNSToken();
       if (token != null && token.isNotEmpty) return;
       await Future<void>.delayed(const Duration(milliseconds: 250));
@@ -301,7 +310,7 @@ class NotificationService extends ChangeNotifier {
           await FirebaseMessaging.instance.unregister();
         })().timeout(const Duration(seconds: 2)).catchError((Object _) {}),
     ]);
-    status = 'Avisos desactivados.';
+    status = tr("Avisos desactivados.");
     notifyListeners();
   }
 

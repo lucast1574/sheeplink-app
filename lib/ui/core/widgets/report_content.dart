@@ -1,3 +1,4 @@
+import '../../../l10n/locale.dart';
 import 'dart:math';
 import 'package:flutter/material.dart';
 import '../../../data/repositories/community_repository.dart';
@@ -30,7 +31,7 @@ class _ReportContentState extends State<ReportContent> {
   Future<void> send() async {
     if (text.text.trim().length < 10) {
       setState(
-        () => error = 'Describe lo ocurrido con al menos 10 caracteres.',
+        () => error = tr("Describe lo ocurrido con al menos 10 caracteres."),
       );
       return;
     }
@@ -56,14 +57,16 @@ class _ReportContentState extends State<ReportContent> {
   Widget build(BuildContext context) => PopScope(
     canPop: !sending,
     child: AlertDialog(
-      title: const Text('Reportar contenido o usuario'),
+      title: Text(tr("Reportar contenido o usuario")),
       content: SingleChildScrollView(
         child: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text(
-              'Indica qué contenido o usuario debemos revisar. El reporte lo recibe el equipo de soporte de SheepLink.',
+            Text(
+              tr(
+                "Indica qué contenido o usuario debemos revisar. El reporte lo recibe el equipo de soporte de SheepLink.",
+              ),
             ),
             const SizedBox(height: 16),
             TextField(
@@ -71,10 +74,11 @@ class _ReportContentState extends State<ReportContent> {
               enabled: !sending,
               maxLines: 5,
               maxLength: 2000,
-              decoration: const InputDecoration(
-                labelText: '¿Qué ocurrió?',
-                hintText:
-                    'Incluye la célula, semana o nombre del usuario. No envíes contraseñas.',
+              decoration: InputDecoration(
+                labelText: tr("¿Qué ocurrió?"),
+                hintText: tr(
+                  "Incluye la célula, semana o nombre del usuario. No envíes contraseñas.",
+                ),
               ),
             ),
             if (error != null)
@@ -88,11 +92,11 @@ class _ReportContentState extends State<ReportContent> {
       actions: [
         TextButton(
           onPressed: sending ? null : () => Navigator.pop(context, false),
-          child: const Text('Cancelar'),
+          child: Text(tr("Cancelar")),
         ),
         FilledButton(
           onPressed: sending ? null : send,
-          child: Text(sending ? 'Enviando…' : 'Enviar reporte'),
+          child: Text(sending ? tr("Enviando…") : tr("Enviar reporte")),
         ),
       ],
     ),
@@ -112,8 +116,10 @@ Future<void> openContentReport(
   );
   if (sent == true && context.mounted) {
     ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(
-        content: Text('Reporte enviado. El equipo de SheepLink lo revisará.'),
+      SnackBar(
+        content: Text(
+          tr("Reporte enviado. El equipo de SheepLink lo revisará."),
+        ),
       ),
     );
   }

@@ -1,3 +1,4 @@
+import './l10n/locale.dart';
 import 'package:flutter/widgets.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'app/sheeplink_app.dart';
@@ -9,7 +10,7 @@ import 'ui/features/community/view_models/community_view_model.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await initializeDateFormatting('es');
+  await initializeDateFormatting();
   final repository = ApiCommunityRepository(ApiClient());
   final model = CommunityViewModel(
     repository,
@@ -19,8 +20,9 @@ Future<void> main() async {
   try {
     await notifications.initialize();
   } catch (_) {
-    notifications.status =
-        'No pudimos preparar los avisos. Puedes reintentarlo desde Perfil.';
+    notifications.status = tr(
+      "No pudimos preparar los avisos. Puedes reintentarlo desde Perfil.",
+    );
   }
   runApp(SheeplinkApp(model: model, notifications: notifications));
   await model.restore();

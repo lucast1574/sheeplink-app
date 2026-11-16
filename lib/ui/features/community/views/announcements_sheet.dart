@@ -1,3 +1,4 @@
+import '../../../../l10n/locale.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import '../../../../domain/models/personal_profile.dart';
@@ -33,7 +34,7 @@ class _AnnouncementsSheetState extends State<_AnnouncementsSheet> {
   String _formatDate(String raw) {
     final parsed = DateTime.tryParse(raw)?.toLocal();
     if (parsed == null) return '';
-    return DateFormat("d 'de' MMM", 'es').format(parsed);
+    return DateFormat.MMMd(appLocale).format(parsed);
   }
 
   @override
@@ -57,12 +58,12 @@ class _AnnouncementsSheetState extends State<_AnnouncementsSheet> {
                     const SizedBox(width: 10),
                     Expanded(
                       child: Text(
-                        'Mensajes y avisos',
+                        tr("Mensajes y avisos"),
                         style: Theme.of(context).textTheme.titleLarge,
                       ),
                     ),
                     IconButton(
-                      tooltip: 'Cerrar',
+                      tooltip: tr("Cerrar"),
                       onPressed: () => Navigator.pop(context),
                       icon: const AppIcon(Symbol.close, size: 20),
                     ),
@@ -72,11 +73,11 @@ class _AnnouncementsSheetState extends State<_AnnouncementsSheet> {
               const Divider(height: 1),
               Expanded(
                 child: items.isEmpty
-                    ? const Center(
+                    ? Center(
                         child: Padding(
                           padding: EdgeInsets.all(24),
                           child: Text(
-                            'No tienes avisos pendientes por ahora.',
+                            tr("No tienes avisos pendientes por ahora."),
                             textAlign: TextAlign.center,
                           ),
                         ),
@@ -165,8 +166,8 @@ class _AnnouncementCard extends StatelessWidget {
                         color: AppTheme.leaf.withValues(alpha: 0.45),
                         borderRadius: BorderRadius.circular(99),
                       ),
-                      child: const Text(
-                        'Fijado',
+                      child: Text(
+                        tr("Fijado"),
                         style: TextStyle(
                           fontSize: 11,
                           fontWeight: FontWeight.w600,

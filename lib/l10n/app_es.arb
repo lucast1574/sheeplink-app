@@ -1,0 +1,4764 @@
+{
+  "@@locale": "es",
+  "mca8c1fc0b533": "Reporte de contenido o usuario",
+  "@mca8c1fc0b533": {
+    "description": "Reporte de contenido o usuario",
+    "placeholders": {}
+  },
+  "m67cc537808d8": "Invalid photo",
+  "@m67cc537808d8": {
+    "description": "Invalid photo",
+    "placeholders": {}
+  },
+  "m5a334e683a12": "Tu sesión terminó. Vuelve a ingresar.",
+  "@m5a334e683a12": {
+    "description": "Tu sesión terminó. Vuelve a ingresar.",
+    "placeholders": {}
+  },
+  "m91ff101421b9": "No pudimos conectar. Revisa tu conexión e inténtalo de nuevo.",
+  "@m91ff101421b9": {
+    "description": "No pudimos conectar. Revisa tu conexión e inténtalo de nuevo.",
+    "placeholders": {}
+  },
+  "m6cb0a45e7613": "No pudimos completar la acción. Inténtalo de nuevo.",
+  "@m6cb0a45e7613": {
+    "description": "No pudimos completar la acción. Inténtalo de nuevo.",
+    "placeholders": {}
+  },
+  "m6af7cd04d86b": "Google did not return an identity.",
+  "@m6af7cd04d86b": {
+    "description": "Google did not return an identity.",
+    "placeholders": {}
+  },
+  "m8d20e67b172b": "Firebase did not return an identity.",
+  "@m8d20e67b172b": {
+    "description": "Firebase did not return an identity.",
+    "placeholders": {}
+  },
+  "m6b7a28c8fb5e": "Mi comunidad",
+  "@m6b7a28c8fb5e": {
+    "description": "Mi comunidad",
+    "placeholders": {}
+  },
+  "mbee723641566": "Cumpleaños y avisos de tu comunidad",
+  "@mbee723641566": {
+    "description": "Cumpleaños y avisos de tu comunidad",
+    "placeholders": {}
+  },
+  "me3896368e9af": "Los avisos push no están disponibles en este dispositivo.",
+  "@me3896368e9af": {
+    "description": "Los avisos push no están disponibles en este dispositivo.",
+    "placeholders": {}
+  },
+  "mab3aad5bf242": "Permiso denegado. Puedes habilitarlo en los ajustes del teléfono.",
+  "@mab3aad5bf242": {
+    "description": "Permiso denegado. Puedes habilitarlo en los ajustes del teléfono.",
+    "placeholders": {}
+  },
+  "m1ef7ac720968": "Permite las notificaciones en los ajustes del teléfono.",
+  "@m1ef7ac720968": {
+    "description": "Permite las notificaciones en los ajustes del teléfono.",
+    "placeholders": {}
+  },
+  "m3f582376c705": "No pudimos activar todos los avisos. Inténtalo de nuevo.",
+  "@m3f582376c705": {
+    "description": "No pudimos activar todos los avisos. Inténtalo de nuevo.",
+    "placeholders": {}
+  },
+  "m2de84396bcfe": "Abre Perfil para sincronizar los avisos.",
+  "@m2de84396bcfe": {
+    "description": "Abre Perfil para sincronizar los avisos.",
+    "placeholders": {}
+  },
+  "m08243457b515": "Notificaciones activadas y dispositivo sincronizado. Recordatorios actualizados.",
+  "@m08243457b515": {
+    "description": "Notificaciones activadas y dispositivo sincronizado. Recordatorios actualizados.",
+    "placeholders": {}
+  },
+  "mc478340b5642": "Recordatorios locales actualizados. Los avisos del servidor no están disponibles en este dispositivo.",
+  "@mc478340b5642": {
+    "description": "Recordatorios locales actualizados. Los avisos del servidor no están disponibles en este dispositivo.",
+    "placeholders": {}
+  },
+  "m8aed973edda7": "No pudimos completar la sincronización de los avisos. Reintenta desde Perfil.",
+  "@m8aed973edda7": {
+    "description": "No pudimos completar la sincronización de los avisos. Reintenta desde Perfil.",
+    "placeholders": {}
+  },
+  "m67481232f9ed": "Notifications were disabled.",
+  "@m67481232f9ed": {
+    "description": "Notifications were disabled.",
+    "placeholders": {}
+  },
+  "m556e0acc5a60": "Avisos desactivados.",
+  "@m556e0acc5a60": {
+    "description": "Avisos desactivados.",
+    "placeholders": {}
+  },
+  "m8e0d50a2d008": "Usa una foto de menos de 20 MB.",
+  "@m8e0d50a2d008": {
+    "description": "Usa una foto de menos de 20 MB.",
+    "placeholders": {}
+  },
+  "mcc752d04b8d6": "No pudimos leer esta foto. Usa JPG o PNG.",
+  "@mcc752d04b8d6": {
+    "description": "No pudimos leer esta foto. Usa JPG o PNG.",
+    "placeholders": {}
+  },
+  "mf14f2f81070b": "La foto sigue siendo muy grande. Prueba con una más pequeña.",
+  "@mf14f2f81070b": {
+    "description": "La foto sigue siendo muy grande. Prueba con una más pequeña.",
+    "placeholders": {}
+  },
+  "m00b34af8b7d2": "Mi ministerio",
+  "@m00b34af8b7d2": {
+    "description": "Mi ministerio",
+    "placeholders": {}
+  },
+  "mb73a7e98ecad": "Iglesia",
+  "@mb73a7e98ecad": {
+    "description": "Iglesia",
+    "placeholders": {}
+  },
+  "m2c41346596a1": "Un día para acompañar",
+  "@m2c41346596a1": {
+    "description": "Un día para acompañar",
+    "placeholders": {}
+  },
+  "mb6fd43c91528": "Hoy cumple años {p0}. Un saludo puede alegrarle el día.",
+  "@mb6fd43c91528": {
+    "description": "Hoy cumple años {{p0}}. Un saludo puede alegrarle el día.",
+    "placeholders": {
+      "p0": {
+        "type": "String"
+      }
+    }
+  },
+  "m27626f607323": "{p0}{p1} a las {p2}.",
+  "@m27626f607323": {
+    "description": "{{p0}}{{p1}} a las {{p2}}.",
+    "placeholders": {
+      "p0": {
+        "type": "String"
+      },
+      "p1": {
+        "type": "String"
+      },
+      "p2": {
+        "type": "String"
+      }
+    }
+  },
+  "m69b62091165d": "Mañana te toca servir",
+  "@m69b62091165d": {
+    "description": "Mañana te toca servir",
+    "placeholders": {}
+  },
+  "mfa87c2503652": "Hoy te toca servir",
+  "@mfa87c2503652": {
+    "description": "Hoy te toca servir",
+    "placeholders": {}
+  },
+  "mdb366b898d06": "No pudimos preparar los avisos. Puedes reintentarlo desde Perfil.",
+  "@mdb366b898d06": {
+    "description": "No pudimos preparar los avisos. Puedes reintentarlo desde Perfil.",
+    "placeholders": {}
+  },
+  "mcd859ce5c9d9": "Figtree",
+  "@mcd859ce5c9d9": {
+    "description": "Figtree",
+    "placeholders": {}
+  },
+  "ma9b13bcc2ec0": "Tienes cambios sin guardar",
+  "@ma9b13bcc2ec0": {
+    "description": "Tienes cambios sin guardar",
+    "placeholders": {}
+  },
+  "m025bd87afc3f": "Si continúas perderás los cambios de esta reunión.",
+  "@m025bd87afc3f": {
+    "description": "Si continúas perderás los cambios de esta reunión.",
+    "placeholders": {}
+  },
+  "m975698d64cd9": "Seguir editando",
+  "@m975698d64cd9": {
+    "description": "Seguir editando",
+    "placeholders": {}
+  },
+  "m80ca383e9c8d": "Descartar cambios",
+  "@m80ca383e9c8d": {
+    "description": "Descartar cambios",
+    "placeholders": {}
+  },
+  "m84ca335e8bfc": "Sin asignar",
+  "@m84ca335e8bfc": {
+    "description": "Sin asignar",
+    "placeholders": {}
+  },
+  "m9c75a923152f": "Fotos que cuidan de todos",
+  "@m9c75a923152f": {
+    "description": "Fotos que cuidan de todos",
+    "placeholders": {}
+  },
+  "m80a8f7b2f14d": "Sube solo fotos que tengas permiso de compartir. No se permite contenido sexual, violencia, odio, acoso ni explotación de menores. Puedes reportar contenido o usuarios desde Perfil o junto a la foto de la reunión.",
+  "@m80a8f7b2f14d": {
+    "description": "Sube solo fotos que tengas permiso de compartir. No se permite contenido sexual, violencia, odio, acoso ni explotación de menores. Puedes reportar contenido o usuarios desde Perfil o junto a la foto de la reunión.",
+    "placeholders": {}
+  },
+  "m29e142f8d590": "Leer términos y condiciones",
+  "@m29e142f8d590": {
+    "description": "Leer términos y condiciones",
+    "placeholders": {}
+  },
+  "mbb9dbb406dcb": "Cancelar",
+  "@mbb9dbb406dcb": {
+    "description": "Cancelar",
+    "placeholders": {}
+  },
+  "m62b95e136367": "Aceptar y continuar",
+  "@m62b95e136367": {
+    "description": "Aceptar y continuar",
+    "placeholders": {}
+  },
+  "m5a5f6d7c5977": "Cerrar selector",
+  "@m5a5f6d7c5977": {
+    "description": "Cerrar selector",
+    "placeholders": {}
+  },
+  "m9f0ef620d435": "Describe lo ocurrido con al menos 10 caracteres.",
+  "@m9f0ef620d435": {
+    "description": "Describe lo ocurrido con al menos 10 caracteres.",
+    "placeholders": {}
+  },
+  "m8764a1f5e833": "Reportar contenido o usuario",
+  "@m8764a1f5e833": {
+    "description": "Reportar contenido o usuario",
+    "placeholders": {}
+  },
+  "m45d167b2015d": "Indica qué contenido o usuario debemos revisar. El reporte lo recibe el equipo de soporte de SheepLink.",
+  "@m45d167b2015d": {
+    "description": "Indica qué contenido o usuario debemos revisar. El reporte lo recibe el equipo de soporte de SheepLink.",
+    "placeholders": {}
+  },
+  "m95832c2f9c37": "¿Qué ocurrió?",
+  "@m95832c2f9c37": {
+    "description": "¿Qué ocurrió?",
+    "placeholders": {}
+  },
+  "mfd84fcaa783a": "Incluye la célula, semana o nombre del usuario. No envíes contraseñas.",
+  "@mfd84fcaa783a": {
+    "description": "Incluye la célula, semana o nombre del usuario. No envíes contraseñas.",
+    "placeholders": {}
+  },
+  "m9415ac2416c5": "Enviando…",
+  "@m9415ac2416c5": {
+    "description": "Enviando…",
+    "placeholders": {}
+  },
+  "m9739d880d5b0": "Enviar reporte",
+  "@m9739d880d5b0": {
+    "description": "Enviar reporte",
+    "placeholders": {}
+  },
+  "m801cb7f02a48": "Reporte enviado. El equipo de SheepLink lo revisará.",
+  "@m801cb7f02a48": {
+    "description": "Reporte enviado. El equipo de SheepLink lo revisará.",
+    "placeholders": {}
+  },
+  "mf823a0d28dce": "Tu comunidad,\nmás cerca.",
+  "@mf823a0d28dce": {
+    "description": "Tu comunidad,\nmás cerca.",
+    "placeholders": {}
+  },
+  "m2218ed82eb74": "Un espacio sencillo para acompañar a tu célula.",
+  "@m2218ed82eb74": {
+    "description": "Un espacio sencillo para acompañar a tu célula.",
+    "placeholders": {}
+  },
+  "mab51f6ea5985": "Continuar con Google",
+  "@mab51f6ea5985": {
+    "description": "Continuar con Google",
+    "placeholders": {}
+  },
+  "mdd0f139b3178": "o entra con tu correo",
+  "@mdd0f139b3178": {
+    "description": "o entra con tu correo",
+    "placeholders": {}
+  },
+  "mec64dc30a483": "Correo electrónico",
+  "@mec64dc30a483": {
+    "description": "Correo electrónico",
+    "placeholders": {}
+  },
+  "mf92e850af7bf": "Escribe tu correo electrónico.",
+  "@mf92e850af7bf": {
+    "description": "Escribe tu correo electrónico.",
+    "placeholders": {}
+  },
+  "ma389a638dec3": "Contraseña",
+  "@ma389a638dec3": {
+    "description": "Contraseña",
+    "placeholders": {}
+  },
+  "ma50194551d9b": "Escribe tu contraseña.",
+  "@ma50194551d9b": {
+    "description": "Escribe tu contraseña.",
+    "placeholders": {}
+  },
+  "me4269fcd2489": "Ingresando…",
+  "@me4269fcd2489": {
+    "description": "Ingresando…",
+    "placeholders": {}
+  },
+  "m4faead569d28": "Entrar a mi comunidad",
+  "@m4faead569d28": {
+    "description": "Entrar a mi comunidad",
+    "placeholders": {}
+  },
+  "mdd8683778577": "Ingresa con la misma cuenta que usas en SheepLink.",
+  "@mdd8683778577": {
+    "description": "Ingresa con la misma cuenta que usas en SheepLink.",
+    "placeholders": {}
+  },
+  "m8c148b9fcf35": "d 'de' MMM",
+  "@m8c148b9fcf35": {
+    "description": "d 'de' MMM",
+    "placeholders": {}
+  },
+  "m82307e502cc6": "Mensajes y avisos",
+  "@m82307e502cc6": {
+    "description": "Mensajes y avisos",
+    "placeholders": {}
+  },
+  "maeccae342e4b": "Cerrar",
+  "@maeccae342e4b": {
+    "description": "Cerrar",
+    "placeholders": {}
+  },
+  "m058bd29bd53b": "No tienes avisos pendientes por ahora.",
+  "@m058bd29bd53b": {
+    "description": "No tienes avisos pendientes por ahora.",
+    "placeholders": {}
+  },
+  "m3a7900b566d1": "Fijado",
+  "@m3a7900b566d1": {
+    "description": "Fijado",
+    "placeholders": {}
+  },
+  "ma4a06c1819b7": "Presente",
+  "@ma4a06c1819b7": {
+    "description": "Presente",
+    "placeholders": {}
+  },
+  "mfd7f0836e8ad": "Ausente",
+  "@mfd7f0836e8ad": {
+    "description": "Ausente",
+    "placeholders": {}
+  },
+  "ma901543e48c3": "La reunión está por realizarse. Prepara el plan ahora y registra la asistencia cuando llegue el día.",
+  "@ma901543e48c3": {
+    "description": "La reunión está por realizarse. Prepara el plan ahora y registra la asistencia cuando llegue el día.",
+    "placeholders": {}
+  },
+  "m3cca5d976609": "Tu cuenta puede consultar esta célula. El registro requiere permiso de asistencia.",
+  "@m3cca5d976609": {
+    "description": "Tu cuenta puede consultar esta célula. El registro requiere permiso de asistencia.",
+    "placeholders": {}
+  },
+  "me4e77ddd6019": "Aún no hay integrantes activos en esta célula.",
+  "@me4e77ddd6019": {
+    "description": "Aún no hay integrantes activos en esta célula.",
+    "placeholders": {}
+  },
+  "m35fc3f717c5f": "{p0} de {p1} marcados · {p2} presentes",
+  "@m35fc3f717c5f": {
+    "description": "{{p0}} de {{p1}} marcados · {{p2}} presentes",
+    "placeholders": {
+      "p0": {
+        "type": "String"
+      },
+      "p1": {
+        "type": "String"
+      },
+      "p2": {
+        "type": "String"
+      }
+    }
+  },
+  "m20a29be89612": "Marca presente o ausente para cada persona.",
+  "@m20a29be89612": {
+    "description": "Marca presente o ausente para cada persona.",
+    "placeholders": {}
+  },
+  "m5dcf6c2f41dd": "Marcar pendientes como ausentes",
+  "@m5dcf6c2f41dd": {
+    "description": "Marcar pendientes como ausentes",
+    "placeholders": {}
+  },
+  "m3c8dc4dc7a83": "Guardando…",
+  "@m3c8dc4dc7a83": {
+    "description": "Guardando…",
+    "placeholders": {}
+  },
+  "ma9b09fdc946a": "Guardar reunión",
+  "@ma9b09fdc946a": {
+    "description": "Guardar reunión",
+    "placeholders": {}
+  },
+  "m7158ed1d325d": "Reunión guardada",
+  "@m7158ed1d325d": {
+    "description": "Reunión guardada",
+    "placeholders": {}
+  },
+  "m6a62e02614b8": "Completa todas las marcas para guardar.",
+  "@m6a62e02614b8": {
+    "description": "Completa todas las marcas para guardar.",
+    "placeholders": {}
+  },
+  "md21df98f0966": "Puedes corregir las marcas antes de guardar.",
+  "@md21df98f0966": {
+    "description": "Puedes corregir las marcas antes de guardar.",
+    "placeholders": {}
+  },
+  "mdf66b455043d": "Un día para celebrar",
+  "@mdf66b455043d": {
+    "description": "Un día para celebrar",
+    "placeholders": {}
+  },
+  "md6e184172342": "Cumpleaños de tu célula · próximos 30 días",
+  "@md6e184172342": {
+    "description": "Cumpleaños de tu célula · próximos 30 días",
+    "placeholders": {}
+  },
+  "maff7b8055aab": "No hay cumpleaños registrados para estos días.",
+  "@maff7b8055aab": {
+    "description": "No hay cumpleaños registrados para estos días.",
+    "placeholders": {}
+  },
+  "me5c70930ceca": "Hoy · un saludo hace la diferencia",
+  "@me5c70930ceca": {
+    "description": "Hoy · un saludo hace la diferencia",
+    "placeholders": {}
+  },
+  "m0ea3f422ac9d": "Un buen día para hacerle sentir parte.",
+  "@m0ea3f422ac9d": {
+    "description": "Un buen día para hacerle sentir parte.",
+    "placeholders": {}
+  },
+  "m1411146d4073": "Elige tu célula",
+  "@m1411146d4073": {
+    "description": "Elige tu célula",
+    "placeholders": {}
+  },
+  "mf8fb3dc84c6e": "Mi célula",
+  "@mf8fb3dc84c6e": {
+    "description": "Mi célula",
+    "placeholders": {}
+  },
+  "m2f8a872a2eca": "Sin célula asignada",
+  "@m2f8a872a2eca": {
+    "description": "Sin célula asignada",
+    "placeholders": {}
+  },
+  "meae6c487bac5": "Cambiar célula",
+  "@meae6c487bac5": {
+    "description": "Cambiar célula",
+    "placeholders": {}
+  },
+  "m15eba185d110": "Semana del {p0}",
+  "@m15eba185d110": {
+    "description": "Semana del {{p0}}",
+    "placeholders": {
+      "p0": {
+        "type": "String"
+      }
+    }
+  },
+  "me4ce7c09d51e": "Anterior",
+  "@me4ce7c09d51e": {
+    "description": "Anterior",
+    "placeholders": {}
+  },
+  "m49683b71c6ac": "Siguiente",
+  "@m49683b71c6ac": {
+    "description": "Siguiente",
+    "placeholders": {}
+  },
+  "m11e68ec7d8f6": "Elegir fecha · {p0}",
+  "@m11e68ec7d8f6": {
+    "description": "Elegir fecha · {{p0}}",
+    "placeholders": {
+      "p0": {
+        "type": "String"
+      }
+    }
+  },
+  "m05fd84dd61af": "EEEE d 'de' MMMM",
+  "@m05fd84dd61af": {
+    "description": "EEEE d 'de' MMMM",
+    "placeholders": {}
+  },
+  "mc1a96dd2ec6a": "Esta semana tiene una reunión registrada. Para una nueva reunión, elige otra semana.",
+  "@mc1a96dd2ec6a": {
+    "description": "Esta semana tiene una reunión registrada. Para una nueva reunión, elige otra semana.",
+    "placeholders": {}
+  },
+  "mc14517580692": "Preparar próxima célula",
+  "@mc14517580692": {
+    "description": "Preparar próxima célula",
+    "placeholders": {}
+  },
+  "m35d03bb8cc97": "Asistencia",
+  "@m35d03bb8cc97": {
+    "description": "Asistencia",
+    "placeholders": {}
+  },
+  "m6dc295258d08": "Planificador",
+  "@m6dc295258d08": {
+    "description": "Planificador",
+    "placeholders": {}
+  },
+  "m9ce88185986d": "Actividades habituales",
+  "@m9ce88185986d": {
+    "description": "Actividades habituales",
+    "placeholders": {}
+  },
+  "m945d4c83ccfd": "Actividades de esta reunión",
+  "@m945d4c83ccfd": {
+    "description": "Actividades de esta reunión",
+    "placeholders": {}
+  },
+  "m57a5f96fd673": "Se usarán en las nuevas reuniones. Las reuniones guardadas no cambian.",
+  "@m57a5f96fd673": {
+    "description": "Se usarán en las nuevas reuniones. Las reuniones guardadas no cambian.",
+    "placeholders": {}
+  },
+  "m0941f6617737": "Elige lo que harán en esta fecha. Conservaremos las asignaciones de lo que no hagan.",
+  "@m0941f6617737": {
+    "description": "Elige lo que harán en esta fecha. Conservaremos las asignaciones de lo que no hagan.",
+    "placeholders": {}
+  },
+  "mf5f273d88e2e": "Bienvenida",
+  "@mf5f273d88e2e": {
+    "description": "Bienvenida",
+    "placeholders": {}
+  },
+  "m3a42dad1f958": "Alabanza",
+  "@m3a42dad1f958": {
+    "description": "Alabanza",
+    "placeholders": {}
+  },
+  "mb57f8d7339c9": "Palabra",
+  "@mb57f8d7339c9": {
+    "description": "Palabra",
+    "placeholders": {}
+  },
+  "m71babbfd2917": "Oración",
+  "@m71babbfd2917": {
+    "description": "Oración",
+    "placeholders": {}
+  },
+  "mc4ddf5105f52": "Despedida",
+  "@mc4ddf5105f52": {
+    "description": "Despedida",
+    "placeholders": {}
+  },
+  "m951ad19c9bc7": "Selecciona una célula para consultar su plan semanal.",
+  "@m951ad19c9bc7": {
+    "description": "Selecciona una célula para consultar su plan semanal.",
+    "placeholders": {}
+  },
+  "mc21ffa48764c": "Reintentar plan",
+  "@mc21ffa48764c": {
+    "description": "Reintentar plan",
+    "placeholders": {}
+  },
+  "mbfff4dd31017": "Plan de {p0}",
+  "@mbfff4dd31017": {
+    "description": "Plan de {{p0}}",
+    "placeholders": {
+      "p0": {
+        "type": "String"
+      }
+    }
+  },
+  "mcf8ad632141a": "Puedes consultar el plan. Solo los responsables de la célula pueden editarlo.",
+  "@mcf8ad632141a": {
+    "description": "Puedes consultar el plan. Solo los responsables de la célula pueden editarlo.",
+    "placeholders": {}
+  },
+  "m7b00f485031b": "Título del encuentro",
+  "@m7b00f485031b": {
+    "description": "Título del encuentro",
+    "placeholders": {}
+  },
+  "m3a251873f94e": "¿Qué compartirán esta semana?",
+  "@m3a251873f94e": {
+    "description": "¿Qué compartirán esta semana?",
+    "placeholders": {}
+  },
+  "m80353e24546c": "No hay actividades seleccionadas para esta reunión.",
+  "@m80353e24546c": {
+    "description": "No hay actividades seleccionadas para esta reunión.",
+    "placeholders": {}
+  },
+  "m62c1aec4ffc8": "Responsable",
+  "@m62c1aec4ffc8": {
+    "description": "Responsable",
+    "placeholders": {}
+  },
+  "mee00b96fff26": "Descripción",
+  "@mee00b96fff26": {
+    "description": "Descripción",
+    "placeholders": {}
+  },
+  "m9f837af34453": "Indicaciones para {p0}",
+  "@m9f837af34453": {
+    "description": "Indicaciones para {{p0}}",
+    "placeholders": {
+      "p0": {
+        "type": "String"
+      }
+    }
+  },
+  "m3a9634090942": "Escribe un título para el encuentro.",
+  "@m3a9634090942": {
+    "description": "Escribe un título para el encuentro.",
+    "placeholders": {}
+  },
+  "m5b7608db8957": "Plan guardado.",
+  "@m5b7608db8957": {
+    "description": "Plan guardado.",
+    "placeholders": {}
+  },
+  "m34011ca1d486": "Guardar plan",
+  "@m34011ca1d486": {
+    "description": "Guardar plan",
+    "placeholders": {}
+  },
+  "m3d44f0be19af": "Elegir actividades de esta reunión",
+  "@m3d44f0be19af": {
+    "description": "Elegir actividades de esta reunión",
+    "placeholders": {}
+  },
+  "m09ec41492cae": "Configurar actividades habituales",
+  "@m09ec41492cae": {
+    "description": "Configurar actividades habituales",
+    "placeholders": {}
+  },
+  "mf0c689c710b4": "Mantente cerca de tu comunidad",
+  "@mf0c689c710b4": {
+    "description": "Mantente cerca de tu comunidad",
+    "placeholders": {}
+  },
+  "mc458a6cd56d3": "Te avisamos de los cumpleaños y de tus turnos de servicio: el día anterior y el mismo día. Puedes elegir los avisos en tu perfil.",
+  "@mc458a6cd56d3": {
+    "description": "Te avisamos de los cumpleaños y de tus turnos de servicio: el día anterior y el mismo día. Puedes elegir los avisos en tu perfil.",
+    "placeholders": {}
+  },
+  "m6c64e278488d": "Ahora no",
+  "@m6c64e278488d": {
+    "description": "Ahora no",
+    "placeholders": {}
+  },
+  "m8e38c2571d87": "Activar",
+  "@m8e38c2571d87": {
+    "description": "Activar",
+    "placeholders": {}
+  },
+  "ma9254c5f8128": "Reintentar",
+  "@ma9254c5f8128": {
+    "description": "Reintentar",
+    "placeholders": {}
+  },
+  "m55133d4e6eb6": "Hoy",
+  "@m55133d4e6eb6": {
+    "description": "Hoy",
+    "placeholders": {}
+  },
+  "m00d551e63dd5": "Perfil",
+  "@m00d551e63dd5": {
+    "description": "Perfil",
+    "placeholders": {}
+  },
+  "mb07b919ee966": "No tienes cursos activos asignados como maestro.",
+  "@mb07b919ee966": {
+    "description": "No tienes cursos activos asignados como maestro.",
+    "placeholders": {}
+  },
+  "m65f64698cf0d": "Asistencia de cursos",
+  "@m65f64698cf0d": {
+    "description": "Asistencia de cursos",
+    "placeholders": {}
+  },
+  "md9414a7431b1": "Volver a cursos",
+  "@md9414a7431b1": {
+    "description": "Volver a cursos",
+    "placeholders": {}
+  },
+  "m85532e16f36c": "{p0} {p1} · Marcar asistencia",
+  "@m85532e16f36c": {
+    "description": "{{p0}} {{p1}} · Marcar asistencia",
+    "placeholders": {
+      "p0": {
+        "type": "String"
+      },
+      "p1": {
+        "type": "String"
+      }
+    }
+  },
+  "m36ff829074e6": "Asistencia · {p0}",
+  "@m36ff829074e6": {
+    "description": "Asistencia · {{p0}}",
+    "placeholders": {
+      "p0": {
+        "type": "String"
+      }
+    }
+  },
+  "m957da9fb6923": "Alumno",
+  "@m957da9fb6923": {
+    "description": "Alumno",
+    "placeholders": {}
+  },
+  "m233839e8fe3f": "Asistencia guardada.",
+  "@m233839e8fe3f": {
+    "description": "Asistencia guardada.",
+    "placeholders": {}
+  },
+  "md84d1126102b": "Guardar asistencia",
+  "@md84d1126102b": {
+    "description": "Guardar asistencia",
+    "placeholders": {}
+  },
+  "m319292aee78f": "Portada ilustrada del curso",
+  "@m319292aee78f": {
+    "description": "Portada ilustrada del curso",
+    "placeholders": {}
+  },
+  "meeef5e3f6156": "Portada de {p0}",
+  "@meeef5e3f6156": {
+    "description": "Portada de {{p0}}",
+    "placeholders": {
+      "p0": {
+        "type": "String"
+      }
+    }
+  },
+  "m807c269930cc": "Mi devocional de hoy",
+  "@m807c269930cc": {
+    "description": "Mi devocional de hoy",
+    "placeholders": {}
+  },
+  "ma4bf84d85b20": "Lectura bíblica",
+  "@ma4bf84d85b20": {
+    "description": "Lectura bíblica",
+    "placeholders": {}
+  },
+  "m2bfbf01f3576": "Mi reflexión",
+  "@m2bfbf01f3576": {
+    "description": "Mi reflexión",
+    "placeholders": {}
+  },
+  "m1270f237be68": "¿Qué te dejó la lectura de hoy?",
+  "@m1270f237be68": {
+    "description": "¿Qué te dejó la lectura de hoy?",
+    "placeholders": {}
+  },
+  "m4e142b0fcf09": "Devocional guardado.",
+  "@m4e142b0fcf09": {
+    "description": "Devocional guardado.",
+    "placeholders": {}
+  },
+  "md634470d9348": "Guardar devocional",
+  "@md634470d9348": {
+    "description": "Guardar devocional",
+    "placeholders": {}
+  },
+  "mb30192f8cdf1": "No pudimos cargar el tema.",
+  "@mb30192f8cdf1": {
+    "description": "No pudimos cargar el tema.",
+    "placeholders": {}
+  },
+  "mc2d114ea71ba": "Tema o título de la reunión",
+  "@mc2d114ea71ba": {
+    "description": "Tema o título de la reunión",
+    "placeholders": {}
+  },
+  "m5b52903c9423": "Ej. La fe en tiempos difíciles",
+  "@m5b52903c9423": {
+    "description": "Ej. La fe en tiempos difíciles",
+    "placeholders": {}
+  },
+  "mde078aa6f551": "Tema guardado.",
+  "@mde078aa6f551": {
+    "description": "Tema guardado.",
+    "placeholders": {}
+  },
+  "mffd697f0812b": "No se pudo guardar el tema. Reintenta.",
+  "@mffd697f0812b": {
+    "description": "No se pudo guardar el tema. Reintenta.",
+    "placeholders": {}
+  },
+  "m6d5a1ffed64f": "Guardar tema",
+  "@m6d5a1ffed64f": {
+    "description": "Guardar tema",
+    "placeholders": {}
+  },
+  "me0cc74a6b7d8": "dinámica 1",
+  "@me0cc74a6b7d8": {
+    "description": "dinámica 1",
+    "placeholders": {}
+  },
+  "m2eb0ce6104c2": "dinámica 2",
+  "@m2eb0ce6104c2": {
+    "description": "dinámica 2",
+    "placeholders": {}
+  },
+  "mdcb74c01e9e3": "Aplicar selección",
+  "@mdcb74c01e9e3": {
+    "description": "Aplicar selección",
+    "placeholders": {}
+  },
+  "mc95eed82d976": "Reportar ausencia",
+  "@mc95eed82d976": {
+    "description": "Reportar ausencia",
+    "placeholders": {}
+  },
+  "mdecd42d278ee": "Motivo (opcional)",
+  "@mdecd42d278ee": {
+    "description": "Motivo (opcional)",
+    "placeholders": {}
+  },
+  "m9a2bbbd7afbd": "Confirmar ausencia",
+  "@m9a2bbbd7afbd": {
+    "description": "Confirmar ausencia",
+    "placeholders": {}
+  },
+  "m27365075772d": "Tu servicio",
+  "@m27365075772d": {
+    "description": "Tu servicio",
+    "placeholders": {}
+  },
+  "m9faebf1d2790": "No tienes turnos próximos asignados. Cuando tu líder programe uno, aparecerá aquí.",
+  "@m9faebf1d2790": {
+    "description": "No tienes turnos próximos asignados. Cuando tu líder programe uno, aparecerá aquí.",
+    "placeholders": {}
+  },
+  "m821e20bdc71c": "Asignación de hoy",
+  "@m821e20bdc71c": {
+    "description": "Asignación de hoy",
+    "placeholders": {}
+  },
+  "m1efa3b455a06": "Servicio",
+  "@m1efa3b455a06": {
+    "description": "Servicio",
+    "placeholders": {}
+  },
+  "m70a39f863f0d": "Asignación pendiente de confirmar. Aún no genera recordatorios.",
+  "@m70a39f863f0d": {
+    "description": "Asignación pendiente de confirmar. Aún no genera recordatorios.",
+    "placeholders": {}
+  },
+  "m640d6761c178": "Aceptar",
+  "@m640d6761c178": {
+    "description": "Aceptar",
+    "placeholders": {}
+  },
+  "mf53f7de6464b": "No puedo asistir",
+  "@mf53f7de6464b": {
+    "description": "No puedo asistir",
+    "placeholders": {}
+  },
+  "mbd93f4de4dcf": "Hola, {p0}.",
+  "@mbd93f4de4dcf": {
+    "description": "Hola, {{p0}}.",
+    "placeholders": {
+      "p0": {
+        "type": "String"
+      }
+    }
+  },
+  "m900ab22a2a79": "Lo importante es estar cerca.",
+  "@m900ab22a2a79": {
+    "description": "Lo importante es estar cerca.",
+    "placeholders": {}
+  },
+  "m25fc5f3074b5": "Tu célula",
+  "@m25fc5f3074b5": {
+    "description": "Tu célula",
+    "placeholders": {}
+  },
+  "m67fb2ba71687": "Cada persona\ncuenta.",
+  "@m67fb2ba71687": {
+    "description": "Cada persona\ncuenta.",
+    "placeholders": {}
+  },
+  "m3ed1416b4e71": "Todavía no tienes una célula asignada.",
+  "@m3ed1416b4e71": {
+    "description": "Todavía no tienes una célula asignada.",
+    "placeholders": {}
+  },
+  "m22cb54973300": "{p0} integrantes para acompañar.",
+  "@m22cb54973300": {
+    "description": "{{p0}} integrantes para acompañar.",
+    "placeholders": {
+      "p0": {
+        "type": "String"
+      }
+    }
+  },
+  "m340998e0abc0": "Marcar asistencia",
+  "@m340998e0abc0": {
+    "description": "Marcar asistencia",
+    "placeholders": {}
+  },
+  "mb76bba1125b2": "No pudimos preparar la foto. Prueba con una imagen JPG o PNG más pequeña.",
+  "@mb76bba1125b2": {
+    "description": "No pudimos preparar la foto. Prueba con una imagen JPG o PNG más pequeña.",
+    "placeholders": {}
+  },
+  "mff416f36cb45": "La foto de esta semana",
+  "@mff416f36cb45": {
+    "description": "La foto de esta semana",
+    "placeholders": {}
+  },
+  "m954918fe479e": "Un recuerdo de la reunión, junto a su asistencia. El pastor podrá revisarlo en el historial.",
+  "@m954918fe479e": {
+    "description": "Un recuerdo de la reunión, junto a su asistencia. El pastor podrá revisarlo en el historial.",
+    "placeholders": {}
+  },
+  "md6beb8d9b5ab": "Foto de la reunión semanal",
+  "@md6beb8d9b5ab": {
+    "description": "Foto de la reunión semanal",
+    "placeholders": {}
+  },
+  "ma84a7d52c6c1": "No pudimos mostrar esta foto.",
+  "@ma84a7d52c6c1": {
+    "description": "No pudimos mostrar esta foto.",
+    "placeholders": {}
+  },
+  "m540b61eed958": "Todavía no hay una foto de esta reunión.",
+  "@m540b61eed958": {
+    "description": "Todavía no hay una foto de esta reunión.",
+    "placeholders": {}
+  },
+  "m16724a5eab2a": "Tomar foto",
+  "@m16724a5eab2a": {
+    "description": "Tomar foto",
+    "placeholders": {}
+  },
+  "mc134d6478a98": "Elegir de galería",
+  "@mc134d6478a98": {
+    "description": "Elegir de galería",
+    "placeholders": {}
+  },
+  "m3d44a92b8bbe": "Deshacer cambio",
+  "@m3d44a92b8bbe": {
+    "description": "Deshacer cambio",
+    "placeholders": {}
+  },
+  "m761201703986": "Célula {p0}; semana {p1}; foto de reunión",
+  "@m761201703986": {
+    "description": "Célula {{p0}}; semana {{p1}}; foto de reunión",
+    "placeholders": {
+      "p0": {
+        "type": "String"
+      },
+      "p1": {
+        "type": "String"
+      }
+    }
+  },
+  "m50645d660fa1": "Reportar esta foto o usuario",
+  "@m50645d660fa1": {
+    "description": "Reportar esta foto o usuario",
+    "placeholders": {}
+  },
+  "m645523b074f4": "Preparando la foto…",
+  "@m645523b074f4": {
+    "description": "Preparando la foto…",
+    "placeholders": {}
+  },
+  "m77f96d59dca3": "Foto pendiente. Se enviará al guardar la reunión.",
+  "@m77f96d59dca3": {
+    "description": "Foto pendiente. Se enviará al guardar la reunión.",
+    "placeholders": {}
+  },
+  "mcfaa698de8e2": "El teléfono recuperó una foto que no se había enviado. Comprueba que corresponde a esta semana.",
+  "@mcfaa698de8e2": {
+    "description": "El teléfono recuperó una foto que no se había enviado. Comprueba que corresponde a esta semana.",
+    "placeholders": {}
+  },
+  "m81f5818d024d": "Usar en esta semana",
+  "@m81f5818d024d": {
+    "description": "Usar en esta semana",
+    "placeholders": {}
+  },
+  "m25a2e8bb8311": "Tu espacio de trabajo",
+  "@m25a2e8bb8311": {
+    "description": "Tu espacio de trabajo",
+    "placeholders": {}
+  },
+  "m9cb07a120628": "Elige una iglesia",
+  "@m9cb07a120628": {
+    "description": "Elige una iglesia",
+    "placeholders": {}
+  },
+  "me6a6069fda35": "Tu cuenta administra la plataforma. Selecciona la comunidad que quieres abrir en la app.",
+  "@me6a6069fda35": {
+    "description": "Tu cuenta administra la plataforma. Selecciona la comunidad que quieres abrir en la app.",
+    "placeholders": {}
+  },
+  "m88f5ea4a93e1": "Abrir comunidad",
+  "@m88f5ea4a93e1": {
+    "description": "Abrir comunidad",
+    "placeholders": {}
+  },
+  "m081350fdaaea": "Google access is not configured.",
+  "@m081350fdaaea": {
+    "description": "Google access is not configured.",
+    "placeholders": {}
+  },
+  "mc442ad6fda97": "No pudimos cargar la foto de esta semana.",
+  "@mc442ad6fda97": {
+    "description": "No pudimos cargar la foto de esta semana.",
+    "placeholders": {}
+  },
+  "m31d10fde7a16": "Reunión semanal guardada. Ya forma parte del historial de tu célula.",
+  "@m31d10fde7a16": {
+    "description": "Reunión semanal guardada. Ya forma parte del historial de tu célula.",
+    "placeholders": {}
+  },
+  "m547689bb8b42": "La asistencia está guardada; falta guardar la foto o el registro semanal. Reintenta. {p0}",
+  "@m547689bb8b42": {
+    "description": "La asistencia está guardada; falta guardar la foto o el registro semanal. Reintenta. {{p0}}",
+    "placeholders": {
+      "p0": {
+        "type": "String"
+      }
+    }
+  },
+  "m22b08009589c": "Servicio confirmado.",
+  "@m22b08009589c": {
+    "description": "Servicio confirmado.",
+    "placeholders": {}
+  },
+  "m89a91fa1011b": "Ausencia reportada al líder del ministerio.",
+  "@m89a91fa1011b": {
+    "description": "Ausencia reportada al líder del ministerio.",
+    "placeholders": {}
+  },
+  "mc5ad79152f73": "Tomar una foto",
+  "@mc5ad79152f73": {
+    "description": "Tomar una foto",
+    "placeholders": {}
+  },
+  "me9cad51432e2": "No pudimos cambiar tu foto. Inténtalo de nuevo.",
+  "@me9cad51432e2": {
+    "description": "No pudimos cambiar tu foto. Inténtalo de nuevo.",
+    "placeholders": {}
+  },
+  "m391e20da0c2f": "Foto de perfil de {p0}",
+  "@m391e20da0c2f": {
+    "description": "Foto de perfil de {{p0}}",
+    "placeholders": {
+      "p0": {
+        "type": "String"
+      }
+    }
+  },
+  "me778abe4d995": "Guardando foto…",
+  "@me778abe4d995": {
+    "description": "Guardando foto…",
+    "placeholders": {}
+  },
+  "m91912ae7c0ef": "Cambiar foto de perfil",
+  "@m91912ae7c0ef": {
+    "description": "Cambiar foto de perfil",
+    "placeholders": {}
+  },
+  "m4d091d3ccd71": "Tu espacio",
+  "@m4d091d3ccd71": {
+    "description": "Tu espacio",
+    "placeholders": {}
+  },
+  "mce08fdc24c11": "Mi perfil",
+  "@mce08fdc24c11": {
+    "description": "Mi perfil",
+    "placeholders": {}
+  },
+  "m194139b0bf1f": "No pudimos completar la acción. Revisa tu conexión e inténtalo de nuevo.",
+  "@m194139b0bf1f": {
+    "description": "No pudimos completar la acción. Revisa tu conexión e inténtalo de nuevo.",
+    "placeholders": {}
+  },
+  "me5cbc5e87577": "Iglesia seleccionada",
+  "@me5cbc5e87577": {
+    "description": "Iglesia seleccionada",
+    "placeholders": {}
+  },
+  "m074a5e75a8e3": "Cambiar iglesia",
+  "@m074a5e75a8e3": {
+    "description": "Cambiar iglesia",
+    "placeholders": {}
+  },
+  "mf1186abd0b8b": "Teléfono",
+  "@mf1186abd0b8b": {
+    "description": "Teléfono",
+    "placeholders": {}
+  },
+  "mb3a165bd5c78": "Cumpleaños",
+  "@mb3a165bd5c78": {
+    "description": "Cumpleaños",
+    "placeholders": {}
+  },
+  "m82886eb918c3": "d 'de' MMMM",
+  "@m82886eb918c3": {
+    "description": "d 'de' MMMM",
+    "placeholders": {}
+  },
+  "m2f8aa99e0a61": "Ministerios",
+  "@m2f8aa99e0a61": {
+    "description": "Ministerios",
+    "placeholders": {}
+  },
+  "m86f063376aec": "Un recordatorio cercano",
+  "@m86f063376aec": {
+    "description": "Un recordatorio cercano",
+    "placeholders": {}
+  },
+  "m213667011fa0": "Cumpleaños y servicio, a tu manera. Los turnos confirmados se recuerdan a las 19:00 del día anterior y dos horas antes. Abre la app para mantener tus avisos actualizados.",
+  "@m213667011fa0": {
+    "description": "Cumpleaños y servicio, a tu manera. Los turnos confirmados se recuerdan a las 19:00 del día anterior y dos horas antes. Abre la app para mantener tus avisos actualizados.",
+    "placeholders": {}
+  },
+  "m117814a3584e": "Un momento…",
+  "@m117814a3584e": {
+    "description": "Un momento…",
+    "placeholders": {}
+  },
+  "mad2f3e6fd647": "Desactivar avisos",
+  "@mad2f3e6fd647": {
+    "description": "Desactivar avisos",
+    "placeholders": {}
+  },
+  "m967eadfb6810": "Activar notificaciones",
+  "@m967eadfb6810": {
+    "description": "Activar notificaciones",
+    "placeholders": {}
+  },
+  "mc7aa59693b25": "Reintentar activación de notificaciones",
+  "@mc7aa59693b25": {
+    "description": "Reintentar activación de notificaciones",
+    "placeholders": {}
+  },
+  "me7f4ac0e4faf": "Cumpleaños de mi célula",
+  "@me7f4ac0e4faf": {
+    "description": "Cumpleaños de mi célula",
+    "placeholders": {}
+  },
+  "ma1aa57b0ae00": "Mis turnos de servicio",
+  "@ma1aa57b0ae00": {
+    "description": "Mis turnos de servicio",
+    "placeholders": {}
+  },
+  "meb80d908905f": "No browser",
+  "@meb80d908905f": {
+    "description": "No browser",
+    "placeholders": {}
+  },
+  "m52233e2c4d6b": "Privacidad",
+  "@m52233e2c4d6b": {
+    "description": "Privacidad",
+    "placeholders": {}
+  },
+  "m60eaf1f65f21": "Términos",
+  "@m60eaf1f65f21": {
+    "description": "Términos",
+    "placeholders": {}
+  },
+  "me62d1c062cd5": "Perfil móvil; comunidad {p0}",
+  "@me62d1c062cd5": {
+    "description": "Perfil móvil; comunidad {{p0}}",
+    "placeholders": {
+      "p0": {
+        "type": "String"
+      }
+    }
+  },
+  "mc6e6960395f4": "Cerrar sesión",
+  "@mc6e6960395f4": {
+    "description": "Cerrar sesión",
+    "placeholders": {}
+  },
+  "m8ca066c6dfaf": "Origen no permitido por CORS",
+  "@m8ca066c6dfaf": {
+    "description": "Origen no permitido por CORS",
+    "placeholders": {}
+  },
+  "m2724dd84531f": "Petición no permitida",
+  "@m2724dd84531f": {
+    "description": "Petición no permitida",
+    "placeholders": {}
+  },
+  "md69daf16cbbc": "No se pudo completar la eliminación de Google. Intenta más tarde.",
+  "@md69daf16cbbc": {
+    "description": "No se pudo completar la eliminación de Google. Intenta más tarde.",
+    "placeholders": {}
+  },
+  "ma588e1f94e6d": "No se pudo verificar Google. Intenta de nuevo.",
+  "@ma588e1f94e6d": {
+    "description": "No se pudo verificar Google. Intenta de nuevo.",
+    "placeholders": {}
+  },
+  "mfffaecd0cb7e": "El acceso con Google aún no está configurado",
+  "@mfffaecd0cb7e": {
+    "description": "El acceso con Google aún no está configurado",
+    "placeholders": {}
+  },
+  "m1613505a4579": "Acceso de Google inválido",
+  "@m1613505a4579": {
+    "description": "Acceso de Google inválido",
+    "placeholders": {}
+  },
+  "m2737101960dc": "No se pudo validar el acceso de Google. Vuelve a intentarlo.",
+  "@m2737101960dc": {
+    "description": "No se pudo validar el acceso de Google. Vuelve a intentarlo.",
+    "placeholders": {}
+  },
+  "m64e42b32cc3c": "No se pudo enviar el correo. Inténtalo de nuevo en unos minutos.",
+  "@m64e42b32cc3c": {
+    "description": "No se pudo enviar el correo. Inténtalo de nuevo en unos minutos.",
+    "placeholders": {}
+  },
+  "m1cdef3a9e1dd": "Falta configurar MAIL_FROM_EMAIL en el servidor.",
+  "@m1cdef3a9e1dd": {
+    "description": "Falta configurar MAIL_FROM_EMAIL en el servidor.",
+    "placeholders": {}
+  },
+  "md49a2f75a5a6": "El envío de correos no está configurado en el servidor.",
+  "@md49a2f75a5a6": {
+    "description": "El envío de correos no está configurado en el servidor.",
+    "placeholders": {}
+  },
+  "mfd5ee96cd03a": "La subida de fotos estará disponible cuando se vincule el almacenamiento S3 de Nexode.",
+  "@mfd5ee96cd03a": {
+    "description": "La subida de fotos estará disponible cuando se vincule el almacenamiento S3 de Nexode.",
+    "placeholders": {}
+  },
+  "m0bd1ad5be257": "La foto es demasiado grande",
+  "@m0bd1ad5be257": {
+    "description": "La foto es demasiado grande",
+    "placeholders": {}
+  },
+  "mc4842b4d19d8": "Usa una imagen JPG, PNG o WebP",
+  "@mc4842b4d19d8": {
+    "description": "Usa una imagen JPG, PNG o WebP",
+    "placeholders": {}
+  },
+  "m001f7716a4e1": "La foto debe pesar hasta 500 KB",
+  "@m001f7716a4e1": {
+    "description": "La foto debe pesar hasta 500 KB",
+    "placeholders": {}
+  },
+  "m51be20ade068": "El archivo no es una imagen válida",
+  "@m51be20ade068": {
+    "description": "El archivo no es una imagen válida",
+    "placeholders": {}
+  },
+  "m581039566d05": "No se pudieron borrar todas las fotos. Intenta de nuevo.",
+  "@m581039566d05": {
+    "description": "No se pudieron borrar todas las fotos. Intenta de nuevo.",
+    "placeholders": {}
+  },
+  "md1228e3c81f8": "Período no encontrado",
+  "@md1228e3c81f8": {
+    "description": "Período no encontrado",
+    "placeholders": {}
+  },
+  "m8d7721030ee5": "El período cambió; vuelve a cargarlo",
+  "@m8d7721030ee5": {
+    "description": "El período cambió; vuelve a cargarlo",
+    "placeholders": {}
+  },
+  "m3a6a5d6ef2f5": "El fin debe ser igual o posterior al inicio",
+  "@m3a6a5d6ef2f5": {
+    "description": "El fin debe ser igual o posterior al inicio",
+    "placeholders": {}
+  },
+  "mf49ab2eaafd2": "Estado inválido",
+  "@mf49ab2eaafd2": {
+    "description": "Estado inválido",
+    "placeholders": {}
+  },
+  "m5e9fddcb5c23": "Elige un período activo de tu iglesia",
+  "@m5e9fddcb5c23": {
+    "description": "Elige un período activo de tu iglesia",
+    "placeholders": {}
+  },
+  "mf1dd891ceb73": "Reglas académicas inválidas",
+  "@mf1dd891ceb73": {
+    "description": "Reglas académicas inválidas",
+    "placeholders": {}
+  },
+  "m0f9791ddb49d": "Revisa la nota mínima (0–20), asistencia (0–100) y reglas de evaluación",
+  "@m0f9791ddb49d": {
+    "description": "Revisa la nota mínima (0–20), asistencia (0–100) y reglas de evaluación",
+    "placeholders": {}
+  },
+  "mf67372245802": "El peso debe ser mayor a 0 y no superar 1000",
+  "@mf67372245802": {
+    "description": "El peso debe ser mayor a 0 y no superar 1000",
+    "placeholders": {}
+  },
+  "mce7b34a6d03e": "Filtro académico inválido",
+  "@mce7b34a6d03e": {
+    "description": "Filtro académico inválido",
+    "placeholders": {}
+  },
+  "mc1f8270d480c": "Formato inválido",
+  "@mc1f8270d480c": {
+    "description": "Formato inválido",
+    "placeholders": {}
+  },
+  "m998aede32721": "Este curso ya está registrado en el catálogo",
+  "@m998aede32721": {
+    "description": "Este curso ya está registrado en el catálogo",
+    "placeholders": {}
+  },
+  "m419465850996": "Curso del catálogo no encontrado",
+  "@m419465850996": {
+    "description": "Curso del catálogo no encontrado",
+    "placeholders": {}
+  },
+  "m486bb3f43ca4": "Elige un curso activo del catálogo",
+  "@m486bb3f43ca4": {
+    "description": "Elige un curso activo del catálogo",
+    "placeholders": {}
+  },
+  "m9180e1278ee3": "Solo pastor, owner o líder de zona pueden crear cursos",
+  "@m9180e1278ee3": {
+    "description": "Solo pastor, owner o líder de zona pueden crear cursos",
+    "placeholders": {}
+  },
+  "m990e7ef78621": "Fecha de inicio inválida",
+  "@m990e7ef78621": {
+    "description": "Fecha de inicio inválida",
+    "placeholders": {}
+  },
+  "mfe0a72360caa": "Fecha de fin inválida",
+  "@mfe0a72360caa": {
+    "description": "Fecha de fin inválida",
+    "placeholders": {}
+  },
+  "m9598f28dafe2": "La fecha de fin no puede ser anterior a la de inicio",
+  "@m9598f28dafe2": {
+    "description": "La fecha de fin no puede ser anterior a la de inicio",
+    "placeholders": {}
+  },
+  "me6d557f82794": "Indica la hora de inicio y fin",
+  "@me6d557f82794": {
+    "description": "Indica la hora de inicio y fin",
+    "placeholders": {}
+  },
+  "m824f1c137149": "Indica hasta qué fecha se repetirá la clase",
+  "@m824f1c137149": {
+    "description": "Indica hasta qué fecha se repetirá la clase",
+    "placeholders": {}
+  },
+  "me0e84b558033": "El responsable organiza grupos, maestros y horarios. Puedes editar la descripción, modalidad y ubicación",
+  "@me0e84b558033": {
+    "description": "El responsable organiza grupos, maestros y horarios. Puedes editar la descripción, modalidad y ubicación",
+    "placeholders": {}
+  },
+  "m244358868f2b": "Para finalizar un curso usa la opción \"Finalizar\", donde eliges quiénes aprobaron",
+  "@m244358868f2b": {
+    "description": "Para finalizar un curso usa la opción \"Finalizar\", donde eliges quiénes aprobaron",
+    "placeholders": {}
+  },
+  "m71faa3ee085b": "Para otro ciclo crea un nuevo grupo. Los resultados de este grupo se conservan",
+  "@m71faa3ee085b": {
+    "description": "Para otro ciclo crea un nuevo grupo. Los resultados de este grupo se conservan",
+    "placeholders": {}
+  },
+  "m8dbaaebbdfb6": "Curso eliminado por completo",
+  "@m8dbaaebbdfb6": {
+    "description": "Curso eliminado por completo",
+    "placeholders": {}
+  },
+  "mddbcac3b9b90": "El curso ya está finalizado",
+  "@mddbcac3b9b90": {
+    "description": "El curso ya está finalizado",
+    "placeholders": {}
+  },
+  "m4015c0b29344": "approvedMemberIds debe ser una lista",
+  "@m4015c0b29344": {
+    "description": "approvedMemberIds debe ser una lista",
+    "placeholders": {}
+  },
+  "m778d1e70e55d": "Hay personas que no están inscritas en este curso",
+  "@m778d1e70e55d": {
+    "description": "Hay personas que no están inscritas en este curso",
+    "placeholders": {}
+  },
+  "m8ed83282c95e": "Hay alumnos seleccionados que no cumplen la nota o asistencia mínima del curso",
+  "@m8ed83282c95e": {
+    "description": "Hay alumnos seleccionados que no cumplen la nota o asistencia mínima del curso",
+    "placeholders": {}
+  },
+  "mbd27f7c46e19": "Curso finalizado",
+  "@mbd27f7c46e19": {
+    "description": "Curso finalizado",
+    "placeholders": {}
+  },
+  "m1bb8364d87c4": "El resultado se define al finalizar el curso",
+  "@m1bb8364d87c4": {
+    "description": "El resultado se define al finalizar el curso",
+    "placeholders": {}
+  },
+  "m68b680437320": "Resultado inválido",
+  "@m68b680437320": {
+    "description": "Resultado inválido",
+    "placeholders": {}
+  },
+  "m6fca084dac49": "Alumno no encontrado",
+  "@m6fca084dac49": {
+    "description": "Alumno no encontrado",
+    "placeholders": {}
+  },
+  "mab1b690b3f30": "El curso está finalizado. Reactívalo para agregar alumnos",
+  "@mab1b690b3f30": {
+    "description": "El curso está finalizado. Reactívalo para agregar alumnos",
+    "placeholders": {}
+  },
+  "m5fcda7d76869": "Elige entre 1 y 100 integrantes",
+  "@m5fcda7d76869": {
+    "description": "Elige entre 1 y 100 integrantes",
+    "placeholders": {}
+  },
+  "m27f6b62f7153": "Hay integrantes que no existen o no están activos",
+  "@m27f6b62f7153": {
+    "description": "Hay integrantes que no existen o no están activos",
+    "placeholders": {}
+  },
+  "m93e5cfa4170a": "El curso está finalizado",
+  "@m93e5cfa4170a": {
+    "description": "El curso está finalizado",
+    "placeholders": {}
+  },
+  "me83751df7afd": "Alumno quitado del curso",
+  "@me83751df7afd": {
+    "description": "Alumno quitado del curso",
+    "placeholders": {}
+  },
+  "m4fcdd3bc433d": "Fecha inválida",
+  "@m4fcdd3bc433d": {
+    "description": "Fecha inválida",
+    "placeholders": {}
+  },
+  "m06c72cf0742c": "No se puede registrar asistencia de una fecha futura",
+  "@m06c72cf0742c": {
+    "description": "No se puede registrar asistencia de una fecha futura",
+    "placeholders": {}
+  },
+  "m669e72e76313": "records es obligatorio",
+  "@m669e72e76313": {
+    "description": "records es obligatorio",
+    "placeholders": {}
+  },
+  "m33b50250ce65": "Estado de asistencia inválido",
+  "@m33b50250ce65": {
+    "description": "Estado de asistencia inválido",
+    "placeholders": {}
+  },
+  "mba5fd06579b9": "Asistencia inválida",
+  "@mba5fd06579b9": {
+    "description": "Asistencia inválida",
+    "placeholders": {}
+  },
+  "m4e21c82b28e2": "Asistencia registrada",
+  "@m4e21c82b28e2": {
+    "description": "Asistencia registrada",
+    "placeholders": {}
+  },
+  "mf80088d94c4a": "{p0} inválida",
+  "@mf80088d94c4a": {
+    "description": "{{p0}} inválida",
+    "placeholders": {
+      "p0": {
+        "type": "String"
+      }
+    }
+  },
+  "mcbcc3f1c23db": "Un curso admite hasta {p0} evaluaciones",
+  "@mcbcc3f1c23db": {
+    "description": "Un curso admite hasta {{p0}} evaluaciones",
+    "placeholders": {
+      "p0": {
+        "type": "String"
+      }
+    }
+  },
+  "m904395f4a05b": "Ya existe una evaluación con ese nombre en este curso",
+  "@m904395f4a05b": {
+    "description": "Ya existe una evaluación con ese nombre en este curso",
+    "placeholders": {}
+  },
+  "m9dea7bd54d02": "Evaluación no encontrada",
+  "@m9dea7bd54d02": {
+    "description": "Evaluación no encontrada",
+    "placeholders": {}
+  },
+  "mf4d0ac3ce5fe": "Hay notas mayores a {p0}. Corrígelas antes de bajar la nota máxima",
+  "@mf4d0ac3ce5fe": {
+    "description": "Hay notas mayores a {{p0}}. Corrígelas antes de bajar la nota máxima",
+    "placeholders": {
+      "p0": {
+        "type": "String"
+      }
+    }
+  },
+  "m4e54fdaa2103": "Evaluación eliminada con sus notas",
+  "@m4e54fdaa2103": {
+    "description": "Evaluación eliminada con sus notas",
+    "placeholders": {}
+  },
+  "mf6533f1c48fa": "Hay evaluaciones que no pertenecen a este curso",
+  "@mf6533f1c48fa": {
+    "description": "Hay evaluaciones que no pertenecen a este curso",
+    "placeholders": {}
+  },
+  "m623a05b19744": "Notas guardadas",
+  "@m623a05b19744": {
+    "description": "Notas guardadas",
+    "placeholders": {}
+  },
+  "mee62fb957a54": "El año debe estar entre 1950 y {p0}",
+  "@mee62fb957a54": {
+    "description": "El año debe estar entre 1950 y {{p0}}",
+    "placeholders": {
+      "p0": {
+        "type": "String"
+      }
+    }
+  },
+  "mc1c4e906b8c5": "Elige entre 1 y 200 personas",
+  "@mc1c4e906b8c5": {
+    "description": "Elige entre 1 y 200 personas",
+    "placeholders": {}
+  },
+  "mbf473d605c1e": "Hay integrantes que no existen",
+  "@mbf473d605c1e": {
+    "description": "Hay integrantes que no existen",
+    "placeholders": {}
+  },
+  "mde8e8e3b6fe8": "Este curso lo culminó en la academia. Para cambiarlo, corrige su resultado dentro del curso (pestaña Alumnos)",
+  "@mde8e8e3b6fe8": {
+    "description": "Este curso lo culminó en la academia. Para cambiarlo, corrige su resultado dentro del curso (pestaña Alumnos)",
+    "placeholders": {}
+  },
+  "m4fd17b776e90": "Registro no encontrado",
+  "@m4fd17b776e90": {
+    "description": "Registro no encontrado",
+    "placeholders": {}
+  },
+  "m98aae573223b": "Registro eliminado",
+  "@m98aae573223b": {
+    "description": "Registro eliminado",
+    "placeholders": {}
+  },
+  "m2ed1372db9aa": "Corrige el resultado en la pestaña Alumnos del curso",
+  "@m2ed1372db9aa": {
+    "description": "Corrige el resultado en la pestaña Alumnos del curso",
+    "placeholders": {}
+  },
+  "m244a4a2def12": "Año inválido",
+  "@m244a4a2def12": {
+    "description": "Año inválido",
+    "placeholders": {}
+  },
+  "mcb409aeb787b": "La persona ya tiene ese curso y año",
+  "@mcb409aeb787b": {
+    "description": "La persona ya tiene ese curso y año",
+    "placeholders": {}
+  },
+  "mea249b4c6938": "Curso no encontrado",
+  "@mea249b4c6938": {
+    "description": "Curso no encontrado",
+    "placeholders": {}
+  },
+  "m9e6ef1ec7cc7": "No tienes permiso sobre este curso",
+  "@m9e6ef1ec7cc7": {
+    "description": "No tienes permiso sobre este curso",
+    "placeholders": {}
+  },
+  "md544c424a006": "Las notas deben estar entre 0 y {p0}",
+  "@md544c424a006": {
+    "description": "Las notas deben estar entre 0 y {{p0}}",
+    "placeholders": {
+      "p0": {
+        "type": "String"
+      }
+    }
+  },
+  "mbc987e9bff24": "La nota máxima debe estar entre 1 y 1000",
+  "@mbc987e9bff24": {
+    "description": "La nota máxima debe estar entre 1 y 1000",
+    "placeholders": {}
+  },
+  "me414973f9e63": "Elige una persona activa con el rol de maestro de escuela bíblica",
+  "@me414973f9e63": {
+    "description": "Elige una persona activa con el rol de maestro de escuela bíblica",
+    "placeholders": {}
+  },
+  "m51b1b59222d9": "El maestro está fuera de tu ámbito",
+  "@m51b1b59222d9": {
+    "description": "El maestro está fuera de tu ámbito",
+    "placeholders": {}
+  },
+  "md263744f6983": "Zona fuera de tu ámbito",
+  "@md263744f6983": {
+    "description": "Zona fuera de tu ámbito",
+    "placeholders": {}
+  },
+  "m83bc41f0e6b4": "Selecciona un sector a tu cargo para el curso",
+  "@m83bc41f0e6b4": {
+    "description": "Selecciona un sector a tu cargo para el curso",
+    "placeholders": {}
+  },
+  "mc4e5b918b06f": "Modalidad inválida",
+  "@mc4e5b918b06f": {
+    "description": "Modalidad inválida",
+    "placeholders": {}
+  },
+  "m7d527654038b": "Usa un enlace HTTPS válido para la reunión o ubicación",
+  "@m7d527654038b": {
+    "description": "Usa un enlace HTTPS válido para la reunión o ubicación",
+    "placeholders": {}
+  },
+  "m6e528563763d": "El enlace es demasiado largo",
+  "@m6e528563763d": {
+    "description": "El enlace es demasiado largo",
+    "placeholders": {}
+  },
+  "m03004817b202": "Revisa el horario de la clase",
+  "@m03004817b202": {
+    "description": "Revisa el horario de la clase",
+    "placeholders": {}
+  },
+  "m7ae15470e1e7": "Zona horaria inválida",
+  "@m7ae15470e1e7": {
+    "description": "Zona horaria inválida",
+    "placeholders": {}
+  },
+  "m5778674ffc4f": "Frecuencia inválida",
+  "@m5778674ffc4f": {
+    "description": "Frecuencia inválida",
+    "placeholders": {}
+  },
+  "m76126d167b86": "Ese horario no existe en la zona horaria elegida",
+  "@m76126d167b86": {
+    "description": "Ese horario no existe en la zona horaria elegida",
+    "placeholders": {}
+  },
+  "m9e0b4a5bd61a": "El horario del maestro se está actualizando. Inténtalo de nuevo",
+  "@m9e0b4a5bd61a": {
+    "description": "El horario del maestro se está actualizando. Inténtalo de nuevo",
+    "placeholders": {}
+  },
+  "mb3559dbb1b3c": "El maestro ya tiene una clase de {p0} en ese horario",
+  "@mb3559dbb1b3c": {
+    "description": "El maestro ya tiene una clase de {{p0}} en ese horario",
+    "placeholders": {
+      "p0": {
+        "type": "String"
+      }
+    }
+  },
+  "mae1340819970": "La reserva del horario venció. Inténtalo de nuevo",
+  "@mae1340819970": {
+    "description": "La reserva del horario venció. Inténtalo de nuevo",
+    "placeholders": {}
+  },
+  "mf9f0c907148f": "No tienes permiso para esta acción",
+  "@mf9f0c907148f": {
+    "description": "No tienes permiso para esta acción",
+    "placeholders": {}
+  },
+  "mf7809c492088": "Sector no encontrado",
+  "@mf7809c492088": {
+    "description": "Sector no encontrado",
+    "placeholders": {}
+  },
+  "ma24f326f8d5a": "No tienes acceso a este sector",
+  "@ma24f326f8d5a": {
+    "description": "No tienes acceso a este sector",
+    "placeholders": {}
+  },
+  "maf7ec8c1150f": "Célula no encontrada",
+  "@maf7ec8c1150f": {
+    "description": "Célula no encontrada",
+    "placeholders": {}
+  },
+  "m9554da5bc656": "No tienes permiso sobre esta célula",
+  "@m9554da5bc656": {
+    "description": "No tienes permiso sobre esta célula",
+    "placeholders": {}
+  },
+  "mdd43d9cb3a66": "No puedes registrar asistencias futuras",
+  "@mdd43d9cb3a66": {
+    "description": "No puedes registrar asistencias futuras",
+    "placeholders": {}
+  },
+  "m89451371fe41": "Cada asistencia debe indicar presente o ausente",
+  "@m89451371fe41": {
+    "description": "Cada asistencia debe indicar presente o ausente",
+    "placeholders": {}
+  },
+  "mc2c1487c247f": "Hay integrantes duplicados en la reunión",
+  "@mc2c1487c247f": {
+    "description": "Hay integrantes duplicados en la reunión",
+    "placeholders": {}
+  },
+  "mac5a010eaa77": "Hay integrantes que no pertenecen a la célula o no están activos",
+  "@mac5a010eaa77": {
+    "description": "Hay integrantes que no pertenecen a la célula o no están activos",
+    "placeholders": {}
+  },
+  "md27a62bd3158": "Un integrante ya tiene asistencia registrada en otra célula ese día. Su historial no se sobrescribirá.",
+  "@md27a62bd3158": {
+    "description": "Un integrante ya tiene asistencia registrada en otra célula ese día. Su historial no se sobrescribirá.",
+    "placeholders": {}
+  },
+  "m602e8ccae3be": "La asistencia cambió en otra célula. Recarga antes de guardar.",
+  "@m602e8ccae3be": {
+    "description": "La asistencia cambió en otra célula. Recarga antes de guardar.",
+    "placeholders": {}
+  },
+  "mc46b11838c0a": "El período debe estar ordenado y abarcar como máximo 366 días",
+  "@mc46b11838c0a": {
+    "description": "El período debe estar ordenado y abarcar como máximo 366 días",
+    "placeholders": {}
+  },
+  "m50e3f5fc7bc6": "Página inválida",
+  "@m50e3f5fc7bc6": {
+    "description": "Página inválida",
+    "placeholders": {}
+  },
+  "m56255fb989ba": "Búsqueda inválida",
+  "@m56255fb989ba": {
+    "description": "Búsqueda inválida",
+    "placeholders": {}
+  },
+  "m2ab411996669": "Este integrante no tiene registros en esta célula durante el período",
+  "@m2ab411996669": {
+    "description": "Este integrante no tiene registros en esta célula durante el período",
+    "placeholders": {}
+  },
+  "m7c1f267c1b73": "No se pudo verificar la cuenta.",
+  "@m7c1f267c1b73": {
+    "description": "No se pudo verificar la cuenta.",
+    "placeholders": {}
+  },
+  "m94fe25c9ac61": "Confirma con la misma cuenta de Google que quieres eliminar.",
+  "@m94fe25c9ac61": {
+    "description": "Confirma con la misma cuenta de Google que quieres eliminar.",
+    "placeholders": {}
+  },
+  "mf6a7e428a78c": "No se pudo verificar la cuenta. Revisa tu correo y contraseña.",
+  "@mf6a7e428a78c": {
+    "description": "No se pudo verificar la cuenta. Revisa tu correo y contraseña.",
+    "placeholders": {}
+  },
+  "m3908338baa82": "Confirma con la misma cuenta de Google que usas en SheepLink.",
+  "@m3908338baa82": {
+    "description": "Confirma con la misma cuenta de Google que usas en SheepLink.",
+    "placeholders": {}
+  },
+  "mce656101b2d4": "La contraseña no es correcta. Confirma tu identidad para eliminar la cuenta.",
+  "@mce656101b2d4": {
+    "description": "La contraseña no es correcta. Confirma tu identidad para eliminar la cuenta.",
+    "placeholders": {}
+  },
+  "m8593776fdc58": "La cuenta de administración de plataforma no se elimina desde este flujo.",
+  "@m8593776fdc58": {
+    "description": "La cuenta de administración de plataforma no se elimina desde este flujo.",
+    "placeholders": {}
+  },
+  "md3000f338319": "Confirma que quieres eliminar tu cuenta.",
+  "@md3000f338319": {
+    "description": "Confirma que quieres eliminar tu cuenta.",
+    "placeholders": {}
+  },
+  "mccf10ad90976": "Hay otra eliminación en curso. Intenta de nuevo más tarde.",
+  "@mccf10ad90976": {
+    "description": "Hay otra eliminación en curso. Intenta de nuevo más tarde.",
+    "placeholders": {}
+  },
+  "m60e9ce79588c": "Elige un nuevo propietario y confirma el traspaso antes de eliminar tu cuenta.",
+  "@m60e9ce79588c": {
+    "description": "Elige un nuevo propietario y confirma el traspaso antes de eliminar tu cuenta.",
+    "placeholders": {}
+  },
+  "m698d9310df05": "Elige otro integrante activo de tu iglesia.",
+  "@m698d9310df05": {
+    "description": "Elige otro integrante activo de tu iglesia.",
+    "placeholders": {}
+  },
+  "m2f6d81e0db44": "Sesión requerida",
+  "@m2f6d81e0db44": {
+    "description": "Sesión requerida",
+    "placeholders": {}
+  },
+  "m0dfd46bdd5e2": "Token inválido o expirado",
+  "@m0dfd46bdd5e2": {
+    "description": "Token inválido o expirado",
+    "placeholders": {}
+  },
+  "me2c9720d03a3": "Usuario no válido",
+  "@me2c9720d03a3": {
+    "description": "Usuario no válido",
+    "placeholders": {}
+  },
+  "m798e54e760d7": "No tienes permiso para administrar la plataforma",
+  "@m798e54e760d7": {
+    "description": "No tienes permiso para administrar la plataforma",
+    "placeholders": {}
+  },
+  "m7512dc6cb77e": "Selecciona una iglesia desde el panel de administración",
+  "@m7512dc6cb77e": {
+    "description": "Selecciona una iglesia desde el panel de administración",
+    "placeholders": {}
+  },
+  "m827a60f8ec71": "Solo el administrador de plataforma puede acceder",
+  "@m827a60f8ec71": {
+    "description": "Solo el administrador de plataforma puede acceder",
+    "placeholders": {}
+  },
+  "mdc7060215e05": "Tu cuenta no pertenece a ninguna iglesia",
+  "@mdc7060215e05": {
+    "description": "Tu cuenta no pertenece a ninguna iglesia",
+    "placeholders": {}
+  },
+  "mffe4202a751e": "Elige un plan para activar tu iglesia.",
+  "@mffe4202a751e": {
+    "description": "Elige un plan para activar tu iglesia.",
+    "placeholders": {}
+  },
+  "m78235a837140": "Tu iglesia está suspendida. Contacta al administrador de la plataforma.",
+  "@m78235a837140": {
+    "description": "Tu iglesia está suspendida. Contacta al administrador de la plataforma.",
+    "placeholders": {}
+  },
+  "m75ae869f3e9a": "Tu cuenta se ha eliminado.",
+  "@m75ae869f3e9a": {
+    "description": "Tu cuenta se ha eliminado.",
+    "placeholders": {}
+  },
+  "m62724cfd7301": "Demasiados intentos, intenta de nuevo en unos minutos",
+  "@m62724cfd7301": {
+    "description": "Demasiados intentos, intenta de nuevo en unos minutos",
+    "placeholders": {}
+  },
+  "mdcb8562a5d77": "Demasiados registros desde tu conexión. Intenta más tarde.",
+  "@mdcb8562a5d77": {
+    "description": "Demasiados registros desde tu conexión. Intenta más tarde.",
+    "placeholders": {}
+  },
+  "m9cd5be97318e": "Escribe un correo válido",
+  "@m9cd5be97318e": {
+    "description": "Escribe un correo válido",
+    "placeholders": {}
+  },
+  "m31a90f01f968": "La contraseña debe tener al menos 8 caracteres",
+  "@m31a90f01f968": {
+    "description": "La contraseña debe tener al menos 8 caracteres",
+    "placeholders": {}
+  },
+  "mec21c22c8e26": "La contraseña es demasiado larga (máximo 128 caracteres)",
+  "@mec21c22c8e26": {
+    "description": "La contraseña es demasiado larga (máximo 128 caracteres)",
+    "placeholders": {}
+  },
+  "ma767a0a037fb": "Invitación no válida",
+  "@ma767a0a037fb": {
+    "description": "Invitación no válida",
+    "placeholders": {}
+  },
+  "m40e2f6a950b9": "Esta invitación ya no es válida. Pide a tu administrador que te envíe una nueva.",
+  "@m40e2f6a950b9": {
+    "description": "Esta invitación ya no es válida. Pide a tu administrador que te envíe una nueva.",
+    "placeholders": {}
+  },
+  "m228876529129": "La invitación venció. Pide a tu administrador que te la reenvíe.",
+  "@m228876529129": {
+    "description": "La invitación venció. Pide a tu administrador que te la reenvíe.",
+    "placeholders": {}
+  },
+  "mc54d410b1b37": "Correo y contraseña requeridos",
+  "@mc54d410b1b37": {
+    "description": "Correo y contraseña requeridos",
+    "placeholders": {}
+  },
+  "m2486649f3fd7": "Credenciales incorrectas",
+  "@m2486649f3fd7": {
+    "description": "Credenciales incorrectas",
+    "placeholders": {}
+  },
+  "m4756a46c494e": "Ya existe una cuenta con ese correo. Inicia sesión.",
+  "@m4756a46c494e": {
+    "description": "Ya existe una cuenta con ese correo. Inicia sesión.",
+    "placeholders": {}
+  },
+  "m0fcfbe32001b": "Espera {p0} s antes de pedir otro código",
+  "@m0fcfbe32001b": {
+    "description": "Espera {{p0}} s antes de pedir otro código",
+    "placeholders": {
+      "p0": {
+        "type": "String"
+      }
+    }
+  },
+  "mcd0e38caff52": "Tu registro venció. Vuelve a completar el formulario.",
+  "@mcd0e38caff52": {
+    "description": "Tu registro venció. Vuelve a completar el formulario.",
+    "placeholders": {}
+  },
+  "mb4a273c5e709": "Llegaste al máximo de reenvíos. Intenta de nuevo en una hora.",
+  "@mb4a273c5e709": {
+    "description": "Llegaste al máximo de reenvíos. Intenta de nuevo en una hora.",
+    "placeholders": {}
+  },
+  "mcb54630abdb5": "El código tiene 6 números",
+  "@mcb54630abdb5": {
+    "description": "El código tiene 6 números",
+    "placeholders": {}
+  },
+  "m3b1b7bda5fe8": "Vuelve a completar el registro y acepta los documentos legales.",
+  "@m3b1b7bda5fe8": {
+    "description": "Vuelve a completar el registro y acepta los documentos legales.",
+    "placeholders": {}
+  },
+  "m83642d819f3e": "El código venció. Pide uno nuevo.",
+  "@m83642d819f3e": {
+    "description": "El código venció. Pide uno nuevo.",
+    "placeholders": {}
+  },
+  "m3044a07559ee": "Demasiados intentos con este código. Pide uno nuevo.",
+  "@m3044a07559ee": {
+    "description": "Demasiados intentos con este código. Pide uno nuevo.",
+    "placeholders": {}
+  },
+  "m5dcaa994b3de": "Esta invitación ya fue utilizada. Inicia sesión.",
+  "@m5dcaa994b3de": {
+    "description": "Esta invitación ya fue utilizada. Inicia sesión.",
+    "placeholders": {}
+  },
+  "m18ec7be6367a": "Usa el correo de tu cuenta de SHEEPLINK. Si recibiste una invitación, acéptala primero.",
+  "@m18ec7be6367a": {
+    "description": "Usa el correo de tu cuenta de SHEEPLINK. Si recibiste una invitación, acéptala primero.",
+    "placeholders": {}
+  },
+  "m9baa7821dbbe": "Este acceso de Google no corresponde a tu cuenta",
+  "@m9baa7821dbbe": {
+    "description": "Este acceso de Google no corresponde a tu cuenta",
+    "placeholders": {}
+  },
+  "mdac846fce706": "Tu iglesia no está disponible. Contacta a su responsable.",
+  "@mdac846fce706": {
+    "description": "Tu iglesia no está disponible. Contacta a su responsable.",
+    "placeholders": {}
+  },
+  "mbbc673073953": "Hay una actualización de facturación en curso. Intenta de nuevo.",
+  "@mbbc673073953": {
+    "description": "Hay una actualización de facturación en curso. Intenta de nuevo.",
+    "placeholders": {}
+  },
+  "m7e8c2ebb35bb": "La suscripción tiene una estructura no admitida",
+  "@m7e8c2ebb35bb": {
+    "description": "La suscripción tiene una estructura no admitida",
+    "placeholders": {}
+  },
+  "mfa4596bac162": "Periodo de facturación inválido",
+  "@mfa4596bac162": {
+    "description": "Periodo de facturación inválido",
+    "placeholders": {}
+  },
+  "mb11ab5d4e00e": "Los pagos todavía no están disponibles. Tu cuenta conserva su estado actual.",
+  "@mb11ab5d4e00e": {
+    "description": "Los pagos todavía no están disponibles. Tu cuenta conserva su estado actual.",
+    "placeholders": {}
+  },
+  "m1ea7603de191": "Plan no válido",
+  "@m1ea7603de191": {
+    "description": "Plan no válido",
+    "placeholders": {}
+  },
+  "m14852c5fe8bc": "Precio de Stripe no reconocido",
+  "@m14852c5fe8bc": {
+    "description": "Precio de Stripe no reconocido",
+    "placeholders": {}
+  },
+  "m844655f5bece": "El plan no está disponible temporalmente.",
+  "@m844655f5bece": {
+    "description": "El plan no está disponible temporalmente.",
+    "placeholders": {}
+  },
+  "mfc7dfb07fc88": "Solo el responsable de la cuenta puede gestionar su facturación",
+  "@mfc7dfb07fc88": {
+    "description": "Solo el responsable de la cuenta puede gestionar su facturación",
+    "placeholders": {}
+  },
+  "m446d8b343b71": "Iglesia no encontrada",
+  "@m446d8b343b71": {
+    "description": "Iglesia no encontrada",
+    "placeholders": {}
+  },
+  "ma45fed82562f": "Esta iglesia no puede contratar una suscripción",
+  "@ma45fed82562f": {
+    "description": "Esta iglesia no puede contratar una suscripción",
+    "placeholders": {}
+  },
+  "mf694720f2f41": "Ya existe una suscripción. Adminístrala desde el portal de Stripe.",
+  "@mf694720f2f41": {
+    "description": "Ya existe una suscripción. Adminístrala desde el portal de Stripe.",
+    "placeholders": {}
+  },
+  "mee3898228ed6": "Estamos confirmando tu suscripción. Actualiza el estado en unos instantes.",
+  "@mee3898228ed6": {
+    "description": "Estamos confirmando tu suscripción. Actualiza el estado en unos instantes.",
+    "placeholders": {}
+  },
+  "mfc4c7f5375f8": "Stripe no devolvió el enlace de pago",
+  "@mfc4c7f5375f8": {
+    "description": "Stripe no devolvió el enlace de pago",
+    "placeholders": {}
+  },
+  "mfa78c2821a6a": "Acción de facturación inválida",
+  "@mfa78c2821a6a": {
+    "description": "Acción de facturación inválida",
+    "placeholders": {}
+  },
+  "mcb8739839e7d": "Todavía no hay una cuenta de facturación",
+  "@mcb8739839e7d": {
+    "description": "Todavía no hay una cuenta de facturación",
+    "placeholders": {}
+  },
+  "m6f3d1640a6e2": "No hay una suscripción para administrar",
+  "@m6f3d1640a6e2": {
+    "description": "No hay una suscripción para administrar",
+    "placeholders": {}
+  },
+  "m60a7a727c7e2": "El plan requiere una acción de cambio",
+  "@m60a7a727c7e2": {
+    "description": "El plan requiere una acción de cambio",
+    "placeholders": {}
+  },
+  "ma508f09f5299": "Suscripción no compatible",
+  "@ma508f09f5299": {
+    "description": "Suscripción no compatible",
+    "placeholders": {}
+  },
+  "m8ae7457b37d5": "Elige un plan con capacidad igual o superior",
+  "@m8ae7457b37d5": {
+    "description": "Elige un plan con capacidad igual o superior",
+    "placeholders": {}
+  },
+  "m7525423e9bba": "El cambio anual no está disponible temporalmente",
+  "@m7525423e9bba": {
+    "description": "El cambio anual no está disponible temporalmente",
+    "placeholders": {}
+  },
+  "m8f961ba4a733": "Suscripción sin vínculo válido a la iglesia",
+  "@m8f961ba4a733": {
+    "description": "Suscripción sin vínculo válido a la iglesia",
+    "placeholders": {}
+  },
+  "mf9527baa5d0c": "Hay más de una suscripción para esta iglesia",
+  "@mf9527baa5d0c": {
+    "description": "Hay más de una suscripción para esta iglesia",
+    "placeholders": {}
+  },
+  "mf55d841885cf": "La prueba requiere una tarjeta confirmada.",
+  "@mf55d841885cf": {
+    "description": "La prueba requiere una tarjeta confirmada.",
+    "placeholders": {}
+  },
+  "m3630c815a01a": "El evento no pertenece al modo de Stripe configurado",
+  "@m3630c815a01a": {
+    "description": "El evento no pertenece al modo de Stripe configurado",
+    "placeholders": {}
+  },
+  "m857a74d28d6c": "Firma de Stripe requerida",
+  "@m857a74d28d6c": {
+    "description": "Firma de Stripe requerida",
+    "placeholders": {}
+  },
+  "m7f217f376e41": "Firma de Stripe no válida",
+  "@m7f217f376e41": {
+    "description": "Firma de Stripe no válida",
+    "placeholders": {}
+  },
+  "m66d468d4451f": "Página no encontrada",
+  "@m66d468d4451f": {
+    "description": "Página no encontrada",
+    "placeholders": {}
+  },
+  "mf3c1f4c307d0": "Publicación no encontrada",
+  "@mf3c1f4c307d0": {
+    "description": "Publicación no encontrada",
+    "placeholders": {}
+  },
+  "m49cc112fd429": "Conexión de redes no disponible",
+  "@m49cc112fd429": {
+    "description": "Conexión de redes no disponible",
+    "placeholders": {}
+  },
+  "m50f50cec38f2": "No se pudo consultar n8n. Intenta de nuevo.",
+  "@m50f50cec38f2": {
+    "description": "No se pudo consultar n8n. Intenta de nuevo.",
+    "placeholders": {}
+  },
+  "m4974f35a6516": "Respuesta de redes inválida",
+  "@m4974f35a6516": {
+    "description": "Respuesta de redes inválida",
+    "placeholders": {}
+  },
+  "mcbf331937a65": "Usa letras minúsculas, números y guiones en la dirección",
+  "@mcbf331937a65": {
+    "description": "Usa letras minúsculas, números y guiones en la dirección",
+    "placeholders": {}
+  },
+  "m11b0b7aa2b97": "Portada inválida",
+  "@m11b0b7aa2b97": {
+    "description": "Portada inválida",
+    "placeholders": {}
+  },
+  "m8a6b1c85d7c8": "La portada debe tener una dirección HTTPS pública",
+  "@m8a6b1c85d7c8": {
+    "description": "La portada debe tener una dirección HTTPS pública",
+    "placeholders": {}
+  },
+  "m0a532511843d": "Describe la imagen de portada",
+  "@m0a532511843d": {
+    "description": "Describe la imagen de portada",
+    "placeholders": {}
+  },
+  "m9b10d6a7b52b": "Escribe el contenido del artículo",
+  "@m9b10d6a7b52b": {
+    "description": "Escribe el contenido del artículo",
+    "placeholders": {}
+  },
+  "m36302fae4411": "La publicación cambió. Vuelve a abrirla.",
+  "@m36302fae4411": {
+    "description": "La publicación cambió. Vuelve a abrirla.",
+    "placeholders": {}
+  },
+  "md802b379af93": "La dirección se conserva después de publicar para proteger los enlaces",
+  "@md802b379af93": {
+    "description": "La dirección se conserva después de publicar para proteger los enlaces",
+    "placeholders": {}
+  },
+  "m9c0a924a068c": "El integrante no está activo",
+  "@m9c0a924a068c": {
+    "description": "El integrante no está activo",
+    "placeholders": {}
+  },
+  "m7b4758b5b5cf": "La cuenta vinculada al siervo no está disponible",
+  "@m7b4758b5b5cf": {
+    "description": "La cuenta vinculada al siervo no está disponible",
+    "placeholders": {}
+  },
+  "m5e93fcb92616": "Selecciona hasta 30 células",
+  "@m5e93fcb92616": {
+    "description": "Selecciona hasta 30 células",
+    "placeholders": {}
+  },
+  "ma9787c32b52e": "La célula está desactivada",
+  "@ma9787c32b52e": {
+    "description": "La célula está desactivada",
+    "placeholders": {}
+  },
+  "mfad75f601418": "Una célula ya tiene un encuentro ese día. Edita el itinerario existente primero",
+  "@mfad75f601418": {
+    "description": "Una célula ya tiene un encuentro ese día. Edita el itinerario existente primero",
+    "placeholders": {}
+  },
+  "ma12bdbbb8cdb": "Los responsables deben pertenecer a las células participantes",
+  "@ma12bdbbb8cdb": {
+    "description": "Los responsables deben pertenecer a las células participantes",
+    "placeholders": {}
+  },
+  "mc36e423a0e36": "Versión inválida",
+  "@mc36e423a0e36": {
+    "description": "Versión inválida",
+    "placeholders": {}
+  },
+  "m8b93fa30bc85": "Otra persona guardó cambios. Recarga el itinerario",
+  "@m8b93fa30bc85": {
+    "description": "Otra persona guardó cambios. Recarga el itinerario",
+    "placeholders": {}
+  },
+  "mb70758837c83": "Otra persona actualizó el itinerario. Recarga antes de guardar",
+  "@mb70758837c83": {
+    "description": "Otra persona actualizó el itinerario. Recarga antes de guardar",
+    "placeholders": {}
+  },
+  "m6526d1ea1d0e": "Perfil de iglesia no encontrado",
+  "@m6526d1ea1d0e": {
+    "description": "Perfil de iglesia no encontrado",
+    "placeholders": {}
+  },
+  "mb4edec093f2e": "El fin debe ser posterior al inicio",
+  "@mb4edec093f2e": {
+    "description": "El fin debe ser posterior al inicio",
+    "placeholders": {}
+  },
+  "me72812bcf9d5": "Disciplina no encontrada",
+  "@me72812bcf9d5": {
+    "description": "Disciplina no encontrada",
+    "placeholders": {}
+  },
+  "mbc8b030d8f6f": "Perfil no encontrado",
+  "@mbc8b030d8f6f": {
+    "description": "Perfil no encontrado",
+    "placeholders": {}
+  },
+  "m872c013ad096": "Integrante no encontrado",
+  "@m872c013ad096": {
+    "description": "Integrante no encontrado",
+    "placeholders": {}
+  },
+  "m7ae28aa34f8e": "El itinerario admite hasta 100 actividades",
+  "@m7ae28aa34f8e": {
+    "description": "El itinerario admite hasta 100 actividades",
+    "placeholders": {}
+  },
+  "m6592f49dae72": "Actividad inválida",
+  "@m6592f49dae72": {
+    "description": "Actividad inválida",
+    "placeholders": {}
+  },
+  "ma225c44c0b9b": "Actividad duplicada",
+  "@ma225c44c0b9b": {
+    "description": "Actividad duplicada",
+    "placeholders": {}
+  },
+  "m65aaf20dbdbe": "Indica si la actividad se realizará",
+  "@m65aaf20dbdbe": {
+    "description": "Indica si la actividad se realizará",
+    "placeholders": {}
+  },
+  "m09511e491729": "La duración debe estar entre 1 y 480 minutos",
+  "@m09511e491729": {
+    "description": "La duración debe estar entre 1 y 480 minutos",
+    "placeholders": {}
+  },
+  "m0df69e3121ef": "Cada usuario registra su propio devocional",
+  "@m0df69e3121ef": {
+    "description": "Cada usuario registra su propio devocional",
+    "placeholders": {}
+  },
+  "mb384242d9130": "Solo el líder o apoyo registra devocionales de personas sin cuenta",
+  "@mb384242d9130": {
+    "description": "Solo el líder o apoyo registra devocionales de personas sin cuenta",
+    "placeholders": {}
+  },
+  "me1f05510b93c": "No tienes permiso para revisar devocionales",
+  "@me1f05510b93c": {
+    "description": "No tienes permiso para revisar devocionales",
+    "placeholders": {}
+  },
+  "m1e71bfb8ffae": "Célula fuera de tu responsabilidad",
+  "@m1e71bfb8ffae": {
+    "description": "Célula fuera de tu responsabilidad",
+    "placeholders": {}
+  },
+  "m85c7ca4c2ce8": "Selecciona un rol disponible",
+  "@m85c7ca4c2ce8": {
+    "description": "Selecciona un rol disponible",
+    "placeholders": {}
+  },
+  "m268d81106121": "No puedes consultar el diario de esta persona",
+  "@m268d81106121": {
+    "description": "No puedes consultar el diario de esta persona",
+    "placeholders": {}
+  },
+  "meded344361f7": "El diario personal del pastor es privado",
+  "@meded344361f7": {
+    "description": "El diario personal del pastor es privado",
+    "placeholders": {}
+  },
+  "mdaadfad2f3e1": "No puedes registrar días futuros",
+  "@mdaadfad2f3e1": {
+    "description": "No puedes registrar días futuros",
+    "placeholders": {}
+  },
+  "m504e3384291d": "Otra persona cambió las actividades habituales. Recarga antes de guardar",
+  "@m504e3384291d": {
+    "description": "Otra persona cambió las actividades habituales. Recarga antes de guardar",
+    "placeholders": {}
+  },
+  "m37dece671318": "Registra el bautismo antes de programar a esta persona para servir",
+  "@m37dece671318": {
+    "description": "Registra el bautismo antes de programar a esta persona para servir",
+    "placeholders": {}
+  },
+  "m13543eef4a62": "La cuenta del siervo está suspendida",
+  "@m13543eef4a62": {
+    "description": "La cuenta del siervo está suspendida",
+    "placeholders": {}
+  },
+  "m9b7b41693bed": "Este siervo tiene una disciplina. Usa fechas concretas fuera del período indicado",
+  "@m9b7b41693bed": {
+    "description": "Este siervo tiene una disciplina. Usa fechas concretas fuera del período indicado",
+    "placeholders": {}
+  },
+  "m26567d570396": "En disciplina el {p0}. Un responsable autorizado debe levantar la disciplina para habilitar el servicio",
+  "@m26567d570396": {
+    "description": "En disciplina el {{p0}}. Un responsable autorizado debe levantar la disciplina para habilitar el servicio",
+    "placeholders": {
+      "p0": {
+        "type": "String"
+      }
+    }
+  },
+  "m7ccd7ba7fdc4": "La semana debe comenzar en lunes",
+  "@m7ccd7ba7fdc4": {
+    "description": "La semana debe comenzar en lunes",
+    "placeholders": {}
+  },
+  "md765cd8d90e5": "Guarda la asistencia de esta reunión antes de añadir su foto",
+  "@md765cd8d90e5": {
+    "description": "Guarda la asistencia de esta reunión antes de añadir su foto",
+    "placeholders": {}
+  },
+  "m349cc3d055d1": "El tema debe tener como máximo 120 caracteres",
+  "@m349cc3d055d1": {
+    "description": "El tema debe tener como máximo 120 caracteres",
+    "placeholders": {}
+  },
+  "m51bf99745417": "Esta semana ya tiene otra fecha de reunión registrada",
+  "@m51bf99745417": {
+    "description": "Esta semana ya tiene otra fecha de reunión registrada",
+    "placeholders": {}
+  },
+  "me02514c88abd": "La reunión cambió. Actualiza esta semana antes de guardar.",
+  "@me02514c88abd": {
+    "description": "La reunión cambió. Actualiza esta semana antes de guardar.",
+    "placeholders": {}
+  },
+  "mb4f5319c61ca": "Semana inválida",
+  "@mb4f5319c61ca": {
+    "description": "Semana inválida",
+    "placeholders": {}
+  },
+  "mdf2993131280": "Esta semana aún no tiene foto",
+  "@mdf2993131280": {
+    "description": "Esta semana aún no tiene foto",
+    "placeholders": {}
+  },
+  "maa80384b1b97": "Usuario de iglesia no encontrado",
+  "@maa80384b1b97": {
+    "description": "Usuario de iglesia no encontrado",
+    "placeholders": {}
+  },
+  "me65bf19c19da": "El perfil de integrante debe reactivarse antes de agregarlo",
+  "@me65bf19c19da": {
+    "description": "El perfil de integrante debe reactivarse antes de agregarlo",
+    "placeholders": {}
+  },
+  "md35ff95c82c8": "Esta persona asiste a otra célula. Confirma el cambio de su célula de asistencia.",
+  "@md35ff95c82c8": {
+    "description": "Esta persona asiste a otra célula. Confirma el cambio de su célula de asistencia.",
+    "placeholders": {}
+  },
+  "m606201b8c0b5": "La célula de asistencia cambió. Recarga antes de continuar",
+  "@m606201b8c0b5": {
+    "description": "La célula de asistencia cambió. Recarga antes de continuar",
+    "placeholders": {}
+  },
+  "m844dcf8a7bdb": "Esta persona ya tiene un perfil. Recarga la célula",
+  "@m844dcf8a7bdb": {
+    "description": "Esta persona ya tiene un perfil. Recarga la célula",
+    "placeholders": {}
+  },
+  "mb3b8e9737103": "Foto de perfil no encontrada",
+  "@mb3b8e9737103": {
+    "description": "Foto de perfil no encontrada",
+    "placeholders": {}
+  },
+  "m2ba89fc51dc3": "Indica la hora de reunión de la célula",
+  "@m2ba89fc51dc3": {
+    "description": "Indica la hora de reunión de la célula",
+    "placeholders": {}
+  },
+  "mad43ebe0c8f4": "La hora de fin debe ser posterior al inicio",
+  "@mad43ebe0c8f4": {
+    "description": "La hora de fin debe ser posterior al inicio",
+    "placeholders": {}
+  },
+  "m2c1bdbeb6681": "La reunión no pertenece a esta semana",
+  "@m2c1bdbeb6681": {
+    "description": "La reunión no pertenece a esta semana",
+    "placeholders": {}
+  },
+  "m4508f4bfb8ff": "No puedes registrar una reunión futura",
+  "@m4508f4bfb8ff": {
+    "description": "No puedes registrar una reunión futura",
+    "placeholders": {}
+  },
+  "m9e7af05f14ad": "Zona no encontrada",
+  "@m9e7af05f14ad": {
+    "description": "Zona no encontrada",
+    "placeholders": {}
+  },
+  "m8f1dc62de31e": "Zona fuera de tu alcance",
+  "@m8f1dc62de31e": {
+    "description": "Zona fuera de tu alcance",
+    "placeholders": {}
+  },
+  "m4efbc1478146": "Día inválido",
+  "@m4efbc1478146": {
+    "description": "Día inválido",
+    "placeholders": {}
+  },
+  "m5bdb1fdc699a": "No puedes mover células fuera de tu ámbito",
+  "@m5bdb1fdc699a": {
+    "description": "No puedes mover células fuera de tu ámbito",
+    "placeholders": {}
+  },
+  "m6dc647b05659": "No puedes reactivar la célula: su zona está desactivada. Reactiva la zona primero",
+  "@m6dc647b05659": {
+    "description": "No puedes reactivar la célula: su zona está desactivada. Reactiva la zona primero",
+    "placeholders": {}
+  },
+  "m0ce13ae790d1": "Célula eliminada por completo",
+  "@m0ce13ae790d1": {
+    "description": "Célula eliminada por completo",
+    "placeholders": {}
+  },
+  "m63ad0a054ff7": "Has enviado varias consultas. Espera un minuto e inténtalo de nuevo.",
+  "@m63ad0a054ff7": {
+    "description": "Has enviado varias consultas. Espera un minuto e inténtalo de nuevo.",
+    "placeholders": {}
+  },
+  "m10f2c0b8b820": "Si encuentras un bug o error, envía una solicitud desde Cuenta y ayuda → Contactar soporte o abre esta página: https://app.sheeplink.app/soporte. Si no puedes entrar, escríbenos a krecarfaz@gmail.com o por WhatsApp al +51 981 427 532: https://wa.me/51981427532?text=Hola%2C%20necesito%20ayuda%20con%20SHEEPLINK",
+  "@m10f2c0b8b820": {
+    "description": "Si encuentras un bug o error, envía una solicitud desde Cuenta y ayuda → Contactar soporte o abre esta página: https://app.sheeplink.app/soporte. Si no puedes entrar, escríbenos a krecarfaz@gmail.com o por WhatsApp al +51 981 427 532: https://wa.me/51981427532?text=Hola%2C%20necesito%20ayuda%20con%20SHEEPLINK",
+    "placeholders": {}
+  },
+  "me4ec7cfda7f0": "¡Hola! Soy el asistente de SHEEPLINK. Puedo orientarte sobre Dashboard, Mi espacio, mensajes, comunidad, organización de la iglesia, formación, actividades, planes y uso desde el celular. Si encuentras un bug o error, te indico cómo contactar soporte. ¿Qué necesitas saber?",
+  "@me4ec7cfda7f0": {
+    "description": "¡Hola! Soy el asistente de SHEEPLINK. Puedo orientarte sobre Dashboard, Mi espacio, mensajes, comunidad, organización de la iglesia, formación, actividades, planes y uso desde el celular. Si encuentras un bug o error, te indico cómo contactar soporte. ¿Qué necesitas saber?",
+    "placeholders": {}
+  },
+  "mc8a7a7c9cac6": "SHEEPLINK tiene planes para distintas necesidades y tamaños de iglesia. Los límites de integrantes, células, ministerios y usuarios dependen del plan. Puedes comparar los precios y revisar qué incluye cada uno aquí: https://sheeplink.app/#precios ",
+  "@mc8a7a7c9cac6": {
+    "description": "SHEEPLINK tiene planes para distintas necesidades y tamaños de iglesia. Los límites de integrantes, células, ministerios y usuarios dependen del plan. Puedes comparar los precios y revisar qué incluye cada uno aquí: https://sheeplink.app/#precios ",
+    "placeholders": {}
+  },
+  "m1e0ea0cf3c11": "En “Facturación” puedes consultar tu plan, la fecha de próxima renovación y los pagos procesados con Stripe. Para revisar o resolver un cobro de tu cuenta, contacta a soporte desde Cuenta y ayuda → Contactar soporte.",
+  "@m1e0ea0cf3c11": {
+    "description": "En “Facturación” puedes consultar tu plan, la fecha de próxima renovación y los pagos procesados con Stripe. Para revisar o resolver un cobro de tu cuenta, contacta a soporte desde Cuenta y ayuda → Contactar soporte.",
+    "placeholders": {}
+  },
+  "mcccd88696e38": "SHEEPLINK te ayuda a organizar los integrantes de tu iglesia y su relación con las células y zonas. Puedes invitar a los líderes con su propio usuario; cada persona ve la información que corresponde a su rol. El pastor principal puede consultar la estructura general, mientras los líderes acompañan a sus grupos.",
+  "@mcccd88696e38": {
+    "description": "SHEEPLINK te ayuda a organizar los integrantes de tu iglesia y su relación con las células y zonas. Puedes invitar a los líderes con su propio usuario; cada persona ve la información que corresponde a su rol. El pastor principal puede consultar la estructura general, mientras los líderes acompañan a sus grupos.",
+    "placeholders": {}
+  },
+  "m1f62bc55f062": "En “Invitar a mi iglesia” puedes invitar personas y organizar las responsabilidades de tu equipo. Los accesos y permisos disponibles dependen del rol que les asignes. Si tienes problemas con una invitación, contacta a soporte.",
+  "@m1f62bc55f062": {
+    "description": "En “Invitar a mi iglesia” puedes invitar personas y organizar las responsabilidades de tu equipo. Los accesos y permisos disponibles dependen del rol que les asignes. Si tienes problemas con una invitación, contacta a soporte.",
+    "placeholders": {}
+  },
+  "m5f38559648aa": "Puedes crear zonas y células para reflejar la estructura de tu iglesia, asignar líderes e invitarlos con su propio usuario. El líder de zona puede acompañar a los líderes de célula y revisar la asistencia de su zona; cada usuario ve lo que le corresponde según su rol.",
+  "@m5f38559648aa": {
+    "description": "Puedes crear zonas y células para reflejar la estructura de tu iglesia, asignar líderes e invitarlos con su propio usuario. El líder de zona puede acompañar a los líderes de célula y revisar la asistencia de su zona; cada usuario ve lo que le corresponde según su rol.",
+    "placeholders": {}
+  },
+  "mb590a2d88775": "“Estructura de la iglesia” organiza las zonas y las células que pertenecen a cada sector, para que el liderazgo pueda ver cómo están agrupados los equipos y acompañarlos según sus permisos.",
+  "@mb590a2d88775": {
+    "description": "“Estructura de la iglesia” organiza las zonas y las células que pertenecen a cada sector, para que el liderazgo pueda ver cómo están agrupados los equipos y acompañarlos según sus permisos.",
+    "placeholders": {}
+  },
+  "mede1a0e6a1c7": "Los líderes de célula pueden registrar a sus integrantes y marcar la asistencia cada semana. El líder de zona puede revisar la asistencia de su zona, y el pastor principal puede ver la iglesia completa. Se puede usar desde el navegador del celular, sin instalar nada.",
+  "@mede1a0e6a1c7": {
+    "description": "Los líderes de célula pueden registrar a sus integrantes y marcar la asistencia cada semana. El líder de zona puede revisar la asistencia de su zona, y el pastor principal puede ver la iglesia completa. Se puede usar desde el navegador del celular, sin instalar nada.",
+    "placeholders": {}
+  },
+  "mdab066abf002": "Con SHEEPLINK puedes organizar zonas y células, registrar integrantes, revisar asistencias semanales y coordinar turnos de servicio. También reúne devocionales, cursos, actividades y comunidad. Los líderes acceden con su propio usuario y cada rol ve lo que le corresponde. La plataforma web funciona en el navegador de la computadora o del celular.",
+  "@mdab066abf002": {
+    "description": "Con SHEEPLINK puedes organizar zonas y células, registrar integrantes, revisar asistencias semanales y coordinar turnos de servicio. También reúne devocionales, cursos, actividades y comunidad. Los líderes acceden con su propio usuario y cada rol ve lo que le corresponde. La plataforma web funciona en el navegador de la computadora o del celular.",
+    "placeholders": {}
+  },
+  "mef53cce7f652": "Puedes usar SHEEPLINK desde el navegador de tu celular, sin instalar nada: consultar grupos, registrar asistencia y gestionar tus tareas según tu rol. También está disponible la app para iPhone y iPad en App Store: https://apps.apple.com/pe/app/sheeplink/id6829374579. La app para Android está en preparación y se anunciará cuando esté lista.",
+  "@mef53cce7f652": {
+    "description": "Puedes usar SHEEPLINK desde el navegador de tu celular, sin instalar nada: consultar grupos, registrar asistencia y gestionar tus tareas según tu rol. También está disponible la app para iPhone y iPad en App Store: https://apps.apple.com/pe/app/sheeplink/id6829374579. La app para Android está en preparación y se anunciará cuando esté lista.",
+    "placeholders": {}
+  },
+  "ma7dbd54363ee": "SHEEPLINK se puede usar desde el navegador del celular. La app para iPhone y iPad ya está disponible en App Store: https://apps.apple.com/pe/app/sheeplink/id6829374579. La app para Android está en preparación; todavía no hay un enlace de descarga de Google Play.",
+  "@ma7dbd54363ee": {
+    "description": "SHEEPLINK se puede usar desde el navegador del celular. La app para iPhone y iPad ya está disponible en App Store: https://apps.apple.com/pe/app/sheeplink/id6829374579. La app para Android está en preparación; todavía no hay un enlace de descarga de Google Play.",
+    "placeholders": {}
+  },
+  "m583986165251": "SHEEPLINK permite registrar y dar seguimiento a los devocionales diarios de los cargos de servicio y liderazgo, incluidos los pastores. Si pasan tres días completos consecutivos sin registro, el responsable directo recibe un aviso para acompañar a la persona. El seguimiento queda a criterio del liderazgo y no suspende automáticamente el servicio.",
+  "@m583986165251": {
+    "description": "SHEEPLINK permite registrar y dar seguimiento a los devocionales diarios de los cargos de servicio y liderazgo, incluidos los pastores. Si pasan tres días completos consecutivos sin registro, el responsable directo recibe un aviso para acompañar a la persona. El seguimiento queda a criterio del liderazgo y no suspende automáticamente el servicio.",
+    "placeholders": {}
+  },
+  "m4c5827fc32f3": "En Mis cursos, cada alumno encuentra sus aulas, materiales y resultados. Los cursos pueden mostrar horarios, fechas, modalidad y ubicación o enlace de reunión; el responsable comparte el formulario de inscripción, que también se puede completar desde el celular. El acceso depende de la inscripción o asignación del responsable.",
+  "@m4c5827fc32f3": {
+    "description": "En Mis cursos, cada alumno encuentra sus aulas, materiales y resultados. Los cursos pueden mostrar horarios, fechas, modalidad y ubicación o enlace de reunión; el responsable comparte el formulario de inscripción, que también se puede completar desde el celular. El acceso depende de la inscripción o asignación del responsable.",
+    "placeholders": {}
+  },
+  "m260392419aca": "La sección Formación reúne Mis cursos y Academia Bíblica. Los alumnos pueden acceder a sus aulas, materiales y resultados; quienes administran cursos pueden organizar alumnos, asistencia semanal y calificaciones. Al terminar, los alumnos aprobados quedan en su historial.",
+  "@m260392419aca": {
+    "description": "La sección Formación reúne Mis cursos y Academia Bíblica. Los alumnos pueden acceder a sus aulas, materiales y resultados; quienes administran cursos pueden organizar alumnos, asistencia semanal y calificaciones. Al terminar, los alumnos aprobados quedan en su historial.",
+    "placeholders": {}
+  },
+  "m5338c1be6e49": "En Actividades puedes consultar encuentros de la iglesia como retiros, campamentos, viajes y otras actividades. Los organizadores pueden crear la actividad y compartir un formulario para que las personas se inscriban, incluso desde el celular y sin crear una cuenta. Según los permisos, también pueden gestionar inscripciones, tareas y presupuesto.",
+  "@m5338c1be6e49": {
+    "description": "En Actividades puedes consultar encuentros de la iglesia como retiros, campamentos, viajes y otras actividades. Los organizadores pueden crear la actividad y compartir un formulario para que las personas se inscriban, incluso desde el celular y sin crear una cuenta. Según los permisos, también pueden gestionar inscripciones, tareas y presupuesto.",
+    "placeholders": {}
+  },
+  "m858df0d88cca": "El Dashboard muestra un resumen del mes con cifras, asistencia, mensajes y cumpleaños. La información visible depende de tu rol y permisos en la iglesia.",
+  "@m858df0d88cca": {
+    "description": "El Dashboard muestra un resumen del mes con cifras, asistencia, mensajes y cumpleaños. La información visible depende de tu rol y permisos en la iglesia.",
+    "placeholders": {}
+  },
+  "m11b2bb4575dc": "“Mi espacio” reúne tu calendario personal y tus devocionales. El contenido disponible depende de tu cuenta y responsabilidades en la iglesia.",
+  "@m11b2bb4575dc": {
+    "description": "“Mi espacio” reúne tu calendario personal y tus devocionales. El contenido disponible depende de tu cuenta y responsabilidades en la iglesia.",
+    "placeholders": {}
+  },
+  "m55f79c50962d": "En “Mensajes” puedes revisar avisos del pastor y de los líderes. Si esperabas un aviso y no aparece, contacta a soporte e indica qué mensaje esperabas y cuándo.",
+  "@m55f79c50962d": {
+    "description": "En “Mensajes” puedes revisar avisos del pastor y de los líderes. Si esperabas un aviso y no aparece, contacta a soporte e indica qué mensaje esperabas y cuándo.",
+    "placeholders": {}
+  },
+  "m356001c5acde": "La sección Comunidad reúne devocionales de la iglesia y de tu célula, además de espacios de foro y redes. Lo que puedes consultar depende de tu cuenta y permisos.",
+  "@m356001c5acde": {
+    "description": "La sección Comunidad reúne devocionales de la iglesia y de tu célula, además de espacios de foro y redes. Lo que puedes consultar depende de tu cuenta y permisos.",
+    "placeholders": {}
+  },
+  "m8f7e346778b3": "“Redes de mi iglesia” permite consultar y configurar los enlaces de redes de la iglesia y sus células. Si un enlace está equivocado o no abre, repórtalo a soporte.",
+  "@m8f7e346778b3": {
+    "description": "“Redes de mi iglesia” permite consultar y configurar los enlaces de redes de la iglesia y sus células. Si un enlace está equivocado o no abre, repórtalo a soporte.",
+    "placeholders": {}
+  },
+  "mae7cb3ee1109": "“Consultas” muestra estadísticas y comparativos de asistencia para ayudar a revisar la participación a lo largo del tiempo. Los datos que ves dependen de tu rol y alcance en la iglesia.",
+  "@mae7cb3ee1109": {
+    "description": "“Consultas” muestra estadísticas y comparativos de asistencia para ayudar a revisar la participación a lo largo del tiempo. Los datos que ves dependen de tu rol y alcance en la iglesia.",
+    "placeholders": {}
+  },
+  "m2a8f6ebbc9c0": "Para reportar un bug o error, abre directamente Cuenta y ayuda → Contactar soporte: https://app.sheeplink.app/soporte. Describe lo ocurrido e indica los pasos para reproducirlo; desde esa página podrás consultar el estado de tu solicitud. Si no puedes acceder, escríbenos a krecarfaz@gmail.com o por WhatsApp: https://wa.me/51981427532?text=Hola%2C%20quiero%20reportar%20un%20error%20en%20SHEEPLINK",
+  "@m2a8f6ebbc9c0": {
+    "description": "Para reportar un bug o error, abre directamente Cuenta y ayuda → Contactar soporte: https://app.sheeplink.app/soporte. Describe lo ocurrido e indica los pasos para reproducirlo; desde esa página podrás consultar el estado de tu solicitud. Si no puedes acceder, escríbenos a krecarfaz@gmail.com o por WhatsApp: https://wa.me/51981427532?text=Hola%2C%20quiero%20reportar%20un%20error%20en%20SHEEPLINK",
+    "placeholders": {}
+  },
+  "m18253c314fee": "En Ministerios puedes organizar las áreas de servicio, sus líderes y servidores. Programa turnos para un día de la semana o una fecha específica, consulta quiénes sirven próximamente y revisa el historial de turnos. Cada servidor puede gestionar los turnos de su ministerio según los permisos de su cuenta.",
+  "@m18253c314fee": {
+    "description": "En Ministerios puedes organizar las áreas de servicio, sus líderes y servidores. Programa turnos para un día de la semana o una fecha específica, consulta quiénes sirven próximamente y revisa el historial de turnos. Cada servidor puede gestionar los turnos de su ministerio según los permisos de su cuenta.",
+    "placeholders": {}
+  },
+  "mcbe602695f4b": "Tesorería reúne diezmos, ofrendas, cuentas, ingresos y gastos en un solo lugar. Los usuarios autorizados pueden registrar y corregir movimientos, revisar períodos y consultar informes; el acceso depende del rol: owner y tesorero registran movimientos y el pastor puede consultar. Para dudas sobre permisos o configuración, contáctanos.",
+  "@mcbe602695f4b": {
+    "description": "Tesorería reúne diezmos, ofrendas, cuentas, ingresos y gastos en un solo lugar. Los usuarios autorizados pueden registrar y corregir movimientos, revisar períodos y consultar informes; el acceso depende del rol: owner y tesorero registran movimientos y el pastor puede consultar. Para dudas sobre permisos o configuración, contáctanos.",
+    "placeholders": {}
+  },
+  "m3f16fb802976": "Puedo orientarte sobre Dashboard, Mi espacio, mensajes, devocionales, comunidad y redes, células, integrantes, asistencias, ministerios y turnos, invitaciones, estructura de la iglesia, tesorería, consultas, formación, cursos, actividades, facturación, uso desde el celular y planes. Si encuentras un bug o error, te indico cómo contactar soporte. ¿Qué tema necesitas?",
+  "@m3f16fb802976": {
+    "description": "Puedo orientarte sobre Dashboard, Mi espacio, mensajes, devocionales, comunidad y redes, células, integrantes, asistencias, ministerios y turnos, invitaciones, estructura de la iglesia, tesorería, consultas, formación, cursos, actividades, facturación, uso desde el celular y planes. Si encuentras un bug o error, te indico cómo contactar soporte. ¿Qué tema necesitas?",
+    "placeholders": {}
+  },
+  "ma6404ea5e40c": "¡Hola! Soy el asistente de SHEEPLINK. Puedo orientarte sobre funciones, grupos, asistencia, planes y contacto. ¿Qué necesitas saber?",
+  "@ma6404ea5e40c": {
+    "description": "¡Hola! Soy el asistente de SHEEPLINK. Puedo orientarte sobre funciones, grupos, asistencia, planes y contacto. ¿Qué necesitas saber?",
+    "placeholders": {}
+  },
+  "mc1694a077a1d": "Puedes reportar bugs y errores al equipo de soporte.",
+  "@mc1694a077a1d": {
+    "description": "Puedes reportar bugs y errores al equipo de soporte.",
+    "placeholders": {}
+  },
+  "m3225c307e40e": "En Facturación puedes consultar tu plan, renovación y pagos.",
+  "@m3225c307e40e": {
+    "description": "En Facturación puedes consultar tu plan, renovación y pagos.",
+    "placeholders": {}
+  },
+  "m92107c82c11d": "Los planes y precios de SHEEPLINK se muestran en la página de planes. Para una cotización o ayuda con tu caso, escríbenos a krecarfaz@gmail.com o por WhatsApp al +51 981 427 532.",
+  "@m92107c82c11d": {
+    "description": "Los planes y precios de SHEEPLINK se muestran en la página de planes. Para una cotización o ayuda con tu caso, escríbenos a krecarfaz@gmail.com o por WhatsApp al +51 981 427 532.",
+    "placeholders": {}
+  },
+  "m63e176dad6d6": "El Dashboard muestra el resumen de la iglesia.",
+  "@m63e176dad6d6": {
+    "description": "El Dashboard muestra el resumen de la iglesia.",
+    "placeholders": {}
+  },
+  "m72e6ac525546": "Mi espacio reúne tu calendario y devocionales.",
+  "@m72e6ac525546": {
+    "description": "Mi espacio reúne tu calendario y devocionales.",
+    "placeholders": {}
+  },
+  "ma5d2604f09ca": "En Mensajes puedes revisar avisos de tus líderes.",
+  "@ma5d2604f09ca": {
+    "description": "En Mensajes puedes revisar avisos de tus líderes.",
+    "placeholders": {}
+  },
+  "mf6099b02d6cb": "Puedes consultar las redes de tu iglesia y sus células.",
+  "@mf6099b02d6cb": {
+    "description": "Puedes consultar las redes de tu iglesia y sus células.",
+    "placeholders": {}
+  },
+  "m47c99375f32f": "La sección Comunidad reúne devocionales, foro y redes.",
+  "@m47c99375f32f": {
+    "description": "La sección Comunidad reúne devocionales, foro y redes.",
+    "placeholders": {}
+  },
+  "mc264b577a044": "Puedes invitar personas a tu iglesia y organizar sus responsabilidades.",
+  "@mc264b577a044": {
+    "description": "Puedes invitar personas a tu iglesia y organizar sus responsabilidades.",
+    "placeholders": {}
+  },
+  "mebce5fa23472": "La estructura organiza las zonas y células de la iglesia.",
+  "@mebce5fa23472": {
+    "description": "La estructura organiza las zonas y células de la iglesia.",
+    "placeholders": {}
+  },
+  "m952bd58a321b": "Consultas muestra estadísticas y comparativos de asistencia.",
+  "@m952bd58a321b": {
+    "description": "Consultas muestra estadísticas y comparativos de asistencia.",
+    "placeholders": {}
+  },
+  "m300ddf70a7b4": "SHEEPLINK ayuda a organizar la información de los miembros de tu iglesia. Para detalles de configuración de tu cuenta, contáctanos en krecarfaz@gmail.com.",
+  "@m300ddf70a7b4": {
+    "description": "SHEEPLINK ayuda a organizar la información de los miembros de tu iglesia. Para detalles de configuración de tu cuenta, contáctanos en krecarfaz@gmail.com.",
+    "placeholders": {}
+  },
+  "me858747ef76b": "Puedes organizar células o grupos y consultar su información desde SHEEPLINK. Si necesitas ayuda para configurarlos, escríbenos a krecarfaz@gmail.com o al WhatsApp +51 981 427 532.",
+  "@me858747ef76b": {
+    "description": "Puedes organizar células o grupos y consultar su información desde SHEEPLINK. Si necesitas ayuda para configurarlos, escríbenos a krecarfaz@gmail.com o al WhatsApp +51 981 427 532.",
+    "placeholders": {}
+  },
+  "m3c1a79cd5bc4": "SHEEPLINK permite llevar el control de asistencia. Para resolver dudas sobre el registro en tu iglesia, contáctanos en krecarfaz@gmail.com.",
+  "@m3c1a79cd5bc4": {
+    "description": "SHEEPLINK permite llevar el control de asistencia. Para resolver dudas sobre el registro en tu iglesia, contáctanos en krecarfaz@gmail.com.",
+    "placeholders": {}
+  },
+  "ma57577f6711e": "SHEEPLINK incluye registro y seguimiento de devocionales.",
+  "@ma57577f6711e": {
+    "description": "SHEEPLINK incluye registro y seguimiento de devocionales.",
+    "placeholders": {}
+  },
+  "m00b6dc341e5d": "SHEEPLINK cuenta con formación y Academia Bíblica.",
+  "@m00b6dc341e5d": {
+    "description": "SHEEPLINK cuenta con formación y Academia Bíblica.",
+    "placeholders": {}
+  },
+  "m7b6e634da378": "SHEEPLINK incluye cursos y aulas para alumnos.",
+  "@m7b6e634da378": {
+    "description": "SHEEPLINK incluye cursos y aulas para alumnos.",
+    "placeholders": {}
+  },
+  "md09ff4a80b1a": "SHEEPLINK permite organizar actividades e inscripciones.",
+  "@md09ff4a80b1a": {
+    "description": "SHEEPLINK permite organizar actividades e inscripciones.",
+    "placeholders": {}
+  },
+  "m3ff87a703d71": "SHEEPLINK incluye herramientas de tesorería.",
+  "@m3ff87a703d71": {
+    "description": "SHEEPLINK incluye herramientas de tesorería.",
+    "placeholders": {}
+  },
+  "m1215455f26bf": "SHEEPLINK permite organizar ministerios y turnos de servicio.",
+  "@m1215455f26bf": {
+    "description": "SHEEPLINK permite organizar ministerios y turnos de servicio.",
+    "placeholders": {}
+  },
+  "mddcdc3bb9121": "SHEEPLINK reúne herramientas para organizar la iglesia, sus zonas y células, integrantes, asistencia y turnos de servicio.",
+  "@mddcdc3bb9121": {
+    "description": "SHEEPLINK reúne herramientas para organizar la iglesia, sus zonas y células, integrantes, asistencia y turnos de servicio.",
+    "placeholders": {}
+  },
+  "m12cafb85c35c": "SHEEPLINK está pensado para usarse también desde dispositivos móviles. Si algo no carga bien en tu teléfono, indícanos el modelo y navegador por correo a krecarfaz@gmail.com.",
+  "@m12cafb85c35c": {
+    "description": "SHEEPLINK está pensado para usarse también desde dispositivos móviles. Si algo no carga bien en tu teléfono, indícanos el modelo y navegador por correo a krecarfaz@gmail.com.",
+    "placeholders": {}
+  },
+  "m176efef19731": "Puedes contactar al equipo en krecarfaz@gmail.com o por WhatsApp al +51 981 427 532.",
+  "@m176efef19731": {
+    "description": "Puedes contactar al equipo en krecarfaz@gmail.com o por WhatsApp al +51 981 427 532.",
+    "placeholders": {}
+  },
+  "ma3486b4b566b": "Escribe una consulta de hasta 500 caracteres.",
+  "@ma3486b4b566b": {
+    "description": "Escribe una consulta de hasta 500 caracteres.",
+    "placeholders": {}
+  },
+  "m5bbc47ac8f4d": "Días de prueba inválidos (0 a 365)",
+  "@m5bbc47ac8f4d": {
+    "description": "Días de prueba inválidos (0 a 365)",
+    "placeholders": {}
+  },
+  "m8627a2bbbdaa": "Ya existe un usuario con ese correo",
+  "@m8627a2bbbdaa": {
+    "description": "Ya existe un usuario con ese correo",
+    "placeholders": {}
+  },
+  "m691e015203b7": "Segundo usuario inválido",
+  "@m691e015203b7": {
+    "description": "Segundo usuario inválido",
+    "placeholders": {}
+  },
+  "m0e6eb2575dcb": "Las cuentas de prueba requieren una iglesia temporal con bloqueo al vencer",
+  "@m0e6eb2575dcb": {
+    "description": "Las cuentas de prueba requieren una iglesia temporal con bloqueo al vencer",
+    "placeholders": {}
+  },
+  "m0e4cdbbb2d37": "El segundo correo ya está en uso",
+  "@m0e4cdbbb2d37": {
+    "description": "El segundo correo ya está en uso",
+    "placeholders": {}
+  },
+  "m3f9e5b4dbb14": "El periodo pagado se confirma desde Stripe.",
+  "@m3f9e5b4dbb14": {
+    "description": "El periodo pagado se confirma desde Stripe.",
+    "placeholders": {}
+  },
+  "ma55774647b66": "exempt debe ser verdadero o falso",
+  "@ma55774647b66": {
+    "description": "exempt debe ser verdadero o falso",
+    "placeholders": {}
+  },
+  "m5f072aa67dc4": "La iglesia no está suspendida",
+  "@m5f072aa67dc4": {
+    "description": "La iglesia no está suspendida",
+    "placeholders": {}
+  },
+  "m6a155efde4c8": "No hay nada que cambiar",
+  "@m6a155efde4c8": {
+    "description": "No hay nada que cambiar",
+    "placeholders": {}
+  },
+  "m539b867a2da6": "Los límites del plan se gestionan desde Stripe.",
+  "@m539b867a2da6": {
+    "description": "Los límites del plan se gestionan desde Stripe.",
+    "placeholders": {}
+  },
+  "mbb640b6f584b": "Una iglesia activa necesita la fecha \"Pagada hasta\". El periodo pagado se confirma mediante Stripe.",
+  "@mbb640b6f584b": {
+    "description": "Una iglesia activa necesita la fecha \"Pagada hasta\". El periodo pagado se confirma mediante Stripe.",
+    "placeholders": {}
+  },
+  "m084b15989190": "Una iglesia en prueba necesita la fecha \"Fin de la prueba\". Indícala o márcala como exonerada.",
+  "@m084b15989190": {
+    "description": "Una iglesia en prueba necesita la fecha \"Fin de la prueba\". Indícala o márcala como exonerada.",
+    "placeholders": {}
+  },
+  "m6467218c7dad": "Los pagos se gestionan exclusivamente desde Stripe.",
+  "@m6467218c7dad": {
+    "description": "Los pagos se gestionan exclusivamente desde Stripe.",
+    "placeholders": {}
+  },
+  "m1054774e58a7": "Días de prueba inválidos (1 a 365)",
+  "@m1054774e58a7": {
+    "description": "Días de prueba inválidos (1 a 365)",
+    "placeholders": {}
+  },
+  "ma38bc587ece7": "Esta iglesia ya tiene facturación en Stripe. Gestiona su plan allí.",
+  "@ma38bc587ece7": {
+    "description": "Esta iglesia ya tiene facturación en Stripe. Gestiona su plan allí.",
+    "placeholders": {}
+  },
+  "m13e6f30b5d4d": "Esta iglesia está exonerada: no necesita prueba",
+  "@m13e6f30b5d4d": {
+    "description": "Esta iglesia está exonerada: no necesita prueba",
+    "placeholders": {}
+  },
+  "ma601583e9de8": "Esta iglesia todavía tiene la suscripción pagada. Podrás darle una prueba cuando venza.",
+  "@ma601583e9de8": {
+    "description": "Esta iglesia todavía tiene la suscripción pagada. Podrás darle una prueba cuando venza.",
+    "placeholders": {}
+  },
+  "m2f1dfa5619b9": "Cancela primero la suscripción en Stripe antes de eliminar la iglesia.",
+  "@m2f1dfa5619b9": {
+    "description": "Cancela primero la suscripción en Stripe antes de eliminar la iglesia.",
+    "placeholders": {}
+  },
+  "mffa08249ce6b": "Para eliminarla, escribe el nombre exacto de la iglesia",
+  "@mffa08249ce6b": {
+    "description": "Para eliminarla, escribe el nombre exacto de la iglesia",
+    "placeholders": {}
+  },
+  "m58b827ec72ce": "Iglesia \"{p0}\" eliminada por completo",
+  "@m58b827ec72ce": {
+    "description": "Iglesia \"{{p0}}\" eliminada por completo",
+    "placeholders": {
+      "p0": {
+        "type": "String"
+      }
+    }
+  },
+  "m19b5b657bcce": "La iglesia no tiene un usuario principal activo",
+  "@m19b5b657bcce": {
+    "description": "La iglesia no tiene un usuario principal activo",
+    "placeholders": {}
+  },
+  "m19951c9ca4e8": "{p0} inválida (usa AAAA-MM-DD)",
+  "@m19951c9ca4e8": {
+    "description": "{{p0}} inválida (usa AAAA-MM-DD)",
+    "placeholders": {
+      "p0": {
+        "type": "String"
+      }
+    }
+  },
+  "m6678248badd6": "{p0} inválido (número entero mayor a 0, o vacío para sin tope)",
+  "@m6678248badd6": {
+    "description": "{{p0}} inválido (número entero mayor a 0, o vacío para sin tope)",
+    "placeholders": {
+      "p0": {
+        "type": "String"
+      }
+    }
+  },
+  "mf259ed5d763e": "Tu plan permite hasta {p0} usuarios activos. {p1}",
+  "@mf259ed5d763e": {
+    "description": "Tu plan permite hasta {{p0}} usuarios activos. {{p1}}",
+    "placeholders": {
+      "p0": {
+        "type": "String"
+      },
+      "p1": {
+        "type": "String"
+      }
+    }
+  },
+  "mff847d2eb505": "Tu plan permite hasta {p0} integrantes activos. {p1}",
+  "@mff847d2eb505": {
+    "description": "Tu plan permite hasta {{p0}} integrantes activos. {{p1}}",
+    "placeholders": {
+      "p0": {
+        "type": "String"
+      },
+      "p1": {
+        "type": "String"
+      }
+    }
+  },
+  "m5ea0de903f82": "Tu plan permite hasta {p0} células activas. {p1}",
+  "@m5ea0de903f82": {
+    "description": "Tu plan permite hasta {{p0}} células activas. {{p1}}",
+    "placeholders": {
+      "p0": {
+        "type": "String"
+      },
+      "p1": {
+        "type": "String"
+      }
+    }
+  },
+  "m88e44468523b": "Tu plan permite hasta {p0} ministerios activos. {p1}",
+  "@m88e44468523b": {
+    "description": "Tu plan permite hasta {{p0}} ministerios activos. {{p1}}",
+    "placeholders": {
+      "p0": {
+        "type": "String"
+      },
+      "p1": {
+        "type": "String"
+      }
+    }
+  },
+  "ma2f9156dff08": "El devocional ya cambió. Recarga antes de guardar",
+  "@ma2f9156dff08": {
+    "description": "El devocional ya cambió. Recarga antes de guardar",
+    "placeholders": {}
+  },
+  "m4c02430e9bec": "Solo owner y pastor pueden cambiar la foto de la iglesia",
+  "@m4c02430e9bec": {
+    "description": "Solo owner y pastor pueden cambiar la foto de la iglesia",
+    "placeholders": {}
+  },
+  "ma69c0b55eea5": "Conversación no encontrada",
+  "@ma69c0b55eea5": {
+    "description": "Conversación no encontrada",
+    "placeholders": {}
+  },
+  "m3d6f58e10474": "Respuestas inválidas",
+  "@m3d6f58e10474": {
+    "description": "Respuestas inválidas",
+    "placeholders": {}
+  },
+  "m78bdd7baa63d": "Respuesta inválida",
+  "@m78bdd7baa63d": {
+    "description": "Respuesta inválida",
+    "placeholders": {}
+  },
+  "me930cc7153ac": "Cursor inválido",
+  "@me930cc7153ac": {
+    "description": "Cursor inválido",
+    "placeholders": {}
+  },
+  "mf54ecd02ebf6": "Mensaje no encontrado",
+  "@mf54ecd02ebf6": {
+    "description": "Mensaje no encontrado",
+    "placeholders": {}
+  },
+  "m73dc17c2acb3": "No puedes ocultar este mensaje",
+  "@m73dc17c2acb3": {
+    "description": "No puedes ocultar este mensaje",
+    "placeholders": {}
+  },
+  "m33e37c673240": "Sin portada",
+  "@m33e37c673240": {
+    "description": "Sin portada",
+    "placeholders": {}
+  },
+  "mfb0d5721f7e7": "Si ya tienes una cuenta, inicia sesión para inscribirte.",
+  "@mfb0d5721f7e7": {
+    "description": "Si ya tienes una cuenta, inicia sesión para inscribirte.",
+    "placeholders": {}
+  },
+  "m20efbf5cbd38": "Revisa tu correo para confirmar la inscripción",
+  "@m20efbf5cbd38": {
+    "description": "Revisa tu correo para confirmar la inscripción",
+    "placeholders": {}
+  },
+  "m3ff2cf3d4ed4": "Escribe los seis números del código",
+  "@m3ff2cf3d4ed4": {
+    "description": "Escribe los seis números del código",
+    "placeholders": {}
+  },
+  "m7dac7c65b16b": "El código venció o agotó sus intentos. Inicia la inscripción nuevamente",
+  "@m7dac7c65b16b": {
+    "description": "El código venció o agotó sus intentos. Inicia la inscripción nuevamente",
+    "placeholders": {}
+  },
+  "m4454e8b15406": "Código incorrecto",
+  "@m4454e8b15406": {
+    "description": "Código incorrecto",
+    "placeholders": {}
+  },
+  "m951971b82d63": "Esta inscripción ya fue procesada",
+  "@m951971b82d63": {
+    "description": "Esta inscripción ya fue procesada",
+    "placeholders": {}
+  },
+  "m2b3becd33ae4": "Tu cuenta ya existe. Inicia sesión para inscribirte.",
+  "@m2b3becd33ae4": {
+    "description": "Tu cuenta ya existe. Inicia sesión para inscribirte.",
+    "placeholders": {}
+  },
+  "m5eb44d828b39": "Indica tu fecha de nacimiento",
+  "@m5eb44d828b39": {
+    "description": "Indica tu fecha de nacimiento",
+    "placeholders": {}
+  },
+  "md1eab2b23bd9": "Indica una fecha de nacimiento válida, anterior o igual a hoy",
+  "@md1eab2b23bd9": {
+    "description": "Indica una fecha de nacimiento válida, anterior o igual a hoy",
+    "placeholders": {}
+  },
+  "m43b821535fad": "La inscripción de esta iglesia no está disponible",
+  "@m43b821535fad": {
+    "description": "La inscripción de esta iglesia no está disponible",
+    "placeholders": {}
+  },
+  "m3d45dd7655e5": "Usa una cuenta activa de esta iglesia",
+  "@m3d45dd7655e5": {
+    "description": "Usa una cuenta activa de esta iglesia",
+    "placeholders": {}
+  },
+  "m3f51efc58b24": "Portada actualizada",
+  "@m3f51efc58b24": {
+    "description": "Portada actualizada",
+    "placeholders": {}
+  },
+  "m84b9f3abd554": "Nombre inválido",
+  "@m84b9f3abd554": {
+    "description": "Nombre inválido",
+    "placeholders": {}
+  },
+  "mf651b91f81b1": "Título inválido",
+  "@mf651b91f81b1": {
+    "description": "Título inválido",
+    "placeholders": {}
+  },
+  "m33214bb7e1a0": "Material no encontrado",
+  "@m33214bb7e1a0": {
+    "description": "Material no encontrado",
+    "placeholders": {}
+  },
+  "ma461262a6057": "Material retirado del curso",
+  "@ma461262a6057": {
+    "description": "Material retirado del curso",
+    "placeholders": {}
+  },
+  "me3ee26708ba8": "Indica si habilitar la inscripción",
+  "@me3ee26708ba8": {
+    "description": "Indica si habilitar la inscripción",
+    "placeholders": {}
+  },
+  "m1e54e8186f9a": "Cuenta no disponible",
+  "@m1e54e8186f9a": {
+    "description": "Cuenta no disponible",
+    "placeholders": {}
+  },
+  "m87037a78ad79": "Integrante no disponible",
+  "@m87037a78ad79": {
+    "description": "Integrante no disponible",
+    "placeholders": {}
+  },
+  "m603c80c0b7e3": "Alumno inscrito",
+  "@m603c80c0b7e3": {
+    "description": "Alumno inscrito",
+    "placeholders": {}
+  },
+  "md9675f7894a8": "No puedes modificar este curso",
+  "@md9675f7894a8": {
+    "description": "No puedes modificar este curso",
+    "placeholders": {}
+  },
+  "m54777ee5e7a0": "No estás inscrito en este curso",
+  "@m54777ee5e7a0": {
+    "description": "No estás inscrito en este curso",
+    "placeholders": {}
+  },
+  "mfb6a2dbbfbad": "Inscripción no disponible",
+  "@mfb6a2dbbfbad": {
+    "description": "Inscripción no disponible",
+    "placeholders": {}
+  },
+  "m7e120943731d": "El archivo debe pesar hasta 10 MB",
+  "@m7e120943731d": {
+    "description": "El archivo debe pesar hasta 10 MB",
+    "placeholders": {}
+  },
+  "m49bb69172b93": "Nombre de archivo inválido",
+  "@m49bb69172b93": {
+    "description": "Nombre de archivo inválido",
+    "placeholders": {}
+  },
+  "mf2a9a8d6ce38": "Usa PDF, JPG, PNG, WebP, Word o PowerPoint",
+  "@mf2a9a8d6ce38": {
+    "description": "Usa PDF, JPG, PNG, WebP, Word o PowerPoint",
+    "placeholders": {}
+  },
+  "m2f09ead1e46c": "El contenido del archivo no coincide con su formato",
+  "@m2f09ead1e46c": {
+    "description": "El contenido del archivo no coincide con su formato",
+    "placeholders": {}
+  },
+  "mb7bccfceaae8": "Material no disponible",
+  "@mb7bccfceaae8": {
+    "description": "Material no disponible",
+    "placeholders": {}
+  },
+  "m2b3895aa10ac": "Aviso no encontrado",
+  "@m2b3895aa10ac": {
+    "description": "Aviso no encontrado",
+    "placeholders": {}
+  },
+  "ma06459ac6457": "Este aviso corresponde a su responsable directo",
+  "@ma06459ac6457": {
+    "description": "Este aviso corresponde a su responsable directo",
+    "placeholders": {}
+  },
+  "m9daccfdd30d3": "Este seguimiento ya fue resuelto",
+  "@m9daccfdd30d3": {
+    "description": "Este seguimiento ya fue resuelto",
+    "placeholders": {}
+  },
+  "m20fccb677bba": "El seguimiento cambió. Recarga antes de continuar",
+  "@m20fccb677bba": {
+    "description": "El seguimiento cambió. Recarga antes de continuar",
+    "placeholders": {}
+  },
+  "m68464ed0d6db": "La nota admite hasta 500 caracteres",
+  "@m68464ed0d6db": {
+    "description": "La nota admite hasta 500 caracteres",
+    "placeholders": {}
+  },
+  "md2f2cb85499d": "Acción inválida",
+  "@md2f2cb85499d": {
+    "description": "Acción inválida",
+    "placeholders": {}
+  },
+  "meb6cb05f3899": "Selecciona su superior o un pastor responsable",
+  "@meb6cb05f3899": {
+    "description": "Selecciona su superior o un pastor responsable",
+    "placeholders": {}
+  },
+  "m93f64b5a3d09": "El devocional debe tener hasta 60 000 caracteres",
+  "@m93f64b5a3d09": {
+    "description": "El devocional debe tener hasta 60 000 caracteres",
+    "placeholders": {}
+  },
+  "mdfd97523cd3f": "Escribe una reflexión de hasta 20 000 caracteres",
+  "@mdfd97523cd3f": {
+    "description": "Escribe una reflexión de hasta 20 000 caracteres",
+    "placeholders": {}
+  },
+  "maf0a00c813f1": "Iglesia no disponible",
+  "@maf0a00c813f1": {
+    "description": "Iglesia no disponible",
+    "placeholders": {}
+  },
+  "mb2ac19c180d5": "Tipo de devocional inválido",
+  "@mb2ac19c180d5": {
+    "description": "Tipo de devocional inválido",
+    "placeholders": {}
+  },
+  "mb18133a27e77": "Elige publicar o guardar borrador",
+  "@mb18133a27e77": {
+    "description": "Elige publicar o guardar borrador",
+    "placeholders": {}
+  },
+  "mbeed9b399478": "La publicación cambió. Recarga antes de guardar",
+  "@mbeed9b399478": {
+    "description": "La publicación cambió. Recarga antes de guardar",
+    "placeholders": {}
+  },
+  "m13adc0586369": "Elige un pastor activo de tu iglesia",
+  "@m13adc0586369": {
+    "description": "Elige un pastor activo de tu iglesia",
+    "placeholders": {}
+  },
+  "mb07161585609": "Ya existe un devocional para ese día. Recarga y edítalo",
+  "@mb07161585609": {
+    "description": "Ya existe un devocional para ese día. Recarga y edítalo",
+    "placeholders": {}
+  },
+  "m30b5156eb711": "Imagen no encontrada",
+  "@m30b5156eb711": {
+    "description": "Imagen no encontrada",
+    "placeholders": {}
+  },
+  "m1163dafb0c27": "Solo el equipo pastoral publica para la iglesia",
+  "@m1163dafb0c27": {
+    "description": "Solo el equipo pastoral publica para la iglesia",
+    "placeholders": {}
+  },
+  "m90898cfb9116": "No puedes publicar para esta célula",
+  "@m90898cfb9116": {
+    "description": "No puedes publicar para esta célula",
+    "placeholders": {}
+  },
+  "md7e4a19cd228": "Devocional no encontrado",
+  "@md7e4a19cd228": {
+    "description": "Devocional no encontrado",
+    "placeholders": {}
+  },
+  "md34cfa84cd75": "Devocional no disponible",
+  "@md34cfa84cd75": {
+    "description": "Devocional no disponible",
+    "placeholders": {}
+  },
+  "m4ddd69f25cd0": "Sitemap no encontrado",
+  "@m4ddd69f25cd0": {
+    "description": "Sitemap no encontrado",
+    "placeholders": {}
+  },
+  "m4383edb2d872": "Acepta los términos y confirma la lectura de la política de privacidad.",
+  "@m4383edb2d872": {
+    "description": "Acepta los términos y confirma la lectura de la política de privacidad.",
+    "placeholders": {}
+  },
+  "m25fff146dbb3": "Los documentos legales se actualizaron. Recarga la página y revísalos.",
+  "@m25fff146dbb3": {
+    "description": "Los documentos legales se actualizaron. Recarga la página y revísalos.",
+    "placeholders": {}
+  },
+  "m0bd1e8b6d0bd": "Activa primero al integrante",
+  "@m0bd1e8b6d0bd": {
+    "description": "Activa primero al integrante",
+    "placeholders": {}
+  },
+  "m1ea7e5cf499a": "Actualiza primero el correo del integrante antes de enviar la invitación",
+  "@m1ea7e5cf499a": {
+    "description": "Actualiza primero el correo del integrante antes de enviar la invitación",
+    "placeholders": {}
+  },
+  "mfe1972be3f01": "Disponibilidad inválida",
+  "@mfe1972be3f01": {
+    "description": "Disponibilidad inválida",
+    "placeholders": {}
+  },
+  "me4482a0334e2": "Horario inválido",
+  "@me4482a0334e2": {
+    "description": "Horario inválido",
+    "placeholders": {}
+  },
+  "m434a9894f9ca": "Usa una foto JPG, PNG o WebP de hasta 500 KB",
+  "@m434a9894f9ca": {
+    "description": "Usa una foto JPG, PNG o WebP de hasta 500 KB",
+    "placeholders": {}
+  },
+  "md87eb79f3ad6": "Bautismo inválido",
+  "@md87eb79f3ad6": {
+    "description": "Bautismo inválido",
+    "placeholders": {}
+  },
+  "m2987758c4a85": "El correo de una cuenta vinculada se cambia desde la administración de la cuenta",
+  "@m2987758c4a85": {
+    "description": "El correo de una cuenta vinculada se cambia desde la administración de la cuenta",
+    "placeholders": {}
+  },
+  "maad84023c330": "Integrante eliminado",
+  "@maad84023c330": {
+    "description": "Integrante eliminado",
+    "placeholders": {}
+  },
+  "m54dafa7f8386": "Edad inválida",
+  "@m54dafa7f8386": {
+    "description": "Edad inválida",
+    "placeholders": {}
+  },
+  "m2bcbeaa32780": "Tipo de audiencia inválido",
+  "@m2bcbeaa32780": {
+    "description": "Tipo de audiencia inválido",
+    "placeholders": {}
+  },
+  "m080f8bf888c1": "Solo el pastor o usuario principal puede fijar comunicados",
+  "@m080f8bf888c1": {
+    "description": "Solo el pastor o usuario principal puede fijar comunicados",
+    "placeholders": {}
+  },
+  "mfc1cd6b0c073": "La fecha de vencimiento del fijado debe ser hoy o posterior",
+  "@mfc1cd6b0c073": {
+    "description": "La fecha de vencimiento del fijado debe ser hoy o posterior",
+    "placeholders": {}
+  },
+  "m7a73861cac2d": "Actividad no encontrada",
+  "@m7a73861cac2d": {
+    "description": "Actividad no encontrada",
+    "placeholders": {}
+  },
+  "mce1deecd3160": "Selecciona al menos un grupo de destinatarios válido",
+  "@mce1deecd3160": {
+    "description": "Selecciona al menos un grupo de destinatarios válido",
+    "placeholders": {}
+  },
+  "m8cdf4dc0b78a": "Solo puedes enviar a roles inferiores dentro de tu ámbito",
+  "@m8cdf4dc0b78a": {
+    "description": "Solo puedes enviar a roles inferiores dentro de tu ámbito",
+    "placeholders": {}
+  },
+  "mbd0b68753ed8": "No hay destinatarios activos para esos roles dentro de tu ámbito",
+  "@mbd0b68753ed8": {
+    "description": "No hay destinatarios activos para esos roles dentro de tu ámbito",
+    "placeholders": {}
+  },
+  "m18053caf9255": "No hay destinatarios activos en esa audiencia",
+  "@m18053caf9255": {
+    "description": "No hay destinatarios activos en esa audiencia",
+    "placeholders": {}
+  },
+  "m3123b65b1912": "Marcado como leído",
+  "@m3123b65b1912": {
+    "description": "Marcado como leído",
+    "placeholders": {}
+  },
+  "ma89072806e9e": "Mensaje eliminado",
+  "@ma89072806e9e": {
+    "description": "Mensaje eliminado",
+    "placeholders": {}
+  },
+  "m1cd51e5cd589": "Solo el pastor o usuario principal puede enviar a toda la iglesia",
+  "@m1cd51e5cd589": {
+    "description": "Solo el pastor o usuario principal puede enviar a toda la iglesia",
+    "placeholders": {}
+  },
+  "m3c23f77301f5": "No tienes permiso para enviar comunicados a esa célula",
+  "@m3c23f77301f5": {
+    "description": "No tienes permiso para enviar comunicados a esa célula",
+    "placeholders": {}
+  },
+  "m9aa4d9636e70": "Ministerio no encontrado",
+  "@m9aa4d9636e70": {
+    "description": "Ministerio no encontrado",
+    "placeholders": {}
+  },
+  "m6d054731d7b7": "No tienes permiso para enviar comunicados a este ministerio",
+  "@m6d054731d7b7": {
+    "description": "No tienes permiso para enviar comunicados a este ministerio",
+    "placeholders": {}
+  },
+  "m806882647047": "Ministerio eliminado por completo",
+  "@m806882647047": {
+    "description": "Ministerio eliminado por completo",
+    "placeholders": {}
+  },
+  "m2fc3ca32614a": "El ministerio está desactivado",
+  "@m2fc3ca32614a": {
+    "description": "El ministerio está desactivado",
+    "placeholders": {}
+  },
+  "m1e241ed41db5": "Integrante no encontrado o no activo",
+  "@m1e241ed41db5": {
+    "description": "Integrante no encontrado o no activo",
+    "placeholders": {}
+  },
+  "mf5df4c5a7900": "Esa persona ya sirve en este ministerio",
+  "@mf5df4c5a7900": {
+    "description": "Esa persona ya sirve en este ministerio",
+    "placeholders": {}
+  },
+  "mb1d79ed26f22": "Registra el bautismo antes de añadir a esta persona al servicio",
+  "@mb1d79ed26f22": {
+    "description": "Registra el bautismo antes de añadir a esta persona al servicio",
+    "placeholders": {}
+  },
+  "m845f5aaae128": "Registra el bautismo antes de activar el servicio",
+  "@m845f5aaae128": {
+    "description": "Registra el bautismo antes de activar el servicio",
+    "placeholders": {}
+  },
+  "m49a01b7b2cf5": "Servidor quitado del ministerio",
+  "@m49a01b7b2cf5": {
+    "description": "Servidor quitado del ministerio",
+    "placeholders": {}
+  },
+  "m540e0fbdc688": "Este siervo está en pausa",
+  "@m540e0fbdc688": {
+    "description": "Este siervo está en pausa",
+    "placeholders": {}
+  },
+  "m8fdb31ec6976": "Hora inválida",
+  "@m8fdb31ec6976": {
+    "description": "Hora inválida",
+    "placeholders": {}
+  },
+  "mc88df0fd2fce": "Fechas inválidas",
+  "@mc88df0fd2fce": {
+    "description": "Fechas inválidas",
+    "placeholders": {}
+  },
+  "mc6b86037b1e9": "Elige entre 1 y 62 fechas",
+  "@mc6b86037b1e9": {
+    "description": "Elige entre 1 y 62 fechas",
+    "placeholders": {}
+  },
+  "m7fef71f32acf": "Fecha inválida: {p0}",
+  "@m7fef71f32acf": {
+    "description": "Fecha inválida: {{p0}}",
+    "placeholders": {
+      "p0": {
+        "type": "String"
+      }
+    }
+  },
+  "m1e04efaf878b": "Turno no encontrado",
+  "@m1e04efaf878b": {
+    "description": "Turno no encontrado",
+    "placeholders": {}
+  },
+  "m0d109051c146": "Turno eliminado",
+  "@m0d109051c146": {
+    "description": "Turno eliminado",
+    "placeholders": {}
+  },
+  "m553797d19e8a": "Fecha inválida para el reemplazo",
+  "@m553797d19e8a": {
+    "description": "Fecha inválida para el reemplazo",
+    "placeholders": {}
+  },
+  "md9d841514795": "Elige a otro servidor para el reemplazo",
+  "@md9d841514795": {
+    "description": "Elige a otro servidor para el reemplazo",
+    "placeholders": {}
+  },
+  "m725d06685332": "Ese servidor ya tiene un turno asignado en ese horario",
+  "@m725d06685332": {
+    "description": "Ese servidor ya tiene un turno asignado en ese horario",
+    "placeholders": {}
+  },
+  "m5d09518e2fae": "Fecha inválida para registrar asistencia",
+  "@m5d09518e2fae": {
+    "description": "Fecha inválida para registrar asistencia",
+    "placeholders": {}
+  },
+  "m4574656ac909": "Solo puedes registrar participación en fechas pasadas o de hoy",
+  "@m4574656ac909": {
+    "description": "Solo puedes registrar participación en fechas pasadas o de hoy",
+    "placeholders": {}
+  },
+  "m7eed36c0a36f": "No tienes permiso sobre este ministerio",
+  "@m7eed36c0a36f": {
+    "description": "No tienes permiso sobre este ministerio",
+    "placeholders": {}
+  },
+  "m648e6bf2b74a": "Servidor no encontrado",
+  "@m648e6bf2b74a": {
+    "description": "Servidor no encontrado",
+    "placeholders": {}
+  },
+  "mb69d55e94ef4": "Otra persona actualizó las indicaciones. Recarga antes de guardar.",
+  "@mb69d55e94ef4": {
+    "description": "Otra persona actualizó las indicaciones. Recarga antes de guardar.",
+    "placeholders": {}
+  },
+  "m3204389ff814": "Las notificaciones del navegador aún no están disponibles",
+  "@m3204389ff814": {
+    "description": "Las notificaciones del navegador aún no están disponibles",
+    "placeholders": {}
+  },
+  "mad1bcce76a27": "Tipo de dispositivo inválido",
+  "@mad1bcce76a27": {
+    "description": "Tipo de dispositivo inválido",
+    "placeholders": {}
+  },
+  "m0bd73514053e": "Identificador de instalación inválido",
+  "@m0bd73514053e": {
+    "description": "Identificador de instalación inválido",
+    "placeholders": {}
+  },
+  "m0ad8e1375393": "Registra primero el bautismo de esta persona para asignarle servicio o liderazgo",
+  "@m0ad8e1375393": {
+    "description": "Registra primero el bautismo de esta persona para asignarle servicio o liderazgo",
+    "placeholders": {}
+  },
+  "ma07387e45710": "No se puede usar este correo para una nueva cuenta en esta iglesia",
+  "@ma07387e45710": {
+    "description": "No se puede usar este correo para una nueva cuenta en esta iglesia",
+    "placeholders": {}
+  },
+  "mb38d62d4184f": "La cuenta está suspendida. Su responsable debe reactivarla",
+  "@mb38d62d4184f": {
+    "description": "La cuenta está suspendida. Su responsable debe reactivarla",
+    "placeholders": {}
+  },
+  "m3810c09b5e93": "Esta persona ya tiene otra célula de asistencia. Usa su célula actual o actualiza la asignación desde el panel de permisos",
+  "@m3810c09b5e93": {
+    "description": "Esta persona ya tiene otra célula de asistencia. Usa su célula actual o actualiza la asignación desde el panel de permisos",
+    "placeholders": {}
+  },
+  "m3161bf551480": "Integrante no disponible para vincular",
+  "@m3161bf551480": {
+    "description": "Integrante no disponible para vincular",
+    "placeholders": {}
+  },
+  "m0406053a801d": "Este correo ya pertenece a un integrante de otra célula. Selecciona su perfil actual",
+  "@m0406053a801d": {
+    "description": "Este correo ya pertenece a un integrante de otra célula. Selecciona su perfil actual",
+    "placeholders": {}
+  },
+  "mf0d2169dce20": "El correo debe coincidir con el del integrante seleccionado",
+  "@mf0d2169dce20": {
+    "description": "El correo debe coincidir con el del integrante seleccionado",
+    "placeholders": {}
+  },
+  "md4af4fb83614": "Esta persona ya tiene cuenta. Cambia sus cargos desde su perfil",
+  "@md4af4fb83614": {
+    "description": "Esta persona ya tiene cuenta. Cambia sus cargos desde su perfil",
+    "placeholders": {}
+  },
+  "mbffda598af20": "Esta persona ya tiene cuenta. Usa Roles y asignaciones para cambiar sus responsabilidades",
+  "@mbffda598af20": {
+    "description": "Esta persona ya tiene cuenta. Usa Roles y asignaciones para cambiar sus responsabilidades",
+    "placeholders": {}
+  },
+  "m90a73b032bb9": "El owner o el pastor debe asignar su rol de iglesia desde el panel de permisos",
+  "@m90a73b032bb9": {
+    "description": "El owner o el pastor debe asignar su rol de iglesia desde el panel de permisos",
+    "placeholders": {}
+  },
+  "m498a4bc83bff": "Sector eliminado",
+  "@m498a4bc83bff": {
+    "description": "Sector eliminado",
+    "placeholders": {}
+  },
+  "m479adaeb50a5": "Solo el owner asigna pastores a los sectores",
+  "@m479adaeb50a5": {
+    "description": "Solo el owner asigna pastores a los sectores",
+    "placeholders": {}
+  },
+  "ma132cac22c15": "Pastores inválidos",
+  "@ma132cac22c15": {
+    "description": "Pastores inválidos",
+    "placeholders": {}
+  },
+  "m1bdb89b8a015": "Selecciona pastores de tu iglesia",
+  "@m1bdb89b8a015": {
+    "description": "Selecciona pastores de tu iglesia",
+    "placeholders": {}
+  },
+  "m2faf793f0c04": "Solo el owner y el pastor pueden cambiar roles",
+  "@m2faf793f0c04": {
+    "description": "Solo el owner y el pastor pueden cambiar roles",
+    "placeholders": {}
+  },
+  "m2b23ceeae12a": "Usuario no encontrado",
+  "@m2b23ceeae12a": {
+    "description": "Usuario no encontrado",
+    "placeholders": {}
+  },
+  "m63aaa756bad4": "Solo el administrador del sistema modifica los cargos adicionales del owner",
+  "@m63aaa756bad4": {
+    "description": "Solo el administrador del sistema modifica los cargos adicionales del owner",
+    "placeholders": {}
+  },
+  "m5aaf684022f4": "La cuenta ya está activada o está suspendida",
+  "@m5aaf684022f4": {
+    "description": "La cuenta ya está activada o está suspendida",
+    "placeholders": {}
+  },
+  "mfc77df7cc102": "Solo el owner y el pastor administran cuentas",
+  "@mfc77df7cc102": {
+    "description": "Solo el owner y el pastor administran cuentas",
+    "placeholders": {}
+  },
+  "mc48daa6d07a0": "No puedes asignar uno de estos roles",
+  "@mc48daa6d07a0": {
+    "description": "No puedes asignar uno de estos roles",
+    "placeholders": {}
+  },
+  "mca5421af369e": "Rol desconocido",
+  "@mca5421af369e": {
+    "description": "Rol desconocido",
+    "placeholders": {}
+  },
+  "me5289a2ff214": "La relación de supervisión formaría un ciclo",
+  "@me5289a2ff214": {
+    "description": "La relación de supervisión formaría un ciclo",
+    "placeholders": {}
+  },
+  "m7e02145abb7a": "No puedes modificar tus propios permisos",
+  "@m7e02145abb7a": {
+    "description": "No puedes modificar tus propios permisos",
+    "placeholders": {}
+  },
+  "m3095a9dd286f": "No puedes administrar un cargo de igual o mayor jerarquía",
+  "@m3095a9dd286f": {
+    "description": "No puedes administrar un cargo de igual o mayor jerarquía",
+    "placeholders": {}
+  },
+  "m3d63ee7cf811": "Esta persona no está bajo tu supervisión",
+  "@m3d63ee7cf811": {
+    "description": "Esta persona no está bajo tu supervisión",
+    "placeholders": {}
+  },
+  "mfd3e8af376a5": "Célula de asistencia no encontrada",
+  "@mfd3e8af376a5": {
+    "description": "Célula de asistencia no encontrada",
+    "placeholders": {}
+  },
+  "m8b84506a5e1e": "Célula desactivada",
+  "@m8b84506a5e1e": {
+    "description": "Célula desactivada",
+    "placeholders": {}
+  },
+  "m9a5096f31f86": "La célula a cargo debe pertenecer a tu zona asignada",
+  "@m9a5096f31f86": {
+    "description": "La célula a cargo debe pertenecer a tu zona asignada",
+    "placeholders": {}
+  },
+  "m5fddb87d37b8": "La célula a cargo debe pertenecer a tu sector asignado",
+  "@m5fddb87d37b8": {
+    "description": "La célula a cargo debe pertenecer a tu sector asignado",
+    "placeholders": {}
+  },
+  "me041248fe6ba": "Curso no disponible",
+  "@me041248fe6ba": {
+    "description": "Curso no disponible",
+    "placeholders": {}
+  },
+  "m0b461373f3d2": "Solo puedes invitar alumnos a tus cursos",
+  "@m0b461373f3d2": {
+    "description": "Solo puedes invitar alumnos a tus cursos",
+    "placeholders": {}
+  },
+  "mfdac7c5b7cfd": "No puedes asignar líderes de ministerio",
+  "@mfdac7c5b7cfd": {
+    "description": "No puedes asignar líderes de ministerio",
+    "placeholders": {}
+  },
+  "mb270e5cc23c0": "Solo puedes invitar siervos a tu ministerio",
+  "@mb270e5cc23c0": {
+    "description": "Solo puedes invitar siervos a tu ministerio",
+    "placeholders": {}
+  },
+  "ma925fdf30d57": "Supervisor no disponible",
+  "@ma925fdf30d57": {
+    "description": "Supervisor no disponible",
+    "placeholders": {}
+  },
+  "me6aabafb296b": "El supervisor debe tener una jerarquía mayor",
+  "@me6aabafb296b": {
+    "description": "El supervisor debe tener una jerarquía mayor",
+    "placeholders": {}
+  },
+  "m2802ed794a45": "Esta responsabilidad ya tiene un líder activo",
+  "@m2802ed794a45": {
+    "description": "Esta responsabilidad ya tiene un líder activo",
+    "placeholders": {}
+  },
+  "m3a7bd55f5a7a": "Jerarquía demasiado profunda",
+  "@m3a7bd55f5a7a": {
+    "description": "Jerarquía demasiado profunda",
+    "placeholders": {}
+  },
+  "mb7ee19c4dc21": "Existe un ciclo en la jerarquía",
+  "@mb7ee19c4dc21": {
+    "description": "Existe un ciclo en la jerarquía",
+    "placeholders": {}
+  },
+  "m7086e0f8bd3b": "No se puede eliminar: tiene personas, grupos o historial vinculados. Reasigna sus dependencias o desactívalo para conservar la información.",
+  "@m7086e0f8bd3b": {
+    "description": "No se puede eliminar: tiene personas, grupos o historial vinculados. Reasigna sus dependencias o desactívalo para conservar la información.",
+    "placeholders": {}
+  },
+  "m810836f77330": "Foto no encontrada",
+  "@m810836f77330": {
+    "description": "Foto no encontrada",
+    "placeholders": {}
+  },
+  "m40d774f249a9": "Sin acceso a esta foto",
+  "@m40d774f249a9": {
+    "description": "Sin acceso a esta foto",
+    "placeholders": {}
+  },
+  "m59574faa5411": "Asignación no encontrada",
+  "@m59574faa5411": {
+    "description": "Asignación no encontrada",
+    "placeholders": {}
+  },
+  "mb1ff1405a132": "Esta asignación ya tiene una respuesta",
+  "@mb1ff1405a132": {
+    "description": "Esta asignación ya tiene una respuesta",
+    "placeholders": {}
+  },
+  "mfb0d26bb4b10": "La asignación ya cambió",
+  "@mfb0d26bb4b10": {
+    "description": "La asignación ya cambió",
+    "placeholders": {}
+  },
+  "m58151fbaed35": "Esta asignación ya fue declinada",
+  "@m58151fbaed35": {
+    "description": "Esta asignación ya fue declinada",
+    "placeholders": {}
+  },
+  "mea71c5a4167d": "No puedes declinar un turno pasado",
+  "@mea71c5a4167d": {
+    "description": "No puedes declinar un turno pasado",
+    "placeholders": {}
+  },
+  "m3dbf02d26cc4": "Fecha inválida para este turno semanal",
+  "@m3dbf02d26cc4": {
+    "description": "Fecha inválida para este turno semanal",
+    "placeholders": {}
+  },
+  "m4bf390b55c03": "Este diario privado corresponde al pastor",
+  "@m4bf390b55c03": {
+    "description": "Este diario privado corresponde al pastor",
+    "placeholders": {}
+  },
+  "mbba5902f0583": "Género inválido",
+  "@mbba5902f0583": {
+    "description": "Género inválido",
+    "placeholders": {}
+  },
+  "m21d47385a934": "Escribe un teléfono válido",
+  "@m21d47385a934": {
+    "description": "Escribe un teléfono válido",
+    "placeholders": {}
+  },
+  "m0bb070a3e881": "Célula o ministerio no disponible",
+  "@m0bb070a3e881": {
+    "description": "Célula o ministerio no disponible",
+    "placeholders": {}
+  },
+  "m5a1f7ea6f6e6": "Conecta Stripe para consultar ingresos, comisiones y resultado.",
+  "@m5a1f7ea6f6e6": {
+    "description": "Conecta Stripe para consultar ingresos, comisiones y resultado.",
+    "placeholders": {}
+  },
+  "mda9cbf1451b7": "No se pudo consultar Stripe. Reintenta en unos instantes.",
+  "@mda9cbf1451b7": {
+    "description": "No se pudo consultar Stripe. Reintenta en unos instantes.",
+    "placeholders": {}
+  },
+  "m985727b7c693": "Elige un periodo de hasta 366 días, con inicio anterior al fin",
+  "@m985727b7c693": {
+    "description": "Elige un periodo de hasta 366 días, con inicio anterior al fin",
+    "placeholders": {}
+  },
+  "m22d322811e8d": "Escribe un importe positivo con hasta dos decimales",
+  "@m22d322811e8d": {
+    "description": "Escribe un importe positivo con hasta dos decimales",
+    "placeholders": {}
+  },
+  "m290cbbf78480": "El importe debe ser mayor a cero",
+  "@m290cbbf78480": {
+    "description": "El importe debe ser mayor a cero",
+    "placeholders": {}
+  },
+  "m0fc3f0a6dc23": "Moneda inválida",
+  "@m0fc3f0a6dc23": {
+    "description": "Moneda inválida",
+    "placeholders": {}
+  },
+  "mcd9d0af6a8b7": "Indica si el costo se repite mensualmente",
+  "@mcd9d0af6a8b7": {
+    "description": "Indica si el costo se repite mensualmente",
+    "placeholders": {}
+  },
+  "me18b0c64ec22": "Gasto no encontrado",
+  "@me18b0c64ec22": {
+    "description": "Gasto no encontrado",
+    "placeholders": {}
+  },
+  "m4dacfcb18677": "Restaura el costo antes de cambiar su frecuencia",
+  "@m4dacfcb18677": {
+    "description": "Restaura el costo antes de cambiar su frecuencia",
+    "placeholders": {}
+  },
+  "m4d71eb8344a8": "Para una nueva serie, registra otro costo con su fecha de inicio",
+  "@m4d71eb8344a8": {
+    "description": "Para una nueva serie, registra otro costo con su fecha de inicio",
+    "placeholders": {}
+  },
+  "m716f77182bb8": "Este costo no es mensual",
+  "@m716f77182bb8": {
+    "description": "Este costo no es mensual",
+    "placeholders": {}
+  },
+  "m2664250e7b4d": "Rol inválido",
+  "@m2664250e7b4d": {
+    "description": "Rol inválido",
+    "placeholders": {}
+  },
+  "m3f632d15f63d": "Estado de actividad inválido",
+  "@m3f632d15f63d": {
+    "description": "Estado de actividad inválido",
+    "placeholders": {}
+  },
+  "mfebeae94bf91": "groupBy inválido",
+  "@mfebeae94bf91": {
+    "description": "groupBy inválido",
+    "placeholders": {}
+  },
+  "m5a52b9b48b4d": "No tienes permiso para esta consulta",
+  "@m5a52b9b48b4d": {
+    "description": "No tienes permiso para esta consulta",
+    "placeholders": {}
+  },
+  "m0a5d700ce089": "No tienes permiso sobre esa zona",
+  "@m0a5d700ce089": {
+    "description": "No tienes permiso sobre esa zona",
+    "placeholders": {}
+  },
+  "m9457af4e3331": "Esta acción solo cambia el estado del bien",
+  "@m9457af4e3331": {
+    "description": "Esta acción solo cambia el estado del bien",
+    "placeholders": {}
+  },
+  "m6f751ea2f43c": "Primero registra el daño; desde Dañados puedes enviar a reparación o dar de baja",
+  "@m6f751ea2f43c": {
+    "description": "Primero registra el daño; desde Dañados puedes enviar a reparación o dar de baja",
+    "placeholders": {}
+  },
+  "maef3e44f787f": "Selecciona un estado diferente",
+  "@maef3e44f787f": {
+    "description": "Selecciona un estado diferente",
+    "placeholders": {}
+  },
+  "mdc023a8ee5d2": "El bien cambió, está prestado o dado de baja. Actualiza el inventario.",
+  "@mdc023a8ee5d2": {
+    "description": "El bien cambió, está prestado o dado de baja. Actualiza el inventario.",
+    "placeholders": {}
+  },
+  "m31a57a02b91d": "Selecciona un icono válido para el bien",
+  "@m31a57a02b91d": {
+    "description": "Selecciona un icono válido para el bien",
+    "placeholders": {}
+  },
+  "m4b6d1388fad5": "Categoría inválida",
+  "@m4b6d1388fad5": {
+    "description": "Categoría inválida",
+    "placeholders": {}
+  },
+  "me72e07dd6527": "Filtro de estado inválido",
+  "@me72e07dd6527": {
+    "description": "Filtro de estado inválido",
+    "placeholders": {}
+  },
+  "mda5b2abcb44a": "Bien no encontrado",
+  "@mda5b2abcb44a": {
+    "description": "Bien no encontrado",
+    "placeholders": {}
+  },
+  "mf2320ead5f5d": "El bien ya no está disponible",
+  "@mf2320ead5f5d": {
+    "description": "El bien ya no está disponible",
+    "placeholders": {}
+  },
+  "m1486edae92c3": "Indica el resultado de la reparación",
+  "@m1486edae92c3": {
+    "description": "Indica el resultado de la reparación",
+    "placeholders": {}
+  },
+  "me5ba17088d71": "La finalización no puede ser anterior al inicio",
+  "@me5ba17088d71": {
+    "description": "La finalización no puede ser anterior al inicio",
+    "placeholders": {}
+  },
+  "mef51003546aa": "La fecha de inicio no coincide con la reparación",
+  "@mef51003546aa": {
+    "description": "La fecha de inicio no coincide con la reparación",
+    "placeholders": {}
+  },
+  "mbaa1c7e99359": "Identificador del envío inválido",
+  "@mbaa1c7e99359": {
+    "description": "Identificador del envío inválido",
+    "placeholders": {}
+  },
+  "mcc234822609a": "Este envío ya se utilizó con otros datos de reparación",
+  "@mcc234822609a": {
+    "description": "Este envío ya se utilizó con otros datos de reparación",
+    "placeholders": {}
+  },
+  "mec9d9fff9e0f": "La finalización ya está en proceso; actualiza el inventario",
+  "@mec9d9fff9e0f": {
+    "description": "La finalización ya está en proceso; actualiza el inventario",
+    "placeholders": {}
+  },
+  "m45c5da1f9c64": "El bien no está en reparación",
+  "@m45c5da1f9c64": {
+    "description": "El bien no está en reparación",
+    "placeholders": {}
+  },
+  "m87f02ebd83ac": "La reparación cambió; actualiza antes de finalizar",
+  "@m87f02ebd83ac": {
+    "description": "La reparación cambió; actualiza antes de finalizar",
+    "placeholders": {}
+  },
+  "m5e93190e6f91": "Registra el bien como dañado y luego envíalo a reparación con su fecha",
+  "@m5e93190e6f91": {
+    "description": "Registra el bien como dañado y luego envíalo a reparación con su fecha",
+    "placeholders": {}
+  },
+  "m6addda95d165": "Registra entre 1 y 100 unidades",
+  "@m6addda95d165": {
+    "description": "Registra entre 1 y 100 unidades",
+    "placeholders": {}
+  },
+  "mda0f72288b4b": "El número de serie corresponde a una sola unidad",
+  "@mda0f72288b4b": {
+    "description": "El número de serie corresponde a una sola unidad",
+    "placeholders": {}
+  },
+  "m8965bb0605f1": "Usa letras, números, guion o guion bajo en el código",
+  "@m8965bb0605f1": {
+    "description": "Usa letras, números, guion o guion bajo en el código",
+    "placeholders": {}
+  },
+  "mb9ea507e981b": "No puedes editar un bien prestado, dado de baja o con una reparación pendiente",
+  "@mb9ea507e981b": {
+    "description": "No puedes editar un bien prestado, dado de baja o con una reparación pendiente",
+    "placeholders": {}
+  },
+  "m322032c513ae": "Usa la acción de reparación para cambiar el estado",
+  "@m322032c513ae": {
+    "description": "Usa la acción de reparación para cambiar el estado",
+    "placeholders": {}
+  },
+  "m6e55237ce7b9": "Habilita explícitamente la edición de los datos de identificación",
+  "@m6e55237ce7b9": {
+    "description": "Habilita explícitamente la edición de los datos de identificación",
+    "placeholders": {}
+  },
+  "mb39fa937bc42": "El bien cambió. Actualiza antes de editar.",
+  "@mb39fa937bc42": {
+    "description": "El bien cambió. Actualiza antes de editar.",
+    "placeholders": {}
+  },
+  "me3f840d43900": "Solo puedes dar de baja un bien dañado sin préstamo ni reparación pendiente",
+  "@me3f840d43900": {
+    "description": "Solo puedes dar de baja un bien dañado sin préstamo ni reparación pendiente",
+    "placeholders": {}
+  },
+  "m06fedf8b85c9": "La devolución prevista debe ser igual o posterior a la entrega",
+  "@m06fedf8b85c9": {
+    "description": "La devolución prevista debe ser igual o posterior a la entrega",
+    "placeholders": {}
+  },
+  "m1d9f3bda3371": "Este envío ya se utilizó para otro préstamo",
+  "@m1d9f3bda3371": {
+    "description": "Este envío ya se utilizó para otro préstamo",
+    "placeholders": {}
+  },
+  "m9de846ea3209": "El bien ya está prestado, dado de baja o no está operativo. Actualiza el inventario.",
+  "@m9de846ea3209": {
+    "description": "El bien ya está prestado, dado de baja o no está operativo. Actualiza el inventario.",
+    "placeholders": {}
+  },
+  "madbd02368ca7": "Devuelve el bien como dañado y luego registra la reparación",
+  "@madbd02368ca7": {
+    "description": "Devuelve el bien como dañado y luego registra la reparación",
+    "placeholders": {}
+  },
+  "mcc8607f6bb1a": "Préstamo no encontrado",
+  "@mcc8607f6bb1a": {
+    "description": "Préstamo no encontrado",
+    "placeholders": {}
+  },
+  "mebf61e659ad3": "Revisa la fecha de devolución o actualiza el préstamo: ya pudo haber sido devuelto",
+  "@mebf61e659ad3": {
+    "description": "Revisa la fecha de devolución o actualiza el préstamo: ya pudo haber sido devuelto",
+    "placeholders": {}
+  },
+  "m5974c608ab46": "Demasiadas inscripciones desde esta conexión. Intenta más tarde.",
+  "@m5974c608ab46": {
+    "description": "Demasiadas inscripciones desde esta conexión. Intenta más tarde.",
+    "placeholders": {}
+  },
+  "me2aecb7547c4": "Completa el formulario de inscripción. No necesitas crear una cuenta",
+  "@me2aecb7547c4": {
+    "description": "Completa el formulario de inscripción. No necesitas crear una cuenta",
+    "placeholders": {}
+  },
+  "ma0553759519c": "La inscripción a actividades ya no crea cuentas. Completa el formulario",
+  "@ma0553759519c": {
+    "description": "La inscripción a actividades ya no crea cuentas. Completa el formulario",
+    "placeholders": {}
+  },
+  "mf0f2ef142fe6": "{p0} inválido",
+  "@mf0f2ef142fe6": {
+    "description": "{{p0}} inválido",
+    "placeholders": {
+      "p0": {
+        "type": "String"
+      }
+    }
+  },
+  "m383cac389373": "{p0}: usa un importe positivo con hasta dos decimales",
+  "@m383cac389373": {
+    "description": "{{p0}}: usa un importe positivo con hasta dos decimales",
+    "placeholders": {
+      "p0": {
+        "type": "String"
+      }
+    }
+  },
+  "m3c41898cb268": "{p0} debe ser mayor que cero",
+  "@m3c41898cb268": {
+    "description": "{{p0}} debe ser mayor que cero",
+    "placeholders": {
+      "p0": {
+        "type": "String"
+      }
+    }
+  },
+  "m5ebd1ac4c051": "Cantidad inválida",
+  "@m5ebd1ac4c051": {
+    "description": "Cantidad inválida",
+    "placeholders": {}
+  },
+  "m25a94117096b": "Presupuesto demasiado grande",
+  "@m25a94117096b": {
+    "description": "Presupuesto demasiado grande",
+    "placeholders": {}
+  },
+  "md99a69cf46bd": "Indica si el gasto fue realizado",
+  "@md99a69cf46bd": {
+    "description": "Indica si el gasto fue realizado",
+    "placeholders": {}
+  },
+  "m01285174d983": "No puedes elegir administradores",
+  "@m01285174d983": {
+    "description": "No puedes elegir administradores",
+    "placeholders": {}
+  },
+  "m34bf86fbe4ef": "Solo el creador y el owner pueden cambiar los administradores",
+  "@m34bf86fbe4ef": {
+    "description": "Solo el creador y el owner pueden cambiar los administradores",
+    "placeholders": {}
+  },
+  "m5e3326c8cbb8": "La actividad cambió. Recarga antes de guardar",
+  "@m5e3326c8cbb8": {
+    "description": "La actividad cambió. Recarga antes de guardar",
+    "placeholders": {}
+  },
+  "me1e847d69bba": "Selecciona hasta 30 administradores",
+  "@me1e847d69bba": {
+    "description": "Selecciona hasta 30 administradores",
+    "placeholders": {}
+  },
+  "mefa120082fe8": "Selecciona líderes activos desde líder de zona de tu misma iglesia",
+  "@mefa120082fe8": {
+    "description": "Selecciona líderes activos desde líder de zona de tu misma iglesia",
+    "placeholders": {}
+  },
+  "m650fb5779bed": "Inscripción no encontrada",
+  "@m650fb5779bed": {
+    "description": "Inscripción no encontrada",
+    "placeholders": {}
+  },
+  "m979fbbb9d25b": "Esta inscripción no tiene costo",
+  "@m979fbbb9d25b": {
+    "description": "Esta inscripción no tiene costo",
+    "placeholders": {}
+  },
+  "m814040f27741": "Indica una fecha válida para el abono",
+  "@m814040f27741": {
+    "description": "Indica una fecha válida para el abono",
+    "placeholders": {}
+  },
+  "m2de2f3c2aa1e": "El importe supera el saldo pendiente de la inscripción",
+  "@m2de2f3c2aa1e": {
+    "description": "El importe supera el saldo pendiente de la inscripción",
+    "placeholders": {}
+  },
+  "m24fa12d343ef": "Abono no encontrado",
+  "@m24fa12d343ef": {
+    "description": "Abono no encontrado",
+    "placeholders": {}
+  },
+  "m2e5416fffc15": "El abono ya fue revisado. Anula un pago confirmado para corregirlo",
+  "@m2e5416fffc15": {
+    "description": "El abono ya fue revisado. Anula un pago confirmado para corregirlo",
+    "placeholders": {}
+  },
+  "m00c204a83ed4": "La inscripci�n no est� activa",
+  "@m00c204a83ed4": {
+    "description": "La inscripci�n no est� activa",
+    "placeholders": {}
+  },
+  "m5d9a5ac61929": "El importe supera el saldo pendiente",
+  "@m5d9a5ac61929": {
+    "description": "El importe supera el saldo pendiente",
+    "placeholders": {}
+  },
+  "mf77a54e8a109": "Solo puedes corregir el importe al confirmar",
+  "@mf77a54e8a109": {
+    "description": "Solo puedes corregir el importe al confirmar",
+    "placeholders": {}
+  },
+  "mb7dfa133d92f": "Sin comprobante",
+  "@mb7dfa133d92f": {
+    "description": "Sin comprobante",
+    "placeholders": {}
+  },
+  "m83eb65507a07": "Indica la llegada del participante",
+  "@m83eb65507a07": {
+    "description": "Indica la llegada del participante",
+    "placeholders": {}
+  },
+  "m4570e41a637a": "Espera un minuto para reenviar",
+  "@m4570e41a637a": {
+    "description": "Espera un minuto para reenviar",
+    "placeholders": {}
+  },
+  "m58dc2e8ee1b6": "Concepto no encontrado",
+  "@m58dc2e8ee1b6": {
+    "description": "Concepto no encontrado",
+    "placeholders": {}
+  },
+  "m955d89078916": "El presupuesto cambió. Recarga antes de guardar",
+  "@m955d89078916": {
+    "description": "El presupuesto cambió. Recarga antes de guardar",
+    "placeholders": {}
+  },
+  "m1f5310613e92": "Estado de tarea inválido",
+  "@m1f5310613e92": {
+    "description": "Estado de tarea inválido",
+    "placeholders": {}
+  },
+  "m16f493642166": "Tarea no encontrada",
+  "@m16f493642166": {
+    "description": "Tarea no encontrada",
+    "placeholders": {}
+  },
+  "me3ca622ced17": "La tarea cambió. Recarga antes de guardar",
+  "@me3ca622ced17": {
+    "description": "La tarea cambió. Recarga antes de guardar",
+    "placeholders": {}
+  },
+  "m65cf051293e4": "Estado de inscripción inválido",
+  "@m65cf051293e4": {
+    "description": "Estado de inscripción inválido",
+    "placeholders": {}
+  },
+  "m2f06eab757b0": "Usa la inscripción actual de este participante",
+  "@m2f06eab757b0": {
+    "description": "Usa la inscripción actual de este participante",
+    "placeholders": {}
+  },
+  "m70895aa89021": "No tienes una inscripción activa",
+  "@m70895aa89021": {
+    "description": "No tienes una inscripción activa",
+    "placeholders": {}
+  },
+  "m78fc5691b395": "El abono supera el saldo disponible; revisa también los comprobantes pendientes",
+  "@m78fc5691b395": {
+    "description": "El abono supera el saldo disponible; revisa también los comprobantes pendientes",
+    "placeholders": {}
+  },
+  "m90045f68e286": "Adjunta el comprobante de este abono",
+  "@m90045f68e286": {
+    "description": "Adjunta el comprobante de este abono",
+    "placeholders": {}
+  },
+  "m29634a59b493": "Comprobante no encontrado",
+  "@m29634a59b493": {
+    "description": "Comprobante no encontrado",
+    "placeholders": {}
+  },
+  "m200e02ee2f93": "Indica una edad válida",
+  "@m200e02ee2f93": {
+    "description": "Indica una edad válida",
+    "placeholders": {}
+  },
+  "m2fba42fd67cb": "Autoriza el uso de estos datos para organizar la actividad y atender necesidades de salud",
+  "@m2fba42fd67cb": {
+    "description": "Autoriza el uso de estos datos para organizar la actividad y atender necesidades de salud",
+    "placeholders": {}
+  },
+  "mcd00915d6091": "El abono supera el costo de la actividad",
+  "@mcd00915d6091": {
+    "description": "El abono supera el costo de la actividad",
+    "placeholders": {}
+  },
+  "mc0465a03a167": "Esta actividad es gratuita",
+  "@mc0465a03a167": {
+    "description": "Esta actividad es gratuita",
+    "placeholders": {}
+  },
+  "md12ffcf23626": "Indica el importe del comprobante",
+  "@md12ffcf23626": {
+    "description": "Indica el importe del comprobante",
+    "placeholders": {}
+  },
+  "m6aee14131ee9": "Esta inscripción fue retirada. Contacta al organizador para restaurarla",
+  "@m6aee14131ee9": {
+    "description": "Esta inscripción fue retirada. Contacta al organizador para restaurarla",
+    "placeholders": {}
+  },
+  "mbb188e3da48a": "Este correo ya está inscrito. Revisa tu confirmación o contacta al organizador",
+  "@mbb188e3da48a": {
+    "description": "Este correo ya está inscrito. Revisa tu confirmación o contacta al organizador",
+    "placeholders": {}
+  },
+  "mbaf468631bbc": "Tu inscripción está registrada",
+  "@mbaf468631bbc": {
+    "description": "Tu inscripción está registrada",
+    "placeholders": {}
+  },
+  "mcad70a967781": "Pega un enlace de Google Maps",
+  "@mcad70a967781": {
+    "description": "Pega un enlace de Google Maps",
+    "placeholders": {}
+  },
+  "md76ced269452": "Enlace de Google Maps inválido",
+  "@md76ced269452": {
+    "description": "Enlace de Google Maps inválido",
+    "placeholders": {}
+  },
+  "mde442e11310f": "Usa un enlace HTTPS de Google Maps",
+  "@mde442e11310f": {
+    "description": "Usa un enlace HTTPS de Google Maps",
+    "placeholders": {}
+  },
+  "m2a05d1d77e28": "El enlace debe abrir Google Maps",
+  "@m2a05d1d77e28": {
+    "description": "El enlace debe abrir Google Maps",
+    "placeholders": {}
+  },
+  "m49a3423c6c8e": "Enlace de ubicación inválido",
+  "@m49a3423c6c8e": {
+    "description": "Enlace de ubicación inválido",
+    "placeholders": {}
+  },
+  "m2ced94e9045d": "No puedes configurar actividades",
+  "@m2ced94e9045d": {
+    "description": "No puedes configurar actividades",
+    "placeholders": {}
+  },
+  "m0d919371e19d": "El ámbito del retiro se conserva; crea otro retiro para otro ámbito",
+  "@m0d919371e19d": {
+    "description": "El ámbito del retiro se conserva; crea otro retiro para otro ámbito",
+    "placeholders": {}
+  },
+  "m10bbaa56ac43": "Usa el panel de administradores para cambiar el equipo",
+  "@m10bbaa56ac43": {
+    "description": "Usa el panel de administradores para cambiar el equipo",
+    "placeholders": {}
+  },
+  "m59e9188b7e6d": "Con inscripciones o presupuesto, la moneda se conserva",
+  "@m59e9188b7e6d": {
+    "description": "Con inscripciones o presupuesto, la moneda se conserva",
+    "placeholders": {}
+  },
+  "m84ee9196db1f": "No tienes acceso a esta actividad",
+  "@m84ee9196db1f": {
+    "description": "No tienes acceso a esta actividad",
+    "placeholders": {}
+  },
+  "m3cc36d0adf9d": "Solo desde líder de zona puedes crear actividades",
+  "@m3cc36d0adf9d": {
+    "description": "Solo desde líder de zona puedes crear actividades",
+    "placeholders": {}
+  },
+  "m926873e3160a": "Selecciona tu zona",
+  "@m926873e3160a": {
+    "description": "Selecciona tu zona",
+    "placeholders": {}
+  },
+  "m90619fc3f069": "Primero debes tener una zona asignada",
+  "@m90619fc3f069": {
+    "description": "Primero debes tener una zona asignada",
+    "placeholders": {}
+  },
+  "mf15d8e431c90": "Selecciona un sector a tu cargo",
+  "@mf15d8e431c90": {
+    "description": "Selecciona un sector a tu cargo",
+    "placeholders": {}
+  },
+  "m6e190b8117b9": "Revisa las fechas del retiro",
+  "@m6e190b8117b9": {
+    "description": "Revisa las fechas del retiro",
+    "placeholders": {}
+  },
+  "mf00b08d43d4a": "Tipo de actividad inválido",
+  "@mf00b08d43d4a": {
+    "description": "Tipo de actividad inválido",
+    "placeholders": {}
+  },
+  "m33685b17972c": "Indica el titular de la cuenta bancaria",
+  "@m33685b17972c": {
+    "description": "Indica el titular de la cuenta bancaria",
+    "placeholders": {}
+  },
+  "ma1911806fcad": "Indica el titular de Yape",
+  "@ma1911806fcad": {
+    "description": "Indica el titular de Yape",
+    "placeholders": {}
+  },
+  "m419e43e81f6d": "Revisa el número de contacto o Yape",
+  "@m419e43e81f6d": {
+    "description": "Revisa el número de contacto o Yape",
+    "placeholders": {}
+  },
+  "m7f15ead7ddca": "Usa un enlace HTTPS válido para la ubicación",
+  "@m7f15ead7ddca": {
+    "description": "Usa un enlace HTTPS válido para la ubicación",
+    "placeholders": {}
+  },
+  "m91d14507d898": "Has enviado varios tickets. Espera unos minutos antes de volver a intentarlo.",
+  "@m91d14507d898": {
+    "description": "Has enviado varios tickets. Espera unos minutos antes de volver a intentarlo.",
+    "placeholders": {}
+  },
+  "ma010dadcb816": "Adjunto no encontrado",
+  "@ma010dadcb816": {
+    "description": "Adjunto no encontrado",
+    "placeholders": {}
+  },
+  "mf81afa4e7d14": "Ticket no encontrado",
+  "@mf81afa4e7d14": {
+    "description": "Ticket no encontrado",
+    "placeholders": {}
+  },
+  "mcc2df05fb40a": "Identificador de envío inválido",
+  "@mcc2df05fb40a": {
+    "description": "Identificador de envío inválido",
+    "placeholders": {}
+  },
+  "m813c6916d060": "Describe tu consulta en un máximo de 10 000 caracteres",
+  "@m813c6916d060": {
+    "description": "Describe tu consulta en un máximo de 10 000 caracteres",
+    "placeholders": {}
+  },
+  "mdff180f4b7dd": "Puedes adjuntar hasta tres imágenes",
+  "@mdff180f4b7dd": {
+    "description": "Puedes adjuntar hasta tres imágenes",
+    "placeholders": {}
+  },
+  "m579cb4a65d83": "Estado o versión inválidos",
+  "@m579cb4a65d83": {
+    "description": "Estado o versión inválidos",
+    "placeholders": {}
+  },
+  "m761f95c6de55": "El ticket cambió. Actualiza el tablero.",
+  "@m761f95c6de55": {
+    "description": "El ticket cambió. Actualiza el tablero.",
+    "placeholders": {}
+  },
+  "m3fdd36193a57": "Este ticket ya está resuelto. Puedes consultar su historial.",
+  "@m3fdd36193a57": {
+    "description": "Este ticket ya está resuelto. Puedes consultar su historial.",
+    "placeholders": {}
+  },
+  "m89823083559e": "Otro administrador actualizó este ticket. Recarga el tablero.",
+  "@m89823083559e": {
+    "description": "Otro administrador actualizó este ticket. Recarga el tablero.",
+    "placeholders": {}
+  },
+  "m41f465b12418": "Gasto pendiente no encontrado",
+  "@m41f465b12418": {
+    "description": "Gasto pendiente no encontrado",
+    "placeholders": {}
+  },
+  "mdc93cb56f353": "Este gasto ya se está registrando con otros datos",
+  "@mdc93cb56f353": {
+    "description": "Este gasto ya se está registrando con otros datos",
+    "placeholders": {}
+  },
+  "mdbf1c2759296": "El gasto cambió; actualiza Tesorería",
+  "@mdbf1c2759296": {
+    "description": "El gasto cambió; actualiza Tesorería",
+    "placeholders": {}
+  },
+  "m4a2ee0949167": "Tipo de movimiento inválido",
+  "@m4a2ee0949167": {
+    "description": "Tipo de movimiento inválido",
+    "placeholders": {}
+  },
+  "m8daa990493d2": "Cuenta no encontrada",
+  "@m8daa990493d2": {
+    "description": "Cuenta no encontrada",
+    "placeholders": {}
+  },
+  "m27073581d1fb": "El movimiento es anterior a la apertura de la cuenta",
+  "@m27073581d1fb": {
+    "description": "El movimiento es anterior a la apertura de la cuenta",
+    "placeholders": {}
+  },
+  "mf5f39f96db78": "Tipo de ingreso inválido",
+  "@mf5f39f96db78": {
+    "description": "Tipo de ingreso inválido",
+    "placeholders": {}
+  },
+  "me2059fda0b75": "Elige otra cuenta de destino",
+  "@me2059fda0b75": {
+    "description": "Elige otra cuenta de destino",
+    "placeholders": {}
+  },
+  "m670bdaa46ce4": "El movimiento es anterior a la cuenta de destino",
+  "@m670bdaa46ce4": {
+    "description": "El movimiento es anterior a la cuenta de destino",
+    "placeholders": {}
+  },
+  "mfca19193c1f1": "Usa transferencia para la misma moneda o cambio para monedas distintas",
+  "@mfca19193c1f1": {
+    "description": "Usa transferencia para la misma moneda o cambio para monedas distintas",
+    "placeholders": {}
+  },
+  "m77cf946036a8": "Este movimiento no tiene cuenta de destino",
+  "@m77cf946036a8": {
+    "description": "Este movimiento no tiene cuenta de destino",
+    "placeholders": {}
+  },
+  "m38dabda97d0e": "Solo un ingreso puede vincularse a un integrante",
+  "@m38dabda97d0e": {
+    "description": "Solo un ingreso puede vincularse a un integrante",
+    "placeholders": {}
+  },
+  "mcbd9849028ee": "Integrante activo no encontrado",
+  "@mcbd9849028ee": {
+    "description": "Integrante activo no encontrado",
+    "placeholders": {}
+  },
+  "m214470b25f8d": "El diezmo debe vincularse a un integrante",
+  "@m214470b25f8d": {
+    "description": "El diezmo debe vincularse a un integrante",
+    "placeholders": {}
+  },
+  "m4d5b3adefbed": "El período de diezmo solo corresponde a un diezmo",
+  "@m4d5b3adefbed": {
+    "description": "El período de diezmo solo corresponde a un diezmo",
+    "placeholders": {}
+  },
+  "m83af83da004c": "Recaudación no encontrada",
+  "@m83af83da004c": {
+    "description": "Recaudación no encontrada",
+    "placeholders": {}
+  },
+  "m1a4f648d569a": "Selecciona la recaudación",
+  "@m1a4f648d569a": {
+    "description": "Selecciona la recaudación",
+    "placeholders": {}
+  },
+  "mb825e617b2d1": "Este envío ya se utilizó con otros datos",
+  "@mb825e617b2d1": {
+    "description": "Este envío ya se utilizó con otros datos",
+    "placeholders": {}
+  },
+  "m3ca594bc8ca5": "El movimiento o pago mensual ya fue registrado. Actualiza la lista.",
+  "@m3ca594bc8ca5": {
+    "description": "El movimiento o pago mensual ya fue registrado. Actualiza la lista.",
+    "placeholders": {}
+  },
+  "m63eebdee1962": "Movimiento no encontrado",
+  "@m63eebdee1962": {
+    "description": "Movimiento no encontrado",
+    "placeholders": {}
+  },
+  "mb19740ce1ed5": "El movimiento cambió o ya está anulado",
+  "@mb19740ce1ed5": {
+    "description": "El movimiento cambió o ya está anulado",
+    "placeholders": {}
+  },
+  "m5c67c182b62f": "Anula el pago recurrente y vuelve a confirmarlo para corregirlo",
+  "@m5c67c182b62f": {
+    "description": "Anula el pago recurrente y vuelve a confirmarlo para corregirlo",
+    "placeholders": {}
+  },
+  "m9ca0e3360825": "Otra persona modificó este movimiento. Actualiza antes de guardar.",
+  "@m9ca0e3360825": {
+    "description": "Otra persona modificó este movimiento. Actualiza antes de guardar.",
+    "placeholders": {}
+  },
+  "m86b1a6a5d8b3": "Tipo inválido",
+  "@m86b1a6a5d8b3": {
+    "description": "Tipo inválido",
+    "placeholders": {}
+  },
+  "m2d38a11682a1": "Los gastos recurrentes solo permiten gastos",
+  "@m2d38a11682a1": {
+    "description": "Los gastos recurrentes solo permiten gastos",
+    "placeholders": {}
+  },
+  "m2738e00c1eb4": "El primer vencimiento es anterior a la apertura de la cuenta",
+  "@m2738e00c1eb4": {
+    "description": "El primer vencimiento es anterior a la apertura de la cuenta",
+    "placeholders": {}
+  },
+  "md74dc06a104f": "El final debe ser posterior al inicio",
+  "@md74dc06a104f": {
+    "description": "El final debe ser posterior al inicio",
+    "placeholders": {}
+  },
+  "md38a944694a3": "La programación cambió. Actualiza antes de guardar.",
+  "@md38a944694a3": {
+    "description": "La programación cambió. Actualiza antes de guardar.",
+    "placeholders": {}
+  },
+  "m6ea9c37c4f6f": "Programación activa no encontrada",
+  "@m6ea9c37c4f6f": {
+    "description": "Programación activa no encontrada",
+    "placeholders": {}
+  },
+  "mbf4d413e2b1e": "La fecha no pertenece a esta programación",
+  "@mbf4d413e2b1e": {
+    "description": "La fecha no pertenece a esta programación",
+    "placeholders": {}
+  },
+  "mac6ff12f490b": "El envío ya se usó con otro informe",
+  "@mac6ff12f490b": {
+    "description": "El envío ya se usó con otro informe",
+    "placeholders": {}
+  },
+  "m99af6b81518a": "Selecciona hasta 50 destinatarios",
+  "@m99af6b81518a": {
+    "description": "Selecciona hasta 50 destinatarios",
+    "placeholders": {}
+  },
+  "mf6863b8c3c2d": "Solo puedes enviar a responsables autorizados de tu iglesia",
+  "@mf6863b8c3c2d": {
+    "description": "Solo puedes enviar a responsables autorizados de tu iglesia",
+    "placeholders": {}
+  },
+  "m6e8e70e47db2": "Selecciona hasta 100 integrantes",
+  "@m6e8e70e47db2": {
+    "description": "Selecciona hasta 100 integrantes",
+    "placeholders": {}
+  },
+  "me2a6a0876b4d": "Selección de integrantes inválida",
+  "@me2a6a0876b4d": {
+    "description": "Selección de integrantes inválida",
+    "placeholders": {}
+  },
+  "ma72428126a15": "Selecciona hasta 100 integrantes para este informe",
+  "@ma72428126a15": {
+    "description": "Selecciona hasta 100 integrantes para este informe",
+    "placeholders": {}
+  },
+  "mdf7ae4ea1c7a": "Uno de los integrantes no pertenece a tu iglesia",
+  "@mdf7ae4ea1c7a": {
+    "description": "Uno de los integrantes no pertenece a tu iglesia",
+    "placeholders": {}
+  },
+  "mdb93eb5a2e49": "El informe cambió",
+  "@mdb93eb5a2e49": {
+    "description": "El informe cambió",
+    "placeholders": {}
+  },
+  "mc61bb8524d88": "Moneda o tipo de cuenta inválido",
+  "@mc61bb8524d88": {
+    "description": "Moneda o tipo de cuenta inválido",
+    "placeholders": {}
+  },
+  "mf76d7d33faa4": "Ya existe una cuenta con ese nombre y moneda",
+  "@mf76d7d33faa4": {
+    "description": "Ya existe una cuenta con ese nombre y moneda",
+    "placeholders": {}
+  },
+  "mbc986cd07aed": "Reduce el período para exportar hasta 5000 movimientos",
+  "@mbc986cd07aed": {
+    "description": "Reduce el período para exportar hasta 5000 movimientos",
+    "placeholders": {}
+  },
+  "m240e37d056df": "Confirma si el integrante no diezmó",
+  "@m240e37d056df": {
+    "description": "Confirma si el integrante no diezmó",
+    "placeholders": {}
+  },
+  "me2beeb7d204c": "El registro cambió",
+  "@me2beeb7d204c": {
+    "description": "El registro cambió",
+    "placeholders": {}
+  },
+  "m04edd6ea1cfe": "Otra persona actualizó este registro",
+  "@m04edd6ea1cfe": {
+    "description": "Otra persona actualizó este registro",
+    "placeholders": {}
+  },
+  "mf5d098c43d4c": "Otra persona actualizó este registro. Recarga para continuar.",
+  "@mf5d098c43d4c": {
+    "description": "Otra persona actualizó este registro. Recarga para continuar.",
+    "placeholders": {}
+  },
+  "m277c4be531e5": "La fecha no es válida o todavía no ocurrió",
+  "@m277c4be531e5": {
+    "description": "La fecha no es válida o todavía no ocurrió",
+    "placeholders": {}
+  },
+  "m741a0b66a9db": "Mes inválido",
+  "@m741a0b66a9db": {
+    "description": "Mes inválido",
+    "placeholders": {}
+  },
+  "m96333c4a6e2e": "Elige un período de hasta 366 días",
+  "@m96333c4a6e2e": {
+    "description": "Elige un período de hasta 366 días",
+    "placeholders": {}
+  },
+  "mf06450f0ff8e": "Usa un importe positivo con hasta dos decimales",
+  "@mf06450f0ff8e": {
+    "description": "Usa un importe positivo con hasta dos decimales",
+    "placeholders": {}
+  },
+  "m50ea273de177": "Identificador inválido",
+  "@m50ea273de177": {
+    "description": "Identificador inválido",
+    "placeholders": {}
+  },
+  "m29ede22e05e0": "Informe no encontrado",
+  "@m29ede22e05e0": {
+    "description": "Informe no encontrado",
+    "placeholders": {}
+  },
+  "m315464ee7e4e": "Permiso inválido",
+  "@m315464ee7e4e": {
+    "description": "Permiso inválido",
+    "placeholders": {}
+  },
+  "md31b5ca3140c": "La cuenta cambió o no está disponible en tu iglesia",
+  "@md31b5ca3140c": {
+    "description": "La cuenta cambió o no está disponible en tu iglesia",
+    "placeholders": {}
+  },
+  "mf5e84453cbc0": "Suspende la cuenta para conservar el historial de la iglesia",
+  "@mf5e84453cbc0": {
+    "description": "Suspende la cuenta para conservar el historial de la iglesia",
+    "placeholders": {}
+  },
+  "md9975093224b": "Seguimiento no encontrado",
+  "@md9975093224b": {
+    "description": "Seguimiento no encontrado",
+    "placeholders": {}
+  },
+  "mb6d0ef688b57": "Elige un responsable activo dentro de tu ámbito",
+  "@mb6d0ef688b57": {
+    "description": "Elige un responsable activo dentro de tu ámbito",
+    "placeholders": {}
+  },
+  "mfeb31aebde39": "El próximo contacto no puede preceder a la primera visita",
+  "@mfeb31aebde39": {
+    "description": "El próximo contacto no puede preceder a la primera visita",
+    "placeholders": {}
+  },
+  "ma6500ddb5460": "Ya hay un seguimiento abierto con ese correo",
+  "@ma6500ddb5460": {
+    "description": "Ya hay un seguimiento abierto con ese correo",
+    "placeholders": {}
+  },
+  "m9865897c085a": "Fecha anterior a la primera visita",
+  "@m9865897c085a": {
+    "description": "Fecha anterior a la primera visita",
+    "placeholders": {}
+  },
+  "m646b2d16d4ba": "El seguimiento cambió. Actualiza antes de guardar.",
+  "@m646b2d16d4ba": {
+    "description": "El seguimiento cambió. Actualiza antes de guardar.",
+    "placeholders": {}
+  },
+  "m3bab6485aa4a": "Tipo de contacto inválido",
+  "@m3bab6485aa4a": {
+    "description": "Tipo de contacto inválido",
+    "placeholders": {}
+  },
+  "mffa9033cb89d": "El contacto no puede preceder a la primera visita",
+  "@mffa9033cb89d": {
+    "description": "El contacto no puede preceder a la primera visita",
+    "placeholders": {}
+  },
+  "m6e0286eea0ba": "Este envío ya se utilizó",
+  "@m6e0286eea0ba": {
+    "description": "Este envío ya se utilizó",
+    "placeholders": {}
+  },
+  "mefcf39eaac40": "Cierre inválido",
+  "@mefcf39eaac40": {
+    "description": "Cierre inválido",
+    "placeholders": {}
+  },
+  "m40ab2273d10c": "El próximo contacto debe ser posterior o igual al contacto registrado",
+  "@m40ab2273d10c": {
+    "description": "El próximo contacto debe ser posterior o igual al contacto registrado",
+    "placeholders": {}
+  },
+  "m53b3357bbc18": "Elige una persona activa",
+  "@m53b3357bbc18": {
+    "description": "Elige una persona activa",
+    "placeholders": {}
+  },
+  "mfe70281bf7b5": "El seguimiento cambió. Actualiza antes de vincular.",
+  "@mfe70281bf7b5": {
+    "description": "El seguimiento cambió. Actualiza antes de vincular.",
+    "placeholders": {}
+  },
+  "ma45599925205": "El owner debe asignar esta zona a un sector",
+  "@ma45599925205": {
+    "description": "El owner debe asignar esta zona a un sector",
+    "placeholders": {}
+  },
+  "m6154fd0dea5d": "La zona todavía tiene células activas",
+  "@m6154fd0dea5d": {
+    "description": "La zona todavía tiene células activas",
+    "placeholders": {}
+  },
+  "m8e647845ce8c": "Sin acceso",
+  "@m8e647845ce8c": {
+    "description": "Sin acceso",
+    "placeholders": {}
+  },
+  "m4ba5d091135e": "Revisa la fecha indicada",
+  "@m4ba5d091135e": {
+    "description": "Revisa la fecha indicada",
+    "placeholders": {}
+  },
+  "mc960040bb747": "Ruta no encontrada",
+  "@mc960040bb747": {
+    "description": "Ruta no encontrada",
+    "placeholders": {}
+  },
+  "mfbd411cea5d3": "La petición es demasiado grande",
+  "@mfbd411cea5d3": {
+    "description": "La petición es demasiado grande",
+    "placeholders": {}
+  },
+  "mad9f8ac43207": "JSON inválido",
+  "@mad9f8ac43207": {
+    "description": "JSON inválido",
+    "placeholders": {}
+  },
+  "m0afbba58fd4b": "Otra persona actualizó este registro. Recarga antes de guardar.",
+  "@m0afbba58fd4b": {
+    "description": "Otra persona actualizó este registro. Recarga antes de guardar.",
+    "placeholders": {}
+  },
+  "ma360cee02fc5": "Dato inválido",
+  "@ma360cee02fc5": {
+    "description": "Dato inválido",
+    "placeholders": {}
+  },
+  "m000fe1c08252": "Ya existe un registro con esos datos",
+  "@m000fe1c08252": {
+    "description": "Ya existe un registro con esos datos",
+    "placeholders": {}
+  },
+  "m66d8af67c3da": "Error interno del servidor",
+  "@m66d8af67c3da": {
+    "description": "Error interno del servidor",
+    "placeholders": {}
+  },
+  "mb53e2632bac2": "{p0} es obligatorio",
+  "@mb53e2632bac2": {
+    "description": "{{p0}} es obligatorio",
+    "placeholders": {
+      "p0": {
+        "type": "String"
+      }
+    }
+  },
+  "m5f57d0531daf": "{p0} es demasiado largo (máximo {p1} caracteres)",
+  "@m5f57d0531daf": {
+    "description": "{{p0}} es demasiado largo (máximo {{p1}} caracteres)",
+    "placeholders": {
+      "p0": {
+        "type": "String"
+      },
+      "p1": {
+        "type": "String"
+      }
+    }
+  },
+  "md051f9debd87": "Petición inválida",
+  "@md051f9debd87": {
+    "description": "Petición inválida",
+    "placeholders": {}
+  },
+  "m4670c1601513": "Agrega hasta 8 enlaces",
+  "@m4670c1601513": {
+    "description": "Agrega hasta 8 enlaces",
+    "placeholders": {}
+  },
+  "md21305a0d8f4": "Escribe un enlace HTTPS válido",
+  "@md21305a0d8f4": {
+    "description": "Escribe un enlace HTTPS válido",
+    "placeholders": {}
+  },
+  "me33603bf73ec": "Los enlaces deben usar HTTPS y no incluir credenciales",
+  "@me33603bf73ec": {
+    "description": "Los enlaces deben usar HTTPS y no incluir credenciales",
+    "placeholders": {}
+  },
+  "mcf28643de99c": "Para organizar y acompañar a una comunidad que empieza.",
+  "@mcf28643de99c": {
+    "description": "Para organizar y acompañar a una comunidad que empieza.",
+    "placeholders": {}
+  },
+  "mffe1028c4468": "Para una iglesia con más equipos y comunidades.",
+  "@mffe1028c4468": {
+    "description": "Para una iglesia con más equipos y comunidades.",
+    "placeholders": {}
+  },
+  "m915220d46810": "Para coordinar una iglesia con varios equipos y comunidades.",
+  "@m915220d46810": {
+    "description": "Para coordinar una iglesia con varios equipos y comunidades.",
+    "placeholders": {}
+  },
+  "m879c9381646c": "Para coordinar una congregación sin topes de integrantes ni equipos.",
+  "@m879c9381646c": {
+    "description": "Para coordinar una congregación sin topes de integrantes ni equipos.",
+    "placeholders": {}
+  },
+  "m13e51a210f45": "Guardar",
+  "@m13e51a210f45": {
+    "description": "Guardar",
+    "placeholders": {}
+  },
+  "m58fcc9468fe1": "Inicio",
+  "@m58fcc9468fe1": {
+    "description": "Inicio",
+    "placeholders": {}
+  }
+}

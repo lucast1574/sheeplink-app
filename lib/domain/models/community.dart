@@ -1,3 +1,5 @@
+import '../../l10n/locale.dart';
+
 class Session {
   const Session({
     required this.id,
@@ -27,7 +29,7 @@ class Session {
       id: user['id'] as String,
       name: user['name'] as String,
       email: user['email'] as String,
-      churchName: data['church']?['name'] as String? ?? 'Mi comunidad',
+      churchName: data['church']?['name'] as String? ?? tr("Mi comunidad"),
       photoUrl: user['photoUrl'] as String?,
       needsWorkspace:
           user['role'] == 'SUPER_ADMIN' && user['workspaceChurchId'] == null,

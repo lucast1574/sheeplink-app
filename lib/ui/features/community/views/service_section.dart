@@ -1,3 +1,4 @@
+import '../../../../l10n/locale.dart';
 import 'package:flutter/material.dart';
 import 'package:timezone/timezone.dart' as tz;
 import 'package:intl/intl.dart';
@@ -27,7 +28,7 @@ class ServiceSection extends StatelessWidget {
     final reason = await showDialog<String?>(
       context: context,
       builder: (context) => AlertDialog(
-        title: const Text('Reportar ausencia'),
+        title: Text(tr("Reportar ausencia")),
         content: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -37,8 +38,8 @@ class ServiceSection extends StatelessWidget {
             TextField(
               controller: controller,
               maxLength: 200,
-              decoration: const InputDecoration(
-                labelText: 'Motivo (opcional)',
+              decoration: InputDecoration(
+                labelText: tr("Motivo (opcional)"),
                 hintText: 'Ej. Viaje o tema familiar',
               ),
             ),
@@ -47,11 +48,11 @@ class ServiceSection extends StatelessWidget {
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: const Text('Cancelar'),
+            child: Text(tr("Cancelar")),
           ),
           FilledButton(
             onPressed: () => Navigator.pop(context, controller.text.trim()),
-            child: const Text('Confirmar ausencia'),
+            child: Text(tr("Confirmar ausencia")),
           ),
         ],
       ),
@@ -84,7 +85,7 @@ class ServiceSection extends StatelessWidget {
             const SizedBox(width: 10),
             Expanded(
               child: Text(
-                'Tu servicio',
+                tr("Tu servicio"),
                 style: Theme.of(context).textTheme.titleLarge,
               ),
             ),
@@ -92,8 +93,10 @@ class ServiceSection extends StatelessWidget {
         ),
         const SizedBox(height: 12),
         if (upcoming.isEmpty)
-          const Text(
-            'No tienes turnos próximos asignados. Cuando tu líder programe uno, aparecerá aquí.',
+          Text(
+            tr(
+              "No tienes turnos próximos asignados. Cuando tu líder programe uno, aparecerá aquí.",
+            ),
           ),
         for (final shift in upcoming.take(3))
           Container(
@@ -113,9 +116,9 @@ class ServiceSection extends StatelessWidget {
                         tz.TZDateTime.from(now, shift.startsAt.location),
                       )
                       ? (shift.confirmed
-                            ? 'Hoy te toca servir'
-                            : 'Asignación de hoy')
-                      : '${DateFormat("EEEE d 'de' MMMM", 'es').format(shift.startsAt)} · ${shift.time}',
+                            ? tr("Hoy te toca servir")
+                            : tr("Asignación de hoy"))
+                      : '${DateFormat.MMMMEEEEd(appLocale).format(shift.startsAt)} · ${shift.time}',
                   style: const TextStyle(
                     fontSize: 13,
                     fontWeight: FontWeight.w600,
@@ -127,13 +130,15 @@ class ServiceSection extends StatelessWidget {
                   style: Theme.of(context).textTheme.titleMedium,
                 ),
                 Text(
-                  '${shift.role.isEmpty ? 'Servicio' : shift.role} · ${shift.time}',
+                  '${shift.role.isEmpty ? tr("Servicio") : shift.role} · ${shift.time}',
                 ),
                 if (!shift.confirmed)
-                  const Padding(
+                  Padding(
                     padding: EdgeInsets.only(top: 6),
                     child: Text(
-                      'Asignación pendiente de confirmar. Aún no genera recordatorios.',
+                      tr(
+                        "Asignación pendiente de confirmar. Aún no genera recordatorios.",
+                      ),
                     ),
                   ),
                 if (shift.shiftId.isNotEmpty &&
@@ -146,14 +151,14 @@ class ServiceSection extends StatelessWidget {
                       if (!shift.confirmed && onAccept != null)
                         FilledButton(
                           onPressed: busy ? null : () => onAccept!(shift),
-                          child: const Text('Aceptar'),
+                          child: Text(tr("Aceptar")),
                         ),
                       if (onDecline != null)
                         OutlinedButton(
                           onPressed: busy
                               ? null
                               : () => _confirmAbsence(context, shift),
-                          child: const Text('No puedo asistir'),
+                          child: Text(tr("No puedo asistir")),
                         ),
                     ],
                   ),

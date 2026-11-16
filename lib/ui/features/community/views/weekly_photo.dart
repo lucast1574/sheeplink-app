@@ -1,3 +1,4 @@
+import '../../../../l10n/locale.dart';
 import '../../../core/widgets/report_content.dart';
 import '../../../core/widgets/photo_policy.dart';
 import 'dart:typed_data';
@@ -48,8 +49,9 @@ class _WeeklyPhotoState extends State<WeeklyPhoto> {
     } catch (_) {
       if (mounted) {
         setState(
-          () => error =
-              'No pudimos preparar la foto. Prueba con una imagen JPG o PNG más pequeña.',
+          () => error = tr(
+            "No pudimos preparar la foto. Prueba con una imagen JPG o PNG más pequeña.",
+          ),
         );
       }
     } finally {
@@ -65,12 +67,14 @@ class _WeeklyPhotoState extends State<WeeklyPhoto> {
       children: [
         const SizedBox(height: 24),
         Text(
-          'La foto de esta semana',
+          tr("La foto de esta semana"),
           style: Theme.of(context).textTheme.titleLarge,
         ),
         const SizedBox(height: 6),
-        const Text(
-          'Un recuerdo de la reunión, junto a su asistencia. El pastor podrá revisarlo en el historial.',
+        Text(
+          tr(
+            "Un recuerdo de la reunión, junto a su asistencia. El pastor podrá revisarlo en el historial.",
+          ),
         ),
         const SizedBox(height: 14),
         if (photo != null)
@@ -81,9 +85,9 @@ class _WeeklyPhotoState extends State<WeeklyPhoto> {
               width: double.infinity,
               height: 200,
               fit: BoxFit.cover,
-              semanticLabel: 'Foto de la reunión semanal',
+              semanticLabel: tr("Foto de la reunión semanal"),
               errorBuilder: (context, error, stack) =>
-                  const FeedbackPanel('No pudimos mostrar esta foto.'),
+                  FeedbackPanel(tr("No pudimos mostrar esta foto.")),
             ),
           ),
         if (photo == null)
@@ -94,11 +98,11 @@ class _WeeklyPhotoState extends State<WeeklyPhoto> {
               color: AppTheme.surface,
               borderRadius: BorderRadius.circular(18),
             ),
-            child: const Column(
+            child: Column(
               children: [
                 AppIcon(Symbol.camera),
                 SizedBox(height: 8),
-                Text('Todavía no hay una foto de esta reunión.'),
+                Text(tr("Todavía no hay una foto de esta reunión.")),
               ],
             ),
           ),
@@ -111,18 +115,18 @@ class _WeeklyPhotoState extends State<WeeklyPhoto> {
                     ? null
                     : () => pick(ImageSource.camera),
                 icon: const AppIcon(Symbol.camera, size: 20),
-                label: const Text('Tomar foto'),
+                label: Text(tr("Tomar foto")),
               ),
               TextButton(
                 onPressed: model.busy || model.pickingPhoto
                     ? null
                     : () => pick(ImageSource.gallery),
-                child: const Text('Elegir de galería'),
+                child: Text(tr("Elegir de galería")),
               ),
               if (model.pendingPhoto != null)
                 TextButton(
                   onPressed: model.busy ? null : model.discardPhoto,
-                  child: const Text('Deshacer cambio'),
+                  child: Text(tr("Deshacer cambio")),
                 ),
             ],
           ),
@@ -131,16 +135,21 @@ class _WeeklyPhotoState extends State<WeeklyPhoto> {
             onPressed: () => openContentReport(
               context,
               model.repository,
-              'Célula ${model.cell?.id}; semana ${model.week}; foto de reunión',
+              tr("Célula {{p0}}; semana {{p1}}; foto de reunión", {
+                'p0': model.cell?.id,
+                'p1': model.week,
+              }),
             ),
-            child: const Text('Reportar esta foto o usuario'),
+            child: Text(tr("Reportar esta foto o usuario")),
           ),
-        if (model.pickingPhoto) const Text('Preparando la foto…'),
+        if (model.pickingPhoto) Text(tr("Preparando la foto…")),
         if (model.pendingPhoto != null)
-          const Text('Foto pendiente. Se enviará al guardar la reunión.'),
+          Text(tr("Foto pendiente. Se enviará al guardar la reunión.")),
         if (recovered != null && model.canWrite)
           FeedbackPanel(
-            'El teléfono recuperó una foto que no se había enviado. Comprueba que corresponde a esta semana.',
+            tr(
+              "El teléfono recuperó una foto que no se había enviado. Comprueba que corresponde a esta semana.",
+            ),
             action: TextButton(
               onPressed: model.busy
                   ? null
@@ -155,7 +164,7 @@ class _WeeklyPhotoState extends State<WeeklyPhoto> {
                       model.setPhoto(recovered!);
                       setState(() => recovered = null);
                     },
-              child: const Text('Usar en esta semana'),
+              child: Text(tr("Usar en esta semana")),
             ),
           ),
         if (error ?? model.photoError case final message?)

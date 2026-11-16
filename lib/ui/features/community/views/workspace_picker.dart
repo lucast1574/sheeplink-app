@@ -1,3 +1,4 @@
+import '../../../../l10n/locale.dart';
 import 'package:flutter/material.dart';
 import '../../../../data/repositories/community_repository.dart';
 import '../../../../data/services/api_client.dart';
@@ -35,17 +36,19 @@ class _WorkspacePickerState extends State<WorkspacePicker> {
 
   @override
   Widget build(BuildContext context) => Scaffold(
-    appBar: AppBar(title: const Text('Tu espacio de trabajo')),
+    appBar: AppBar(title: Text(tr("Tu espacio de trabajo"))),
     body: ListView(
       padding: const EdgeInsets.all(24),
       children: [
         Text(
-          'Elige una iglesia',
+          tr("Elige una iglesia"),
           style: Theme.of(context).textTheme.headlineMedium,
         ),
         const SizedBox(height: 12),
-        const Text(
-          'Tu cuenta administra la plataforma. Selecciona la comunidad que quieres abrir en la app.',
+        Text(
+          tr(
+            "Tu cuenta administra la plataforma. Selecciona la comunidad que quieres abrir en la app.",
+          ),
         ),
         const SizedBox(height: 24),
         if (error != null) Text(error!),
@@ -60,7 +63,7 @@ class _WorkspacePickerState extends State<WorkspacePicker> {
                 borderRadius: BorderRadius.circular(16),
               ),
               title: Text(church['name']),
-              subtitle: const Text('Abrir comunidad'),
+              subtitle: Text(tr("Abrir comunidad")),
               enabled: !busy,
               onTap: () async {
                 setState(() {
@@ -85,7 +88,7 @@ class _WorkspacePickerState extends State<WorkspacePicker> {
             ),
           ),
         if (error != null && churches == null)
-          TextButton(onPressed: load, child: const Text('Reintentar')),
+          TextButton(onPressed: load, child: Text(tr("Reintentar"))),
       ],
     ),
   );

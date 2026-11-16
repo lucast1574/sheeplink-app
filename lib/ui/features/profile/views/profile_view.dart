@@ -1,3 +1,4 @@
+import '../../../../l10n/locale.dart';
 import '../../../core/widgets/report_content.dart';
 import '../../community/views/workspace_picker.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -32,8 +33,9 @@ class _ProfileViewState extends State<ProfileView> {
     } catch (_) {
       if (mounted) {
         setState(
-          () => error =
-              'No pudimos completar la acción. Revisa tu conexión e inténtalo de nuevo.',
+          () => error = tr(
+            "No pudimos completar la acción. Revisa tu conexión e inténtalo de nuevo.",
+          ),
         );
       }
     } finally {
@@ -79,7 +81,7 @@ class _ProfileViewState extends State<ProfileView> {
           ProfileHeader(model: widget.model),
           if (widget.model.session!.permissions.contains('platform')) ...[
             const SizedBox(height: 16),
-            info('Iglesia seleccionada', widget.model.session!.churchName),
+            info(tr("Iglesia seleccionada"), widget.model.session!.churchName),
             TextButton(
               onPressed: () async {
                 if (widget.model.dirty && !await confirmDiscard(context)) {
@@ -93,32 +95,34 @@ class _ProfileViewState extends State<ProfileView> {
                   ),
                 );
               },
-              child: const Text('Cambiar iglesia'),
+              child: Text(tr("Cambiar iglesia")),
             ),
           ],
           const SizedBox(height: 24),
-          if (profile.phone.isNotEmpty) info('Teléfono', profile.phone),
+          if (profile.phone.isNotEmpty) info(tr("Teléfono"), profile.phone),
           if (profile.birthday != null)
             info(
-              'Cumpleaños',
-              DateFormat("d 'de' MMMM", 'es').format(profile.birthday!),
+              tr("Cumpleaños"),
+              DateFormat.MMMMd(appLocale).format(profile.birthday!),
             ),
           if (profile.ministries.isNotEmpty)
-            info('Ministerios', profile.ministries.join(' · ')),
+            info(tr("Ministerios"), profile.ministries.join(' · ')),
           if (widget.model.cell != null)
-            info('Mi célula', widget.model.cell!.name),
+            info(tr("Mi célula"), widget.model.cell!.name),
           if (profile.responsibilities.isNotEmpty)
             info('A mi cargo', profile.responsibilities.join('\n')),
           const SizedBox(height: 24),
           const AppIcon(Symbol.bell),
           const SizedBox(height: 12),
           Text(
-            'Un recordatorio cercano',
+            tr("Un recordatorio cercano"),
             style: Theme.of(context).textTheme.titleLarge,
           ),
           const SizedBox(height: 8),
-          const Text(
-            'Cumpleaños y servicio, a tu manera. Los turnos confirmados se recuerdan a las 19:00 del día anterior y dos horas antes. Abre la app para mantener tus avisos actualizados.',
+          Text(
+            tr(
+              "Cumpleaños y servicio, a tu manera. Los turnos confirmados se recuerdan a las 19:00 del día anterior y dos horas antes. Abre la app para mantener tus avisos actualizados.",
+            ),
           ),
           const SizedBox(height: 16),
           SizedBox(
@@ -137,10 +141,10 @@ class _ProfileViewState extends State<ProfileView> {
                     ),
               child: Text(
                 working
-                    ? 'Un momento…'
+                    ? tr("Un momento…")
                     : notices.enabled
-                    ? 'Desactivar avisos'
-                    : 'Activar notificaciones',
+                    ? tr("Desactivar avisos")
+                    : tr("Activar notificaciones"),
               ),
             ),
           ),
@@ -155,11 +159,11 @@ class _ProfileViewState extends State<ProfileView> {
                         assignments: profile.assignments,
                       ),
                     ),
-              child: const Text('Reintentar activación de notificaciones'),
+              child: Text(tr("Reintentar activación de notificaciones")),
             ),
             SwitchListTile.adaptive(
               contentPadding: EdgeInsets.zero,
-              title: const Text('Cumpleaños de mi célula'),
+              title: Text(tr("Cumpleaños de mi célula")),
               value: notices.birthdaysEnabled,
               onChanged: working
                   ? null
@@ -174,7 +178,7 @@ class _ProfileViewState extends State<ProfileView> {
             ),
             SwitchListTile.adaptive(
               contentPadding: EdgeInsets.zero,
-              title: const Text('Mis turnos de servicio'),
+              title: Text(tr("Mis turnos de servicio")),
               value: notices.serviceEnabled,
               onChanged: working
                   ? null
@@ -206,10 +210,10 @@ class _ProfileViewState extends State<ProfileView> {
                     Uri.parse('https://sheeplink.app/privacidad'),
                     mode: LaunchMode.externalApplication,
                   )) {
-                    throw StateError('No browser');
+                    throw StateError(tr("No browser"));
                   }
                 }),
-                child: const Text('Privacidad'),
+                child: Text(tr("Privacidad")),
               ),
               TextButton(
                 onPressed: () => action(() async {
@@ -217,10 +221,10 @@ class _ProfileViewState extends State<ProfileView> {
                     Uri.parse('https://sheeplink.app/terminos'),
                     mode: LaunchMode.externalApplication,
                   )) {
-                    throw StateError('No browser');
+                    throw StateError(tr("No browser"));
                   }
                 }),
-                child: const Text('Términos'),
+                child: Text(tr("Términos")),
               ),
             ],
           ),
@@ -228,9 +232,11 @@ class _ProfileViewState extends State<ProfileView> {
             onPressed: () => openContentReport(
               context,
               widget.model.repository,
-              'Perfil móvil; comunidad ${widget.model.session!.churchName}',
+              tr("Perfil móvil; comunidad {{p0}}", {
+                'p0': widget.model.session!.churchName,
+              }),
             ),
-            child: const Text('Reportar contenido o usuario'),
+            child: Text(tr("Reportar contenido o usuario")),
           ),
           const SizedBox(height: 40),
           SizedBox(
@@ -253,7 +259,7 @@ class _ProfileViewState extends State<ProfileView> {
                   working || widget.model.busy || widget.model.pickingPhoto
                   ? null
                   : logout,
-              label: const Text('Cerrar sesión'),
+              label: Text(tr("Cerrar sesión")),
             ),
           ),
         ],

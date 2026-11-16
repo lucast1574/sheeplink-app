@@ -1,3 +1,4 @@
+import '../../../l10n/locale.dart';
 import 'package:flutter/material.dart';
 import 'app_icon.dart';
 
@@ -14,7 +15,7 @@ class PickerHeader extends StatelessWidget {
       ),
       const SizedBox(width: 16),
       IconButton(
-        tooltip: 'Cerrar selector',
+        tooltip: tr("Cerrar selector"),
         onPressed: () => Navigator.pop(context),
         icon: const AppIcon(Symbol.close),
       ),

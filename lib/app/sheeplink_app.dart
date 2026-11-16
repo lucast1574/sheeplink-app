@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
+import '../l10n/generated/app_localizations.dart';
+import '../l10n/locale.dart';
 import '../data/services/notification_service.dart';
 import '../ui/core/theme/app_theme.dart';
 import '../ui/features/auth/views/login_view.dart';
@@ -25,9 +26,10 @@ class SheeplinkApp extends StatelessWidget {
     ),
     debugShowCheckedModeBanner: false,
     theme: AppTheme.light,
-    locale: const Locale('es'),
-    supportedLocales: const [Locale('es')],
-    localizationsDelegates: GlobalMaterialLocalizations.delegates,
+    supportedLocales: AppLocalizations.supportedLocales,
+    localeListResolutionCallback: (locales, supported) =>
+        resolveLocale(locales),
+    localizationsDelegates: AppLocalizations.localizationsDelegates,
     home: ListenableBuilder(
       listenable: model,
       builder: (context, _) => model.restoring

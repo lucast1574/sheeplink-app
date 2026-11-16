@@ -1,3 +1,4 @@
+import '../../l10n/locale.dart';
 import 'dart:async';
 import 'dart:convert';
 import 'dart:typed_data';
@@ -89,7 +90,7 @@ class ApiCommunityRepository implements CommunityRepository {
     await client.dio.post<void>(
       '/support/tickets',
       data: {
-        'title': 'Reporte de contenido o usuario',
+        'title': tr("Reporte de contenido o usuario"),
         'html':
             '<p>${escape.convert(context)}</p><p>${escape.convert(message)}</p>',
         'images': <String>[],
@@ -152,7 +153,7 @@ class ApiCommunityRepository implements CommunityRepository {
     if (target.origin != base.origin ||
         !(target.path.startsWith('/api/cells/') ||
             target.path.startsWith('/api/media/'))) {
-      throw StateError('Invalid photo');
+      throw StateError(tr("Invalid photo"));
     }
     final response = await client.dio.get<List<int>>(
       target.toString(),

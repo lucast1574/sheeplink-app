@@ -1,3 +1,4 @@
+import '../../../../l10n/locale.dart';
 import 'dart:typed_data';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
@@ -57,7 +58,7 @@ class _CourseCoverState extends State<CourseCover> {
       <path d="M468 270h54l-8 43h-38z" fill="$accent"/>
     </svg>''',
       fit: BoxFit.cover,
-      semanticsLabel: 'Portada ilustrada del curso',
+      semanticsLabel: tr("Portada ilustrada del curso"),
     );
     return AspectRatio(
       aspectRatio: 16 / 9,
@@ -68,7 +69,9 @@ class _CourseCoverState extends State<CourseCover> {
             : Image.memory(
                 snapshot.data!,
                 fit: BoxFit.cover,
-                semanticLabel: 'Portada de ${widget.course['name']}',
+                semanticLabel: tr("Portada de {{p0}}", {
+                  'p0': widget.course['name'],
+                }),
                 errorBuilder: (_, _, _) => fallback,
               ),
       ),

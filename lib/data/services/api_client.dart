@@ -1,3 +1,4 @@
+import '../../l10n/locale.dart';
 import 'package:cookie_jar/cookie_jar.dart';
 import 'package:dio/dio.dart';
 import 'package:dio_cookie_manager/dio_cookie_manager.dart';
@@ -18,6 +19,7 @@ class ApiClient {
             connectTimeout: const Duration(seconds: 15),
             receiveTimeout: const Duration(seconds: 25),
             headers: {
+              'Accept-Language': deviceLocale.languageCode,
               'X-Requested-With': 'XMLHttpRequest',
               'User-Agent': 'SheepLink/0.1 (Flutter)',
             },
@@ -35,12 +37,12 @@ String friendlyError(Object error) {
   if (error is DioException) {
     final body = error.response?.data;
     if (body is Map && body['message'] is String) {
-      return body['message'] as String;
+      return serverMessage(body['message'] as String);
     }
     if (error.response?.statusCode == 401) {
-      return 'Tu sesión terminó. Vuelve a ingresar.';
+      return tr("Tu sesión terminó. Vuelve a ingresar.");
     }
-    return 'No pudimos conectar. Revisa tu conexión e inténtalo de nuevo.';
+    return tr("No pudimos conectar. Revisa tu conexión e inténtalo de nuevo.");
   }
-  return 'No pudimos completar la acción. Inténtalo de nuevo.';
+  return tr("No pudimos completar la acción. Inténtalo de nuevo.");
 }

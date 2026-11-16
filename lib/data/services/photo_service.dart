@@ -1,3 +1,4 @@
+import '../../l10n/locale.dart';
 import 'package:flutter/foundation.dart';
 import 'package:image/image.dart' as image;
 import 'package:image_picker/image_picker.dart';
@@ -14,7 +15,7 @@ class PhotoService {
     );
     if (file == null) return null;
     if (await file.length() > 20 * 1024 * 1024) {
-      throw StateError('Usa una foto de menos de 20 MB.');
+      throw StateError(tr("Usa una foto de menos de 20 MB."));
     }
     return compute(preparePhoto, await file.readAsBytes());
   }
@@ -31,7 +32,7 @@ class PhotoService {
 Uint8List preparePhoto(Uint8List bytes) {
   var decoded = image.decodeImage(bytes);
   if (decoded == null) {
-    throw StateError('No pudimos leer esta foto. Usa JPG o PNG.');
+    throw StateError(tr("No pudimos leer esta foto. Usa JPG o PNG."));
   }
   decoded = image.bakeOrientation(decoded);
   if (decoded.width > 1280 || decoded.height > 1280) {
@@ -47,6 +48,6 @@ Uint8List preparePhoto(Uint8List bytes) {
     if (jpeg.length <= 512000) return jpeg;
   }
   throw StateError(
-    'La foto sigue siendo muy grande. Prueba con una más pequeña.',
+    tr("La foto sigue siendo muy grande. Prueba con una más pequeña."),
   );
 }

@@ -1,3 +1,4 @@
+import '../../../../l10n/locale.dart';
 import 'course_attendance.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -42,7 +43,7 @@ class _CommunityShellState extends State<CommunityShell>
     final model = widget.model;
     if (model.session == null || model.busy) return;
     final signature =
-        '${DateTime.now().day}:${model.personal.assignments.map((a) => '${a.id}/${a.confirmation}/${a.blocked}/${a.date}/${a.time}').join(',')}:${model.session!.id}:${model.cell?.id}:${model.members.map((m) => '${m.id}/${m.birthday}').join(',')}';
+        '$appLocale:${DateTime.now().day}:${model.personal.assignments.map((a) => '${a.id}/${a.confirmation}/${a.blocked}/${a.date}/${a.time}').join(',')}:${model.session!.id}:${model.cell?.id}:${model.members.map((m) => '${m.id}/${m.birthday}').join(',')}';
     if (signature == _roster) return;
     _roster = signature;
     widget.notifications.synchronize(
@@ -69,18 +70,20 @@ class _CommunityShellState extends State<CommunityShell>
       final activate = await showDialog<bool>(
         context: context,
         builder: (context) => AlertDialog(
-          title: const Text('Mantente cerca de tu comunidad'),
-          content: const Text(
-            'Te avisamos de los cumpleaños y de tus turnos de servicio: el día anterior y el mismo día. Puedes elegir los avisos en tu perfil.',
+          title: Text(tr("Mantente cerca de tu comunidad")),
+          content: Text(
+            tr(
+              "Te avisamos de los cumpleaños y de tus turnos de servicio: el día anterior y el mismo día. Puedes elegir los avisos en tu perfil.",
+            ),
           ),
           actions: [
             TextButton(
               onPressed: () => Navigator.pop(context, false),
-              child: const Text('Ahora no'),
+              child: Text(tr("Ahora no")),
             ),
             FilledButton(
               onPressed: () => Navigator.pop(context, true),
-              child: const Text('Activar'),
+              child: Text(tr("Activar")),
             ),
           ],
         ),
@@ -173,7 +176,7 @@ class _CommunityShellState extends State<CommunityShell>
               Padding(
                 padding: const EdgeInsets.only(right: 8),
                 child: IconButton(
-                  tooltip: 'Mensajes y avisos',
+                  tooltip: tr("Mensajes y avisos"),
                   onPressed: () => showAnnouncementsSheet(context, model),
                   icon: Badge(
                     isLabelVisible: model.unreadAnnouncements > 0,
@@ -238,7 +241,7 @@ class _CommunityShellState extends State<CommunityShell>
                               onPressed: model.busy
                                   ? null
                                   : () => model.refresh(),
-                              child: const Text('Reintentar'),
+                              child: Text(tr("Reintentar")),
                             ),
                           ),
                           const SizedBox(height: 16),
@@ -278,20 +281,20 @@ class _CommunityShellState extends State<CommunityShell>
           selectedIndex: tab,
           onDestinationSelected: select,
           destinations: [
-            NavigationDestination(icon: AppIcon(Symbol.home), label: 'Hoy'),
+            NavigationDestination(icon: AppIcon(Symbol.home), label: tr("Hoy")),
             NavigationDestination(
               icon: AppIcon(Symbol.people),
-              label: 'Mi célula',
+              label: tr("Mi célula"),
             ),
             if (model.session!.permissions.contains('academy.teach') ||
                 model.session!.permissions.contains('academy.manage'))
-              const NavigationDestination(
+              NavigationDestination(
                 icon: AppIcon(Symbol.calendar),
-                label: 'Asistencia',
+                label: tr("Asistencia"),
               ),
-            const NavigationDestination(
+            NavigationDestination(
               icon: AppIcon(Symbol.user),
-              label: 'Perfil',
+              label: tr("Perfil"),
             ),
           ],
         ),

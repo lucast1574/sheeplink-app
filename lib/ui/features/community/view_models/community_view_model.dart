@@ -1,3 +1,4 @@
+import '../../../../l10n/locale.dart';
 import 'dart:convert';
 import '../../../../domain/models/personal_profile.dart';
 import '../../../../domain/models/weekly_meeting.dart';
@@ -89,7 +90,9 @@ class CommunityViewModel extends ChangeNotifier {
 
   Future<void> loginGoogle() => _signIn(() async {
     final identity = googleIdentity;
-    if (identity == null) throw StateError('Google access is not configured.');
+    if (identity == null) {
+      throw StateError(tr("Google access is not configured."));
+    }
     final token = await identity.firebaseIdToken();
     return token == null ? null : repository.loginGoogle(token);
   });
@@ -167,7 +170,7 @@ class CommunityViewModel extends ChangeNotifier {
       try {
         loadedPhoto = await repository.photo(loadedMeeting.photoUrl!);
       } catch (_) {
-        loadedPhotoError = 'No pudimos cargar la foto de esta semana.';
+        loadedPhotoError = tr("No pudimos cargar la foto de esta semana.");
       }
     }
     if (generation != _generation) return;
@@ -264,11 +267,15 @@ class CommunityViewModel extends ChangeNotifier {
       if (pendingPhoto != null) photoBytes = pendingPhoto;
       pendingPhoto = null;
       _metadataDirty = false;
-      notice =
-          'Reunión semanal guardada. Ya forma parte del historial de tu célula.';
+      notice = tr(
+        "Reunión semanal guardada. Ya forma parte del historial de tu célula.",
+      );
     } catch (e) {
       error = _metadataDirty
-          ? 'La asistencia está guardada; falta guardar la foto o el registro semanal. Reintenta. ${friendlyError(e)}'
+          ? tr(
+              "La asistencia está guardada; falta guardar la foto o el registro semanal. Reintenta. {{p0}}",
+              {'p0': friendlyError(e)},
+            )
           : friendlyError(e);
     } finally {
       busy = false;
@@ -309,7 +316,7 @@ class CommunityViewModel extends ChangeNotifier {
     try {
       await repository.respondToShift(shift.shiftId, 'CONFIRMED');
       personal = await repository.personal();
-      notice = 'Servicio confirmado.';
+      notice = tr("Servicio confirmado.");
     } catch (e) {
       error = friendlyError(e);
     } finally {
@@ -331,7 +338,7 @@ class CommunityViewModel extends ChangeNotifier {
         reason: reason,
       );
       personal = await repository.personal();
-      notice = 'Ausencia reportada al líder del ministerio.';
+      notice = tr("Ausencia reportada al líder del ministerio.");
     } catch (e) {
       error = friendlyError(e);
     } finally {

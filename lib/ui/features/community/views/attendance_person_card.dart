@@ -1,3 +1,4 @@
+import '../../../../l10n/locale.dart';
 import 'package:flutter/material.dart';
 import '../../../core/theme/app_theme.dart';
 import '../../../core/widgets/app_icon.dart';
@@ -30,7 +31,7 @@ class AttendancePersonCard extends StatelessWidget {
           children: [
             Expanded(
               child: _AttendanceMark(
-                label: 'Presente',
+                label: tr("Presente"),
                 selected: present == true,
                 symbol: Symbol.check,
                 onTap: onChanged == null ? null : () => onChanged!(true),
@@ -39,7 +40,7 @@ class AttendancePersonCard extends StatelessWidget {
             const SizedBox(width: 8),
             Expanded(
               child: _AttendanceMark(
-                label: 'Ausente',
+                label: tr("Ausente"),
                 selected: present == false,
                 symbol: Symbol.close,
                 onTap: onChanged == null ? null : () => onChanged!(false),
@@ -72,7 +73,7 @@ class _AttendanceMark extends StatelessWidget {
         backgroundColor: selected ? AppTheme.forest : AppTheme.control,
         foregroundColor: selected ? Colors.white : AppTheme.ink,
         textStyle: TextStyle(
-          fontFamily: 'Figtree',
+          fontFamily: tr("Figtree"),
           fontSize: 14,
           fontWeight: selected ? FontWeight.w700 : FontWeight.w500,
         ),

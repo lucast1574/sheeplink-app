@@ -1,3 +1,4 @@
+import '../../../l10n/locale.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -10,31 +11,33 @@ Future<bool> acceptPhotoPolicy(BuildContext context, String userId) async {
   final accepted = await showDialog<bool>(
     context: context,
     builder: (context) => AlertDialog(
-      title: const Text('Fotos que cuidan de todos'),
+      title: Text(tr("Fotos que cuidan de todos")),
       content: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text(
-            'Sube solo fotos que tengas permiso de compartir. No se permite contenido sexual, violencia, odio, acoso ni explotación de menores. Puedes reportar contenido o usuarios desde Perfil o junto a la foto de la reunión.',
+          Text(
+            tr(
+              "Sube solo fotos que tengas permiso de compartir. No se permite contenido sexual, violencia, odio, acoso ni explotación de menores. Puedes reportar contenido o usuarios desde Perfil o junto a la foto de la reunión.",
+            ),
           ),
           TextButton(
             onPressed: () => launchUrl(
               Uri.parse('https://sheeplink.app/terminos'),
               mode: LaunchMode.externalApplication,
             ),
-            child: const Text('Leer términos y condiciones'),
+            child: Text(tr("Leer términos y condiciones")),
           ),
         ],
       ),
       actions: [
         TextButton(
           onPressed: () => Navigator.pop(context, false),
-          child: const Text('Cancelar'),
+          child: Text(tr("Cancelar")),
         ),
         FilledButton(
           onPressed: () => Navigator.pop(context, true),
-          child: const Text('Aceptar y continuar'),
+          child: Text(tr("Aceptar y continuar")),
         ),
       ],
     ),
