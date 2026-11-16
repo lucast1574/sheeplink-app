@@ -17,6 +17,7 @@ class CommunityViewModel extends ChangeNotifier {
   List<Member> members = [];
   Cell? cell;
   PersonalProfile personal = const PersonalProfile();
+  List<ChurchAnnouncement> announcements = [];
   WeeklyMeeting? meeting;
   Uint8List? photoBytes, pendingPhoto;
   bool _metadataDirty = false;
@@ -53,6 +54,10 @@ class CommunityViewModel extends ChangeNotifier {
   bool get isFutureMeeting => date.isAfter(
     DateTime(DateTime.now().year, DateTime.now().month, DateTime.now().day),
   );
+  bool get canReadAnnouncements =>
+      session?.permissions.contains('messages') ?? false;
+  int get unreadAnnouncements =>
+      announcements.where((a) => !a.sent && !a.read).length;
   bool get canSave =>
       canWrite &&
       !isFutureMeeting &&
@@ -107,6 +112,16 @@ class CommunityViewModel extends ChangeNotifier {
     }
   }
 
+  Future<void> _loadAnnouncements() async {
+    if (!canReadAnnouncements) {
+      announcements = [];
+      return;
+    }
+    try {
+      announcements = await repository.announcements();
+    } catch (_) {}
+  }
+
   Future<void> _loadCells() async {
     if (session!.needsWorkspace) return;
     personal = await repository.personal();
@@ -121,7 +136,7 @@ class CommunityViewModel extends ChangeNotifier {
         DateTime.now(),
       );
     }
-    await _loadRoster();
+    await Future.wait([_loadRoster(), _loadAnnouncements()]);
   }
 
   Future<void> _loadRoster() async {
@@ -196,7 +211,7 @@ class CommunityViewModel extends ChangeNotifier {
     if (selectedDate != null) date = selectedDate;
     try {
       final loadedProfile = await repository.personal();
-      await _loadRoster();
+      await Future.wait([_loadRoster(), _loadAnnouncements()]);
       personal = loadedProfile;
       plannerDirty = false;
       meetingRevision++;
@@ -273,6 +288,58 @@ class CommunityViewModel extends ChangeNotifier {
     }
   }
 
+  Future<void> markAnnouncementRead(ChurchAnnouncement item) async {
+    if (item.sent || item.read) return;
+    announcements = [
+      for (final a in announcements)
+        if (a.id == item.id) a.copyWith(read: true) else a,
+    ];
+    notifyListeners();
+    try {
+      await repository.markAnnouncementRead(item.id);
+    } catch (_) {}
+  }
+
+  Future<void> acceptShift(ServiceAssignment shift) async {
+    if (busy || shift.shiftId.isEmpty) return;
+    busy = true;
+    error = null;
+    notice = null;
+    notifyListeners();
+    try {
+      await repository.respondToShift(shift.shiftId, 'CONFIRMED');
+      personal = await repository.personal();
+      notice = 'Servicio confirmado.';
+    } catch (e) {
+      error = friendlyError(e);
+    } finally {
+      busy = false;
+      notifyListeners();
+    }
+  }
+
+  Future<void> declineShift(ServiceAssignment shift, {String? reason}) async {
+    if (busy || shift.shiftId.isEmpty) return;
+    busy = true;
+    error = null;
+    notice = null;
+    notifyListeners();
+    try {
+      await repository.reportShiftAbsence(
+        shift.shiftId,
+        shift.date,
+        reason: reason,
+      );
+      personal = await repository.personal();
+      notice = 'Ausencia reportada al líder del ministerio.';
+    } catch (e) {
+      error = friendlyError(e);
+    } finally {
+      busy = false;
+      notifyListeners();
+    }
+  }
+
   Future<bool> logout() async {
     if (busy) return false;
     busy = true;
@@ -288,6 +355,7 @@ class CommunityViewModel extends ChangeNotifier {
       members = [];
       cell = null;
       personal = const PersonalProfile();
+      announcements = [];
       meeting = null;
       photoBytes = null;
       pendingPhoto = null;

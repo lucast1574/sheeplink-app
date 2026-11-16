@@ -118,4 +118,35 @@ class FakeRepository implements CommunityRepository {
 
   @override
   Future<void> revokeDevice(String token) async {}
+
+  List<ChurchAnnouncement> announcementItems = [];
+  String? lastReadAnnouncementId;
+  String? lastShiftResponse;
+  String? lastShiftAbsence;
+
+  @override
+  Future<List<ChurchAnnouncement>> announcements() async =>
+      List.of(announcementItems);
+
+  @override
+  Future<void> markAnnouncementRead(String id) async {
+    lastReadAnnouncementId = id;
+    announcementItems = announcementItems
+        .map((item) => item.id == id ? item.copyWith(read: true) : item)
+        .toList();
+  }
+
+  @override
+  Future<void> respondToShift(String shiftId, String decision) async {
+    lastShiftResponse = '$shiftId:$decision';
+  }
+
+  @override
+  Future<void> reportShiftAbsence(
+    String shiftId,
+    String date, {
+    String? reason,
+  }) async {
+    lastShiftAbsence = '$shiftId:$date:${reason ?? ''}';
+  }
 }

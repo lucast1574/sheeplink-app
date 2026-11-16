@@ -1,3 +1,4 @@
+import 'package:sheeplink/domain/models/personal_profile.dart';
 import 'dart:typed_data';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:sheeplink/domain/models/community.dart';
@@ -13,6 +14,45 @@ class FakeGoogleIdentity implements GoogleIdentity {
 }
 
 void main() {
+  test(
+    'latest announcement and shift actions coexist with restored planner drafts',
+    () async {
+      final repository = FakeRepository()
+        ..permissions.add('messages')
+        ..announcementItems = [
+          const ChurchAnnouncement(
+            id: 'notice',
+            title: 'Aviso',
+            read: false,
+            body: 'Encuentro',
+            createdAt: '2026-11-15',
+          ),
+        ];
+      final model = CommunityViewModel(repository);
+      await model.restore();
+      expect(model.unreadAnnouncements, 1);
+      model.setPlannerDirty(true);
+      await model.markAnnouncementRead(model.announcements.single);
+      expect(repository.lastReadAnnouncementId, 'notice');
+      expect(model.unreadAnnouncements, 0);
+      final shift = ServiceAssignment(
+        id: 'assignment',
+        shiftId: 'shift',
+        date: '2026-11-22',
+        time: '10:00',
+        ministry: 'Alabanza',
+        role: 'Voz',
+        confirmation: 'PENDING',
+        blocked: false,
+      );
+      await model.acceptShift(shift);
+      expect(repository.lastShiftResponse, 'shift:CONFIRMED');
+      await model.declineShift(shift, reason: 'Viaje');
+      expect(repository.lastShiftAbsence, 'shift:2026-11-22:Viaje');
+      expect(model.plannerDirty, isTrue);
+      model.dispose();
+    },
+  );
   test(
     'avatar update refreshes session without touching attendance draft',
     () async {

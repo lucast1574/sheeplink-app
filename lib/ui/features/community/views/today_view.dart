@@ -29,7 +29,12 @@ class TodayView extends StatelessWidget {
       const SizedBox(height: 28),
       DailyJournal(model: model),
       const SizedBox(height: 24),
-      ServiceSection(assignments: model.personal.assignments),
+      ServiceSection(
+        assignments: model.personal.assignments,
+        busy: model.busy,
+        onAccept: model.acceptShift,
+        onDecline: (shift, reason) => model.declineShift(shift, reason: reason),
+      ),
       const SizedBox(height: 24),
       if (model.canWrite)
         Container(
