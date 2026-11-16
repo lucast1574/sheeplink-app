@@ -1,0 +1,51 @@
+{
+  "version": "1.0.6",
+  "build": 9,
+  "date": "2026-11-15",
+  "sourceCommit": "d9856a881454d06586f27a3ad04b70ab3415df7a",
+  "checks": {
+    "flutterAnalyze": "passed",
+    "flutterTests": 63,
+    "iosConfiguration": "passed",
+    "iosSigningChecks": "55/55",
+    "androidBundletool": "passed",
+    "androidJarSignature": "verified"
+  },
+  "artifacts": {
+    "android": {
+      "path": "build/app/outputs/bundle/release/app-release.aab",
+      "bytes": 61889503,
+      "sha256": "790bc40c26f3d42ee3c3327ae649791c40e5418f134c2b677c6cf786476c546a"
+    },
+    "ios": {
+      "path": "build/ios-release/SheepLink-1.0.6-9.ipa",
+      "bytes": 10494544,
+      "sha256": "ecc43e4e98ad2b69e8ff23d9818c2db46f71cd2b9fc340584bcee9702f032532"
+    }
+  },
+  "ios": {
+    "appStoreId": "6829374579",
+    "compiler": "Linux NUC, prepared Swift/iOS toolchain",
+    "processingState": "VALID",
+    "uploadState": "COMPLETE",
+    "buildUploadId": "93eb2795-3474-40ec-b1d2-5b057383a9e5",
+    "testFlightInternalGroup": "SheepLink QA",
+    "testFlightGroupId": "b42f9fb4-9924-4199-b879-eb3ab3a4f403",
+    "testFlightGroupAssignment": "verified",
+    "appStoreSubmission": "PENDING_USER_LOGIN",
+    "submissionBlocker": "App Store Connect browser session expired; upload API key cannot create App Store versions. Signed IPA is uploaded and valid.",
+    "temporarySigningKeysRemoved": true
+  },
+  "android": {
+    "alpha": "SENT_FOR_REVIEW_PENDING_AUTOMATED_CHECKS",
+    "internal": "AVAILABLE_TO_INTERNAL_TESTERS",
+    "productionAccess": "MORE_CLOSED_TESTING_REQUIRED",
+    "productionRestriction": "Play Console requires 12 testers continuously for 14 days after its review; observed 4 days on 2026-11-15.",
+    "alphaReleaseUrl": "https://play.google.com/console/u/0/developers/5585127948264862090/app/4973233861400640768/tracks/4698138234816646348/releases/6/review",
+    "internalReleaseUrl": "https://play.google.com/console/u/0/developers/5585127948264862090/app/4973233861400640768/tracks/4699493667805671464/releases/5/details"
+  },
+  "evidence": [
+    "store/android-1.0.6-submitted.jpg",
+    "store/android-1.0.6-internal.jpg"
+  ]
+}
