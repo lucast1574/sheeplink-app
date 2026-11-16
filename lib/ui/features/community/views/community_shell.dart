@@ -97,8 +97,8 @@ class _CommunityShellState extends State<CommunityShell>
   }
 
   void openNotice() {
-    if (mounted) {
-      setState(() => tab = 0);
+    if (mounted && widget.notifications.destination.value != null) {
+      select(0);
       widget.notifications.destination.value = null;
     }
   }
@@ -108,7 +108,8 @@ class _CommunityShellState extends State<CommunityShell>
     if (state == AppLifecycleState.resumed &&
         !widget.model.dirty &&
         !widget.model.pickingPhoto &&
-        !widget.model.busy) {
+        !widget.model.busy &&
+        !widget.model.plannerBusy) {
       widget.model.refresh();
     }
   }
@@ -122,7 +123,12 @@ class _CommunityShellState extends State<CommunityShell>
     super.dispose();
   }
 
-  void select(int index) {
+  Future<void> select(int index) async {
+    if (index == tab || widget.model.plannerBusy) return;
+    if (widget.model.plannerDirty) {
+      if (!await confirmDiscard(context) || !mounted) return;
+      widget.model.plannerDirty = false;
+    }
     FocusManager.instance.primaryFocus?.unfocus();
     setState(() => tab = index);
     if (_scroll.hasClients) _scroll.jumpTo(0);
@@ -132,9 +138,9 @@ class _CommunityShellState extends State<CommunityShell>
   Widget build(BuildContext context) {
     final model = widget.model;
     return PopScope(
-      canPop: !model.dirty,
+      canPop: !model.dirty && !model.plannerBusy,
       onPopInvokedWithResult: (didPop, result) async {
-        if (!didPop) {
+        if (!didPop && !model.plannerBusy) {
           await confirmDiscard(context).then((discard) {
             if (discard && context.mounted) SystemNavigator.pop();
           });

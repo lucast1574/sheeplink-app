@@ -1,3 +1,4 @@
+import '../../../core/widgets/picker_header.dart';
 import 'package:flutter/material.dart';
 import '../../../../data/services/api_client.dart';
 
@@ -29,7 +30,7 @@ Future<void> showPlannerActivityPicker(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                Text(title, style: Theme.of(context).textTheme.titleLarge),
+                PickerHeader(title: title),
                 const SizedBox(height: 8),
                 Text(description),
                 const SizedBox(height: 16),

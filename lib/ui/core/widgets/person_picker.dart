@@ -1,3 +1,4 @@
+import 'picker_header.dart';
 import 'package:flutter/material.dart';
 import '../theme/app_theme.dart';
 import 'app_icon.dart';
@@ -38,21 +39,7 @@ class PersonPicker extends StatelessWidget {
             children: [
               Padding(
                 padding: const EdgeInsets.fromLTRB(24, 4, 16, 16),
-                child: Row(
-                  children: [
-                    Expanded(
-                      child: Text(
-                        label,
-                        style: Theme.of(context).textTheme.titleLarge,
-                      ),
-                    ),
-                    IconButton(
-                      tooltip: 'Cerrar',
-                      onPressed: () => Navigator.pop(context),
-                      icon: const AppIcon(Symbol.close),
-                    ),
-                  ],
-                ),
+                child: PickerHeader(title: label),
               ),
               Flexible(
                 child: ListView.separated(

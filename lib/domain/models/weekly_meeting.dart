@@ -29,5 +29,20 @@ DateTime meetingDateForWeek(DateTime week, String meetingDay, DateTime today) {
     week,
   ).add(Duration(days: index < 0 ? 5 : index));
   final current = DateTime(today.year, today.month, today.day);
+  if (startOfWeek(week).isAfter(startOfWeek(current))) return candidate;
   return candidate.isAfter(current) ? current : candidate;
+}
+
+/// The next habitual meeting after both the selected day and today.
+DateTime nextMeetingDate(DateTime selected, String meetingDay, DateTime today) {
+  final current = DateTime(today.year, today.month, today.day);
+  final from = selected.isAfter(current) ? selected : current;
+  var next = meetingDateForWeek(
+    startOfWeek(from).add(const Duration(days: 7)),
+    meetingDay,
+    current,
+  );
+  final thisWeek = next.subtract(const Duration(days: 7));
+  if (thisWeek.isAfter(from)) next = thisWeek;
+  return next;
 }

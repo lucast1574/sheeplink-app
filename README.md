@@ -94,7 +94,7 @@ Android usa los clientes OAuth de google-services.json y las SHA-1 debug/release
 
 ### Reunión semanal y servicio
 
-Mi célula permite navegar semanas, marcar asistencia y adjuntar una foto de cámara o galería. El día habitual es sugerido; la fecha real puede ser cualquier día de esa semana, hasta hoy. El historial y sus fotos privadas se consultan desde la web pastoral (Células → Asistencia). Una semana sin datos no cuenta como ausencia. Backend y web publicados y verificados en producción el 22 de octubre de 2026.
+Mi célula permite navegar semanas, marcar asistencia y adjuntar una foto de cámara o galería. El día habitual es sugerido. El selector compartido permite elegir fechas pasadas o futuras desde Asistencia y Planificador; «Preparar próxima célula» abre el plan de la siguiente reunión habitual. Los planes futuros se guardan con título, actividades, responsables y descripciones. La asistencia se habilita cuando llega el día. Una semana con asistencia registrada conserva su fecha y para una nueva reunión se elige otra semana. Cambiar de fecha, célula o salir del planificador pide descartar los cambios sin guardar; alternar entre Planificador y Asistencia conserva el borrador. El historial y sus fotos privadas se consultan desde la web pastoral (Células → Asistencia). Una semana sin datos no cuenta como ausencia. Backend y web publicados y verificados en producción el 22 de octubre de 2026.
 
 Hoy muestra los turnos personales; Perfil incluye datos, roles, ministerios y preferencias de cumpleaños/servicio. La invitación al entrar puede aplazarse. Los recordatorios se actualizan al abrir la app; iOS tiene APNs de producción configurado; la comprobación en un dispositivo físico sigue pendiente.
 

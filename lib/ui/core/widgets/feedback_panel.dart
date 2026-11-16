@@ -27,12 +27,12 @@ class FeedbackPanel extends StatelessWidget {
 Future<bool> confirmDiscard(BuildContext context) => showDialog<bool>(
   context: context,
   builder: (context) => AlertDialog(
-    title: const Text('Tienes asistencia sin guardar'),
-    content: const Text('Si continúas perderás las marcas de esta reunión.'),
+    title: const Text('Tienes cambios sin guardar'),
+    content: const Text('Si continúas perderás los cambios de esta reunión.'),
     actions: [
       TextButton(
         onPressed: () => Navigator.pop(context, false),
-        child: const Text('Seguir marcando'),
+        child: const Text('Seguir editando'),
       ),
       FilledButton(
         onPressed: () => Navigator.pop(context, true),

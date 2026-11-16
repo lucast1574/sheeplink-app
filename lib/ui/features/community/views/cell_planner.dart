@@ -1,3 +1,5 @@
+import 'dart:convert';
+import 'cell_meeting_selector.dart';
 import 'planner_activity_picker.dart';
 import 'planner_activity_order.dart';
 import '../../../core/widgets/person_picker.dart';
@@ -17,28 +19,56 @@ class CellWorkspace extends StatefulWidget {
 
 class _CellWorkspaceState extends State<CellWorkspace> {
   bool planning = false;
+  bool plannerOpened = false;
+
+  void openPlanner() {
+    if (!mounted) return;
+    setState(() {
+      planning = true;
+      plannerOpened = true;
+    });
+  }
+
   @override
   Widget build(BuildContext context) => Column(
+    crossAxisAlignment: CrossAxisAlignment.stretch,
     children: [
       SegmentedButton<bool>(
+        showSelectedIcon: false,
         segments: const [
           ButtonSegment(value: false, label: Text('Asistencia')),
           ButtonSegment(value: true, label: Text('Planificador')),
         ],
         selected: {planning},
-        onSelectionChanged: (v) {
-          FocusScope.of(context).unfocus();
-          setState(() => planning = v.first);
-        },
+        onSelectionChanged: widget.model.plannerBusy
+            ? null
+            : (v) {
+                FocusScope.of(context).unfocus();
+                setState(() {
+                  planning = v.first;
+                  if (planning) plannerOpened = true;
+                });
+              },
       ),
-      const SizedBox(height: 16),
-      if (planning)
-        CellPlanner(
-          key: ValueKey('${widget.model.cell?.id}/${widget.model.day}'),
-          model: widget.model,
-        )
-      else
-        AttendanceView(model: widget.model),
+      const SizedBox(height: 24),
+      CellMeetingSelector(model: widget.model, onPrepare: openPlanner),
+      const SizedBox(height: 24),
+      Visibility(
+        visible: !planning,
+        maintainState: true,
+        child: AttendanceView(model: widget.model, showSelector: false),
+      ),
+      if (plannerOpened)
+        Visibility(
+          visible: planning,
+          maintainState: true,
+          child: CellPlanner(
+            key: ValueKey(
+              '${widget.model.cell?.id}/${widget.model.day}/${widget.model.meetingRevision}',
+            ),
+            model: widget.model,
+          ),
+        ),
     ],
   );
 }
@@ -56,6 +86,12 @@ class _CellPlannerState extends State<CellPlanner> {
   List<dynamic> participants = [];
   Map<String, dynamic>? plan;
   Map<String, dynamic> settings = {};
+  String savedDraft = '';
+  String get draft => jsonEncode({'title': title.text, 'items': items});
+  void changed() {
+    widget.model.setPlannerDirty(draft != savedDraft);
+  }
+
   List<Map<String, dynamic>> get activityOptions {
     final result = [...items];
     for (final raw in [...?settings['activities'], ...?settings['options']]) {
@@ -110,6 +146,7 @@ class _CellPlannerState extends State<CellPlanner> {
                 {...option, 'enabled': selected.contains(option['key'])},
             ],
           );
+          changed();
         }
       },
     );
@@ -126,10 +163,10 @@ class _CellPlannerState extends State<CellPlanner> {
     load();
   }
 
-  Future<void> load() async {
+  Future<bool> load() async {
     if (widget.model.cell == null) {
       setState(() => loading = false);
-      return;
+      return false;
     }
     try {
       final data = (await repo.client.dio.get<Map<String, dynamic>>(
@@ -163,10 +200,15 @@ class _CellPlannerState extends State<CellPlanner> {
       if (mounted) {
         items = orderPlannerActivities(items);
         title.text = plan?['title'] ?? '';
+        savedDraft = draft;
+        widget.model.setPlannerDirty(false);
+        error = null;
         setState(() {});
       }
+      return true;
     } catch (e) {
       if (mounted) setState(() => error = friendlyError(e));
+      return false;
     } finally {
       if (mounted) setState(() => loading = false);
     }
@@ -188,6 +230,15 @@ class _CellPlannerState extends State<CellPlanner> {
       );
     }
     if (loading) return const Center(child: CircularProgressIndicator());
+    if (savedDraft.isEmpty && error != null) {
+      return Column(
+        children: [
+          Text(error!),
+          const SizedBox(height: 16),
+          TextButton(onPressed: load, child: const Text('Reintentar plan')),
+        ],
+      );
+    }
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
@@ -209,7 +260,8 @@ class _CellPlannerState extends State<CellPlanner> {
         TextField(
           key: const ValueKey('meeting-title'),
           controller: title,
-          readOnly: !editable,
+          readOnly: !editable || busy,
+          onChanged: (_) => changed(),
           textInputAction: TextInputAction.done,
           onSubmitted: (_) => FocusScope.of(context).unfocus(),
           onTapOutside: (_) => FocusScope.of(context).unfocus(),
@@ -246,7 +298,10 @@ class _CellPlannerState extends State<CellPlanner> {
                       member['_id'] as String: member['name'] as String,
                   },
                   onChanged: editable && !busy
-                      ? (value) => setState(() => item['memberId'] = value)
+                      ? (value) {
+                          setState(() => item['memberId'] = value);
+                          changed();
+                        }
                       : null,
                 ),
                 const SizedBox(height: 16),
@@ -263,7 +318,10 @@ class _CellPlannerState extends State<CellPlanner> {
                   maxLength: 1000,
                   scrollPadding: const EdgeInsets.only(bottom: 120),
                   textInputAction: TextInputAction.done,
-                  onChanged: (value) => item['notes'] = value,
+                  onChanged: (value) {
+                    item['notes'] = value;
+                    changed();
+                  },
                   onFieldSubmitted: (_) => FocusScope.of(context).unfocus(),
                   onTapOutside: (_) => FocusScope.of(context).unfocus(),
                   decoration: InputDecoration(
@@ -283,7 +341,14 @@ class _CellPlannerState extends State<CellPlanner> {
                 ? null
                 : () async {
                     FocusScope.of(context).unfocus();
+                    if (title.text.trim().isEmpty) {
+                      setState(
+                        () => error = 'Escribe un título para el encuentro.',
+                      );
+                      return;
+                    }
                     setState(() => busy = true);
+                    widget.model.setPlannerBusy(true);
                     try {
                       await repo.client.dio.put<void>(
                         '/care/cells/${plan?['cellId'] ?? widget.model.cell!.id}/plan',
@@ -303,11 +368,14 @@ class _CellPlannerState extends State<CellPlanner> {
                           'version': plan?['version'] ?? 0,
                         },
                       );
-                      await load();
-                      if (mounted) setState(() => error = 'Plan guardado.');
+                      final loaded = await load();
+                      if (mounted && loaded) {
+                        setState(() => error = 'Plan guardado.');
+                      }
                     } catch (e) {
                       if (mounted) setState(() => error = friendlyError(e));
                     } finally {
+                      widget.model.setPlannerBusy(false);
                       if (mounted) setState(() => busy = false);
                     }
                   },

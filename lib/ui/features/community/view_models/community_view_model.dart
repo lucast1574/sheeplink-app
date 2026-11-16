@@ -29,18 +29,36 @@ class CommunityViewModel extends ChangeNotifier {
   bool busy = false, restoring = true;
   String? error, notice;
   int _generation = 0;
-  bool get dirty =>
+  int meetingRevision = 0;
+  bool plannerDirty = false, plannerBusy = false;
+  void setPlannerDirty(bool value) {
+    if (plannerDirty == value) return;
+    plannerDirty = value;
+    notifyListeners();
+  }
+
+  void setPlannerBusy(bool value) {
+    plannerBusy = value;
+    notifyListeners();
+  }
+
+  bool get dirty => attendanceDirty || plannerDirty;
+  bool get attendanceDirty =>
       !mapEquals(_saved, _draft) || pendingPhoto != null || _metadataDirty;
   bool? marked(String id) => _draft[id];
   int get markedCount => members.where((m) => _draft.containsKey(m.id)).length;
   int get presentCount => members.where((m) => _draft[m.id] == true).length;
   bool get canWrite =>
       session?.permissions.contains('attendance.write') ?? false;
+  bool get isFutureMeeting => date.isAfter(
+    DateTime(DateTime.now().year, DateTime.now().month, DateTime.now().day),
+  );
   bool get canSave =>
       canWrite &&
+      !isFutureMeeting &&
       members.isNotEmpty &&
       markedCount == members.length &&
-      dirty &&
+      attendanceDirty &&
       !busy &&
       !pickingPhoto;
   String get day => DateFormat('yyyy-MM-dd').format(date);
@@ -155,7 +173,7 @@ class CommunityViewModel extends ChangeNotifier {
   }
 
   void setPhoto(Uint8List bytes) {
-    if (!canWrite || busy) return;
+    if (!canWrite || busy || isFutureMeeting) return;
     pendingPhoto = bytes;
     photoError = null;
     notice = null;
@@ -168,7 +186,7 @@ class CommunityViewModel extends ChangeNotifier {
   }
 
   Future<void> refresh({Cell? selected, DateTime? selectedDate}) async {
-    if (busy || pickingPhoto) return;
+    if (busy || pickingPhoto || plannerBusy) return;
     busy = true;
     error = null;
     notice = null;
@@ -180,6 +198,8 @@ class CommunityViewModel extends ChangeNotifier {
       final loadedProfile = await repository.personal();
       await _loadRoster();
       personal = loadedProfile;
+      plannerDirty = false;
+      meetingRevision++;
     } catch (e) {
       cell = oldCell;
       date = oldDate;
@@ -191,14 +211,14 @@ class CommunityViewModel extends ChangeNotifier {
   }
 
   void mark(String id, bool present) {
-    if (!canWrite || busy) return;
+    if (!canWrite || busy || isFutureMeeting) return;
     _draft = {..._draft, id: present};
     notice = null;
     notifyListeners();
   }
 
   void markRemainingAbsent() {
-    if (!canWrite || busy) return;
+    if (!canWrite || busy || isFutureMeeting) return;
     _draft = {
       for (final member in members) member.id: _draft[member.id] ?? false,
     };
@@ -262,6 +282,8 @@ class CommunityViewModel extends ChangeNotifier {
       await repository.logout();
       ++_generation;
       session = null;
+      plannerDirty = false;
+      plannerBusy = false;
       cells = [];
       members = [];
       cell = null;
