@@ -32,9 +32,11 @@
     "testFlightInternalGroup": "SheepLink QA",
     "testFlightGroupId": "b42f9fb4-9924-4199-b879-eb3ab3a4f403",
     "testFlightGroupAssignment": "verified",
-    "appStoreSubmission": "PENDING_USER_LOGIN",
-    "submissionBlocker": "App Store Connect browser session expired; upload API key cannot create App Store versions. Signed IPA is uploaded and valid.",
-    "temporarySigningKeysRemoved": true
+    "appStoreSubmission": "WAITING_FOR_REVIEW",
+    "temporarySigningKeysRemoved": true,
+    "appStoreVersionId": "65f14ecc-266f-43dd-8a4a-ff47d2ebf215",
+    "reviewSubmissionId": "fb1434dc-1789-42df-867d-4e38accec789",
+    "releaseType": "AFTER_APPROVAL"
   },
   "android": {
     "alpha": "SENT_FOR_REVIEW_PENDING_AUTOMATED_CHECKS",
@@ -46,6 +48,7 @@
   },
   "evidence": [
     "store/android-1.0.6-submitted.jpg",
-    "store/android-1.0.6-internal.jpg"
+    "store/android-1.0.6-internal.jpg",
+    "store/ios-1.0.6-submitted.jpg"
   ]
 }
