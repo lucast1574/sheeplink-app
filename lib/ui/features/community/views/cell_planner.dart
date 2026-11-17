@@ -303,6 +303,10 @@ class _CellPlannerState extends State<CellPlanner> {
                   options: {
                     for (final member in participants)
                       member['_id'] as String: member['name'] as String,
+                    for (final member in widget.model.members.where(
+                      (m) => !participants.any((p) => p['_id'] == m.id),
+                    ))
+                      member.id: member.name,
                   },
                   onChanged: editable && !busy
                       ? (value) {

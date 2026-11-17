@@ -3119,4 +3119,50 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get m58fcc9468fe1 => 'Início';
+
+  @override
+  String get cellMemberRegistration0 => 'Adicionar integrante';
+
+  @override
+  String get cellMemberRegistration1 =>
+      'Registre os dados para a presença. Nenhuma conta é criada e nenhum convite é enviado.';
+
+  @override
+  String get cellMemberRegistration2 => 'Nome completo';
+
+  @override
+  String get cellMemberRegistration3 => 'Digite o nome do integrante.';
+
+  @override
+  String get cellMemberRegistration4 => 'E-mail (opcional)';
+
+  @override
+  String get cellMemberRegistration5 =>
+      'Digite um e-mail válido ou deixe o campo vazio.';
+
+  @override
+  String get cellMemberRegistration6 => 'Idade (opcional)';
+
+  @override
+  String get cellMemberRegistration7 =>
+      'A idade deve estar entre 0 e 120 anos.';
+
+  @override
+  String get cellMemberRegistration8 => 'Data de nascimento (opcional)';
+
+  @override
+  String get cellMemberRegistration9 => 'Escolher data de nascimento';
+
+  @override
+  String get cellMemberRegistration10 => 'Remover data de nascimento';
+
+  @override
+  String get cellMemberRegistration11 => 'Salvar integrante';
+
+  @override
+  String get cellMemberRegistration12 =>
+      'Se sair agora, os dados deste integrante serão perdidos.';
+
+  @override
+  String get cellMemberRegistration13 => 'Integrante adicionado à célula.';
 }

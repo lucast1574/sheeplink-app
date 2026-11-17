@@ -94,6 +94,9 @@ Android usa los clientes OAuth de google-services.json y las SHA-1 debug/release
 
 ### Reunión semanal y servicio
 
+Desde **Mi célula → Añadir integrante**, las cuentas con `members.write` registran una persona en la célula seleccionada mediante `POST /members`. Solo el nombre es obligatorio; correo, edad y cumpleaños son opcionales. Este flujo no crea usuarios ni envía invitaciones. La persona aparece en asistencia y en los responsables del planificador, sin recargar ni descartar el borrador de la reunión. El formulario confirma antes de descartar datos y conserva lo escrito si falla el guardado.
+
+
 Mi célula permite navegar semanas, marcar asistencia y adjuntar una foto de cámara o galería. El día habitual es sugerido. El selector compartido permite elegir fechas pasadas o futuras desde Asistencia y Planificador; «Preparar próxima célula» abre el plan de la siguiente reunión habitual. Los planes futuros se guardan con título, actividades, responsables y descripciones. La asistencia se habilita cuando llega el día. Una semana con asistencia registrada conserva su fecha y para una nueva reunión se elige otra semana. Cambiar de fecha, célula o salir del planificador pide descartar los cambios sin guardar; alternar entre Planificador y Asistencia conserva el borrador. El historial y sus fotos privadas se consultan desde la web pastoral (Células → Asistencia). Una semana sin datos no cuenta como ausencia. Backend y web publicados y verificados en producción el 22 de octubre de 2026.
 
 Hoy muestra los turnos personales; Perfil incluye datos, roles, ministerios y preferencias de cumpleaños/servicio. La invitación al entrar puede aplazarse. Los recordatorios se actualizan al abrir la app; iOS tiene APNs de producción configurado; la comprobación en un dispositivo físico sigue pendiente.

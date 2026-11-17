@@ -1,3 +1,4 @@
+import 'package:sheeplink/domain/models/new_cell_member.dart';
 import 'dart:typed_data';
 import 'package:sheeplink/domain/models/personal_profile.dart';
 import 'package:sheeplink/domain/models/weekly_meeting.dart';
@@ -6,6 +7,26 @@ import 'package:sheeplink/domain/models/community.dart';
 
 class FakeRepository implements CommunityRepository {
   bool failSave = false;
+  bool failCreateMember = false;
+  int memberCreates = 0;
+  NewCellMember? createdDraft;
+  String? createdCell;
+  final addedMembers = <Member>[];
+  @override
+  Future<Member> createMember(String cellId, NewCellMember draft) async {
+    memberCreates++;
+    if (failCreateMember) throw StateError("offline");
+    createdDraft = draft;
+    createdCell = cellId;
+    final member = Member(
+      id: "new-$memberCreates",
+      name: draft.name.trim(),
+      birthday: draft.birthday,
+    );
+    addedMembers.add(member);
+    return member;
+  }
+
   String? report;
   @override
   Future<void> reportContent(
@@ -94,6 +115,7 @@ class FakeRepository implements CommunityRepository {
       name: 'Ana de la Cruz',
       birthday: DateTime(1995, DateTime.now().month, DateTime.now().day),
     ),
+    ...addedMembers,
     const Member(id: 'b', name: 'Mateo Ríos'),
     const Member(id: 'c', name: 'Valentina Rodríguez Martínez'),
   ];

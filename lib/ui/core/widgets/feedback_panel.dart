@@ -25,20 +25,23 @@ class FeedbackPanel extends StatelessWidget {
   );
 }
 
-Future<bool> confirmDiscard(BuildContext context) => showDialog<bool>(
-  context: context,
-  builder: (context) => AlertDialog(
-    title: Text(tr("Tienes cambios sin guardar")),
-    content: Text(tr("Si continúas perderás los cambios de esta reunión.")),
-    actions: [
-      TextButton(
-        onPressed: () => Navigator.pop(context, false),
-        child: Text(tr("Seguir editando")),
+Future<bool> confirmDiscard(BuildContext context, {String? message}) =>
+    showDialog<bool>(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: Text(tr("Tienes cambios sin guardar")),
+        content: Text(
+          message ?? tr("Si continúas perderás los cambios de esta reunión."),
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context, false),
+            child: Text(tr("Seguir editando")),
+          ),
+          FilledButton(
+            onPressed: () => Navigator.pop(context, true),
+            child: Text(tr("Descartar cambios")),
+          ),
+        ],
       ),
-      FilledButton(
-        onPressed: () => Navigator.pop(context, true),
-        child: Text(tr("Descartar cambios")),
-      ),
-    ],
-  ),
-).then((value) => value ?? false);
+    ).then((value) => value ?? false);

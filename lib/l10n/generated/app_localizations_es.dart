@@ -3119,4 +3119,50 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get m58fcc9468fe1 => 'Inicio';
+
+  @override
+  String get cellMemberRegistration0 => 'Añadir integrante';
+
+  @override
+  String get cellMemberRegistration1 =>
+      'Registra sus datos para la asistencia. No se crea una cuenta ni se envía una invitación.';
+
+  @override
+  String get cellMemberRegistration2 => 'Nombre completo';
+
+  @override
+  String get cellMemberRegistration3 => 'Escribe el nombre del integrante.';
+
+  @override
+  String get cellMemberRegistration4 => 'Correo electrónico (opcional)';
+
+  @override
+  String get cellMemberRegistration5 =>
+      'Introduce un correo válido o deja el campo vacío.';
+
+  @override
+  String get cellMemberRegistration6 => 'Edad (opcional)';
+
+  @override
+  String get cellMemberRegistration7 =>
+      'La edad debe estar entre 0 y 120 años.';
+
+  @override
+  String get cellMemberRegistration8 => 'Cumpleaños (opcional)';
+
+  @override
+  String get cellMemberRegistration9 => 'Elegir cumpleaños';
+
+  @override
+  String get cellMemberRegistration10 => 'Quitar cumpleaños';
+
+  @override
+  String get cellMemberRegistration11 => 'Guardar integrante';
+
+  @override
+  String get cellMemberRegistration12 =>
+      'Si sales ahora, perderás los datos de este integrante.';
+
+  @override
+  String get cellMemberRegistration13 => 'Integrante añadido a la célula.';
 }

@@ -4760,5 +4760,75 @@
   "@m58fcc9468fe1": {
     "description": "Inicio",
     "placeholders": {}
+  },
+  "cellMemberRegistration0": "Add member",
+  "@cellMemberRegistration0": {
+    "description": "Añadir integrante",
+    "placeholders": {}
+  },
+  "cellMemberRegistration1": "Record their details for attendance. No account is created and no invitation is sent.",
+  "@cellMemberRegistration1": {
+    "description": "Registra sus datos para la asistencia. No se crea una cuenta ni se envía una invitación.",
+    "placeholders": {}
+  },
+  "cellMemberRegistration2": "Full name",
+  "@cellMemberRegistration2": {
+    "description": "Nombre completo",
+    "placeholders": {}
+  },
+  "cellMemberRegistration3": "Enter the member’s name.",
+  "@cellMemberRegistration3": {
+    "description": "Escribe el nombre del integrante.",
+    "placeholders": {}
+  },
+  "cellMemberRegistration4": "Email address (optional)",
+  "@cellMemberRegistration4": {
+    "description": "Correo electrónico (opcional)",
+    "placeholders": {}
+  },
+  "cellMemberRegistration5": "Enter a valid email address or leave the field empty.",
+  "@cellMemberRegistration5": {
+    "description": "Introduce un correo válido o deja el campo vacío.",
+    "placeholders": {}
+  },
+  "cellMemberRegistration6": "Age (optional)",
+  "@cellMemberRegistration6": {
+    "description": "Edad (opcional)",
+    "placeholders": {}
+  },
+  "cellMemberRegistration7": "Age must be between 0 and 120.",
+  "@cellMemberRegistration7": {
+    "description": "La edad debe estar entre 0 y 120 años.",
+    "placeholders": {}
+  },
+  "cellMemberRegistration8": "Birthday (optional)",
+  "@cellMemberRegistration8": {
+    "description": "Cumpleaños (opcional)",
+    "placeholders": {}
+  },
+  "cellMemberRegistration9": "Choose birthday",
+  "@cellMemberRegistration9": {
+    "description": "Elegir cumpleaños",
+    "placeholders": {}
+  },
+  "cellMemberRegistration10": "Remove birthday",
+  "@cellMemberRegistration10": {
+    "description": "Quitar cumpleaños",
+    "placeholders": {}
+  },
+  "cellMemberRegistration11": "Save member",
+  "@cellMemberRegistration11": {
+    "description": "Guardar integrante",
+    "placeholders": {}
+  },
+  "cellMemberRegistration12": "If you leave now, this member’s details will be lost.",
+  "@cellMemberRegistration12": {
+    "description": "Si sales ahora, perderás los datos de este integrante.",
+    "placeholders": {}
+  },
+  "cellMemberRegistration13": "Member added to the cell.",
+  "@cellMemberRegistration13": {
+    "description": "Integrante añadido a la célula.",
+    "placeholders": {}
   }
 }

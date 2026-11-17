@@ -1,3 +1,4 @@
+import 'add_cell_member_page.dart';
 import '../../../../l10n/locale.dart';
 import '../../../core/widgets/picker_header.dart';
 import 'package:flutter/material.dart';
@@ -89,6 +90,7 @@ class CellMeetingSelector extends StatelessWidget {
         week,
         model.cell?.meetingDay ?? 'Saturday',
         DateTime.now(),
+        allowFuture: true,
       ),
     );
   }
@@ -126,6 +128,26 @@ class CellMeetingSelector extends StatelessWidget {
             child: Text(tr("Cambiar célula")),
           ),
         ),
+      if (model.canManageMembers) ...[
+        const SizedBox(height: 16),
+        Align(
+          alignment: Alignment.centerLeft,
+          child: TextButton.icon(
+            onPressed: locked
+                ? null
+                : () {
+                    FocusManager.instance.primaryFocus?.unfocus();
+                    Navigator.of(context).push(
+                      MaterialPageRoute<Member>(
+                        builder: (_) => AddCellMemberPage(model: model),
+                      ),
+                    );
+                  },
+            icon: const AppIcon(Symbol.people, size: 20),
+            label: Text(tr('Añadir integrante')),
+          ),
+        ),
+      ],
       if (model.cell != null) ...[
         const SizedBox(height: 24),
         Text(

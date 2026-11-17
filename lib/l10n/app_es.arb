@@ -4760,5 +4760,75 @@
   "@m58fcc9468fe1": {
     "description": "Inicio",
     "placeholders": {}
+  },
+  "cellMemberRegistration0": "Añadir integrante",
+  "@cellMemberRegistration0": {
+    "description": "Añadir integrante",
+    "placeholders": {}
+  },
+  "cellMemberRegistration1": "Registra sus datos para la asistencia. No se crea una cuenta ni se envía una invitación.",
+  "@cellMemberRegistration1": {
+    "description": "Registra sus datos para la asistencia. No se crea una cuenta ni se envía una invitación.",
+    "placeholders": {}
+  },
+  "cellMemberRegistration2": "Nombre completo",
+  "@cellMemberRegistration2": {
+    "description": "Nombre completo",
+    "placeholders": {}
+  },
+  "cellMemberRegistration3": "Escribe el nombre del integrante.",
+  "@cellMemberRegistration3": {
+    "description": "Escribe el nombre del integrante.",
+    "placeholders": {}
+  },
+  "cellMemberRegistration4": "Correo electrónico (opcional)",
+  "@cellMemberRegistration4": {
+    "description": "Correo electrónico (opcional)",
+    "placeholders": {}
+  },
+  "cellMemberRegistration5": "Introduce un correo válido o deja el campo vacío.",
+  "@cellMemberRegistration5": {
+    "description": "Introduce un correo válido o deja el campo vacío.",
+    "placeholders": {}
+  },
+  "cellMemberRegistration6": "Edad (opcional)",
+  "@cellMemberRegistration6": {
+    "description": "Edad (opcional)",
+    "placeholders": {}
+  },
+  "cellMemberRegistration7": "La edad debe estar entre 0 y 120 años.",
+  "@cellMemberRegistration7": {
+    "description": "La edad debe estar entre 0 y 120 años.",
+    "placeholders": {}
+  },
+  "cellMemberRegistration8": "Cumpleaños (opcional)",
+  "@cellMemberRegistration8": {
+    "description": "Cumpleaños (opcional)",
+    "placeholders": {}
+  },
+  "cellMemberRegistration9": "Elegir cumpleaños",
+  "@cellMemberRegistration9": {
+    "description": "Elegir cumpleaños",
+    "placeholders": {}
+  },
+  "cellMemberRegistration10": "Quitar cumpleaños",
+  "@cellMemberRegistration10": {
+    "description": "Quitar cumpleaños",
+    "placeholders": {}
+  },
+  "cellMemberRegistration11": "Guardar integrante",
+  "@cellMemberRegistration11": {
+    "description": "Guardar integrante",
+    "placeholders": {}
+  },
+  "cellMemberRegistration12": "Si sales ahora, perderás los datos de este integrante.",
+  "@cellMemberRegistration12": {
+    "description": "Si sales ahora, perderás los datos de este integrante.",
+    "placeholders": {}
+  },
+  "cellMemberRegistration13": "Integrante añadido a la célula.",
+  "@cellMemberRegistration13": {
+    "description": "Integrante añadido a la célula.",
+    "placeholders": {}
   }
 }

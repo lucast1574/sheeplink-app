@@ -14,7 +14,12 @@ DateTime startOfWeek(DateTime date) => DateTime(
   date.month,
   date.day,
 ).subtract(Duration(days: date.weekday - 1));
-DateTime meetingDateForWeek(DateTime week, String meetingDay, DateTime today) {
+DateTime meetingDateForWeek(
+  DateTime week,
+  String meetingDay,
+  DateTime today, {
+  bool allowFuture = false,
+}) {
   const days = [
     'Monday',
     'Tuesday',
@@ -29,7 +34,9 @@ DateTime meetingDateForWeek(DateTime week, String meetingDay, DateTime today) {
     week,
   ).add(Duration(days: index < 0 ? 5 : index));
   final current = DateTime(today.year, today.month, today.day);
-  if (startOfWeek(week).isAfter(startOfWeek(current))) return candidate;
+  if (allowFuture || startOfWeek(week).isAfter(startOfWeek(current))) {
+    return candidate;
+  }
   return candidate.isAfter(current) ? current : candidate;
 }
 

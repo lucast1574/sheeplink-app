@@ -1,3 +1,4 @@
+import '../../../../domain/models/new_cell_member.dart';
 import '../../../../l10n/locale.dart';
 import 'dart:convert';
 import '../../../../domain/models/personal_profile.dart';
@@ -52,6 +53,33 @@ class CommunityViewModel extends ChangeNotifier {
   int get presentCount => members.where((m) => _draft[m.id] == true).length;
   bool get canWrite =>
       session?.permissions.contains('attendance.write') ?? false;
+  bool get canManageMembers =>
+      cell != null && (session?.permissions.contains('members.write') ?? false);
+
+  Future<Member> addMember(NewCellMember draft) async {
+    if (!canManageMembers || busy || plannerBusy || pickingPhoto) {
+      throw StateError('Member registration is unavailable');
+    }
+    final selected = cell!;
+    busy = true;
+    notifyListeners();
+    try {
+      final created = await repository.createMember(selected.id, draft);
+      // Keep attendance and planner drafts intact; do not refresh the meeting.
+      members = List.unmodifiable(
+        [
+          ...members.where((m) => m.id != created.id),
+          created,
+        ]..sort((a, b) => a.name.toLowerCase().compareTo(b.name.toLowerCase())),
+      );
+      notice = tr('Integrante añadido a la célula.');
+      return created;
+    } finally {
+      busy = false;
+      notifyListeners();
+    }
+  }
+
   bool get isFutureMeeting => date.isAfter(
     DateTime(DateTime.now().year, DateTime.now().month, DateTime.now().day),
   );

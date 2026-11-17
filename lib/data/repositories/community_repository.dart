@@ -1,3 +1,4 @@
+import '../../domain/models/new_cell_member.dart';
 import '../../l10n/locale.dart';
 import 'dart:async';
 import 'dart:convert';
@@ -26,6 +27,7 @@ abstract interface class CommunityRepository {
   Future<void> logout();
   Future<List<Cell>> cells();
   Future<List<Member>> members(String cellId);
+  Future<Member> createMember(String cellId, NewCellMember member);
   Future<Map<String, bool>> attendance(String cellId, String day);
   Future<void> saveAttendance(
     String cellId,
@@ -238,6 +240,15 @@ class ApiCommunityRepository implements CommunityRepository {
         '/members',
         queryParameters: {'cellId': cellId, 'status': 'ACTIVE'},
       )).data!).map((e) => Member.fromJson(e as Map<String, dynamic>)).toList();
+  @override
+  Future<Member> createMember(String cellId, NewCellMember member) async =>
+      Member.fromJson(
+        (await client.dio.post<Map<String, dynamic>>(
+          '/members',
+          data: member.forCell(cellId),
+        )).data!,
+      );
+
   @override
   Future<Map<String, bool>> attendance(String cellId, String day) async {
     final rows = (await client.dio.get<List<dynamic>>(

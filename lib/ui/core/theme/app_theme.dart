@@ -1,4 +1,3 @@
-import '../../../l10n/locale.dart';
 import 'package:flutter/material.dart';
 
 abstract final class AppTheme {
@@ -11,7 +10,7 @@ abstract final class AppTheme {
       leaf = Color(0xFFE7EFE9);
   static ThemeData get light => ThemeData(
     useMaterial3: true,
-    fontFamily: tr("Figtree"),
+    fontFamily: 'Figtree',
     colorScheme: ColorScheme.fromSeed(
       seedColor: forest,
       primary: forest,
@@ -77,7 +76,7 @@ abstract final class AppTheme {
       style: FilledButton.styleFrom(
         minimumSize: const Size(48, 56),
         textStyle: TextStyle(
-          fontFamily: tr("Figtree"),
+          fontFamily: 'Figtree',
           fontSize: 16,
           fontWeight: FontWeight.w600,
         ),

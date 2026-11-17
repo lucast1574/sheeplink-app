@@ -1170,5 +1170,22 @@ String message(
     l.m879c9381646c,
   "Guardar" => l.m13e51a210f45,
   "Inicio" => l.m58fcc9468fe1,
+  "Añadir integrante" => l.cellMemberRegistration0,
+  "Registra sus datos para la asistencia. No se crea una cuenta ni se envía una invitación." =>
+    l.cellMemberRegistration1,
+  "Nombre completo" => l.cellMemberRegistration2,
+  "Escribe el nombre del integrante." => l.cellMemberRegistration3,
+  "Correo electrónico (opcional)" => l.cellMemberRegistration4,
+  "Introduce un correo válido o deja el campo vacío." =>
+    l.cellMemberRegistration5,
+  "Edad (opcional)" => l.cellMemberRegistration6,
+  "La edad debe estar entre 0 y 120 años." => l.cellMemberRegistration7,
+  "Cumpleaños (opcional)" => l.cellMemberRegistration8,
+  "Elegir cumpleaños" => l.cellMemberRegistration9,
+  "Quitar cumpleaños" => l.cellMemberRegistration10,
+  "Guardar integrante" => l.cellMemberRegistration11,
+  "Si sales ahora, perderás los datos de este integrante." =>
+    l.cellMemberRegistration12,
+  "Integrante añadido a la célula." => l.cellMemberRegistration13,
   _ => source,
 };

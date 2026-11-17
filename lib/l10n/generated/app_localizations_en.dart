@@ -3096,4 +3096,49 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get m58fcc9468fe1 => 'Home';
+
+  @override
+  String get cellMemberRegistration0 => 'Add member';
+
+  @override
+  String get cellMemberRegistration1 =>
+      'Record their details for attendance. No account is created and no invitation is sent.';
+
+  @override
+  String get cellMemberRegistration2 => 'Full name';
+
+  @override
+  String get cellMemberRegistration3 => 'Enter the member’s name.';
+
+  @override
+  String get cellMemberRegistration4 => 'Email address (optional)';
+
+  @override
+  String get cellMemberRegistration5 =>
+      'Enter a valid email address or leave the field empty.';
+
+  @override
+  String get cellMemberRegistration6 => 'Age (optional)';
+
+  @override
+  String get cellMemberRegistration7 => 'Age must be between 0 and 120.';
+
+  @override
+  String get cellMemberRegistration8 => 'Birthday (optional)';
+
+  @override
+  String get cellMemberRegistration9 => 'Choose birthday';
+
+  @override
+  String get cellMemberRegistration10 => 'Remove birthday';
+
+  @override
+  String get cellMemberRegistration11 => 'Save member';
+
+  @override
+  String get cellMemberRegistration12 =>
+      'If you leave now, this member’s details will be lost.';
+
+  @override
+  String get cellMemberRegistration13 => 'Member added to the cell.';
 }

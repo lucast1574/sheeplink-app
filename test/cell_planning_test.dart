@@ -152,6 +152,15 @@ void main() {
   test('future weeks retain their habitual date across the year', () {
     expect(
       meetingDateForWeek(
+        DateTime(2026, 11, 16),
+        'Saturday',
+        DateTime(2026, 11, 16),
+        allowFuture: true,
+      ),
+      DateTime(2026, 11, 21),
+    );
+    expect(
+      meetingDateForWeek(
         DateTime(2027, 1, 4),
         'Saturday',
         DateTime(2026, 12, 31),

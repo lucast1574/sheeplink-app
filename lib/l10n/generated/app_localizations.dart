@@ -5597,6 +5597,90 @@ abstract class AppLocalizations {
   /// In es, this message translates to:
   /// **'Inicio'**
   String get m58fcc9468fe1;
+
+  /// Añadir integrante
+  ///
+  /// In es, this message translates to:
+  /// **'Añadir integrante'**
+  String get cellMemberRegistration0;
+
+  /// Registra sus datos para la asistencia. No se crea una cuenta ni se envía una invitación.
+  ///
+  /// In es, this message translates to:
+  /// **'Registra sus datos para la asistencia. No se crea una cuenta ni se envía una invitación.'**
+  String get cellMemberRegistration1;
+
+  /// Nombre completo
+  ///
+  /// In es, this message translates to:
+  /// **'Nombre completo'**
+  String get cellMemberRegistration2;
+
+  /// Escribe el nombre del integrante.
+  ///
+  /// In es, this message translates to:
+  /// **'Escribe el nombre del integrante.'**
+  String get cellMemberRegistration3;
+
+  /// Correo electrónico (opcional)
+  ///
+  /// In es, this message translates to:
+  /// **'Correo electrónico (opcional)'**
+  String get cellMemberRegistration4;
+
+  /// Introduce un correo válido o deja el campo vacío.
+  ///
+  /// In es, this message translates to:
+  /// **'Introduce un correo válido o deja el campo vacío.'**
+  String get cellMemberRegistration5;
+
+  /// Edad (opcional)
+  ///
+  /// In es, this message translates to:
+  /// **'Edad (opcional)'**
+  String get cellMemberRegistration6;
+
+  /// La edad debe estar entre 0 y 120 años.
+  ///
+  /// In es, this message translates to:
+  /// **'La edad debe estar entre 0 y 120 años.'**
+  String get cellMemberRegistration7;
+
+  /// Cumpleaños (opcional)
+  ///
+  /// In es, this message translates to:
+  /// **'Cumpleaños (opcional)'**
+  String get cellMemberRegistration8;
+
+  /// Elegir cumpleaños
+  ///
+  /// In es, this message translates to:
+  /// **'Elegir cumpleaños'**
+  String get cellMemberRegistration9;
+
+  /// Quitar cumpleaños
+  ///
+  /// In es, this message translates to:
+  /// **'Quitar cumpleaños'**
+  String get cellMemberRegistration10;
+
+  /// Guardar integrante
+  ///
+  /// In es, this message translates to:
+  /// **'Guardar integrante'**
+  String get cellMemberRegistration11;
+
+  /// Si sales ahora, perderás los datos de este integrante.
+  ///
+  /// In es, this message translates to:
+  /// **'Si sales ahora, perderás los datos de este integrante.'**
+  String get cellMemberRegistration12;
+
+  /// Integrante añadido a la célula.
+  ///
+  /// In es, this message translates to:
+  /// **'Integrante añadido a la célula.'**
+  String get cellMemberRegistration13;
 }
 
 class _AppLocalizationsDelegate
