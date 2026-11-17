@@ -1,81 +1,21 @@
 import '../../../../l10n/locale.dart';
 import 'dart:convert';
+export 'cell_workspace.dart';
 import 'cell_meeting_selector.dart';
+import 'cell_pane.dart';
+import 'planner_activity_tile.dart';
 import 'planner_activity_picker.dart';
 import 'planner_activity_order.dart';
 import '../../../core/widgets/person_picker.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
+import 'cell_disclosure.dart';
 import '../../../../data/repositories/community_repository.dart';
 import '../../../../data/services/api_client.dart';
 import '../view_models/community_view_model.dart';
-import 'attendance_view.dart';
-
-class CellWorkspace extends StatefulWidget {
-  const CellWorkspace({super.key, required this.model});
-  final CommunityViewModel model;
-  @override
-  State<CellWorkspace> createState() => _CellWorkspaceState();
-}
-
-class _CellWorkspaceState extends State<CellWorkspace> {
-  bool planning = false;
-  bool plannerOpened = false;
-
-  void openPlanner() {
-    if (!mounted) return;
-    setState(() {
-      planning = true;
-      plannerOpened = true;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) => Column(
-    crossAxisAlignment: CrossAxisAlignment.stretch,
-    children: [
-      SegmentedButton<bool>(
-        showSelectedIcon: false,
-        segments: [
-          ButtonSegment(value: false, label: Text(tr("Asistencia"))),
-          ButtonSegment(value: true, label: Text(tr("Planificador"))),
-        ],
-        selected: {planning},
-        onSelectionChanged: widget.model.plannerBusy
-            ? null
-            : (v) {
-                FocusScope.of(context).unfocus();
-                setState(() {
-                  planning = v.first;
-                  if (planning) plannerOpened = true;
-                });
-              },
-      ),
-      const SizedBox(height: 24),
-      CellMeetingSelector(model: widget.model, onPrepare: openPlanner),
-      const SizedBox(height: 24),
-      Visibility(
-        visible: !planning,
-        maintainState: true,
-        child: AttendanceView(model: widget.model, showSelector: false),
-      ),
-      if (plannerOpened)
-        Visibility(
-          visible: planning,
-          maintainState: true,
-          child: CellPlanner(
-            key: ValueKey(
-              '${widget.model.cell?.id}/${widget.model.day}/${widget.model.meetingRevision}',
-            ),
-            model: widget.model,
-          ),
-        ),
-    ],
-  );
-}
 
 class CellPlanner extends StatefulWidget {
-  const CellPlanner({super.key, required this.model});
+  const CellPlanner({super.key, required this.model, this.onPrepare});
+  final VoidCallback? onPrepare;
   final CommunityViewModel model;
   @override
   State<CellPlanner> createState() => _CellPlannerState();
@@ -242,15 +182,66 @@ class _CellPlannerState extends State<CellPlanner> {
         ],
       );
     }
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
+    return CellPane(
+      storageKey: 'planner',
+      model: widget.model,
+      footer: editable
+          ? FilledButton(
+              onPressed: busy || widget.model.cell == null
+                  ? null
+                  : () async {
+                      FocusScope.of(context).unfocus();
+                      if (title.text.trim().isEmpty) {
+                        setState(
+                          () => error = tr(
+                            "Escribe un título para el encuentro.",
+                          ),
+                        );
+                        return;
+                      }
+                      setState(() => busy = true);
+                      widget.model.setPlannerBusy(true);
+                      try {
+                        await repo.client.dio.put<void>(
+                          '/care/cells/${plan?['cellId'] ?? widget.model.cell!.id}/plan',
+                          data: {
+                            'date': widget.model.day,
+                            'title': title.text.trim(),
+                            'items': items
+                                .map(
+                                  (i) => {
+                                    ...i,
+                                    if (i['memberId'] == '') 'memberId': null,
+                                  },
+                                )
+                                .toList(),
+                            'participantCellIds':
+                                plan?['participantCellIds'] ?? [],
+                            'version': plan?['version'] ?? 0,
+                          },
+                        );
+                        final loaded = await load();
+                        if (mounted && loaded) {
+                          setState(() => error = tr("Plan guardado."));
+                        }
+                      } catch (e) {
+                        if (mounted) setState(() => error = friendlyError(e));
+                      } finally {
+                        widget.model.setPlannerBusy(false);
+                        if (mounted) setState(() => busy = false);
+                      }
+                    },
+              child: Text(tr("Guardar plan")),
+            )
+          : null,
       children: [
+        CellMeetingSelector(model: widget.model, onPrepare: widget.onPrepare),
+        const SizedBox(height: 24),
         Text(
           tr("Plan de {{p0}}", {'p0': widget.model.cell!.name}),
           style: Theme.of(context).textTheme.titleLarge,
         ),
         const SizedBox(height: 6),
-        Text(DateFormat.MMMMEEEEd(appLocale).format(widget.model.date)),
         const SizedBox(height: 24),
         if (!editable) ...[
           Text(
@@ -285,127 +276,83 @@ class _CellPlannerState extends State<CellPlanner> {
             ),
           ),
         for (final item in items.where((i) => i['enabled'] != false))
-          Padding(
-            padding: const EdgeInsets.only(bottom: 24),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                Text(
-                  item['title'],
-                  style: Theme.of(context).textTheme.titleMedium,
+          PlannerActivityTile(
+            key: ValueKey('activity-${item['key']}'),
+            title: item['title'],
+            responsible:
+                {
+                  for (final p in participants) p['_id']: p['name'],
+                  for (final m in widget.model.members) m.id: m.name,
+                }[item['memberId']] ??
+                tr('Sin asignar'),
+            children: [
+              Text(tr("Responsable")),
+              const SizedBox(height: 8),
+              PersonPicker(
+                label: item['title'],
+                value: item['memberId'],
+                options: {
+                  for (final member in participants)
+                    member['_id'] as String: member['name'] as String,
+                  for (final member in widget.model.members)
+                    member.id: member.name,
+                },
+                onChanged: editable && !busy
+                    ? (value) {
+                        setState(() => item['memberId'] = value);
+                        changed();
+                      }
+                    : null,
+              ),
+              const SizedBox(height: 16),
+              Text(tr("Descripción")),
+              const SizedBox(height: 8),
+              TextFormField(
+                key: ValueKey(
+                  'activity-description-${item['key']}-${plan?['version'] ?? 0}',
                 ),
-                const SizedBox(height: 12),
-                Text(tr("Responsable")),
-                const SizedBox(height: 8),
-                PersonPicker(
-                  label: item['title'],
-                  value: item['memberId'],
-                  options: {
-                    for (final member in participants)
-                      member['_id'] as String: member['name'] as String,
-                    for (final member in widget.model.members.where(
-                      (m) => !participants.any((p) => p['_id'] == m.id),
-                    ))
-                      member.id: member.name,
-                  },
-                  onChanged: editable && !busy
-                      ? (value) {
-                          setState(() => item['memberId'] = value);
-                          changed();
-                        }
-                      : null,
+                initialValue: item['notes'] as String? ?? '',
+                readOnly: !editable || busy,
+                minLines: 2,
+                maxLines: 5,
+                maxLength: 1000,
+                scrollPadding: const EdgeInsets.only(bottom: 120),
+                textInputAction: TextInputAction.done,
+                onChanged: (value) {
+                  item['notes'] = value;
+                  changed();
+                },
+                onFieldSubmitted: (_) => FocusScope.of(context).unfocus(),
+                onTapOutside: (_) => FocusScope.of(context).unfocus(),
+                decoration: InputDecoration(
+                  hintText: tr("Indicaciones para {{p0}}", {
+                    'p0': item['title'].toString().toLowerCase(),
+                  }),
+                  counterText: '',
                 ),
-                const SizedBox(height: 16),
-                Text(tr("Descripción")),
-                const SizedBox(height: 8),
-                TextFormField(
-                  key: ValueKey(
-                    'activity-description-${item['key']}-${plan?['version'] ?? 0}',
-                  ),
-                  initialValue: item['notes'] as String? ?? '',
-                  readOnly: !editable || busy,
-                  minLines: 2,
-                  maxLines: 5,
-                  maxLength: 1000,
-                  scrollPadding: const EdgeInsets.only(bottom: 120),
-                  textInputAction: TextInputAction.done,
-                  onChanged: (value) {
-                    item['notes'] = value;
-                    changed();
-                  },
-                  onFieldSubmitted: (_) => FocusScope.of(context).unfocus(),
-                  onTapOutside: (_) => FocusScope.of(context).unfocus(),
-                  decoration: InputDecoration(
-                    hintText: tr("Indicaciones para {{p0}}", {
-                      'p0': item['title'].toString().toLowerCase(),
-                    }),
-                    counterText: '',
-                  ),
-                ),
-              ],
-            ),
+              ),
+            ],
           ),
         if (error != null) ...[Text(error!), const SizedBox(height: 16)],
         const SizedBox(height: 12),
-        if (editable)
-          FilledButton(
-            onPressed: busy || widget.model.cell == null
-                ? null
-                : () async {
-                    FocusScope.of(context).unfocus();
-                    if (title.text.trim().isEmpty) {
-                      setState(
-                        () =>
-                            error = tr("Escribe un título para el encuentro."),
-                      );
-                      return;
-                    }
-                    setState(() => busy = true);
-                    widget.model.setPlannerBusy(true);
-                    try {
-                      await repo.client.dio.put<void>(
-                        '/care/cells/${plan?['cellId'] ?? widget.model.cell!.id}/plan',
-                        data: {
-                          'date': widget.model.day,
-                          'title': title.text.trim(),
-                          'items': items
-                              .map(
-                                (i) => {
-                                  ...i,
-                                  if (i['memberId'] == '') 'memberId': null,
-                                },
-                              )
-                              .toList(),
-                          'participantCellIds':
-                              plan?['participantCellIds'] ?? [],
-                          'version': plan?['version'] ?? 0,
-                        },
-                      );
-                      final loaded = await load();
-                      if (mounted && loaded) {
-                        setState(() => error = tr("Plan guardado."));
-                      }
-                    } catch (e) {
-                      if (mounted) setState(() => error = friendlyError(e));
-                    } finally {
-                      widget.model.setPlannerBusy(false);
-                      if (mounted) setState(() => busy = false);
-                    }
-                  },
-            child: Text(tr("Guardar plan")),
-          ),
         const SizedBox(height: 24),
-        if (editable) ...[
-          TextButton(
-            onPressed: busy ? null : () => chooseActivities(false),
-            child: Text(tr("Elegir actividades de esta reunión")),
+        if (editable)
+          CellDisclosure(
+            title: Text(tr('Gestionar actividades')),
+            tilePadding: EdgeInsets.zero,
+            childrenPadding: const EdgeInsets.only(bottom: 16),
+            children: [
+              TextButton(
+                onPressed: busy ? null : () => chooseActivities(false),
+                child: Text(tr("Elegir actividades de esta reunión")),
+              ),
+              TextButton(
+                onPressed: busy ? null : () => chooseActivities(true),
+                child: Text(tr("Configurar actividades habituales")),
+              ),
+              const SizedBox(height: 20),
+            ],
           ),
-          TextButton(
-            onPressed: busy ? null : () => chooseActivities(true),
-            child: Text(tr("Configurar actividades habituales")),
-          ),
-          const SizedBox(height: 20),
-        ],
       ],
     );
   }

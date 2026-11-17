@@ -33,7 +33,7 @@ class CommunityViewModel extends ChangeNotifier {
   String? error, notice;
   int _generation = 0;
   int meetingRevision = 0;
-  bool plannerDirty = false, plannerBusy = false;
+  bool plannerDirty = false, plannerBusy = false, topicDirty = false;
   void setPlannerDirty(bool value) {
     if (plannerDirty == value) return;
     plannerDirty = value;
@@ -45,7 +45,13 @@ class CommunityViewModel extends ChangeNotifier {
     notifyListeners();
   }
 
-  bool get dirty => attendanceDirty || plannerDirty;
+  void setTopicDirty(bool value) {
+    if (topicDirty == value) return;
+    topicDirty = value;
+    notifyListeners();
+  }
+
+  bool get dirty => attendanceDirty || plannerDirty || topicDirty;
   bool get attendanceDirty =>
       !mapEquals(_saved, _draft) || pendingPhoto != null || _metadataDirty;
   bool? marked(String id) => _draft[id];
@@ -245,6 +251,7 @@ class CommunityViewModel extends ChangeNotifier {
       await Future.wait([_loadRoster(), _loadAnnouncements()]);
       personal = loadedProfile;
       plannerDirty = false;
+      topicDirty = false;
       meetingRevision++;
     } catch (e) {
       cell = oldCell;
@@ -254,6 +261,13 @@ class CommunityViewModel extends ChangeNotifier {
       busy = false;
       notifyListeners();
     }
+  }
+
+  void clearMark(String id) {
+    if (!canWrite || busy || isFutureMeeting) return;
+    _draft = {..._draft}..remove(id);
+    notice = null;
+    notifyListeners();
   }
 
   void mark(String id, bool present) {
@@ -386,6 +400,7 @@ class CommunityViewModel extends ChangeNotifier {
       session = null;
       plannerDirty = false;
       plannerBusy = false;
+      topicDirty = false;
       cells = [];
       members = [];
       cell = null;

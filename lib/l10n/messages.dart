@@ -1187,5 +1187,17 @@ String message(
   "Si sales ahora, perderás los datos de este integrante." =>
     l.cellMemberRegistration12,
   "Integrante añadido a la célula." => l.cellMemberRegistration13,
+  "Integrantes" => l.cellWorkspace0,
+  "Buscar integrante" => l.cellWorkspace1,
+  "Limpiar búsqueda" => l.cellWorkspace2,
+  "No encontramos integrantes con ese nombre." => l.cellWorkspace3,
+  "Añadir datos opcionales" => l.cellWorkspace4,
+  "Fecha del encuentro" => l.cellWorkspace5,
+  "Próximo encuentro" => l.cellWorkspace6,
+  "Elegir fecha" => l.cellWorkspace7,
+  "Gestionar actividades" => l.cellWorkspace8,
+  "Opciones de asistencia" => l.cellWorkspace9,
+  "Tema y foto del encuentro" => l.cellWorkspace10,
+  "Quitar marca" => l.cellWorkspace11,
   _ => source,
 };

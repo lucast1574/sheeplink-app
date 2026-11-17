@@ -5681,6 +5681,78 @@ abstract class AppLocalizations {
   /// In es, this message translates to:
   /// **'Integrante añadido a la célula.'**
   String get cellMemberRegistration13;
+
+  /// Integrantes
+  ///
+  /// In es, this message translates to:
+  /// **'Integrantes'**
+  String get cellWorkspace0;
+
+  /// Buscar integrante
+  ///
+  /// In es, this message translates to:
+  /// **'Buscar integrante'**
+  String get cellWorkspace1;
+
+  /// Limpiar búsqueda
+  ///
+  /// In es, this message translates to:
+  /// **'Limpiar búsqueda'**
+  String get cellWorkspace2;
+
+  /// No encontramos integrantes con ese nombre.
+  ///
+  /// In es, this message translates to:
+  /// **'No encontramos integrantes con ese nombre.'**
+  String get cellWorkspace3;
+
+  /// Añadir datos opcionales
+  ///
+  /// In es, this message translates to:
+  /// **'Añadir datos opcionales'**
+  String get cellWorkspace4;
+
+  /// Fecha del encuentro
+  ///
+  /// In es, this message translates to:
+  /// **'Fecha del encuentro'**
+  String get cellWorkspace5;
+
+  /// Próximo encuentro
+  ///
+  /// In es, this message translates to:
+  /// **'Próximo encuentro'**
+  String get cellWorkspace6;
+
+  /// Elegir fecha
+  ///
+  /// In es, this message translates to:
+  /// **'Elegir fecha'**
+  String get cellWorkspace7;
+
+  /// Gestionar actividades
+  ///
+  /// In es, this message translates to:
+  /// **'Gestionar actividades'**
+  String get cellWorkspace8;
+
+  /// Opciones de asistencia
+  ///
+  /// In es, this message translates to:
+  /// **'Opciones de asistencia'**
+  String get cellWorkspace9;
+
+  /// Tema y foto del encuentro
+  ///
+  /// In es, this message translates to:
+  /// **'Tema y foto del encuentro'**
+  String get cellWorkspace10;
+
+  /// Quitar marca
+  ///
+  /// In es, this message translates to:
+  /// **'Quitar marca'**
+  String get cellWorkspace11;
 }
 
 class _AppLocalizationsDelegate

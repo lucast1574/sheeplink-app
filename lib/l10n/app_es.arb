@@ -4830,5 +4830,65 @@
   "@cellMemberRegistration13": {
     "description": "Integrante añadido a la célula.",
     "placeholders": {}
+  },
+  "cellWorkspace0": "Integrantes",
+  "@cellWorkspace0": {
+    "description": "Integrantes",
+    "placeholders": {}
+  },
+  "cellWorkspace1": "Buscar integrante",
+  "@cellWorkspace1": {
+    "description": "Buscar integrante",
+    "placeholders": {}
+  },
+  "cellWorkspace2": "Limpiar búsqueda",
+  "@cellWorkspace2": {
+    "description": "Limpiar búsqueda",
+    "placeholders": {}
+  },
+  "cellWorkspace3": "No encontramos integrantes con ese nombre.",
+  "@cellWorkspace3": {
+    "description": "No encontramos integrantes con ese nombre.",
+    "placeholders": {}
+  },
+  "cellWorkspace4": "Añadir datos opcionales",
+  "@cellWorkspace4": {
+    "description": "Añadir datos opcionales",
+    "placeholders": {}
+  },
+  "cellWorkspace5": "Fecha del encuentro",
+  "@cellWorkspace5": {
+    "description": "Fecha del encuentro",
+    "placeholders": {}
+  },
+  "cellWorkspace6": "Próximo encuentro",
+  "@cellWorkspace6": {
+    "description": "Próximo encuentro",
+    "placeholders": {}
+  },
+  "cellWorkspace7": "Elegir fecha",
+  "@cellWorkspace7": {
+    "description": "Elegir fecha",
+    "placeholders": {}
+  },
+  "cellWorkspace8": "Gestionar actividades",
+  "@cellWorkspace8": {
+    "description": "Gestionar actividades",
+    "placeholders": {}
+  },
+  "cellWorkspace9": "Opciones de asistencia",
+  "@cellWorkspace9": {
+    "description": "Opciones de asistencia",
+    "placeholders": {}
+  },
+  "cellWorkspace10": "Tema y foto del encuentro",
+  "@cellWorkspace10": {
+    "description": "Tema y foto del encuentro",
+    "placeholders": {}
+  },
+  "cellWorkspace11": "Quitar marca",
+  "@cellWorkspace11": {
+    "description": "Quitar marca",
+    "placeholders": {}
   }
 }

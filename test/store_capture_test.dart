@@ -71,7 +71,7 @@ void main() {
     );
     await tester.tap(find.text('Mi célula'));
     await tester.pumpAndSettle();
-    await tester.tap(find.text('Presente').first);
+    await tester.tap(find.byTooltip('Presente').first);
     await tester.pump();
     await capture(
       tester,
@@ -80,6 +80,9 @@ void main() {
       pixelRatio: ratio,
       jpeg: iosStore,
     );
+    await tester.ensureVisible(find.text('Tema y foto del encuentro'));
+    await tester.tap(find.text('Tema y foto del encuentro'));
+    await tester.pumpAndSettle();
     await tester.ensureVisible(find.text('La foto de esta semana'));
     await tester.pumpAndSettle();
     await capture(

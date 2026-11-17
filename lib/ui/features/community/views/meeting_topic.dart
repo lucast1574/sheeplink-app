@@ -13,6 +13,8 @@ class MeetingTopic extends StatefulWidget {
 class _MeetingTopicState extends State<MeetingTopic> {
   final text = TextEditingController();
   bool busy = false;
+  String saved = '';
+
   String? error;
   @override
   void initState() {
@@ -29,7 +31,10 @@ class _MeetingTopicState extends State<MeetingTopic> {
       final data = await repository.client.dio.get<Map<String, dynamic>>(
         '/cells/${widget.model.cell!.id}/meetings/${widget.model.week}',
       );
-      if (mounted) text.text = data.data?['title'] as String? ?? '';
+      if (mounted) {
+        saved = data.data?['title'] as String? ?? '';
+        if (!widget.model.topicDirty) text.text = saved;
+      }
     } catch (_) {
       if (mounted) setState(() => error = tr("No pudimos cargar el tema."));
     }
@@ -51,6 +56,7 @@ class _MeetingTopicState extends State<MeetingTopic> {
         const SizedBox(height: 8),
         TextField(
           controller: text,
+          onChanged: (value) => widget.model.setTopicDirty(value != saved),
           readOnly: !widget.model.canWrite,
           maxLength: 120,
           textInputAction: TextInputAction.done,
@@ -78,7 +84,11 @@ class _MeetingTopicState extends State<MeetingTopic> {
                           'title': text.text.trim(),
                         },
                       );
-                      if (mounted) setState(() => error = tr("Tema guardado."));
+                      if (mounted) {
+                        saved = text.text;
+                        widget.model.setTopicDirty(false);
+                        setState(() => error = tr("Tema guardado."));
+                      }
                     } catch (_) {
                       if (mounted) {
                         setState(

@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:sheeplink/l10n/locale.dart';
 import 'package:sheeplink/domain/models/community.dart';
 import 'package:sheeplink/ui/core/widgets/person_picker.dart';
 import 'cell_planning_test.dart' as planner_fixture;
@@ -48,6 +49,16 @@ Future<void> mountMemberFlow(
 
 Future<void> press(WidgetTester tester, String text) async {
   await tester.pumpAndSettle();
+  if ([
+        'Añadir integrante',
+        'Add member',
+        'Adicionar integrante',
+      ].contains(text) &&
+      find.text(text).evaluate().isEmpty) {
+    await tester.ensureVisible(find.text(tr('Integrantes')));
+    await tester.tap(find.text(tr('Integrantes')));
+    await tester.pumpAndSettle();
+  }
   await tester.ensureVisible(find.text(text));
   await tester.pumpAndSettle();
   await tester.tap(find.text(text));
@@ -216,6 +227,7 @@ void main() {
         find.byKey(const ValueKey('new-member-name')),
         'Camila Nueva',
       );
+      await press(tester, tr('Añadir datos opcionales'));
       await tester.enterText(
         find.byKey(const ValueKey('new-member-email')),
         'correo inválido',
@@ -224,6 +236,7 @@ void main() {
         find.byKey(const ValueKey('new-member-age')),
         '121',
       );
+      await press(tester, tr('Añadir datos opcionales'));
       await press(tester, 'Guardar integrante');
       expect(
         find.text('Introduce un correo válido o deja el campo vacío.'),
@@ -361,6 +374,8 @@ void main() {
         'Débora Nueva',
       );
       await press(tester, 'Guardar integrante');
+      await press(tester, 'Planificador');
+      await press(tester, 'Bienvenida');
       expect(find.text('Plan protegido'), findsOneWidget);
       expect(model.plannerDirty, isTrue);
       expect(
@@ -403,6 +418,7 @@ void main() {
           pixelRatio: 1,
         );
         expect(tester.takeException(), isNull);
+        await press(tester, tr('Añadir datos opcionales'));
         await tester.enterText(
           find.byKey(const ValueKey('new-member-age')),
           '28',

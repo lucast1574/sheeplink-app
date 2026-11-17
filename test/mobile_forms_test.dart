@@ -124,6 +124,9 @@ void main() {
         ),
       );
       await tester.pumpAndSettle();
+      await tester.ensureVisible(find.text('Bienvenida'));
+      await tester.tap(find.text('Bienvenida'));
+      await tester.pumpAndSettle();
       final input = find.byKey(const ValueKey('meeting-title'));
       final assignments = find.byType(PersonPicker);
       expect(
@@ -138,6 +141,9 @@ void main() {
       );
       await tester.enterText(input, 'La esperanza de esta semana');
       await tester.testTextInput.receiveAction(TextInputAction.done);
+      await tester.ensureVisible(find.text('Gestionar actividades'));
+      await tester.tap(find.text('Gestionar actividades'));
+      await tester.pumpAndSettle();
       await tester.ensureVisible(
         find.text('Elegir actividades de esta reunión'),
       );
@@ -182,6 +188,9 @@ void main() {
       );
       await tester.pumpAndSettle();
       expect(tester.testTextInput.isVisible, isFalse);
+      await tester.ensureVisible(find.text('Rompehielo'));
+      await tester.tap(find.text('Rompehielo'));
+      await tester.pumpAndSettle();
       final dynamicsDescription = find.byKey(
         const ValueKey('activity-description-Rompehielo-2'),
       );

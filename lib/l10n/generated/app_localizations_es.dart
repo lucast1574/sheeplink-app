@@ -3165,4 +3165,40 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get cellMemberRegistration13 => 'Integrante añadido a la célula.';
+
+  @override
+  String get cellWorkspace0 => 'Integrantes';
+
+  @override
+  String get cellWorkspace1 => 'Buscar integrante';
+
+  @override
+  String get cellWorkspace2 => 'Limpiar búsqueda';
+
+  @override
+  String get cellWorkspace3 => 'No encontramos integrantes con ese nombre.';
+
+  @override
+  String get cellWorkspace4 => 'Añadir datos opcionales';
+
+  @override
+  String get cellWorkspace5 => 'Fecha del encuentro';
+
+  @override
+  String get cellWorkspace6 => 'Próximo encuentro';
+
+  @override
+  String get cellWorkspace7 => 'Elegir fecha';
+
+  @override
+  String get cellWorkspace8 => 'Gestionar actividades';
+
+  @override
+  String get cellWorkspace9 => 'Opciones de asistencia';
+
+  @override
+  String get cellWorkspace10 => 'Tema y foto del encuentro';
+
+  @override
+  String get cellWorkspace11 => 'Quitar marca';
 }

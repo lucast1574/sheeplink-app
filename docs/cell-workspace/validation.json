@@ -1,0 +1,19 @@
+{
+  "date": "2026-11-17",
+  "version": "1.0.9",
+  "build": 12,
+  "checks": {
+    "flutterTestsPassed": 87,
+    "flutterAnalyze": "No issues found",
+    "iosConfiguration": "valid",
+    "androidReleaseBuild": "passed",
+    "androidSignature": "verified v2"
+  },
+  "apk": {
+    "path": "artifacts/SheepLink-1.0.9-12-celula-ux.apk",
+    "bytes": 65268665,
+    "sha256": "76c86e6d6aca0e0ebfac17cdcae6105e97109bdeee9797fdb35d0a34ff297413"
+  },
+  "stores": "NOT_SUBMITTED",
+  "deviceTesting": "Widget tests with simulated keyboard and text scaling; not tested on physical devices in this change."
+}

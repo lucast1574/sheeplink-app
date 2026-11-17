@@ -134,11 +134,22 @@ Future<void> mount(
 
 Future<void> press(WidgetTester tester, String text) async {
   await tester.pumpAndSettle();
+  if (['Anterior', 'Siguiente', 'Preparar próxima célula'].contains(text)) {
+    await tester.ensureVisible(
+      find.byKey(const ValueKey('meeting-date-selector')),
+    );
+    await tester.tap(find.byKey(const ValueKey('meeting-date-selector')));
+    await tester.pumpAndSettle();
+  }
   await tester.ensureVisible(find.text(text));
   await tester.pumpAndSettle();
   expect(find.text(text).hitTestable(), findsOneWidget);
   await tester.tap(find.text(text));
   await tester.pumpAndSettle();
+  if (text == 'Anterior' || text == 'Siguiente') {
+    await tester.tap(find.text('Aplicar selección'));
+    await tester.pumpAndSettle();
+  }
 }
 
 void main() {
@@ -199,7 +210,7 @@ void main() {
       expect(find.text('Planificador').hitTestable(), findsOneWidget);
       expect(
         tester.getTopLeft(find.text('Planificador')).dy,
-        lessThan(tester.getTopLeft(find.text('Mi célula')).dy),
+        greaterThan(tester.getTopLeft(find.text('Mi célula')).dy),
       );
       await press(tester, 'Preparar próxima célula');
       expect(model.isFutureMeeting, isTrue);
@@ -229,7 +240,7 @@ void main() {
       expect(model.day, day);
       expect(find.text('Una nueva reunión'), findsOneWidget);
       await tester.drag(
-        find.byType(SingleChildScrollView),
+        find.byType(SingleChildScrollView).first,
         const Offset(0, 3000),
       );
       await tester.pumpAndSettle();
@@ -247,7 +258,7 @@ void main() {
       final model = api.model();
       await tester.runAsync(() => model.refresh());
       await mount(tester, model);
-      await tester.tap(find.textContaining('Elegir fecha'));
+      await tester.tap(find.byKey(const ValueKey('meeting-date-selector')));
       await tester.pumpAndSettle();
       final calendar = tester.widget<CalendarDatePicker>(
         find.byType(CalendarDatePicker),
@@ -256,13 +267,7 @@ void main() {
       // Select a different week directly through the calendar's selection callback.
       calendar.onDateChanged(DateTime(2026, 11, 21));
       await tester.pump();
-      await tester.tap(
-        find.text(
-          MaterialLocalizations.of(
-            tester.element(find.byType(CalendarDatePicker)),
-          ).okButtonLabel,
-        ),
-      );
+      await tester.tap(find.text('Aplicar selección'));
       await tester.pumpAndSettle();
       expect(model.day, '2026-11-21');
       await press(tester, 'Siguiente');
@@ -380,11 +385,11 @@ void main() {
       expect(find.text('Planificador').hitTestable(), findsOneWidget);
       expect(
         tester.getTopLeft(find.text('Planificador')).dy,
-        lessThan(tester.getTopLeft(find.text('Mi célula')).dy),
+        greaterThan(tester.getTopLeft(find.text('Mi célula')).dy),
       );
       await press(tester, 'Preparar próxima célula');
       await tester.drag(
-        find.byType(SingleChildScrollView),
+        find.byType(SingleChildScrollView).first,
         const Offset(0, 3000),
       );
       await tester.pumpAndSettle();

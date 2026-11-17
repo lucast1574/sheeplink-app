@@ -1,10 +1,10 @@
-import 'add_cell_member_page.dart';
 import '../../../../l10n/locale.dart';
 import '../../../core/widgets/picker_header.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import '../../../../domain/models/community.dart';
 import '../../../../domain/models/weekly_meeting.dart';
+import 'meeting_date_sheet.dart';
 import '../view_models/community_view_model.dart';
 import '../../../core/theme/app_theme.dart';
 import '../../../core/widgets/app_icon.dart';
@@ -19,23 +19,31 @@ class CellMeetingSelector extends StatelessWidget {
   Future<void> changeDate(BuildContext context) async {
     if (locked) return;
     FocusManager.instance.primaryFocus?.unfocus();
-    if (model.dirty && !await confirmDiscard(context)) return;
-    if (!context.mounted) return;
-    final date = await showDatePicker(
+    final selected = await showModalBottomSheet<Object>(
       context: context,
-      initialDate: model.date,
-      firstDate: DateTime(model.date.year - 10),
-      lastDate: DateTime(model.date.year + 10, 12, 31),
-      cancelText: tr("Cancelar"),
-      barrierDismissible: true,
+      isScrollControlled: true,
+      showDragHandle: true,
+      builder: (_) => MeetingDateSheet(
+        date: model.date,
+        meetingDay: model.cell?.meetingDay ?? 'Saturday',
+        canPrepare:
+            model.session?.permissions.contains('planner.write') ?? false,
+        recorded: model.meeting?.date != null,
+      ),
     );
-    if (date != null) await model.refresh(selectedDate: date);
+    if (!context.mounted || selected == null) return;
+    if (selected == MeetingDateAction.prepare) {
+      await prepareNext(context);
+      return;
+    }
+    if (selected is! DateTime || selected == model.date) return;
+    if (model.dirty && !await confirmDiscard(context)) return;
+    await model.refresh(selectedDate: selected);
   }
 
   Future<void> changeCell(BuildContext context) async {
     if (locked) return;
     FocusManager.instance.primaryFocus?.unfocus();
-    if (model.dirty && !await confirmDiscard(context)) return;
     if (!context.mounted) return;
     final selected = await showModalBottomSheet<Cell>(
       context: context,
@@ -77,7 +85,11 @@ class CellMeetingSelector extends StatelessWidget {
         ),
       ),
     );
-    if (selected != null) await model.refresh(selected: selected);
+    if (selected == null || selected.id == model.cell?.id || !context.mounted) {
+      return;
+    }
+    if (model.dirty && !await confirmDiscard(context)) return;
+    await model.refresh(selected: selected);
   }
 
   Future<void> changeWeek(BuildContext context, int offset) async {
@@ -114,97 +126,54 @@ class CellMeetingSelector extends StatelessWidget {
   }
 
   @override
-  Widget build(BuildContext context) => Column(
-    crossAxisAlignment: CrossAxisAlignment.stretch,
-    children: [
-      Text(tr("Mi célula"), style: Theme.of(context).textTheme.headlineLarge),
-      const SizedBox(height: 8),
-      Text(model.cell?.name ?? tr("Sin célula asignada")),
-      if (model.cells.length > 1)
-        Align(
-          alignment: Alignment.centerLeft,
-          child: TextButton(
-            onPressed: locked ? null : () => changeCell(context),
-            child: Text(tr("Cambiar célula")),
+  Widget build(BuildContext context) {
+    if (model.cell == null) return const SizedBox.shrink();
+    return Semantics(
+      label: tr('Elegir fecha'),
+      child: OutlinedButton(
+        key: const ValueKey('meeting-date-selector'),
+        onPressed: locked ? null : () => openMeetingDates(context),
+        style: OutlinedButton.styleFrom(
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(16),
           ),
+          side: const BorderSide(color: AppTheme.control),
         ),
-      if (model.canManageMembers) ...[
-        const SizedBox(height: 16),
-        Align(
-          alignment: Alignment.centerLeft,
-          child: TextButton.icon(
-            onPressed: locked
-                ? null
-                : () {
-                    FocusManager.instance.primaryFocus?.unfocus();
-                    Navigator.of(context).push(
-                      MaterialPageRoute<Member>(
-                        builder: (_) => AddCellMemberPage(model: model),
-                      ),
-                    );
-                  },
-            icon: const AppIcon(Symbol.people, size: 20),
-            label: Text(tr('Añadir integrante')),
-          ),
-        ),
-      ],
-      if (model.cell != null) ...[
-        const SizedBox(height: 24),
-        Text(
-          tr("Semana del {{p0}}", {
-            'p0': DateFormat.MMMd(appLocale).format(startOfWeek(model.date)),
-          }),
-          style: Theme.of(context).textTheme.titleMedium,
-        ),
-        const SizedBox(height: 8),
-        Wrap(
-          spacing: 16,
-          runSpacing: 8,
+        child: Row(
           children: [
-            TextButton(
-              onPressed: locked ? null : () => changeWeek(context, -1),
-              child: Text(tr("Anterior")),
+            const AppIcon(Symbol.calendar, size: 22),
+            const SizedBox(width: 12),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    DateFormat.MMMMEEEEd(appLocale).format(model.date),
+                    style: Theme.of(context).textTheme.titleMedium,
+                  ),
+                  const SizedBox(height: 4),
+                  Text(
+                    tr(
+                      model.isFutureMeeting
+                          ? 'Próximo encuentro'
+                          : 'Fecha del encuentro',
+                    ),
+                    style: Theme.of(context).textTheme.bodySmall,
+                  ),
+                ],
+              ),
             ),
-            TextButton(
-              onPressed: locked ? null : () => changeWeek(context, 1),
-              child: Text(tr("Siguiente")),
+            const SizedBox(width: 8),
+            const RotatedBox(
+              quarterTurns: 1,
+              child: AppIcon(Symbol.arrow, size: 18),
             ),
           ],
         ),
-        const SizedBox(height: 16),
-        OutlinedButton.icon(
-          onPressed: locked ? null : () => changeDate(context),
-          icon: const AppIcon(Symbol.calendar, size: 20),
-          label: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 12),
-            child: Text(
-              tr("Elegir fecha · {{p0}}", {
-                'p0': DateFormat.MMMMEEEEd(appLocale).format(model.date),
-              }),
-              textAlign: TextAlign.center,
-            ),
-          ),
-        ),
-        if (model.meeting?.date != null) ...[
-          const SizedBox(height: 12),
-          Text(
-            tr(
-              "Esta semana tiene una reunión registrada. Para una nueva reunión, elige otra semana.",
-            ),
-          ),
-        ],
-        if (model.session?.permissions.contains('planner.write') ?? false) ...[
-          const SizedBox(height: 16),
-          FilledButton.icon(
-            onPressed: locked ? null : () => prepareNext(context),
-            icon: const AppIcon(Symbol.calendar, color: Colors.white, size: 20),
-            label: Text(
-              tr("Preparar próxima célula"),
-              textAlign: TextAlign.center,
-            ),
-          ),
-        ],
-      ],
-    ],
-  );
+      ),
+    );
+  }
+
+  Future<void> openMeetingDates(BuildContext context) => changeDate(context);
 }

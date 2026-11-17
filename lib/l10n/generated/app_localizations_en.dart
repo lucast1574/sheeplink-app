@@ -3141,4 +3141,40 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get cellMemberRegistration13 => 'Member added to the cell.';
+
+  @override
+  String get cellWorkspace0 => 'Members';
+
+  @override
+  String get cellWorkspace1 => 'Search members';
+
+  @override
+  String get cellWorkspace2 => 'Clear search';
+
+  @override
+  String get cellWorkspace3 => 'No members found with that name.';
+
+  @override
+  String get cellWorkspace4 => 'Add optional details';
+
+  @override
+  String get cellWorkspace5 => 'Meeting date';
+
+  @override
+  String get cellWorkspace6 => 'Upcoming meeting';
+
+  @override
+  String get cellWorkspace7 => 'Choose date';
+
+  @override
+  String get cellWorkspace8 => 'Manage activities';
+
+  @override
+  String get cellWorkspace9 => 'Attendance options';
+
+  @override
+  String get cellWorkspace10 => 'Meeting topic and photo';
+
+  @override
+  String get cellWorkspace11 => 'Clear attendance mark';
 }

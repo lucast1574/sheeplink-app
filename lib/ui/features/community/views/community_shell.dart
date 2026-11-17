@@ -129,10 +129,6 @@ class _CommunityShellState extends State<CommunityShell>
 
   Future<void> select(int index) async {
     if (index == tab || widget.model.plannerBusy) return;
-    if (widget.model.plannerDirty) {
-      if (!await confirmDiscard(context) || !mounted) return;
-      widget.model.plannerDirty = false;
-    }
     FocusManager.instance.primaryFocus?.unfocus();
     setState(() => tab = index);
     if (_scroll.hasClients) _scroll.jumpTo(0);
@@ -189,92 +185,107 @@ class _CommunityShellState extends State<CommunityShell>
         ),
         body: SafeArea(
           top: false,
-          child: RefreshIndicator(
-            onRefresh: () async {
-              if (model.dirty && !await confirmDiscard(context)) return;
-              await model.refresh();
-              _roster = null;
-              sync();
-            },
-            child: ListView(
-              controller: _scroll,
-              physics: const AlwaysScrollableScrollPhysics(),
-              keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
-              padding: EdgeInsets.fromLTRB(
-                (tab == 1 ||
-                        (tab == 2 &&
-                            (model.session!.permissions.contains(
-                                  'academy.teach',
-                                ) ||
-                                model.session!.permissions.contains(
-                                  'academy.manage',
-                                ))))
-                    ? 12
-                    : 24,
-                16,
-                (tab == 1 ||
-                        (tab == 2 &&
-                            (model.session!.permissions.contains(
-                                  'academy.teach',
-                                ) ||
-                                model.session!.permissions.contains(
-                                  'academy.manage',
-                                ))))
-                    ? 12
-                    : 24,
-                32,
-              ),
-              children: [
-                Center(
+          child: Stack(
+            children: [
+              Offstage(
+                offstage: tab != 1,
+                child: Center(
                   child: ConstrainedBox(
                     constraints: const BoxConstraints(maxWidth: 600),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        if (model.busy)
-                          const LinearProgressIndicator(minHeight: 2),
-                        if (model.error != null) ...[
-                          FeedbackPanel(
-                            model.error!,
-                            error: true,
-                            action: TextButton(
-                              onPressed: model.busy
-                                  ? null
-                                  : () => model.refresh(),
-                              child: Text(tr("Reintentar")),
-                            ),
-                          ),
-                          const SizedBox(height: 16),
-                        ],
-                        if (model.notice != null) ...[
-                          FeedbackPanel(model.notice!),
-                          const SizedBox(height: 16),
-                        ],
-                        switch (tab) {
-                          0 => TodayView(
-                            model: model,
-                            onAttendance: () => select(1),
-                          ),
-                          1 => CellWorkspace(model: model),
-                          2
-                              when model.session!.permissions.contains(
-                                    'academy.teach',
-                                  ) ||
-                                  model.session!.permissions.contains(
-                                    'academy.manage',
-                                  ) =>
-                            CourseAttendance(model: model),
-                          _ => ProfileView(
-                            model: model,
-                            notifications: widget.notifications,
-                          ),
-                        },
-                      ],
-                    ),
+                    child: CellWorkspace(model: model),
                   ),
                 ),
-              ],
-            ),
+              ),
+              if (tab != 1)
+                RefreshIndicator(
+                  onRefresh: () async {
+                    if (model.dirty && !await confirmDiscard(context)) return;
+                    await model.refresh();
+                    _roster = null;
+                    sync();
+                  },
+                  child: ListView(
+                    controller: _scroll,
+                    physics: const AlwaysScrollableScrollPhysics(),
+                    keyboardDismissBehavior:
+                        ScrollViewKeyboardDismissBehavior.onDrag,
+                    padding: EdgeInsets.fromLTRB(
+                      (tab == 1 ||
+                              (tab == 2 &&
+                                  (model.session!.permissions.contains(
+                                        'academy.teach',
+                                      ) ||
+                                      model.session!.permissions.contains(
+                                        'academy.manage',
+                                      ))))
+                          ? 12
+                          : 24,
+                      16,
+                      (tab == 1 ||
+                              (tab == 2 &&
+                                  (model.session!.permissions.contains(
+                                        'academy.teach',
+                                      ) ||
+                                      model.session!.permissions.contains(
+                                        'academy.manage',
+                                      ))))
+                          ? 12
+                          : 24,
+                      32,
+                    ),
+                    children: [
+                      Center(
+                        child: ConstrainedBox(
+                          constraints: const BoxConstraints(maxWidth: 600),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              if (model.busy)
+                                const LinearProgressIndicator(minHeight: 2),
+                              if (model.error != null) ...[
+                                FeedbackPanel(
+                                  model.error!,
+                                  error: true,
+                                  action: TextButton(
+                                    onPressed: model.busy
+                                        ? null
+                                        : () => model.refresh(),
+                                    child: Text(tr("Reintentar")),
+                                  ),
+                                ),
+                                const SizedBox(height: 16),
+                              ],
+                              if (model.notice != null) ...[
+                                FeedbackPanel(model.notice!),
+                                const SizedBox(height: 16),
+                              ],
+                              switch (tab) {
+                                0 => TodayView(
+                                  model: model,
+                                  onAttendance: () => select(1),
+                                ),
+
+                                2
+                                    when model.session!.permissions.contains(
+                                          'academy.teach',
+                                        ) ||
+                                        model.session!.permissions.contains(
+                                          'academy.manage',
+                                        ) =>
+                                  CourseAttendance(model: model),
+                                _ => ProfileView(
+                                  model: model,
+                                  notifications: widget.notifications,
+                                ),
+                              },
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+            ],
           ),
         ),
         bottomNavigationBar: NavigationBar(

@@ -175,8 +175,11 @@ void main() {
     await tester.tap(find.text('Mi célula'));
     await tester.pumpAndSettle();
     expect(find.text('Guardar reunión'), findsOneWidget);
-    await tester.tap(find.text('Presente').first);
+    await tester.tap(find.byTooltip('Presente').first);
     await tester.pump();
+    await tester.ensureVisible(find.text('Opciones de asistencia'));
+    await tester.tap(find.text('Opciones de asistencia'));
+    await tester.pumpAndSettle();
     await tester.ensureVisible(find.text('Marcar pendientes como ausentes'));
     await tester.pumpAndSettle();
     await tester.tap(find.text('Marcar pendientes como ausentes'));

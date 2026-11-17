@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'cell_disclosure.dart';
 import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
 import '../../../../domain/models/community.dart';
@@ -18,6 +19,7 @@ class AddCellMemberPage extends StatefulWidget {
 
 class _AddCellMemberPageState extends State<AddCellMemberPage> {
   final form = GlobalKey<FormState>();
+  final optionalDetails = ExpansibleController();
   final name = TextEditingController();
   final email = TextEditingController();
   final age = TextEditingController();
@@ -32,6 +34,7 @@ class _AddCellMemberPageState extends State<AddCellMemberPage> {
 
   @override
   void dispose() {
+    optionalDetails.dispose();
     name.dispose();
     email.dispose();
     age.dispose();
@@ -73,9 +76,21 @@ class _AddCellMemberPageState extends State<AddCellMemberPage> {
 
   Future<void> save() async {
     if (saving) return;
-    if (!form.currentState!.validate()) {
+    final invalidFields = form.currentState!.validateGranularly();
+    if (invalidFields.isNotEmpty) {
+      if (invalidFields.any(
+        (field) => field.widget.key != const ValueKey('new-member-name'),
+      )) {
+        optionalDetails.expand();
+      }
       FocusManager.instance.primaryFocus?.unfocus();
-      Scrollable.ensureVisible(form.currentContext!, alignment: 0);
+      await WidgetsBinding.instance.endOfFrame;
+      if (mounted) {
+        await Scrollable.ensureVisible(
+          invalidFields.first.context,
+          alignment: .2,
+        );
+      }
       return;
     }
     FocusManager.instance.primaryFocus?.unfocus();
@@ -197,63 +212,76 @@ class _AddCellMemberPageState extends State<AddCellMemberPage> {
                         ),
                       ),
                       const SizedBox(height: 20),
-                      _MemberField(
-                        label: tr('Correo electrónico (opcional)'),
-                        child: TextFormField(
-                          key: const ValueKey('new-member-email'),
-                          controller: email,
-                          readOnly: saving,
-                          maxLength: 254,
-                          keyboardType: TextInputType.emailAddress,
-                          textInputAction: TextInputAction.done,
-                          onFieldSubmitted: (_) =>
-                              FocusManager.instance.primaryFocus?.unfocus(),
-                          autocorrect: false,
-                          onTapOutside: (_) =>
-                              FocusManager.instance.primaryFocus?.unfocus(),
-                          decoration: InputDecoration(counterText: ''),
-                          validator: (value) =>
-                              value == null ||
-                                  value.trim().isEmpty ||
-                                  RegExp(
-                                    r'^[^\s@]+@[^\s@]+\.[^\s@]+$',
-                                  ).hasMatch(value.trim())
-                              ? null
-                              : tr(
-                                  'Introduce un correo válido o deja el campo vacío.',
-                                ),
-                        ),
-                      ),
-                      const SizedBox(height: 20),
-                      _MemberField(
-                        label: tr('Edad (opcional)'),
-                        child: TextFormField(
-                          key: const ValueKey('new-member-age'),
-                          controller: age,
-                          readOnly: saving,
-                          maxLength: 3,
-                          keyboardType: TextInputType.number,
-                          inputFormatters: [
-                            FilteringTextInputFormatter.digitsOnly,
-                          ],
-                          textInputAction: TextInputAction.done,
-                          onFieldSubmitted: (_) =>
-                              FocusManager.instance.primaryFocus?.unfocus(),
-                          onTapOutside: (_) =>
-                              FocusManager.instance.primaryFocus?.unfocus(),
-                          decoration: InputDecoration(counterText: ''),
-                          validator: (value) {
-                            if (value == null || value.trim().isEmpty) {
-                              return null;
-                            }
-                            final number = int.tryParse(value.trim());
-                            return number != null &&
-                                    number >= 0 &&
-                                    number <= 120
-                                ? null
-                                : tr('La edad debe estar entre 0 y 120 años.');
-                          },
-                        ),
+                      CellDisclosure(
+                        key: const ValueKey('member-optional-details'),
+                        controller: optionalDetails,
+                        maintainState: true,
+                        tilePadding: EdgeInsets.zero,
+                        title: Text(tr('Añadir datos opcionales')),
+                        onExpansionChanged: (_) =>
+                            FocusManager.instance.primaryFocus?.unfocus(),
+                        children: [
+                          _MemberField(
+                            label: tr('Correo electrónico (opcional)'),
+                            child: TextFormField(
+                              key: const ValueKey('new-member-email'),
+                              controller: email,
+                              readOnly: saving,
+                              maxLength: 254,
+                              keyboardType: TextInputType.emailAddress,
+                              textInputAction: TextInputAction.done,
+                              onFieldSubmitted: (_) =>
+                                  FocusManager.instance.primaryFocus?.unfocus(),
+                              autocorrect: false,
+                              onTapOutside: (_) =>
+                                  FocusManager.instance.primaryFocus?.unfocus(),
+                              decoration: InputDecoration(counterText: ''),
+                              validator: (value) =>
+                                  value == null ||
+                                      value.trim().isEmpty ||
+                                      RegExp(
+                                        r'^[^\s@]+@[^\s@]+\.[^\s@]+$',
+                                      ).hasMatch(value.trim())
+                                  ? null
+                                  : tr(
+                                      'Introduce un correo válido o deja el campo vacío.',
+                                    ),
+                            ),
+                          ),
+                          const SizedBox(height: 20),
+                          _MemberField(
+                            label: tr('Edad (opcional)'),
+                            child: TextFormField(
+                              key: const ValueKey('new-member-age'),
+                              controller: age,
+                              readOnly: saving,
+                              maxLength: 3,
+                              keyboardType: TextInputType.number,
+                              inputFormatters: [
+                                FilteringTextInputFormatter.digitsOnly,
+                              ],
+                              textInputAction: TextInputAction.done,
+                              onFieldSubmitted: (_) =>
+                                  FocusManager.instance.primaryFocus?.unfocus(),
+                              onTapOutside: (_) =>
+                                  FocusManager.instance.primaryFocus?.unfocus(),
+                              decoration: InputDecoration(counterText: ''),
+                              validator: (value) {
+                                if (value == null || value.trim().isEmpty) {
+                                  return null;
+                                }
+                                final number = int.tryParse(value.trim());
+                                return number != null &&
+                                        number >= 0 &&
+                                        number <= 120
+                                    ? null
+                                    : tr(
+                                        'La edad debe estar entre 0 y 120 años.',
+                                      );
+                              },
+                            ),
+                          ),
+                        ],
                       ),
                       const SizedBox(height: 24),
                       Text(tr('Cumpleaños (opcional)')),
