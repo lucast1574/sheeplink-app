@@ -1,0 +1,55 @@
+{
+  "version": "1.0.8",
+  "build": 11,
+  "date": "2026-11-17",
+  "sourceCommit": "e2d236dae3ce5e34f8cb898523559e1f2f50e314",
+  "changes": "Add cell roster members directly from Mi c\u00e9lula without creating accounts or invitations; preserve attendance/planner drafts; fix current-week future meeting navigation and translated font handling.",
+  "artifacts": {
+    "android": {
+      "path": "build/app/outputs/bundle/release/app-release.aab",
+      "bytes": 63155803,
+      "sha256": "17f70ff937a13e8680372d328c4ffe98cb8221355632b2345d093ab0168d3459"
+    },
+    "ios": {
+      "path": "build/ios-release/SheepLink-1.0.8-11.ipa",
+      "bytes": 10714320,
+      "sha256": "945ee51fe25880f97e195b4e62aab70d9c2ab5763a0e0759685e519921f3f506"
+    }
+  },
+  "checks": {
+    "flutterAnalyze": "passed",
+    "flutterTestsPassed": 82,
+    "iosConfiguration": "passed",
+    "iosSigningChecks": "55/55",
+    "androidBundletool": "passed",
+    "androidJarSignature": "verified"
+  },
+  "ios": {
+    "appStoreId": "6829374579",
+    "compiler": "Linux NUC, prepared Swift/iOS toolchain",
+    "processingState": "VALID",
+    "uploadState": "COMPLETE",
+    "buildId": "1aa07648-cc51-494d-9708-b73fa5c20c0b",
+    "appStoreVersionId": "65f14ecc-266f-43dd-8a4a-ff47d2ebf215",
+    "appStoreSubmission": "WAITING_FOR_REVIEW",
+    "reviewSubmissionId": "65fd894a-0265-47eb-bf64-3760ca958008",
+    "releaseType": "AFTER_APPROVAL",
+    "testFlightInternalGroup": "SheepLink QA",
+    "testFlightGroupAssignment": "verified",
+    "previousReviewReplaced": true,
+    "temporarySigningKeysRemoved": true
+  },
+  "android": {
+    "internal": "AVAILABLE_TO_INTERNAL_TESTERS",
+    "alpha": "SENT_FOR_REVIEW_PENDING_AUTOMATED_CHECKS",
+    "productionAccess": "MORE_CLOSED_TESTING_REQUIRED",
+    "closedTestingObserved": "12 testers enrolled, 5 continuous days on 2026-11-17; Google requires 14 days before production access application",
+    "internalReleaseUrl": "https://play.google.com/console/u/0/developers/5585127948264862090/app/4973233861400640768/tracks/4699493667805671464/releases/7/details",
+    "alphaReleaseUrl": "https://play.google.com/console/u/0/developers/5585127948264862090/app/4973233861400640768/tracks/4698138234816646348/releases/8/review"
+  },
+  "evidence": [
+    "store/android-1.0.8-submitted.jpg",
+    "store/android-1.0.8-internal.jpg",
+    "store/ios-1.0.8-submitted.jpg"
+  ]
+}
