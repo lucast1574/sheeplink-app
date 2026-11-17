@@ -1,0 +1,55 @@
+{
+  "version": "1.0.9",
+  "build": 12,
+  "date": "2026-11-17",
+  "sourceCommit": "03da47bf023f200c68e3119094fbec6e9ef12eb6",
+  "changes": "Mi c\u00e9lula organized into Attendance, Planner and Members, preserving all existing functions; explicit selector exits, deselection and draft preservation across task and main navigation.",
+  "artifacts": {
+    "android": {
+      "path": "build/app/outputs/bundle/release/app-release.aab",
+      "bytes": 63330619,
+      "sha256": "ddb479f437b53920609942eeb4f6b33459f6eaf275b34e6c854d40d03b053b1f"
+    },
+    "ios": {
+      "path": "build/ios-release/SheepLink-1.0.9-12.ipa",
+      "bytes": 10755195,
+      "sha256": "961a7eae820176d39935a8627778f38922bab2f3e2589fbe21d02b7839e106d6"
+    }
+  },
+  "checks": {
+    "flutterAnalyze": "passed",
+    "flutterTestsPassed": 87,
+    "iosConfiguration": "passed",
+    "iosSigningChecks": "55/55",
+    "androidBundletool": "passed",
+    "androidJarSignature": "verified"
+  },
+  "ios": {
+    "appStoreId": "6829374579",
+    "compiler": "Linux NUC, prepared Swift/iOS toolchain",
+    "processingState": "VALID",
+    "uploadState": "COMPLETE",
+    "buildId": "703320cf-5b1e-4f9e-8735-935e858d585a",
+    "appStoreVersionId": "fca1a505-e57d-46db-bc33-81cb1bc8fea0",
+    "appStoreSubmission": "WAITING_FOR_REVIEW",
+    "reviewSubmissionId": "c46aecef-f397-4923-9037-a49a344a78b2",
+    "releaseType": "AFTER_APPROVAL",
+    "testFlightInternalGroup": "SheepLink QA",
+    "testFlightGroupAssignment": "verified",
+    "previousVersionAlreadyPublished": "1.0.8",
+    "temporarySigningKeysRemoved": true
+  },
+  "android": {
+    "internal": "AVAILABLE_TO_INTERNAL_TESTERS",
+    "alpha": "SENT_FOR_REVIEW",
+    "productionAccess": "MORE_CLOSED_TESTING_REQUIRED",
+    "closedTestingObserved": "12 testers enrolled, 5 continuous days on 2026-11-17; Google requires 14 days after review before reapplying for production access",
+    "internalReleaseUrl": "https://play.google.com/console/u/0/developers/5585127948264862090/app/4973233861400640768/tracks/4699493667805671464/releases/8/details",
+    "alphaReleaseUrl": "https://play.google.com/console/u/0/developers/5585127948264862090/app/4973233861400640768/tracks/4698138234816646348/releases/9/details"
+  },
+  "evidence": [
+    "store/android-1.0.9-submitted.jpg",
+    "store/android-1.0.9-internal.jpg",
+    "store/ios-1.0.9-submitted.jpg"
+  ]
+}
