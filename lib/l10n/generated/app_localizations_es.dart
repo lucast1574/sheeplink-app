@@ -3201,4 +3201,15 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get cellWorkspace11 => 'Quitar marca';
+
+  @override
+  String get photoPickerFix0 => 'Tema del encuentro';
+
+  @override
+  String get photoPickerFix1 =>
+      'El selector de fotos no respondió. Ciérralo y vuelve a intentarlo.';
+
+  @override
+  String get photoPickerFix2 =>
+      'La foto tardó demasiado en prepararse. Intenta con otra imagen.';
 }

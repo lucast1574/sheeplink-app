@@ -1,6 +1,7 @@
 import '../../../../l10n/locale.dart';
 import '../../../core/widgets/report_content.dart';
 import '../../../core/widgets/photo_policy.dart';
+import '../../../core/widgets/photo_feedback.dart';
 import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
@@ -37,25 +38,23 @@ class _WeeklyPhotoState extends State<WeeklyPhoto> {
   }
 
   Future<void> pick(ImageSource source) async {
-    if (!await acceptPhotoPolicy(context, widget.model.session!.id) ||
-        !mounted) {
-      return;
-    }
-    widget.model.photoSelection(true);
+    final model = widget.model;
+    if (model.busy || model.pickingPhoto || model.session == null) return;
+    FocusManager.instance.primaryFocus?.unfocus();
+    // Claim the entire operation, including consent, so a double tap cannot open
+    // overlapping dialogs/native pickers. Always release it on every exit.
+    model.photoSelection(true);
     setState(() => error = null);
     try {
-      final photo = await _photos.pick(source);
-      if (mounted && photo != null) widget.model.setPhoto(photo);
-    } catch (_) {
-      if (mounted) {
-        setState(
-          () => error = tr(
-            "No pudimos preparar la foto. Prueba con una imagen JPG o PNG más pequeña.",
-          ),
-        );
+      if (!await acceptPhotoPolicy(context, model.session!.id) || !mounted) {
+        return;
       }
+      final photo = await _photos.pick(source);
+      if (mounted && photo != null) model.setPhoto(photo);
+    } catch (e) {
+      if (mounted) setState(() => error = photoFailureMessage(e));
     } finally {
-      widget.model.photoSelection(false);
+      model.photoSelection(false);
     }
   }
 
@@ -65,7 +64,6 @@ class _WeeklyPhotoState extends State<WeeklyPhoto> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const SizedBox(height: 24),
         Text(
           tr("La foto de esta semana"),
           style: Theme.of(context).textTheme.titleLarge,
@@ -106,30 +104,42 @@ class _WeeklyPhotoState extends State<WeeklyPhoto> {
               ],
             ),
           ),
-        if (model.canWrite)
-          Wrap(
-            spacing: 12,
+        if (model.canWrite) ...[
+          const SizedBox(height: 16),
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              TextButton.icon(
-                onPressed: model.busy || model.pickingPhoto
-                    ? null
-                    : () => pick(ImageSource.camera),
-                icon: const AppIcon(Symbol.camera, size: 20),
-                label: Text(tr("Tomar foto")),
-              ),
-              TextButton(
-                onPressed: model.busy || model.pickingPhoto
-                    ? null
-                    : () => pick(ImageSource.gallery),
-                child: Text(tr("Elegir de galería")),
-              ),
-              if (model.pendingPhoto != null)
-                TextButton(
-                  onPressed: model.busy ? null : model.discardPhoto,
-                  child: Text(tr("Deshacer cambio")),
+              Expanded(
+                child: TextButton.icon(
+                  onPressed: model.busy || model.pickingPhoto
+                      ? null
+                      : () => pick(ImageSource.camera),
+                  style: TextButton.styleFrom(alignment: Alignment.centerLeft),
+                  icon: const AppIcon(Symbol.camera, size: 20),
+                  label: Text(tr('Tomar foto')),
                 ),
+              ),
+              const SizedBox(width: 16),
+              Expanded(
+                child: TextButton(
+                  onPressed: model.busy || model.pickingPhoto
+                      ? null
+                      : () => pick(ImageSource.gallery),
+                  style: TextButton.styleFrom(alignment: Alignment.centerRight),
+                  child: Text(
+                    tr('Elegir de galería'),
+                    textAlign: TextAlign.right,
+                  ),
+                ),
+              ),
             ],
           ),
+          if (model.pendingPhoto != null)
+            TextButton(
+              onPressed: model.busy ? null : model.discardPhoto,
+              child: Text(tr('Deshacer cambio')),
+            ),
+        ],
         if (model.photoBytes != null)
           TextButton(
             onPressed: () => openContentReport(

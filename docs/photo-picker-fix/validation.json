@@ -1,0 +1,19 @@
+{
+  "version": "1.0.10",
+  "build": 13,
+  "checks": {
+    "suitePassed": 99,
+    "photoFlowPassed": 10,
+    "flutterAnalyze": "passed",
+    "iosConfiguration": "valid",
+    "androidReleaseBuild": "passed",
+    "apkSignature": "v2 verified"
+  },
+  "apk": {
+    "path": "artifacts/SheepLink-1.0.10-13-fotos.apk",
+    "bytes": 65301437,
+    "sha256": "14173abe6d04f55dcd8b77b93fcdb95e9cf30e3f6603e599b7f1f19f8d6b639d"
+  },
+  "nativeDeviceValidation": "Not performed; no physical devices connected. Native picker responses are mocked in tests.",
+  "stores": "NOT_SUBMITTED"
+}

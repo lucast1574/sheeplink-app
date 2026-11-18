@@ -1,11 +1,86 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:sheeplink/ui/core/widgets/report_content.dart';
 import 'package:sheeplink/ui/core/widgets/photo_policy.dart';
 import 'fake_repository.dart';
 
+class UnavailablePolicyStorage extends FlutterSecureStorage {
+  const UnavailablePolicyStorage({this.stalled = false});
+  final bool stalled;
+  @override
+  Future<String?> read({
+    required String key,
+    AppleOptions? iOptions,
+    AndroidOptions? aOptions,
+    LinuxOptions? lOptions,
+    WebOptions? webOptions,
+    AppleOptions? mOptions,
+    WindowsOptions? wOptions,
+  }) async {
+    if (stalled) return Completer<String?>().future;
+    throw PlatformException(code: 'keychain_unavailable');
+  }
+
+  @override
+  Future<void> write({
+    required String key,
+    required String? value,
+    AppleOptions? iOptions,
+    AndroidOptions? aOptions,
+    LinuxOptions? lOptions,
+    WebOptions? webOptions,
+    AppleOptions? mOptions,
+    WindowsOptions? wOptions,
+  }) async {
+    if (stalled) return Completer<void>().future;
+    throw PlatformException(code: 'keychain_unavailable');
+  }
+}
+
 void main() {
+  for (final stalled in [false, true]) {
+    testWidgets(
+      'photo consent can proceed explicitly when storage is ${stalled ? "unresponsive" : "unavailable"}',
+      (tester) async {
+        bool? result;
+        await tester.pumpWidget(
+          MaterialApp(
+            home: Builder(
+              builder: (context) => TextButton(
+                onPressed: () async {
+                  result = await acceptPhotoPolicy(
+                    context,
+                    'test',
+                    storage: UnavailablePolicyStorage(stalled: stalled),
+                  );
+                },
+                child: const Text('Foto'),
+              ),
+            ),
+          ),
+        );
+        await tester.tap(find.text('Foto'));
+        await tester.pump(const Duration(seconds: 4));
+        await tester.pumpAndSettle();
+        expect(find.text('Fotos que cuidan de todos'), findsOneWidget);
+        expect(result, null);
+        await tester.tap(find.text('Cancelar'));
+        await tester.pumpAndSettle();
+        expect(result, false);
+        await tester.tap(find.text('Foto'));
+        await tester.pump(const Duration(seconds: 4));
+        await tester.pumpAndSettle();
+        await tester.tap(find.text('Aceptar y continuar'));
+        await tester.pump(const Duration(seconds: 4));
+        await tester.pumpAndSettle();
+        expect(result, true);
+        expect(tester.takeException(), isNull);
+      },
+    );
+  }
   testWidgets(
     'photo policy can be declined and consent is remembered per user',
     (tester) async {

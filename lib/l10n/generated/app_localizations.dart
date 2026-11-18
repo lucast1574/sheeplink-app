@@ -5753,6 +5753,24 @@ abstract class AppLocalizations {
   /// In es, this message translates to:
   /// **'Quitar marca'**
   String get cellWorkspace11;
+
+  /// Tema del encuentro
+  ///
+  /// In es, this message translates to:
+  /// **'Tema del encuentro'**
+  String get photoPickerFix0;
+
+  /// El selector de fotos no respondió. Ciérralo y vuelve a intentarlo.
+  ///
+  /// In es, this message translates to:
+  /// **'El selector de fotos no respondió. Ciérralo y vuelve a intentarlo.'**
+  String get photoPickerFix1;
+
+  /// La foto tardó demasiado en prepararse. Intenta con otra imagen.
+  ///
+  /// In es, this message translates to:
+  /// **'La foto tardó demasiado en prepararse. Intenta con otra imagen.'**
+  String get photoPickerFix2;
 }
 
 class _AppLocalizationsDelegate

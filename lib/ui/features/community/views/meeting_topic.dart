@@ -4,8 +4,9 @@ import '../../../../data/repositories/community_repository.dart';
 import '../view_models/community_view_model.dart';
 
 class MeetingTopic extends StatefulWidget {
-  const MeetingTopic({super.key, required this.model});
+  const MeetingTopic({super.key, required this.model, this.showHeading = true});
   final CommunityViewModel model;
+  final bool showHeading;
   @override
   State<MeetingTopic> createState() => _MeetingTopicState();
 }
@@ -52,8 +53,10 @@ class _MeetingTopicState extends State<MeetingTopic> {
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Text(tr("Tema o título de la reunión")),
-        const SizedBox(height: 8),
+        if (widget.showHeading) ...[
+          Text(tr("Tema o título de la reunión")),
+          const SizedBox(height: 8),
+        ],
         TextField(
           controller: text,
           onChanged: (value) => widget.model.setTopicDirty(value != saved),

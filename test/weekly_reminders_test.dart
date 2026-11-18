@@ -134,7 +134,7 @@ void main() {
       expect(output.length, lessThanOrEqualTo(512000));
       expect(
         () => preparePhoto(Uint8List.fromList([1, 2, 3])),
-        throwsStateError,
+        throwsA(isA<PhotoException>()),
       );
     },
   );

@@ -1,53 +1,55 @@
-import '../../l10n/locale.dart';
 import 'package:flutter/foundation.dart';
-import 'package:image/image.dart' as image;
 import 'package:image_picker/image_picker.dart';
+import 'photo_processing.dart';
+export 'photo_processing.dart';
 
 class PhotoService {
-  final _picker = ImagePicker();
+  PhotoService({ImagePicker? picker}) : _picker = picker ?? ImagePicker();
+  final ImagePicker _picker;
+  static const pickerTimeout = Duration(minutes: 2);
+  static const preparationTimeout = Duration(seconds: 30);
+
   Future<Uint8List?> pick(ImageSource source) async {
-    final file = await _picker.pickImage(
-      source: source,
-      maxWidth: 1280,
-      maxHeight: 1280,
-      imageQuality: 75,
-      requestFullMetadata: false,
-    );
+    final file = await _picker
+        .pickImage(
+          source: source,
+          maxWidth: 1280,
+          maxHeight: 1280,
+          imageQuality: 75,
+          requestFullMetadata: false,
+        )
+        .timeout(
+          pickerTimeout,
+          onTimeout: () =>
+              throw const PhotoException(PhotoFailure.pickerTimeout),
+        );
     if (file == null) return null;
+    return _prepare(file).timeout(
+      preparationTimeout,
+      onTimeout: () =>
+          throw const PhotoException(PhotoFailure.preparationTimeout),
+    );
+  }
+
+  Future<Uint8List> _prepare(XFile file) async {
     if (await file.length() > 20 * 1024 * 1024) {
-      throw StateError(tr("Usa una foto de menos de 20 MB."));
+      throw const PhotoException(PhotoFailure.fileTooLarge);
     }
     return compute(preparePhoto, await file.readAsBytes());
   }
 
   Future<Uint8List?> recover() async {
+    // Lost-data recovery is an Android activity-restoration API, not an iOS picker.
+    if (kIsWeb || defaultTargetPlatform != TargetPlatform.android) return null;
     final lost = await _picker.retrieveLostData();
-    if (lost.files?.isNotEmpty != true) return null;
-    final file = lost.files!.first;
-    if (await file.length() > 20 * 1024 * 1024) return null;
-    return compute(preparePhoto, await file.readAsBytes());
-  }
-}
-
-Uint8List preparePhoto(Uint8List bytes) {
-  var decoded = image.decodeImage(bytes);
-  if (decoded == null) {
-    throw StateError(tr("No pudimos leer esta foto. Usa JPG o PNG."));
-  }
-  decoded = image.bakeOrientation(decoded);
-  if (decoded.width > 1280 || decoded.height > 1280) {
-    decoded = image.copyResize(
-      decoded,
-      width: decoded.width >= decoded.height ? 1280 : null,
-      height: decoded.height > decoded.width ? 1280 : null,
+    if (lost.files?.isNotEmpty != true) {
+      if (lost.exception != null) throw lost.exception!;
+      return null;
+    }
+    return _prepare(lost.files!.first).timeout(
+      preparationTimeout,
+      onTimeout: () =>
+          throw const PhotoException(PhotoFailure.preparationTimeout),
     );
   }
-  decoded.exif = image.ExifData();
-  for (final quality in [75, 60, 45]) {
-    final jpeg = image.encodeJpg(decoded, quality: quality);
-    if (jpeg.length <= 512000) return jpeg;
-  }
-  throw StateError(
-    tr("La foto sigue siendo muy grande. Prueba con una más pequeña."),
-  );
 }

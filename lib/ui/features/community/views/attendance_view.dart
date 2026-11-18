@@ -89,7 +89,7 @@ class AttendanceView extends StatelessWidget {
             ),
           const SizedBox(height: 24),
           CellDisclosure(
-            title: Text(tr('Tema y foto del encuentro')),
+            title: Text(tr('Tema del encuentro')),
             tilePadding: EdgeInsets.zero,
             maintainState: true,
             onExpansionChanged: (_) =>
@@ -97,15 +97,17 @@ class AttendanceView extends StatelessWidget {
             children: [
               MeetingTopic(
                 model: model,
+                showHeading: false,
                 key: ValueKey(
                   'topic-${model.cell?.id}/${model.week}/${model.meetingRevision}',
                 ),
               ),
-              WeeklyPhoto(
-                key: ValueKey('${model.cell?.id}/${model.week}'),
-                model: model,
-              ),
             ],
+          ),
+          const SizedBox(height: 24),
+          WeeklyPhoto(
+            key: ValueKey('${model.cell?.id}/${model.week}'),
+            model: model,
           ),
           const SizedBox(height: 20),
           const SizedBox(height: 8),

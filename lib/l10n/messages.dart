@@ -1199,5 +1199,10 @@ String message(
   "Opciones de asistencia" => l.cellWorkspace9,
   "Tema y foto del encuentro" => l.cellWorkspace10,
   "Quitar marca" => l.cellWorkspace11,
+  "Tema del encuentro" => l.photoPickerFix0,
+  "El selector de fotos no respondió. Ciérralo y vuelve a intentarlo." =>
+    l.photoPickerFix1,
+  "La foto tardó demasiado en prepararse. Intenta con otra imagen." =>
+    l.photoPickerFix2,
   _ => source,
 };

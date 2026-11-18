@@ -80,9 +80,6 @@ void main() {
       pixelRatio: ratio,
       jpeg: iosStore,
     );
-    await tester.ensureVisible(find.text('Tema y foto del encuentro'));
-    await tester.tap(find.text('Tema y foto del encuentro'));
-    await tester.pumpAndSettle();
     await tester.ensureVisible(find.text('La foto de esta semana'));
     await tester.pumpAndSettle();
     await capture(

@@ -4890,5 +4890,20 @@
   "@cellWorkspace11": {
     "description": "Quitar marca",
     "placeholders": {}
+  },
+  "photoPickerFix0": "Tema del encuentro",
+  "@photoPickerFix0": {
+    "description": "Tema del encuentro",
+    "placeholders": {}
+  },
+  "photoPickerFix1": "El selector de fotos no respondió. Ciérralo y vuelve a intentarlo.",
+  "@photoPickerFix1": {
+    "description": "El selector de fotos no respondió. Ciérralo y vuelve a intentarlo.",
+    "placeholders": {}
+  },
+  "photoPickerFix2": "La foto tardó demasiado en prepararse. Intenta con otra imagen.",
+  "@photoPickerFix2": {
+    "description": "La foto tardó demasiado en prepararse. Intenta con otra imagen.",
+    "placeholders": {}
   }
 }

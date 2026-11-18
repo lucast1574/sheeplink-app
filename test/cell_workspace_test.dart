@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sheeplink/l10n/locale.dart';
 import 'package:timezone/data/latest.dart' as tz;
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -44,7 +45,10 @@ Future<GlobalKey> mountShell(
 
 Future<void> mainTab(WidgetTester tester, String label) async {
   await tester.tap(
-    find.descendant(of: find.byType(NavigationBar), matching: find.text(label)),
+    find.descendant(
+      of: find.byType(NavigationBar),
+      matching: find.text(tr(label)),
+    ),
   );
   await tester.pumpAndSettle();
 }
@@ -53,7 +57,7 @@ Future<void> tapText(WidgetTester tester, String label) async {
   final sheet = find.byType(BottomSheet);
   final target = sheet.evaluate().isEmpty
       ? find.text(label)
-      : find.descendant(of: sheet, matching: find.text(label));
+      : find.descendant(of: sheet, matching: find.text(tr(label)));
   await tester.ensureVisible(target);
   await tester.pumpAndSettle();
   await tester.tap(target);
@@ -108,7 +112,7 @@ void main() {
       model.mark('sofia', true);
       await tester.pumpAndSettle();
       await capture(tester, key, 'cell-ux-01-attendance', pixelRatio: 1);
-      await tapText(tester, 'Tema y foto del encuentro');
+      await tapText(tester, 'Tema del encuentro');
       final topic = find.descendant(
         of: find.byType(MeetingTopic),
         matching: find.byType(TextField),
