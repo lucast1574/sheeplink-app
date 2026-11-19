@@ -1,0 +1,56 @@
+{
+  "version": "1.0.10",
+  "build": 13,
+  "date": "2026-11-19",
+  "sourceCommit": "0b5923ed1f3376a0e121070a06faad54c827ed0e",
+  "changes": "Guard photo selection from before consent, handle cancellation/permissions/timeouts, isolate image processing from Flutter bindings; weekly photo is not collapsible and gallery is aligned right.",
+  "artifacts": {
+    "android": {
+      "path": "build/app/outputs/bundle/release/app-release.aab",
+      "bytes": 63321853,
+      "sha256": "47a7a4a588b5e2e8d83a7647073ee73be0a97298d7a55ae79e8406a30f3c5394"
+    },
+    "ios": {
+      "path": "build/ios-release/SheepLink-1.0.10-13.ipa",
+      "bytes": 10756992,
+      "sha256": "31e7cfadbdd5fde371139f1c8662b81f97fe3af83538d1086184ef9930ee242d"
+    }
+  },
+  "checks": {
+    "flutterAnalyze": "passed",
+    "flutterTestsPassed": 99,
+    "photoFlowTestsPassed": 10,
+    "iosConfiguration": "passed",
+    "iosSigningChecks": "55/55",
+    "androidBundletool": "passed",
+    "androidJarSignature": "verified"
+  },
+  "ios": {
+    "appStoreId": "6829374579",
+    "compiler": "Linux NUC, prepared Swift/iOS toolchain",
+    "processingState": "VALID",
+    "uploadState": "COMPLETE",
+    "buildId": "5d79215a-716d-44d5-9dee-d3705c6ce748",
+    "appStoreVersionId": "d7723a4a-f620-4e64-ac0b-9794dd43d29f",
+    "appStoreSubmission": "WAITING_FOR_REVIEW",
+    "reviewSubmissionId": "ed353fd8-1d88-4274-a26e-d99b22a63137",
+    "releaseType": "AFTER_APPROVAL",
+    "testFlightInternalGroup": "SheepLink QA",
+    "testFlightGroupAssignment": "verified",
+    "previousVersionAlreadyPublished": "1.0.9",
+    "temporarySigningKeysRemoved": true
+  },
+  "android": {
+    "track": "production",
+    "productionAccess": "AVAILABLE",
+    "submission": "SENT_FOR_REVIEW",
+    "rolloutPercent": 100,
+    "managedPublishing": false,
+    "productionReleaseUrl": "https://play.google.com/console/u/0/developers/5585127948264862090/app/4973233861400640768/tracks/4697262649549841112/releases/2/review",
+    "publishingUrl": "https://play.google.com/console/u/0/developers/5585127948264862090/app/4973233861400640768/publishing"
+  },
+  "evidence": [
+    "store/android-1.0.10-production-submitted.jpg",
+    "store/ios-1.0.10-submitted.jpg"
+  ]
+}
